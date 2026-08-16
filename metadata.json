@@ -1,0 +1,14 @@
+{
+  "module_id": "M12",
+  "module_name": "med_lab_fhir_db",
+  "title": "TW Core IG (FHIR R4) 與 LOINC 檢驗碼對照庫",
+  "table_name": "m12_loinc_codes",
+  "schema_version": "1.0.0",
+  "record_count": 500,
+  "last_updated": "2026-08-16T12:18:22.877325",
+  "attributes_count": 4,
+  "data_sources": [
+    "LOINC Official Standard Database (Regenstrief Institute)",
+    "衛福部 TW Core IG (FHIR R4) 台灣核心實作指引"
+  ]
+}

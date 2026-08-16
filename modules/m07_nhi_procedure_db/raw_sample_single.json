@@ -1,0 +1,11 @@
+[
+  {
+    "code": "PROC-00001",
+    "name_zh": "",
+    "icd10_pcs": "10D00Z1",
+    "nhi_points": 35010,
+    "requires_inpatient": 1,
+    "attributes_json": "{\"icd10_pcs\":\"10D00Z1\",\"nhi_points\":\"35010\",\"requires_inpatient\":\"True\"}",
+    "updated_at": "2026-08-16 04:18:15"
+  }
+]

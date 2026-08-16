@@ -1,0 +1,9 @@
+{
+  "module_id": "M12",
+  "module_name": "med_lab_fhir_db",
+  "description": "TW Core IG (FHIR) + LOINC 檢驗碼對照庫",
+  "table_name": "m12_loinc_codes",
+  "record_count": 500,
+  "schema_version": "0.5.0",
+  "api_gateway": "LOINC / HL7 FHIR"
+}

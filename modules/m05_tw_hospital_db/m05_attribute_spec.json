@@ -1,0 +1,31 @@
+{
+  "module_id": "M05",
+  "module_name": "tw_hospital_db",
+  "description": "M05 台灣健保特約醫事機構與專科地圖庫屬性規格",
+  "allowed_attributes": {
+    "hosp_type": {
+      "type": "string",
+      "description": "醫事機構類別 (如: 醫學中心, 區域醫院, 地區醫院, 診所)"
+    },
+    "city": {
+      "type": "string",
+      "description": "縣市行政區"
+    },
+    "district": {
+      "type": "string",
+      "description": "鄉鎮市區行政區"
+    },
+    "phone": {
+      "type": "string",
+      "description": "連絡電話"
+    },
+    "schedule_str": {
+      "type": "string",
+      "description": "看診時段編碼字串 (21個時段)"
+    },
+    "services": {
+      "type": "array",
+      "description": "診療科別與醫療服務項目"
+    }
+  }
+}

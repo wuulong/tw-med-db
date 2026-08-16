@@ -1,0 +1,9 @@
+{
+  "module_id": "M01",
+  "module_name": "tw_drug_db",
+  "description": "TFDA 藥品許可證與健保用藥價庫",
+  "table_name": "m01_tw_drug_db",
+  "record_count": 66453,
+  "schema_version": "0.5.0",
+  "api_gateway": "TFDA / 健保署"
+}

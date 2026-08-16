@@ -1,0 +1,9 @@
+{
+  "module_id": "M08",
+  "module_name": "rare_disease_db",
+  "description": "國健署罕見疾病與罕藥公告名冊庫",
+  "table_name": "m08_rare_diseases",
+  "record_count": 120,
+  "schema_version": "0.5.0",
+  "api_gateway": "國健署罕病網"
+}

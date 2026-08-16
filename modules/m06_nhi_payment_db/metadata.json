@@ -1,0 +1,9 @@
+{
+  "module_id": "M06",
+  "module_name": "nhi_payment_db",
+  "description": "健保署給付規定與自費醫材比價庫",
+  "table_name": "m06_nhi_rules",
+  "record_count": 150,
+  "schema_version": "0.5.0",
+  "api_gateway": "健保給付規定"
+}

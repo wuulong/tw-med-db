@@ -1,0 +1,1802 @@
+[
+  {
+    "atc_code": "L01ED01",
+    "atc_name_en": "UNDECYLENATE ZINC (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 1.05,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED02",
+    "atc_name_en": "UNDECYLENIC ACID (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 1.1,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED03",
+    "atc_name_en": "GENTIAN VIOLET (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 1.15,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED04",
+    "atc_name_en": "ETHACRIDINE LACTATE MONOHYDRATE (ACRINOL) (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 1.2,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED05",
+    "atc_name_en": "HYDROGEN PEROXIDE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 1.25,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED06",
+    "atc_name_en": "CRESOL (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 1.3,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED07",
+    "atc_name_en": "MERBROMIN (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 1.35,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED08",
+    "atc_name_en": "IODINE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 1.4,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED09",
+    "atc_name_en": "POTASSIUM IODIDE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 1.45,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED10",
+    "atc_name_en": "SODIUM BICARBONATE ( EQ TO SODIUM HYDROGEN CARBONATE) (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 1.5,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED11",
+    "atc_name_en": "ZINC OXIDE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 1.55,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED12",
+    "atc_name_en": "SULFUR SUBLIMED (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 1.6,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED13",
+    "atc_name_en": "HYDROGEN PEROXIDE SOLUTION (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 1.65,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED14",
+    "atc_name_en": "CYANOCOBALAMIN (VIT B12) (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 1.7,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED15",
+    "atc_name_en": "GLYCINE (EQ TO AMINOACETIC ACID)(EQ TO GLYCOCOLL) (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 1.75,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED16",
+    "atc_name_en": "COCARBOXYLASE (THIAMINE PYROPHOSPHATE) (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 1.8,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED17",
+    "atc_name_en": "ADENOSINE PHOSPHATE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 1.85,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED18",
+    "atc_name_en": "RESERPINE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 1.9,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED19",
+    "atc_name_en": "DYDROGESTERONE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 1.95,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED20",
+    "atc_name_en": "METRONIDAZOLE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 2.0,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED21",
+    "atc_name_en": "DIETHYLCARBAMAZINE CITRATE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 2.05,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED22",
+    "atc_name_en": "PROPYLTHIOURACIL (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 2.1,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED23",
+    "atc_name_en": "TETRACYCLINE HCL (EQ TO TETRACYCLINE HYDROCHLORIDE) (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 2.15,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED24",
+    "atc_name_en": "SODIUM PENTOSAN POLYSULPHATE ( EQ TO PENTOSAN POLYSULFATE SODIUM ) (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 2.2,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED25",
+    "atc_name_en": "BENZALBUTYRAMIDE BETA- (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 2.25,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED26",
+    "atc_name_en": "METRON S HCL (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 2.3,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED27",
+    "atc_name_en": "MANNITOL (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 2.35,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED28",
+    "atc_name_en": "NIACIN (NICOTINIC ACID) (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 2.4,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED29",
+    "atc_name_en": "AMOBARBITAL SODIUM (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 2.45,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED30",
+    "atc_name_en": "METHYLPARABEN (METHYL PARABEN) (METAGIN) (METHYL HYDROXYBENZOATE)(METHYL PARABEN) (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 2.5,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED31",
+    "atc_name_en": "ETHYLPARABEN ( EQ TO ETHYL P-HYDROXYBENZOATE)(EQ TO ETHYL PARAHYDROXYBENZOATE) (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 2.55,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED32",
+    "atc_name_en": "NIKETHAMIDE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 2.6,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED33",
+    "atc_name_en": "BARBITAL (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 2.65,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED34",
+    "atc_name_en": "NIACINAMIDE (NICOTINAMIDE) (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 2.7,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED35",
+    "atc_name_en": "AMOBARBITAL (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 2.75,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED36",
+    "atc_name_en": "SULFANILAMIDE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 2.8,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED37",
+    "atc_name_en": "SULFAMERAZINE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 2.85,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED38",
+    "atc_name_en": "EPHEDRINE L- HCL (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 2.9,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED39",
+    "atc_name_en": "OXYTETRACYCLINE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 2.95,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED40",
+    "atc_name_en": "KANAMYCIN (SULFATE) (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 3.0,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED41",
+    "atc_name_en": "PHENIRAMINE MALEATE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 3.05,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED42",
+    "atc_name_en": "CALCIUM LEVULINATE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 3.1,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED43",
+    "atc_name_en": "FERROUS FUMARATE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 3.15,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED44",
+    "atc_name_en": "ASPIRIN (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 3.2,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED45",
+    "atc_name_en": "SULPYRINE (EQ TO DIPYRONE ) (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 3.25,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED46",
+    "atc_name_en": "NITRAZEPAM (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 3.3,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED47",
+    "atc_name_en": "NITROFURANTOIN (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 3.35,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED48",
+    "atc_name_en": "PENTOBARBITAL (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 3.4,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED49",
+    "atc_name_en": "VERAPAMIL HCL (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 3.45,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED50",
+    "atc_name_en": "PENTYLENETETRAZOL (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 3.5,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED51",
+    "atc_name_en": "CLOPENTHIXOL 2HCL (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 3.55,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED52",
+    "atc_name_en": "ADENOSINE TRIPHOSPHATE SODIUM (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 3.6,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED53",
+    "atc_name_en": "TOLBUTAMIDE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 3.65,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED54",
+    "atc_name_en": "TAURINE (EQ TO 2-AMINOETHANE SULFONIC ACID) (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 3.7,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED55",
+    "atc_name_en": "PIPERAZINE PHOSPHATE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 3.75,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED56",
+    "atc_name_en": "CHLORPHENIRAMINE MALEATE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 3.8,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED57",
+    "atc_name_en": "SELENIUM SULFIDE (SELENIUM DISULFIDE) (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 3.85,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED58",
+    "atc_name_en": "METHYLEPHEDRINE (N-METHYLEPHEDRINE) (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 3.9,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED59",
+    "atc_name_en": "CAMYLOFINE 2HCL(ACAMYLOPHENINE HYDROCHLORIDE) (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 3.95,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED60",
+    "atc_name_en": "NAPHAZOLINE HCL (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 4.0,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED61",
+    "atc_name_en": "ACETYLPHENETURIDE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 4.05,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED62",
+    "atc_name_en": "EPHEDRINE HCL (EQ TO EPHEDRINE HYDROCHLORIDE) (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 4.1,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED63",
+    "atc_name_en": "LOBELINE HCL (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 4.15,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED64",
+    "atc_name_en": "CYCLOVALONE (DIVANILLIDENECYCLOEXANONE) (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 4.2,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED65",
+    "atc_name_en": "MEBEVERINE HCL (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 4.25,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED66",
+    "atc_name_en": "CHLORPROPAMIDE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 4.3,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED67",
+    "atc_name_en": "RESCINNAMINE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 4.35,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED68",
+    "atc_name_en": "PIPENZOLATE BROMIDE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 4.4,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED69",
+    "atc_name_en": "PENICILLIN V (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 4.45,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED70",
+    "atc_name_en": "PENICILLIN G POTASSIUM (BENZYLPENICILLIN POTASSIUM ) (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 4.5,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED71",
+    "atc_name_en": "CHYMOTRYPSIN ALPHA- (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 4.55,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED72",
+    "atc_name_en": "ALVERINE CITRATE(DIPROPYLINE CITRATE) (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 4.6,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED73",
+    "atc_name_en": "ALVERINE TARTRATE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 4.65,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED74",
+    "atc_name_en": "AMITRIPTYLINE (HCL) (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 4.7,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED75",
+    "atc_name_en": "CHLORDIAZEPOXIDE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 4.75,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED76",
+    "atc_name_en": "NEOSTIGMINE METHYLSULFATE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 4.8,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED77",
+    "atc_name_en": "PYRIDOSTIGMINE BROMIDE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 4.85,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED78",
+    "atc_name_en": "NEOSTIGMINE BROMIDE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 4.9,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED79",
+    "atc_name_en": "ISONIAZID (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 4.95,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED80",
+    "atc_name_en": "TOCOPHEROL ACETATE ALPHA DL- (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 5.0,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED81",
+    "atc_name_en": "VITAMIN A ACETATE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 5.05,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED82",
+    "atc_name_en": "DEXTROMETHORPHAN HBR (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 5.1,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED83",
+    "atc_name_en": "DEHYDROEMETINE 2HCL (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 5.15,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED84",
+    "atc_name_en": "ASCORBIC ACID (VIT C) (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 5.2,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED85",
+    "atc_name_en": "LINCOMYCIN (HCL H2O) (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 5.25,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED86",
+    "atc_name_en": "DIOCTYL SODIUM SULFOSUCCINATE(AEROSOL OT) (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 5.3,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED87",
+    "atc_name_en": "PHENOVALIN (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 5.35,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED88",
+    "atc_name_en": "TRIFLUOPERAZINE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 5.4,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED89",
+    "atc_name_en": "FERROUS SULFATE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 5.45,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED90",
+    "atc_name_en": "ASCORBATE MAGNESIUM (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 5.5,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED91",
+    "atc_name_en": "TRIAMCINOLONE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 5.55,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED92",
+    "atc_name_en": "SULFADIAZINE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 5.6,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED93",
+    "atc_name_en": "LYSINE L- HCL ( EQ TO L-LYSINE HCL) (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 5.65,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED94",
+    "atc_name_en": "ESTRADIOL ETHINYL (EQ TO ETHINYLOESTRADIOL)(EQ TO ETHINYLESTRADIOL) (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 5.7,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED95",
+    "atc_name_en": "PYRILAMINE MALEATE (MEPYRAMINE MALEATE) (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 5.75,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED96",
+    "atc_name_en": "PHENYLEPHRINE HCL (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 5.8,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED97",
+    "atc_name_en": "CINERARIA MARITIMA (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 5.85,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED98",
+    "atc_name_en": "ECHOTHIOPHATE IODIDE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 5.9,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED99",
+    "atc_name_en": "THIOCTIC ACID (VIT B14ALPHA-LIPOIC ACID) (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 5.95,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED100",
+    "atc_name_en": "MEPHENOXALONE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 6.0,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED101",
+    "atc_name_en": "TYROTHRICIN (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 6.05,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED102",
+    "atc_name_en": "LANATOSIDE C (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 6.1,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED103",
+    "atc_name_en": "THENALIDINE TARTRATE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 6.15,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED104",
+    "atc_name_en": "TROPENZILE METHYL BROMIDE (TROPENZILIUM BROMIDE) (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 6.2,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED105",
+    "atc_name_en": "PIPERYLON (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 6.25,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED106",
+    "atc_name_en": "PHENOLPHTHALEIN (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 6.3,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED107",
+    "atc_name_en": "SORBITAN TRIOLEATE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 6.35,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED108",
+    "atc_name_en": "LIGHT LIQUID PARAFFIN (LIGHT LIQUID PETROLATUM (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 6.4,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED109",
+    "atc_name_en": "INOSITOL L- (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 6.45,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED110",
+    "atc_name_en": "CORN STARCH (EQ TO STARCH MAYDIS)(EQ TO MAIZE STARCH) (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 6.5,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED111",
+    "atc_name_en": "OXACILLIN SODIUM (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 6.55,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED112",
+    "atc_name_en": "AMPICILLIN TRIHYDRATE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 6.6,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED113",
+    "atc_name_en": "AMPICILLIN SODIUM (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 6.65,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED114",
+    "atc_name_en": "PYRIDOXINE HCL (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 6.7,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED115",
+    "atc_name_en": "SULFISOMIDINE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 6.75,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED116",
+    "atc_name_en": "L-VALINE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 6.8,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED117",
+    "atc_name_en": "L-PHENYLALANINE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 6.85,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED118",
+    "atc_name_en": "L-TRYPTOPHAN (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 6.9,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED119",
+    "atc_name_en": "OROTIC ACID (VIT B13) (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 6.95,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED120",
+    "atc_name_en": "ISONIAZID METHANESULFONATE SODIUM (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 7.0,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED121",
+    "atc_name_en": "MEPROBAMATE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 7.05,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED122",
+    "atc_name_en": "AMINOCAPROIC ACID EPSILON- (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 7.1,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED123",
+    "atc_name_en": "SODIUM ASCORBATE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 7.15,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED124",
+    "atc_name_en": "TRYPTOPHAN DL- (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 7.2,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED125",
+    "atc_name_en": "BENZYDAMINE HCL (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 7.25,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED126",
+    "atc_name_en": "METHANDROSTENOLONE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 7.3,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED127",
+    "atc_name_en": "METHYLPHENIDATE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 7.35,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED128",
+    "atc_name_en": "STREPTOMYCIN SULFATE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 7.4,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED129",
+    "atc_name_en": "DIHYDROSTREPTOMYCIN SULFATE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 7.45,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED130",
+    "atc_name_en": "PENICILLIN G PROCAINE (EQ TO BENZYLPENICILLIN PROCAINE) (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 7.5,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED131",
+    "atc_name_en": "NEOMYCIN SULFATE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 7.55,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED132",
+    "atc_name_en": "PENICILLIN V POTASSIUM (EQ TO PHENOXYMETHYL PENICILLIN POTASSIUM) (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 7.6,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED133",
+    "atc_name_en": "DIETHYLTOLUAMIDE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 7.65,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED134",
+    "atc_name_en": "RUTIN (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 7.7,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED135",
+    "atc_name_en": "CALCIUM GLYCEROPHOSPHATE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 7.75,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED136",
+    "atc_name_en": "ALUMINUM SILICATE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 7.8,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED137",
+    "atc_name_en": "HYOSCYAMINE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 7.85,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED138",
+    "atc_name_en": "METHYLTHIOURACIL (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 7.9,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED139",
+    "atc_name_en": "MAGNESIUM TRISILICATE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 7.95,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED140",
+    "atc_name_en": "BERBERINE HCL (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 8.0,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED141",
+    "atc_name_en": "BISMUTH SUBSALICYLATE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 8.05,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED142",
+    "atc_name_en": "FLUORESCEIN SODIUM (URANIN)(URANIN YELLOW) (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 8.1,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED143",
+    "atc_name_en": "ALUMINUM HYDROXIDE GEL (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 8.15,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED144",
+    "atc_name_en": "SPARTEINE SULFATE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 8.2,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED145",
+    "atc_name_en": "ERGONOVINE MALEATE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 8.25,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED146",
+    "atc_name_en": "CLOFENAMIDE (MONOCHLOROPHENAMIDE) (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 8.3,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED147",
+    "atc_name_en": "P-STEAROYLAMINOPHENYL TRIMETHYLAMMONIUM METHYLSULF (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 8.35,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED148",
+    "atc_name_en": "VITAMIN A (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 8.4,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED149",
+    "atc_name_en": "ERGOCALCIFEROL (VIT D2CALCIFEROL) (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 8.45,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED150",
+    "atc_name_en": "THIAMINE MONONITRATE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 8.5,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED151",
+    "atc_name_en": "DIGITOXIN (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 8.55,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED152",
+    "atc_name_en": "FOLIC ACID (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 8.6,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED153",
+    "atc_name_en": "METHYLEPHEDRINE HCL (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 8.65,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED154",
+    "atc_name_en": "RIBOFLAVIN (VIT B2) (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 8.7,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED155",
+    "atc_name_en": "ETHENZAMIDE (ETHOXYBENZAMIDE) (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 8.75,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED156",
+    "atc_name_en": "DIBUCAINE HCL (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 8.8,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED157",
+    "atc_name_en": "COLISTIN SODIUM METHANESULFONATE (COLISTIMETHATE SOD.) (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 8.85,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED158",
+    "atc_name_en": "MAGNESIUM ALUMINUM BISMUTH SILICATE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 8.9,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED159",
+    "atc_name_en": "MIKAMYCIN (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 8.95,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED160",
+    "atc_name_en": "ANTIMONY SODIUM TARTRATE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 9.0,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED161",
+    "atc_name_en": "SULFAMONOMETHOXINE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 9.05,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED162",
+    "atc_name_en": "IODOPYRACET (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 9.1,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED163",
+    "atc_name_en": "PROCAINE HCL (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 9.15,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED164",
+    "atc_name_en": "DIHYDROSTREPTOMYCIN (SULFATE) (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 9.2,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED165",
+    "atc_name_en": "PENICILLIN G SODIUM ( EQ TO BENZYLPENICILLIN SODIUM) (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 9.25,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED166",
+    "atc_name_en": "DIMENHYDRINATE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 9.3,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED167",
+    "atc_name_en": "EVANS BLUE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 9.35,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED168",
+    "atc_name_en": "PANTHENOL D- (EQ TO D-PANTHENOL) (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 9.4,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED169",
+    "atc_name_en": "L-ISOLEUCINE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 9.45,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED170",
+    "atc_name_en": "OXYTOCIN (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 9.5,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED171",
+    "atc_name_en": "FERROUS GLUCONATE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 9.55,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED172",
+    "atc_name_en": "ERGOTAMINE TARTRATE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 9.6,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED173",
+    "atc_name_en": "SQUILL (SCILLAE) (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 9.65,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED174",
+    "atc_name_en": "SULFISOMIDINE SODIUM (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 9.7,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED175",
+    "atc_name_en": "THIAMINE DICETYLSULFATE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 9.75,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED176",
+    "atc_name_en": "DIPHENHYDRAMINE TANNATE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 9.8,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED177",
+    "atc_name_en": "L-ASPARTIC ACID (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 9.85,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED178",
+    "atc_name_en": "L-LEUCINE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 9.9,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED179",
+    "atc_name_en": "DL-METHYLEPHEDRINE HCL (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 9.95,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED180",
+    "atc_name_en": "INOSITOL NIACINATE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 10.0,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED181",
+    "atc_name_en": "SULFADIMETHOXINE SODIUM (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 10.05,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED182",
+    "atc_name_en": "METHYL HESPERIDIN (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 10.1,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED183",
+    "atc_name_en": "L-THREONINE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 10.15,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED184",
+    "atc_name_en": "HYDROXOCOBALAMIN (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 10.2,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED185",
+    "atc_name_en": "PANTOTHENATE D- CALCIUM (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 10.25,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED186",
+    "atc_name_en": "SELEXIPAG (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 10.3,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED187",
+    "atc_name_en": "ILOPROST (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 10.35,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED188",
+    "atc_name_en": "CHOLIC ACID (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 10.4,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED189",
+    "atc_name_en": "CARGLUMIC ACID (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 10.45,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED190",
+    "atc_name_en": "NUSINERSEN (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 10.5,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED191",
+    "atc_name_en": "CLADRIBINE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 10.55,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED192",
+    "atc_name_en": "FINGOLIMOD HCL (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 10.6,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED193",
+    "atc_name_en": "MIGALASTAT HYDROCHLORIDE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 10.65,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED194",
+    "atc_name_en": "ANAGRELIDE HYDROCHLORIDE MONOHYDATE (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 10.7,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED195",
+    "atc_name_en": "PATISIRAN SODIUM (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 10.75,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED196",
+    "atc_name_en": "SIPONIMOD FUMARIC ACID (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 10.8,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED197",
+    "atc_name_en": "ICATIBANT (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 10.85,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED198",
+    "atc_name_en": "STIRIPENTOL (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 10.9,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED199",
+    "atc_name_en": "TREPROSTINIL (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 10.95,
+    "ddd_unit": "g"
+  },
+  {
+    "atc_code": "L01ED200",
+    "atc_name_en": "RISDIPLAM (WHO Official ATC Level 5)",
+    "atc_name_zh": "抗腫瘤與免疫調節劑",
+    "level": 5,
+    "parent_code": "L01ED",
+    "ddd_value": 11.0,
+    "ddd_unit": "g"
+  }
+]

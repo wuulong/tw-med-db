@@ -1,0 +1,11 @@
+{
+  "_v": "1.0.0",
+  "allowed_attributes": {
+    "_v": "模組 Schema 版號",
+    "iupac_name": "IUPAC Chemical Name",
+    "molecular_weight": "Molecular Weight g/mol",
+    "smiles": "Canonical SMILES String",
+    "inchikey": "27-Character InChIKey Hash",
+    "cid": "PubChem Compound ID"
+  }
+}

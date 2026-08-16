@@ -1,0 +1,16 @@
+# 🔒 防衛：公開 GitHub Repo (.gitignore)
+
+# 系統與臨時檔
+.DS_Store
+*.pyc
+__pycache__/
+*.log
+scratch/
+.env
+
+# 🔒 內部系統工程白皮書與 Task Reports 剛性隔離
+sys_eng/
+task-reports/
+.agents/
+med_poc_samples/
+*.db

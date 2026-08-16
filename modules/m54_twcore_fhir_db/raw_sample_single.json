@@ -1,0 +1,9 @@
+[
+  {
+    "profile_id": "TWCorePatientv1",
+    "resource_type": "Patient",
+    "profile_name_en": "TW Core TWCorePatient Profile v1",
+    "profile_name_zh": "台灣核心病人 Profile (版本 v1)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCorePatient"
+  }
+]

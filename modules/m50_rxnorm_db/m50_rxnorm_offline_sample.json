@@ -1,0 +1,1802 @@
+[
+  {
+    "rxcui": "1900001",
+    "name_en": "MEDROXYPROGESTERONE ACETATE [MEDROXYPROGESTERONE SUSPENDED INJECTION \"SHITEH\"]",
+    "tty": "SBD",
+    "nhi_code": "DHY00101339303",
+    "trade_name_tw": "",
+    "ingredient_name": "MEDROXYPROGESTERONE ACETATE [MEDROXYPROGESTERONE SUSPENDED INJECTION \"SHITEH\"]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900002",
+    "name_en": "DACTINOMYCIN [COSMEGEN]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200212500",
+    "trade_name_tw": "",
+    "ingredient_name": "DACTINOMYCIN [COSMEGEN]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900003",
+    "name_en": "TROFOSFAMIDE [IXOTEN \"ASTA\"]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200439102",
+    "trade_name_tw": "",
+    "ingredient_name": "TROFOSFAMIDE [IXOTEN \"ASTA\"]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900004",
+    "name_en": "TRIETHYLENE THIOPHOSPHORAMIDE [ONCO-TIOTEPA 100MG \"SIMES\"]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200639201",
+    "trade_name_tw": "",
+    "ingredient_name": "TRIETHYLENE THIOPHOSPHORAMIDE [ONCO-TIOTEPA 100MG \"SIMES\"]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900005",
+    "name_en": "TEGAFUR (FTORAFUR) [FUTRAFUL ZUPO]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200642503",
+    "trade_name_tw": "",
+    "ingredient_name": "TEGAFUR (FTORAFUR) [FUTRAFUL ZUPO]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900006",
+    "name_en": "TEGAFUR (FTORAFUR) [FUTRAFUL ZUPO S]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200642605",
+    "trade_name_tw": "",
+    "ingredient_name": "TEGAFUR (FTORAFUR) [FUTRAFUL ZUPO S]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900007",
+    "name_en": "TEGAFUR (FTORAFUR) [1-(2-TETRAHYDROFURYL)-5-FLUORO URACIL]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200651606",
+    "trade_name_tw": "",
+    "ingredient_name": "TEGAFUR (FTORAFUR) [1-(2-TETRAHYDROFURYL)-5-FLUORO URACIL]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900008",
+    "name_en": "TEGAFUR (FTORAFUR) [ICARUS INJECTION]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200652701",
+    "trade_name_tw": "",
+    "ingredient_name": "TEGAFUR (FTORAFUR) [ICARUS INJECTION]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900009",
+    "name_en": "TROMETHAMINE ( EQ TO TROMETAMOL)( EQ TO TROMETHAMOL);;FLUOROURACIL 5- [5-FU INJECTION]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200824906",
+    "trade_name_tw": "",
+    "ingredient_name": "TROMETHAMINE ( EQ TO TROMETAMOL)( EQ TO TROMETHAMOL);;FLUOROURACIL 5- [5-FU INJECTION]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900010",
+    "name_en": "TEGAFUR (FTORAFUR) [LUNACIN CAPSULES]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200838402",
+    "trade_name_tw": "",
+    "ingredient_name": "TEGAFUR (FTORAFUR) [LUNACIN CAPSULES]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900011",
+    "name_en": "TEGAFUR (FTORAFUR) [FURAFLUOR CAPSULES]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200984004",
+    "trade_name_tw": "",
+    "ingredient_name": "TEGAFUR (FTORAFUR) [FURAFLUOR CAPSULES]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900012",
+    "name_en": "TEGAFUR (FTORAFUR) [TEFSIEL C]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201161301",
+    "trade_name_tw": "",
+    "ingredient_name": "TEGAFUR (FTORAFUR) [TEFSIEL C]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900013",
+    "name_en": "FLUOROURACIL 5- (SODIUM) [FLUORO-URACIL AMPOULES 250MG/5ML \"ROCHE\"]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201360305",
+    "trade_name_tw": "",
+    "ingredient_name": "FLUOROURACIL 5- (SODIUM) [FLUORO-URACIL AMPOULES 250MG/5ML \"ROCHE\"]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900014",
+    "name_en": "LEUPROLIDE ACETATE [LEUPROLIDE ACETATE INJECTION 5MG/ML]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201538900",
+    "trade_name_tw": "",
+    "ingredient_name": "LEUPROLIDE ACETATE [LEUPROLIDE ACETATE INJECTION 5MG/ML]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900015",
+    "name_en": "CISPLATIN (CIS-DDPDDP) [PLATAMINE FOR IV INJECTION 50MG]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201540409",
+    "trade_name_tw": "",
+    "ingredient_name": "CISPLATIN (CIS-DDPDDP) [PLATAMINE FOR IV INJECTION 50MG]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900016",
+    "name_en": "TAMOXIFEN (CITRATE) [TAMOPLEX TABLETS 20MG]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201542902",
+    "trade_name_tw": "",
+    "ingredient_name": "TAMOXIFEN (CITRATE) [TAMOPLEX TABLETS 20MG]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900017",
+    "name_en": "TAMOXIFEN (CITRATE) [DEFAROL TABLETS]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201879105",
+    "trade_name_tw": "",
+    "ingredient_name": "TAMOXIFEN (CITRATE) [DEFAROL TABLETS]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900018",
+    "name_en": "TAMOXIFEN [TAMOXIFEN TABLETS 20MG]",
+    "tty": "SBD",
+    "nhi_code": "DHA00202020306",
+    "trade_name_tw": "",
+    "ingredient_name": "TAMOXIFEN [TAMOXIFEN TABLETS 20MG]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900019",
+    "name_en": "TAMOXIFEN [TAMOXIFEN TABLETS 10MG]",
+    "tty": "SBD",
+    "nhi_code": "DHA00202020408",
+    "trade_name_tw": "",
+    "ingredient_name": "TAMOXIFEN [TAMOXIFEN TABLETS 10MG]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900020",
+    "name_en": "TRIAZIQUONE [TRENIMON INJECTION]",
+    "tty": "SBD",
+    "nhi_code": "DHA01300292000",
+    "trade_name_tw": "",
+    "ingredient_name": "TRIAZIQUONE [TRENIMON INJECTION]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900021",
+    "name_en": "TEGAFUR (FTORAFUR) [NEBERK INJECTION]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201017508",
+    "trade_name_tw": "",
+    "ingredient_name": "TEGAFUR (FTORAFUR) [NEBERK INJECTION]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900022",
+    "name_en": "ESTRAMUSTINE PHOSPHATE (SODIUM) [ESTRACYT CAPSULE 140MG \"ROCHE\"]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201268400",
+    "trade_name_tw": "",
+    "ingredient_name": "ESTRAMUSTINE PHOSPHATE (SODIUM) [ESTRACYT CAPSULE 140MG \"ROCHE\"]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900023",
+    "name_en": "METHOTREXATE ANHYDROUS [ABIRTEXATE 100MG/ML]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201387703",
+    "trade_name_tw": "",
+    "ingredient_name": "METHOTREXATE ANHYDROUS [ABIRTEXATE 100MG/ML]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900024",
+    "name_en": "HYDROXYUREA [HYDREA CAPSULES 500MG]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201746806",
+    "trade_name_tw": "",
+    "ingredient_name": "HYDROXYUREA [HYDREA CAPSULES 500MG]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900025",
+    "name_en": "MITOMYCIN C [MITOMYCIN-C]",
+    "tty": "SBD",
+    "nhi_code": "DHA01300375602",
+    "trade_name_tw": "",
+    "ingredient_name": "MITOMYCIN C [MITOMYCIN-C]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900026",
+    "name_en": "BUMETANIDE [BULIN TABLETS 1MG (BUMETANIDE) \"BOWLIN\"]",
+    "tty": "SBD",
+    "nhi_code": "DHY00102721100",
+    "trade_name_tw": "",
+    "ingredient_name": "BUMETANIDE [BULIN TABLETS 1MG (BUMETANIDE) \"BOWLIN\"]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900027",
+    "name_en": "NEOCARZINOSTATIN [NEOCARZINOSTATIN INJECTION]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200708408",
+    "trade_name_tw": "",
+    "ingredient_name": "NEOCARZINOSTATIN [NEOCARZINOSTATIN INJECTION]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900028",
+    "name_en": "TEGAFUR (FTORAFUR) [KESETOZIN]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201046007",
+    "trade_name_tw": "",
+    "ingredient_name": "TEGAFUR (FTORAFUR) [KESETOZIN]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900029",
+    "name_en": "ESTRAMUSTINE PHOSPHATE (SODIUM) [ESTRACYT \"ROCHE\" CAPSULES 140MG]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201593106",
+    "trade_name_tw": "",
+    "ingredient_name": "ESTRAMUSTINE PHOSPHATE (SODIUM) [ESTRACYT \"ROCHE\" CAPSULES 140MG]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900030",
+    "name_en": "TAMOXIFEN (CITRATE) [ZITAZONIUM TABLETS 10MG]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201775601",
+    "trade_name_tw": "",
+    "ingredient_name": "TAMOXIFEN (CITRATE) [ZITAZONIUM TABLETS 10MG]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900031",
+    "name_en": "WATER FOR INJECTION [RECORMON 10000]",
+    "tty": "SBD",
+    "nhi_code": "DHA00202230600",
+    "trade_name_tw": "",
+    "ingredient_name": "WATER FOR INJECTION [RECORMON 10000]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900032",
+    "name_en": "TESTOSTERONE 17-BETA- CYPIONATE [DEPOT TESMON INJECTION 100MG]",
+    "tty": "SBD",
+    "nhi_code": "DHY01200644002",
+    "trade_name_tw": "",
+    "ingredient_name": "TESTOSTERONE 17-BETA- CYPIONATE [DEPOT TESMON INJECTION 100MG]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900033",
+    "name_en": "FLUOXYMESTERONE [FLOXYMESTERONE CAPSULES \"J.H.\"]",
+    "tty": "SBD",
+    "nhi_code": "DHY00102047407",
+    "trade_name_tw": "",
+    "ingredient_name": "FLUOXYMESTERONE [FLOXYMESTERONE CAPSULES \"J.H.\"]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900034",
+    "name_en": "DIETHYLSTILBESTROL [STILBESTROL ECT 5MG (DIETHYLSTILBESTROL) \"NYSCO\"]",
+    "tty": "SBD",
+    "nhi_code": "DHY00102797703",
+    "trade_name_tw": "",
+    "ingredient_name": "DIETHYLSTILBESTROL [STILBESTROL ECT 5MG (DIETHYLSTILBESTROL) \"NYSCO\"]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900035",
+    "name_en": "FLUOROURACIL 5- [FLUORO-URACIL 250MG CAPSULES \"ROCHE\"]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200541304",
+    "trade_name_tw": "",
+    "ingredient_name": "FLUOROURACIL 5- [FLUORO-URACIL 250MG CAPSULES \"ROCHE\"]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900036",
+    "name_en": "MEGESTROL ACETATE [MEGESTIN 10MG TABLETS]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200725700",
+    "trade_name_tw": "",
+    "ingredient_name": "MEGESTROL ACETATE [MEGESTIN 10MG TABLETS]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900037",
+    "name_en": "FLUOROURACIL 5- [FLUORO-URACIL \"HERBRAND\"]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201329102",
+    "trade_name_tw": "",
+    "ingredient_name": "FLUOROURACIL 5- [FLUORO-URACIL \"HERBRAND\"]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900038",
+    "name_en": "METHOTREXATE [METHOTREXATE TABLETS 2.5MG]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201619100",
+    "trade_name_tw": "",
+    "ingredient_name": "METHOTREXATE [METHOTREXATE TABLETS 2.5MG]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900039",
+    "name_en": "BUSERELIN (ACETATE) [SUPREMON INJECTABLE SOLUTION]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201788904",
+    "trade_name_tw": "",
+    "ingredient_name": "BUSERELIN (ACETATE) [SUPREMON INJECTABLE SOLUTION]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900040",
+    "name_en": "BUSERELIN (ACETATE) [SUPREMON NASAL SOLUTION]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201789002",
+    "trade_name_tw": "",
+    "ingredient_name": "BUSERELIN (ACETATE) [SUPREMON NASAL SOLUTION]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900041",
+    "name_en": "TAMOXIFEN CITRATE [TAMOXIFEN CITRATE]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201951805",
+    "trade_name_tw": "",
+    "ingredient_name": "TAMOXIFEN CITRATE [TAMOXIFEN CITRATE]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900042",
+    "name_en": "METHOTREXATE [METHOTREXATE SODIUM PARENTERAL 25MG/ML]",
+    "tty": "SBD",
+    "nhi_code": "DHY00100826003",
+    "trade_name_tw": "",
+    "ingredient_name": "METHOTREXATE [METHOTREXATE SODIUM PARENTERAL 25MG/ML]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900043",
+    "name_en": "METHOTREXATE [METHOTREXATE SODIUM PARENTERAL 2.5MG/ML]",
+    "tty": "SBD",
+    "nhi_code": "DHY00100826105",
+    "trade_name_tw": "",
+    "ingredient_name": "METHOTREXATE [METHOTREXATE SODIUM PARENTERAL 2.5MG/ML]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900044",
+    "name_en": "FLUOXYMESTERONE [GILISONE TABLETS]",
+    "tty": "SBD",
+    "nhi_code": "DHY00101089502",
+    "trade_name_tw": "",
+    "ingredient_name": "FLUOXYMESTERONE [GILISONE TABLETS]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900045",
+    "name_en": "FLUOROURACIL 5- [TEFUROCI CAPSULES 200MG \"F.M.\"]",
+    "tty": "SBD",
+    "nhi_code": "DHY00102499605",
+    "trade_name_tw": "",
+    "ingredient_name": "FLUOROURACIL 5- [TEFUROCI CAPSULES 200MG \"F.M.\"]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900046",
+    "name_en": "CYCLOPHOSPHAMIDE [SYKLOFOSFAMID 100MG INJECTION \"FARMOS\"]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200352008",
+    "trade_name_tw": "",
+    "ingredient_name": "CYCLOPHOSPHAMIDE [SYKLOFOSFAMID 100MG INJECTION \"FARMOS\"]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900047",
+    "name_en": "CYCLOPHOSPHAMIDE [SYKLOFOSFAMID 200MG INJECTION \"FARMOS\"]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200352100",
+    "trade_name_tw": "",
+    "ingredient_name": "CYCLOPHOSPHAMIDE [SYKLOFOSFAMID 200MG INJECTION \"FARMOS\"]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900048",
+    "name_en": "TAMOXIFEN (CITRATE) [NOLVADEX TABLETS 10MG]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200558800",
+    "trade_name_tw": "",
+    "ingredient_name": "TAMOXIFEN (CITRATE) [NOLVADEX TABLETS 10MG]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900049",
+    "name_en": "STREPTOCOCCUS PYROGENE SU STRAIN TX WITH PN G POTASSIUM;;PENICILLIN G POTASSIUM (BENZYLPENICILLIN POTASSIUM ) [PICIBANIL 1KE]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200564206",
+    "trade_name_tw": "",
+    "ingredient_name": "STREPTOCOCCUS PYROGENE SU STRAIN TX WITH PN G POTASSIUM;;PENICILLIN G POTASSIUM (BENZYLPENICILLIN POTASSIUM ) [PICIBANIL 1KE]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900050",
+    "name_en": "PENICILLIN G POTASSIUM (BENZYLPENICILLIN POTASSIUM );;STREPTOCOCCUS PYROGENE SU STRAIN TX WITH PN G POTASSIUM [PICIBANIL 0.5KE]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200564308",
+    "trade_name_tw": "",
+    "ingredient_name": "PENICILLIN G POTASSIUM (BENZYLPENICILLIN POTASSIUM );;STREPTOCOCCUS PYROGENE SU STRAIN TX WITH PN G POTASSIUM [PICIBANIL 0.5KE]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900051",
+    "name_en": "PENICILLIN G POTASSIUM (BENZYLPENICILLIN POTASSIUM );;STREPTOCOCCUS PYROGENE SU STRAIN TX WITH PN G POTASSIUM [PICIBANIL 0.2KE]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200564400",
+    "trade_name_tw": "",
+    "ingredient_name": "PENICILLIN G POTASSIUM (BENZYLPENICILLIN POTASSIUM );;STREPTOCOCCUS PYROGENE SU STRAIN TX WITH PN G POTASSIUM [PICIBANIL 0.2KE]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900052",
+    "name_en": "CISPLATIN (CIS-DDPDDP) [RANDA INJECTION]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201347802",
+    "trade_name_tw": "",
+    "ingredient_name": "CISPLATIN (CIS-DDPDDP) [RANDA INJECTION]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900053",
+    "name_en": "METHOTREXATE ANHYDROUS [ABITREXATE 25MG/ML]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201354800",
+    "trade_name_tw": "",
+    "ingredient_name": "METHOTREXATE ANHYDROUS [ABITREXATE 25MG/ML]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900054",
+    "name_en": "METHOTREXATE [METHOTREXAT-EBEWE 10MG/ML INJECTION]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201636606",
+    "trade_name_tw": "",
+    "ingredient_name": "METHOTREXATE [METHOTREXAT-EBEWE 10MG/ML INJECTION]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900055",
+    "name_en": "MITOMYCIN C [MITOMYCIN C KYOWA 10MG]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201638102",
+    "trade_name_tw": "",
+    "ingredient_name": "MITOMYCIN C [MITOMYCIN C KYOWA 10MG]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900056",
+    "name_en": "MITOMYCIN C [MITOMYCIN-C INJECTION]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201638204",
+    "trade_name_tw": "",
+    "ingredient_name": "MITOMYCIN C [MITOMYCIN-C INJECTION]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900057",
+    "name_en": "METHOTREXATE ANHYDROUS [ABIRTEXATE 100MG/ML]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201641802",
+    "trade_name_tw": "",
+    "ingredient_name": "METHOTREXATE ANHYDROUS [ABIRTEXATE 100MG/ML]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900058",
+    "name_en": "METHOTREXATE ANHYDROUS [ABITREXATE 25MG/ML]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201641901",
+    "trade_name_tw": "",
+    "ingredient_name": "METHOTREXATE ANHYDROUS [ABITREXATE 25MG/ML]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900059",
+    "name_en": "FLUOROURACIL 5- [5-FLUOROURACIL INJECTION]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201642305",
+    "trade_name_tw": "",
+    "ingredient_name": "FLUOROURACIL 5- [5-FLUOROURACIL INJECTION]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900060",
+    "name_en": "METHOTREXATE [METHOLTREXATE INJECTION BP 25MG/ML]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201971201",
+    "trade_name_tw": "",
+    "ingredient_name": "METHOTREXATE [METHOLTREXATE INJECTION BP 25MG/ML]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900061",
+    "name_en": "FLUOROURACIL [FLUORO-URACIL VIALS 250MG/5ML]",
+    "tty": "SBD",
+    "nhi_code": "DHA00202112109",
+    "trade_name_tw": "",
+    "ingredient_name": "FLUOROURACIL [FLUORO-URACIL VIALS 250MG/5ML]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900062",
+    "name_en": "TEGAFUR (FTORAFUR) [FUTRAFUL INJECTION]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200365900",
+    "trade_name_tw": "",
+    "ingredient_name": "TEGAFUR (FTORAFUR) [FUTRAFUL INJECTION]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900063",
+    "name_en": "FLUOROURACIL 5- [FLUORO-URACIL ORAL SOLUTION 250MG/8ML \"ROCHE\"]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200368807",
+    "trade_name_tw": "",
+    "ingredient_name": "FLUOROURACIL 5- [FLUORO-URACIL ORAL SOLUTION 250MG/8ML \"ROCHE\"]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900064",
+    "name_en": "TEGAFUR (FTORAFUR) [FULAID CAPSULES]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200752502",
+    "trade_name_tw": "",
+    "ingredient_name": "TEGAFUR (FTORAFUR) [FULAID CAPSULES]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900065",
+    "name_en": "TEGAFUR (FTORAFUR) [1-(2-TETRAHYDROFURYL)-5-FLUOROURACIL \"DAITO\"]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200752907",
+    "trade_name_tw": "",
+    "ingredient_name": "TEGAFUR (FTORAFUR) [1-(2-TETRAHYDROFURYL)-5-FLUOROURACIL \"DAITO\"]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900066",
+    "name_en": "FLUOROURACIL 5- [ULUP DRY SYRUP]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200757402",
+    "trade_name_tw": "",
+    "ingredient_name": "FLUOROURACIL 5- [ULUP DRY SYRUP]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900067",
+    "name_en": "TESTOSTERONE ENANTHATE [TESTO ENANT 100]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200910207",
+    "trade_name_tw": "",
+    "ingredient_name": "TESTOSTERONE ENANTHATE [TESTO ENANT 100]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900068",
+    "name_en": "METHOTREXATE (SODIUM) [EMTHEXATE (R) 50MG]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200914206",
+    "trade_name_tw": "",
+    "ingredient_name": "METHOTREXATE (SODIUM) [EMTHEXATE (R) 50MG]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900069",
+    "name_en": "METHOTREXATE (SODIUM) [EMTHEXATE (R) 5MG]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200914308",
+    "trade_name_tw": "",
+    "ingredient_name": "METHOTREXATE (SODIUM) [EMTHEXATE (R) 5MG]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900070",
+    "name_en": "METHOTREXATE (SODIUM) [EMTHEXATE (R) 1000MG]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200914400",
+    "trade_name_tw": "",
+    "ingredient_name": "METHOTREXATE (SODIUM) [EMTHEXATE (R) 1000MG]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900071",
+    "name_en": "METHOTREXATE (SODIUM) [EMTHEXATE (R) 500MG]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200915900",
+    "trade_name_tw": "",
+    "ingredient_name": "METHOTREXATE (SODIUM) [EMTHEXATE (R) 500MG]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900072",
+    "name_en": "METHOTREXATE [EMTHEXATE 10MG TABLETS]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201095100",
+    "trade_name_tw": "",
+    "ingredient_name": "METHOTREXATE [EMTHEXATE 10MG TABLETS]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900073",
+    "name_en": "TEGAFUR (FTORAFUR) [ROCIPAL CAPSULES]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201102701",
+    "trade_name_tw": "",
+    "ingredient_name": "TEGAFUR (FTORAFUR) [ROCIPAL CAPSULES]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900074",
+    "name_en": "INTERFERON ALPHA- 2B;;INTERFERON ALPHA- 2B;;INTERFERON ALPHA- 2B;;INTERFERON ALPHA- 2B [INTRON A INJECTION]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201653605",
+    "trade_name_tw": "",
+    "ingredient_name": "INTERFERON ALPHA- 2B;;INTERFERON ALPHA- 2B;;INTERFERON ALPHA- 2B;;INTERFERON ALPHA- 2B [INTRON A INJECTION]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900075",
+    "name_en": "DOXORUBICIN HCL [DOXORBICIN HYDROCHLORIDE FOR INJECTION \"DBL\"]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201817407",
+    "trade_name_tw": "",
+    "ingredient_name": "DOXORUBICIN HCL [DOXORBICIN HYDROCHLORIDE FOR INJECTION \"DBL\"]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900076",
+    "name_en": "TAMOXIFEN (CITRATE) [ZITAZONIUM TABLET 20MG]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201822103",
+    "trade_name_tw": "",
+    "ingredient_name": "TAMOXIFEN (CITRATE) [ZITAZONIUM TABLET 20MG]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900077",
+    "name_en": "LENOGRASTIM (GENETICAL RECOMBINATION);;WATER FOR INJECTION [GRANOCYTE 250]",
+    "tty": "SBD",
+    "nhi_code": "DHA00202120900",
+    "trade_name_tw": "",
+    "ingredient_name": "LENOGRASTIM (GENETICAL RECOMBINATION);;WATER FOR INJECTION [GRANOCYTE 250]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900078",
+    "name_en": "TAMOXIFEN CITRATE [TAMOXIFEN 20MG TABLETS]",
+    "tty": "SBD",
+    "nhi_code": "DHA00202122903",
+    "trade_name_tw": "",
+    "ingredient_name": "TAMOXIFEN CITRATE [TAMOXIFEN 20MG TABLETS]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900079",
+    "name_en": "TAMOXIFEN CITRATE [TAMOXIFEN 10MG TABLETS]",
+    "tty": "SBD",
+    "nhi_code": "DHA00202123001",
+    "trade_name_tw": "",
+    "ingredient_name": "TAMOXIFEN CITRATE [TAMOXIFEN 10MG TABLETS]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900080",
+    "name_en": "BLEOMYCIN (HCL) [BLEO]",
+    "tty": "SBD",
+    "nhi_code": "DHA01300061903",
+    "trade_name_tw": "",
+    "ingredient_name": "BLEOMYCIN (HCL) [BLEO]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900081",
+    "name_en": "TRIETHYLENE THIOPHOSPHORAMIDE [THIOTEPA PARENTERAL]",
+    "tty": "SBD",
+    "nhi_code": "DHY00101651802",
+    "trade_name_tw": "",
+    "ingredient_name": "TRIETHYLENE THIOPHOSPHORAMIDE [THIOTEPA PARENTERAL]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900082",
+    "name_en": "METHOTREXATE [METHOTREXATE U.S.P]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200133108",
+    "trade_name_tw": "",
+    "ingredient_name": "METHOTREXATE [METHOTREXATE U.S.P]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900083",
+    "name_en": "TEGAFUR (FTORAFUR) [1-(2-TETRAHYDRO FURYL)-5-FLUORURACIL]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200140409",
+    "trade_name_tw": "",
+    "ingredient_name": "TEGAFUR (FTORAFUR) [1-(2-TETRAHYDRO FURYL)-5-FLUORURACIL]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900084",
+    "name_en": "TEGAFUR (FTORAFUR) [FENTAL CAPSULE]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200579008",
+    "trade_name_tw": "",
+    "ingredient_name": "TEGAFUR (FTORAFUR) [FENTAL CAPSULE]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900085",
+    "name_en": "TEGAFUR (FTORAFUR) [FENTAL GRANULE]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200579202",
+    "trade_name_tw": "",
+    "ingredient_name": "TEGAFUR (FTORAFUR) [FENTAL GRANULE]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900086",
+    "name_en": "TEGAFUR (FTORAFUR) [NITOBANIL CAPSULES]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201108400",
+    "trade_name_tw": "",
+    "ingredient_name": "TEGAFUR (FTORAFUR) [NITOBANIL CAPSULES]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900087",
+    "name_en": "FLUOROURACIL [FLUORO-URACIL AMPOULES 250MG/10ML \"ROCHE\"]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201109502",
+    "trade_name_tw": "",
+    "ingredient_name": "FLUOROURACIL [FLUORO-URACIL AMPOULES 250MG/10ML \"ROCHE\"]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900088",
+    "name_en": "METHOTREXATE SODIUM [METHOTREXATE 50MG INJECTION]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201178300",
+    "trade_name_tw": "",
+    "ingredient_name": "METHOTREXATE SODIUM [METHOTREXATE 50MG INJECTION]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900089",
+    "name_en": "FLUOROURACIL 5- [5-FLUOROURACIL INJECTION]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201486909",
+    "trade_name_tw": "",
+    "ingredient_name": "FLUOROURACIL 5- [5-FLUOROURACIL INJECTION]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900090",
+    "name_en": "TESTOSTERONE 17-BETA- CYPIONATE [CYCLO-TESTOSTERONE IN COTTON SEED OIL]",
+    "tty": "SBD",
+    "nhi_code": "DHA01300561800",
+    "trade_name_tw": "",
+    "ingredient_name": "TESTOSTERONE 17-BETA- CYPIONATE [CYCLO-TESTOSTERONE IN COTTON SEED OIL]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900091",
+    "name_en": "FLUOROURACIL 5- [TOLAFUL CAPSULES \"J.S.\" (TEDOFURYL)]",
+    "tty": "SBD",
+    "nhi_code": "DHY00101792007",
+    "trade_name_tw": "",
+    "ingredient_name": "FLUOROURACIL 5- [TOLAFUL CAPSULES \"J.S.\" (TEDOFURYL)]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900092",
+    "name_en": "FLUOROURACIL 5- [FU DRY SYRUP]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200626303",
+    "trade_name_tw": "",
+    "ingredient_name": "FLUOROURACIL 5- [FU DRY SYRUP]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900093",
+    "name_en": "IFOSFAMIDE [HOLOXAN (200MG)]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200961204",
+    "trade_name_tw": "",
+    "ingredient_name": "IFOSFAMIDE [HOLOXAN (200MG)]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900094",
+    "name_en": "IFOSFAMIDE [HOLOXAN (2GM)]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200961306",
+    "trade_name_tw": "",
+    "ingredient_name": "IFOSFAMIDE [HOLOXAN (2GM)]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900095",
+    "name_en": "IFOSFAMIDE [HOLOXAN (1GM)]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200961408",
+    "trade_name_tw": "",
+    "ingredient_name": "IFOSFAMIDE [HOLOXAN (1GM)]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900096",
+    "name_en": "PLATINUM CIS- [PLATAMINE]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201218801",
+    "trade_name_tw": "",
+    "ingredient_name": "PLATINUM CIS- [PLATAMINE]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900097",
+    "name_en": "CYCLOPHOSPHAMIDE [ENDOXAN-ASTA 100MG]",
+    "tty": "SBD",
+    "nhi_code": "DHA01300160000",
+    "trade_name_tw": "",
+    "ingredient_name": "CYCLOPHOSPHAMIDE [ENDOXAN-ASTA 100MG]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900098",
+    "name_en": "CARBOQUONE [ESQUINON TABLETS 0.25MG]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200426905",
+    "trade_name_tw": "",
+    "ingredient_name": "CARBOQUONE [ESQUINON TABLETS 0.25MG]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900099",
+    "name_en": "CARBOQUONE [ESQUINON TABLETS 0.5MG]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200427207",
+    "trade_name_tw": "",
+    "ingredient_name": "CARBOQUONE [ESQUINON TABLETS 0.5MG]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900100",
+    "name_en": "TEGAFUR (FTORAFUR) [FUROFUTRAN INJECTION]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200630200",
+    "trade_name_tw": "",
+    "ingredient_name": "TEGAFUR (FTORAFUR) [FUROFUTRAN INJECTION]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900101",
+    "name_en": "TEGAFUR (FTORAFUR) [FUROFUTRAN CAPSULES]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200630302",
+    "trade_name_tw": "",
+    "ingredient_name": "TEGAFUR (FTORAFUR) [FUROFUTRAN CAPSULES]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900102",
+    "name_en": "TEGAFUR (FTORAFUR) [FUTRAFUL CAPSULES]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200631904",
+    "trade_name_tw": "",
+    "ingredient_name": "TEGAFUR (FTORAFUR) [FUTRAFUL CAPSULES]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900103",
+    "name_en": "FLUOROURACIL 5- [FU INJECTIONS]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200633706",
+    "trade_name_tw": "",
+    "ingredient_name": "FLUOROURACIL 5- [FU INJECTIONS]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900104",
+    "name_en": "TEGAFUR (FTORAFUR) [1-(2-TETRAHYDROFURYL)-5-FLUOROURACIL]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200634202",
+    "trade_name_tw": "",
+    "ingredient_name": "TEGAFUR (FTORAFUR) [1-(2-TETRAHYDROFURYL)-5-FLUOROURACIL]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900105",
+    "name_en": "TEGAFUR (FTORAFUR) [FTORAFUR \"SOPARCHIM\"]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200636409",
+    "trade_name_tw": "",
+    "ingredient_name": "TEGAFUR (FTORAFUR) [FTORAFUR \"SOPARCHIM\"]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900106",
+    "name_en": "MITOMYCIN C [MITOMYCIN C 10MG \"KYOWA\"]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200819002",
+    "trade_name_tw": "",
+    "ingredient_name": "MITOMYCIN C [MITOMYCIN C 10MG \"KYOWA\"]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900107",
+    "name_en": "IFOSFAMIDE [HOLOXAN 500MG]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200967107",
+    "trade_name_tw": "",
+    "ingredient_name": "IFOSFAMIDE [HOLOXAN 500MG]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900108",
+    "name_en": "TEGAFUR (FTORAFUR) [RAFTOL INJECTION]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201233909",
+    "trade_name_tw": "",
+    "ingredient_name": "TEGAFUR (FTORAFUR) [RAFTOL INJECTION]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900109",
+    "name_en": "CISPLATIN (CIS-DDPDDP) [CISOLATIN-EBEWE 0.5MG/ML INJECTION]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201708605",
+    "trade_name_tw": "",
+    "ingredient_name": "CISPLATIN (CIS-DDPDDP) [CISOLATIN-EBEWE 0.5MG/ML INJECTION]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900110",
+    "name_en": "TEGAFUR (FTORAFUR) [TEGAFUR]",
+    "tty": "SBD",
+    "nhi_code": "DHA00202017004",
+    "trade_name_tw": "",
+    "ingredient_name": "TEGAFUR (FTORAFUR) [TEGAFUR]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900111",
+    "name_en": "TEGAFUR (FTORAFUR) [TEDOFURYL CAPSULES \"Y.Y.\"]",
+    "tty": "SBD",
+    "nhi_code": "DHY00101380207",
+    "trade_name_tw": "",
+    "ingredient_name": "TEGAFUR (FTORAFUR) [TEDOFURYL CAPSULES \"Y.Y.\"]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900112",
+    "name_en": "BLEOMYCIN HCL [BLEOCIN FOR INJECTION 5MG]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200443101",
+    "trade_name_tw": "",
+    "ingredient_name": "BLEOMYCIN HCL [BLEOCIN FOR INJECTION 5MG]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900113",
+    "name_en": "CARBOQUONE;;DIMETHYLACETAMIDE [DI. ALINVITER TABLETS]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200996001",
+    "trade_name_tw": "",
+    "ingredient_name": "CARBOQUONE;;DIMETHYLACETAMIDE [DI. ALINVITER TABLETS]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900114",
+    "name_en": "NIMUSTINE HCL [NIDRAN FOR INJECTION 50MG]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201005001",
+    "trade_name_tw": "",
+    "ingredient_name": "NIMUSTINE HCL [NIDRAN FOR INJECTION 50MG]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900115",
+    "name_en": "CYCLOPHOSPHAMIDE [ENDOXAN-ASTA 100MG FOR INJECTION]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201368701",
+    "trade_name_tw": "",
+    "ingredient_name": "CYCLOPHOSPHAMIDE [ENDOXAN-ASTA 100MG FOR INJECTION]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900116",
+    "name_en": "CYCLOPHOSPHAMIDE [ENDOXAN-ASTA 1G FOR INJECTION]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201368800",
+    "trade_name_tw": "",
+    "ingredient_name": "CYCLOPHOSPHAMIDE [ENDOXAN-ASTA 1G FOR INJECTION]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900117",
+    "name_en": "MITOMYCIN C [MITOMYCIN-C INJECTION]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201373101",
+    "trade_name_tw": "",
+    "ingredient_name": "MITOMYCIN C [MITOMYCIN-C INJECTION]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900118",
+    "name_en": "TENIPOSIDE [VUMON IV INFUSION]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201550005",
+    "trade_name_tw": "",
+    "ingredient_name": "TENIPOSIDE [VUMON IV INFUSION]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900119",
+    "name_en": "MEDROXYPROGESTERONE ACETATE [FARLUTAL TAB. 100MG]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201894009",
+    "trade_name_tw": "",
+    "ingredient_name": "MEDROXYPROGESTERONE ACETATE [FARLUTAL TAB. 100MG]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900120",
+    "name_en": "DOXORUBICIN HCL [DOXORUBICIN HYDROCHLORIDE INJECTION 2MG/ML]",
+    "tty": "SBD",
+    "nhi_code": "DHA00202033500",
+    "trade_name_tw": "",
+    "ingredient_name": "DOXORUBICIN HCL [DOXORUBICIN HYDROCHLORIDE INJECTION 2MG/ML]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900121",
+    "name_en": "FLUOROURACIL 5- [EFUDIX]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200053302",
+    "trade_name_tw": "",
+    "ingredient_name": "FLUOROURACIL 5- [EFUDIX]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900122",
+    "name_en": "BLEOMYCIN (HCL) [BLEOCIN FOR INJECTION 15MG]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201282100",
+    "trade_name_tw": "",
+    "ingredient_name": "BLEOMYCIN (HCL) [BLEOCIN FOR INJECTION 15MG]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900123",
+    "name_en": "MITOXANTRONE (AS HYDROCHLORIDE) [NOVANTRONE INJECTION]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201388301",
+    "trade_name_tw": "",
+    "ingredient_name": "MITOXANTRONE (AS HYDROCHLORIDE) [NOVANTRONE INJECTION]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900124",
+    "name_en": "TEGAFUR (FTORAFUR) [HELPA FOR INJECTION]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201577709",
+    "trade_name_tw": "",
+    "ingredient_name": "TEGAFUR (FTORAFUR) [HELPA FOR INJECTION]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900125",
+    "name_en": "TAMOXIFEN (CITRATE) [DEFAROL TABLETS]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201760605",
+    "trade_name_tw": "",
+    "ingredient_name": "TAMOXIFEN (CITRATE) [DEFAROL TABLETS]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900126",
+    "name_en": "METHOTREXATE;;METHOTREXATE [METHOLTREXATE INJECTION 25MG/ML]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201919303",
+    "trade_name_tw": "",
+    "ingredient_name": "METHOTREXATE;;METHOTREXATE [METHOLTREXATE INJECTION 25MG/ML]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900127",
+    "name_en": "MITOMYCIN C [MITOMYCIN-C TABLETS \"KYOWA\"]",
+    "tty": "SBD",
+    "nhi_code": "DHA01300351009",
+    "trade_name_tw": "",
+    "ingredient_name": "MITOMYCIN C [MITOMYCIN-C TABLETS \"KYOWA\"]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900128",
+    "name_en": "NANDROLONE DECANOATE [DECA-DURABOLIN]",
+    "tty": "SBD",
+    "nhi_code": "DHA01300352203",
+    "trade_name_tw": "",
+    "ingredient_name": "NANDROLONE DECANOATE [DECA-DURABOLIN]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900129",
+    "name_en": "METHYLTESTOSTERONE [METHYL TESTOSTERONE]",
+    "tty": "SBD",
+    "nhi_code": "DHA01300354005",
+    "trade_name_tw": "",
+    "ingredient_name": "METHYLTESTOSTERONE [METHYL TESTOSTERONE]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900130",
+    "name_en": "TESTOSTERONE [TESTOSTERONE]",
+    "tty": "SBD",
+    "nhi_code": "DHA01300354301",
+    "trade_name_tw": "",
+    "ingredient_name": "TESTOSTERONE [TESTOSTERONE]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900131",
+    "name_en": "METHALLEN ESTRIL [ERCOSTROL TABLETS]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200060208",
+    "trade_name_tw": "",
+    "ingredient_name": "METHALLEN ESTRIL [ERCOSTROL TABLETS]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900132",
+    "name_en": "TEGAFUR (FTORAFUR) [TEGAFUR]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201927100",
+    "trade_name_tw": "",
+    "ingredient_name": "TEGAFUR (FTORAFUR) [TEGAFUR]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900133",
+    "name_en": "HEXESTROL [ROBAL INJECTION 5MG]",
+    "tty": "SBD",
+    "nhi_code": "DHY01201629601",
+    "trade_name_tw": "",
+    "ingredient_name": "HEXESTROL [ROBAL INJECTION 5MG]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900134",
+    "name_en": "HEXESTROL [ROBAL INJECTION 1MG]",
+    "tty": "SBD",
+    "nhi_code": "DHY01201629802",
+    "trade_name_tw": "",
+    "ingredient_name": "HEXESTROL [ROBAL INJECTION 1MG]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900135",
+    "name_en": "CALUSTERONE [METHOSARB TABLETS 50MG]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200322608",
+    "trade_name_tw": "",
+    "ingredient_name": "CALUSTERONE [METHOSARB TABLETS 50MG]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900136",
+    "name_en": "TEGAFUR (FTORAFUR) [NEBERK CAPSULES]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200526005",
+    "trade_name_tw": "",
+    "ingredient_name": "TEGAFUR (FTORAFUR) [NEBERK CAPSULES]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900137",
+    "name_en": "TEGAFUR (FTORAFUR) [ATILLON SUPPOSITORIES]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201059007",
+    "trade_name_tw": "",
+    "ingredient_name": "TEGAFUR (FTORAFUR) [ATILLON SUPPOSITORIES]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900138",
+    "name_en": "TEGAFUR (FTORAFUR) [ATILLON SUPPOSITORIES 1000MG]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201059402",
+    "trade_name_tw": "",
+    "ingredient_name": "TEGAFUR (FTORAFUR) [ATILLON SUPPOSITORIES 1000MG]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900139",
+    "name_en": "TEGAFUR (FTORAFUR) [ROCIPAL]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201064302",
+    "trade_name_tw": "",
+    "ingredient_name": "TEGAFUR (FTORAFUR) [ROCIPAL]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900140",
+    "name_en": "TEGAFUR (FTORAFUR) [TEGAFUR]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201310900",
+    "trade_name_tw": "",
+    "ingredient_name": "TEGAFUR (FTORAFUR) [TEGAFUR]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900141",
+    "name_en": "FOSFESTROL TETRA-SODIUM [HONVAN TABLETS]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201319605",
+    "trade_name_tw": "",
+    "ingredient_name": "FOSFESTROL TETRA-SODIUM [HONVAN TABLETS]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900142",
+    "name_en": "FOSFESTROL TETRA-SODIUM [HONVAN INJECTION]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201319707",
+    "trade_name_tw": "",
+    "ingredient_name": "FOSFESTROL TETRA-SODIUM [HONVAN INJECTION]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900143",
+    "name_en": "DOXORUBICIN HCL [DOXORUBICIN MDIJI FOR I.V. INJECTION 50MG]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201944300",
+    "trade_name_tw": "",
+    "ingredient_name": "DOXORUBICIN HCL [DOXORUBICIN MDIJI FOR I.V. INJECTION 50MG]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900144",
+    "name_en": "DOXORUBICIN HCL [DOXORUBICIN MEIJI FOR I.V. INJECTION 10MG]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201944402",
+    "trade_name_tw": "",
+    "ingredient_name": "DOXORUBICIN HCL [DOXORUBICIN MEIJI FOR I.V. INJECTION 10MG]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900145",
+    "name_en": "ACEGLATONE [GLUCARON TABLETS]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200161305",
+    "trade_name_tw": "",
+    "ingredient_name": "ACEGLATONE [GLUCARON TABLETS]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900146",
+    "name_en": "KAWARATAKE(PROTEIN BINDING POLYSACCHARIDE EXTR. FR [KRESTIN POWDER 1GM]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200593600",
+    "trade_name_tw": "",
+    "ingredient_name": "KAWARATAKE(PROTEIN BINDING POLYSACCHARIDE EXTR. FR [KRESTIN POWDER 1GM]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900147",
+    "name_en": "METHOTREXATE ANHYDROUS [EMTHEXATE 5000MG]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201121601",
+    "trade_name_tw": "",
+    "ingredient_name": "METHOTREXATE ANHYDROUS [EMTHEXATE 5000MG]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900148",
+    "name_en": "TEGAFUR (FTORAFUR) [NATIRA F]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201191909",
+    "trade_name_tw": "",
+    "ingredient_name": "TEGAFUR (FTORAFUR) [NATIRA F]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900149",
+    "name_en": "FLUOROURACIL [FLUOROURACIL INJECTION \"DBL\"]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201192402",
+    "trade_name_tw": "",
+    "ingredient_name": "FLUOROURACIL [FLUOROURACIL INJECTION \"DBL\"]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900150",
+    "name_en": "GOSERELIN ACETATE [ZOLADEX 3.6MG DEPOT]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201980508",
+    "trade_name_tw": "",
+    "ingredient_name": "GOSERELIN ACETATE [ZOLADEX 3.6MG DEPOT]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900151",
+    "name_en": "ACEGLATONE [GLUCARON TABLETS]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201981307",
+    "trade_name_tw": "",
+    "ingredient_name": "ACEGLATONE [GLUCARON TABLETS]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900152",
+    "name_en": "METFORMIN HCL (EQ TO METFORMIN HYDROCHLORIDE) [METFORMIN HYDROCHLORIDE]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201987200",
+    "trade_name_tw": "",
+    "ingredient_name": "METFORMIN HCL (EQ TO METFORMIN HYDROCHLORIDE) [METFORMIN HYDROCHLORIDE]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900153",
+    "name_en": "EPITIOSTANOL [THIODROL (EPITIOSTANOL INJECTION)]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200610001",
+    "trade_name_tw": "",
+    "ingredient_name": "EPITIOSTANOL [THIODROL (EPITIOSTANOL INJECTION)]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900154",
+    "name_en": "TEGAFUR (FTORAFUR) [GEEN CAPSULES]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200611705",
+    "trade_name_tw": "",
+    "ingredient_name": "TEGAFUR (FTORAFUR) [GEEN CAPSULES]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900155",
+    "name_en": "MEDROXYPROGESTERONE ACETATE [FARLUTAL DEPOT]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201137801",
+    "trade_name_tw": "",
+    "ingredient_name": "MEDROXYPROGESTERONE ACETATE [FARLUTAL DEPOT]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900156",
+    "name_en": "METHOTREXATE (SODIUM) [METHOTREXATE INJECTION 25MG/ML \"LEDERLE\"]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201501702",
+    "trade_name_tw": "",
+    "ingredient_name": "METHOTREXATE (SODIUM) [METHOTREXATE INJECTION 25MG/ML \"LEDERLE\"]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900157",
+    "name_en": "FOSFESTROL TETRA-SODIUM [HONVAN TABLETS]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201848307",
+    "trade_name_tw": "",
+    "ingredient_name": "FOSFESTROL TETRA-SODIUM [HONVAN TABLETS]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900158",
+    "name_en": "TAMOXIFEN CITRATE [TAMOXIFEN CITRATE]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201997303",
+    "trade_name_tw": "",
+    "ingredient_name": "TAMOXIFEN CITRATE [TAMOXIFEN CITRATE]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900159",
+    "name_en": "TRIETHYLENE THIOPHOSPHORAMIDE [THIOTEPA NF]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200744004",
+    "trade_name_tw": "",
+    "ingredient_name": "TRIETHYLENE THIOPHOSPHORAMIDE [THIOTEPA NF]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900160",
+    "name_en": "TEGAFUR (FTORAFUR) [FUROFUTRAN FINE GRANULES]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201090101",
+    "trade_name_tw": "",
+    "ingredient_name": "TEGAFUR (FTORAFUR) [FUROFUTRAN FINE GRANULES]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900161",
+    "name_en": "MEDROXYPROGESTERONE ACETATE [FARLUTAL TABLET 500MG]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201632301",
+    "trade_name_tw": "",
+    "ingredient_name": "MEDROXYPROGESTERONE ACETATE [FARLUTAL TABLET 500MG]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900162",
+    "name_en": "MEDROXYPROGESTERONE ACETATE [FARLUTAL TABLET 100MG]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201633100",
+    "trade_name_tw": "",
+    "ingredient_name": "MEDROXYPROGESTERONE ACETATE [FARLUTAL TABLET 100MG]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900163",
+    "name_en": "TESTOSTERONE PROPIONATE;;TESTOSTERONE PHENYLPROPIONATE;;TESTOSTERONE DECANOATE;;TESTOSTERONE ISOCAPROATE [SUSTANON]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201385506",
+    "trade_name_tw": "",
+    "ingredient_name": "TESTOSTERONE PROPIONATE;;TESTOSTERONE PHENYLPROPIONATE;;TESTOSTERONE DECANOATE;;TESTOSTERONE ISOCAPROATE [SUSTANON]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900164",
+    "name_en": "NIMUSTINE HCL [NIDRAN FOR INJECTION 25MG]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201004903",
+    "trade_name_tw": "",
+    "ingredient_name": "NIMUSTINE HCL [NIDRAN FOR INJECTION 25MG]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900165",
+    "name_en": "FENOTEROL HYDROBROMIDE [TUENSILIN TABLETS \"H.L.\" (FENOTEROL)]",
+    "tty": "SBD",
+    "nhi_code": "DHY00102239406",
+    "trade_name_tw": "",
+    "ingredient_name": "FENOTEROL HYDROBROMIDE [TUENSILIN TABLETS \"H.L.\" (FENOTEROL)]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900166",
+    "name_en": "PENICILLIN G POTASSIUM (BENZYLPENICILLIN POTASSIUM );;STREPTOCOCCUS PYROGENE SU STRAIN TX WITH PN G POTASSIUM [PICIBANIL 5KE]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200565400",
+    "trade_name_tw": "",
+    "ingredient_name": "PENICILLIN G POTASSIUM (BENZYLPENICILLIN POTASSIUM );;STREPTOCOCCUS PYROGENE SU STRAIN TX WITH PN G POTASSIUM [PICIBANIL 5KE]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900167",
+    "name_en": "ALBUMIN SERUM;;SODIUM PHOSPHATE DIBASIC (eq to DISOD. HYDROGEN PHOSPHATE) (eq to DISODIUM PHOSPHATE);;POTASSIUM PHOSPHATE ( eq to POTASSIUM PHOSPHATE DIBASIC) [P TEST MOCHIDA 50 TESTS]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200681605",
+    "trade_name_tw": "",
+    "ingredient_name": "ALBUMIN SERUM;;SODIUM PHOSPHATE DIBASIC (eq to DISOD. HYDROGEN PHOSPHATE) (eq to DISODIUM PHOSPHATE);;POTASSIUM PHOSPHATE ( eq to POTASSIUM PHOSPHATE DIBASIC) [P TEST MOCHIDA 50 TESTS]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900168",
+    "name_en": "RIBOFLAVIN (VIT B2);;NIACINAMIDE (NICOTINAMIDE);;THIAMINE HYDROCHLORIDE;;PYRIDOXINE HCL;;ASCORBIC ACID (VIT C);;DEXTROSE [VITAGEN-BC INJECTION \"SINTONG\"]",
+    "tty": "SBD",
+    "nhi_code": "DHY01200307500",
+    "trade_name_tw": "",
+    "ingredient_name": "RIBOFLAVIN (VIT B2);;NIACINAMIDE (NICOTINAMIDE);;THIAMINE HYDROCHLORIDE;;PYRIDOXINE HCL;;ASCORBIC ACID (VIT C);;DEXTROSE [VITAGEN-BC INJECTION \"SINTONG\"]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900169",
+    "name_en": "BUSERELIN (ACETATE) [SUPREFACT INJECTABLE SOLUTION]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201709608",
+    "trade_name_tw": "",
+    "ingredient_name": "BUSERELIN (ACETATE) [SUPREFACT INJECTABLE SOLUTION]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900170",
+    "name_en": "BUSERELIN (ACETATE) [SUPREFACT NASAL SOLUTION]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201711400",
+    "trade_name_tw": "",
+    "ingredient_name": "BUSERELIN (ACETATE) [SUPREFACT NASAL SOLUTION]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900171",
+    "name_en": "CYCLOPHOSPHAMIDE [ENDOXAN 1GM]",
+    "tty": "SBD",
+    "nhi_code": "DHA01300159902",
+    "trade_name_tw": "",
+    "ingredient_name": "CYCLOPHOSPHAMIDE [ENDOXAN 1GM]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900172",
+    "name_en": "TEGAFUR (FTORAFUR);;SODIUM CARBONATE;;SODIUM HYDROXIDE [HELPA FOR INJECTION]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200781801",
+    "trade_name_tw": "",
+    "ingredient_name": "TEGAFUR (FTORAFUR);;SODIUM CARBONATE;;SODIUM HYDROXIDE [HELPA FOR INJECTION]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900173",
+    "name_en": "TEGAFUR (FTORAFUR) [HELPA CAPSULES]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200782103",
+    "trade_name_tw": "",
+    "ingredient_name": "TEGAFUR (FTORAFUR) [HELPA CAPSULES]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900174",
+    "name_en": "TESTOSTERONE 17-BETA- CYPIONATE [TESTOSTERONE DEPOSITUM]",
+    "tty": "SBD",
+    "nhi_code": "DHA01300327104",
+    "trade_name_tw": "",
+    "ingredient_name": "TESTOSTERONE 17-BETA- CYPIONATE [TESTOSTERONE DEPOSITUM]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900175",
+    "name_en": "MEDROXYPROGESTERONE ACETATE [FARLUTAL TAB. 500MG]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201893901",
+    "trade_name_tw": "",
+    "ingredient_name": "MEDROXYPROGESTERONE ACETATE [FARLUTAL TAB. 500MG]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900176",
+    "name_en": "DOXORUBICIN HCL [DOXORUBICIN HYDROCHLORIDE INJECTION 2MG/1ML \"DBL\"]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201911700",
+    "trade_name_tw": "",
+    "ingredient_name": "DOXORUBICIN HCL [DOXORUBICIN HYDROCHLORIDE INJECTION 2MG/1ML \"DBL\"]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900177",
+    "name_en": "TESTOSTERONE ISOCAPROATE;;TESTOSTERONE CYPIONATE ( CYCLOPENTYLPROPIONATE);;TESTOSTERONE PHENYLPROPIONATE;;TESTOSTERONE PROPIONATE [SUSTANON]",
+    "tty": "SBD",
+    "nhi_code": "DHA01300543202",
+    "trade_name_tw": "",
+    "ingredient_name": "TESTOSTERONE ISOCAPROATE;;TESTOSTERONE CYPIONATE ( CYCLOPENTYLPROPIONATE);;TESTOSTERONE PHENYLPROPIONATE;;TESTOSTERONE PROPIONATE [SUSTANON]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900178",
+    "name_en": "TESTOSTERONE 17-BETA- CYPIONATE [DEPO-TESTOMON INJECTION \"LITA\"]",
+    "tty": "SBD",
+    "nhi_code": "DHY01200989302",
+    "trade_name_tw": "",
+    "ingredient_name": "TESTOSTERONE 17-BETA- CYPIONATE [DEPO-TESTOMON INJECTION \"LITA\"]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900179",
+    "name_en": "POLYETHYLENE GLYCOL 4000;;MEDROXYPROGESTERONE ACETATE [PREGESTON SUSPENDED INJECTION \"Y.Y.\"]",
+    "tty": "SBD",
+    "nhi_code": "DHY00101075203",
+    "trade_name_tw": "",
+    "ingredient_name": "POLYETHYLENE GLYCOL 4000;;MEDROXYPROGESTERONE ACETATE [PREGESTON SUSPENDED INJECTION \"Y.Y.\"]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900180",
+    "name_en": "METHOTREXATE [METHOTREXATE INJECTION 1G/10ML \"DBL\"]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201323209",
+    "trade_name_tw": "",
+    "ingredient_name": "METHOTREXATE [METHOTREXATE INJECTION 1G/10ML \"DBL\"]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900181",
+    "name_en": "PERTECHNETATE SODIUM;;PERTECHNETATE SODIUM;;PERTECHNETATE SODIUM;;PERTECHNETATE SODIUM;;PERTECHNETATE SODIUM;;PERTECHNETATE SODIUM;;PERTECHNETATE SODIUM;;PERTECHNETATE SODIUM [ELUMATIC III TECHNETIUM 99m GENERATOR]",
+    "tty": "SBD",
+    "nhi_code": "DHA002R0005503",
+    "trade_name_tw": "",
+    "ingredient_name": "PERTECHNETATE SODIUM;;PERTECHNETATE SODIUM;;PERTECHNETATE SODIUM;;PERTECHNETATE SODIUM;;PERTECHNETATE SODIUM;;PERTECHNETATE SODIUM;;PERTECHNETATE SODIUM;;PERTECHNETATE SODIUM [ELUMATIC III TECHNETIUM 99m GENERATOR]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900182",
+    "name_en": "INTERFERON ALPHA- 2A [ROFERON-A (SOLUTION FOR INJECTION)]",
+    "tty": "SBD",
+    "nhi_code": "DHA00202217804",
+    "trade_name_tw": "",
+    "ingredient_name": "INTERFERON ALPHA- 2A [ROFERON-A (SOLUTION FOR INJECTION)]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900183",
+    "name_en": "RECOMBINANT HUMAN ERYTHROPOIETIN [EPREX INJECTION 10000U/ML]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201930603",
+    "trade_name_tw": "",
+    "ingredient_name": "RECOMBINANT HUMAN ERYTHROPOIETIN [EPREX INJECTION 10000U/ML]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900184",
+    "name_en": "RECOMBINANT HUMAN ERYTHROPOIETIN [EPREX INJECTION 2000 U/ML]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201930705",
+    "trade_name_tw": "",
+    "ingredient_name": "RECOMBINANT HUMAN ERYTHROPOIETIN [EPREX INJECTION 2000 U/ML]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900185",
+    "name_en": "FLUOROURACIL [FLUOROURACIL INJECTION]",
+    "tty": "SBD",
+    "nhi_code": "DHA00202040607",
+    "trade_name_tw": "",
+    "ingredient_name": "FLUOROURACIL [FLUOROURACIL INJECTION]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900186",
+    "name_en": "ETOPOSIDE [ETOPOSIDE INJECTION]",
+    "tty": "SBD",
+    "nhi_code": "DHA00202048006",
+    "trade_name_tw": "",
+    "ingredient_name": "ETOPOSIDE [ETOPOSIDE INJECTION]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900187",
+    "name_en": "DOXORUBICIN HCL [DOXORUBICIN HYDROCHLORIDE INJECTION 2MG/ML]",
+    "tty": "SBD",
+    "nhi_code": "DHA00202171805",
+    "trade_name_tw": "",
+    "ingredient_name": "DOXORUBICIN HCL [DOXORUBICIN HYDROCHLORIDE INJECTION 2MG/ML]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900188",
+    "name_en": "FLUOXYMESTERONE [FAIN CAPSULES \"KOKON\" (FLUOXYMESTERONE)]",
+    "tty": "SBD",
+    "nhi_code": "DHY00101897501",
+    "trade_name_tw": "",
+    "ingredient_name": "FLUOXYMESTERONE [FAIN CAPSULES \"KOKON\" (FLUOXYMESTERONE)]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900189",
+    "name_en": "TEGAFUR (FTORAFUR) [FLOPHOLIN CAPSULE]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200657700",
+    "trade_name_tw": "",
+    "ingredient_name": "TEGAFUR (FTORAFUR) [FLOPHOLIN CAPSULE]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900190",
+    "name_en": "TEGAFUR (FTORAFUR) [FH FINE GRANULE]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200814609",
+    "trade_name_tw": "",
+    "ingredient_name": "TEGAFUR (FTORAFUR) [FH FINE GRANULE]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900191",
+    "name_en": "METHOTREXATE ANHYDROUS [EMTHEXATE PF]",
+    "tty": "SBD",
+    "nhi_code": "DHA00200867803",
+    "trade_name_tw": "",
+    "ingredient_name": "METHOTREXATE ANHYDROUS [EMTHEXATE PF]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900192",
+    "name_en": "METHOTREXATE [METHOTREXAT-EBEWE INJECTION 100MG/ML]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201632403",
+    "trade_name_tw": "",
+    "ingredient_name": "METHOTREXATE [METHOTREXAT-EBEWE INJECTION 100MG/ML]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900193",
+    "name_en": "MEDROXYPROGESTERONE ACETATE [PROGCT TABLETS 5MG \"TTY\" (MEDROXYPROGCSTCRONE ACETATE)]",
+    "tty": "SBD",
+    "nhi_code": "DHYS0104134304",
+    "trade_name_tw": "",
+    "ingredient_name": "MEDROXYPROGESTERONE ACETATE [PROGCT TABLETS 5MG \"TTY\" (MEDROXYPROGCSTCRONE ACETATE)]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900194",
+    "name_en": "RECOMBINANT HUMAN ERYTHROPOIETIN [EPREX INJECTION 4000U/ML]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201828401",
+    "trade_name_tw": "",
+    "ingredient_name": "RECOMBINANT HUMAN ERYTHROPOIETIN [EPREX INJECTION 4000U/ML]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900195",
+    "name_en": "FLUOROURACIL [FLUOROURACIL INJECTION VIAL \"DBL\"]",
+    "tty": "SBD",
+    "nhi_code": "DHA00201918606",
+    "trade_name_tw": "",
+    "ingredient_name": "FLUOROURACIL [FLUOROURACIL INJECTION VIAL \"DBL\"]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900196",
+    "name_en": "TEGAFUR (FTORAFUR) [FRANDYL CAPSULES]",
+    "tty": "SBD",
+    "nhi_code": "DHY00101103506",
+    "trade_name_tw": "",
+    "ingredient_name": "TEGAFUR (FTORAFUR) [FRANDYL CAPSULES]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900197",
+    "name_en": "CARBOPLATIN [CARBOPLATIN INJECTION \"DBL\"]",
+    "tty": "SBD",
+    "nhi_code": "DHA00202072500",
+    "trade_name_tw": "",
+    "ingredient_name": "CARBOPLATIN [CARBOPLATIN INJECTION \"DBL\"]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900198",
+    "name_en": "LENOGRASTIM (GENETICAL RECOMBINATION);;WATER FOR INJECTION [GRANOCYTE 50]",
+    "tty": "SBD",
+    "nhi_code": "DHA00202120706",
+    "trade_name_tw": "",
+    "ingredient_name": "LENOGRASTIM (GENETICAL RECOMBINATION);;WATER FOR INJECTION [GRANOCYTE 50]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900199",
+    "name_en": "LENOGRASTIM (GENETICAL RECOMBINATION);;WATER FOR INJECTION [GRANOCYTE 100]",
+    "tty": "SBD",
+    "nhi_code": "DHA00202120808",
+    "trade_name_tw": "",
+    "ingredient_name": "LENOGRASTIM (GENETICAL RECOMBINATION);;WATER FOR INJECTION [GRANOCYTE 100]",
+    "atc_code": "L01"
+  },
+  {
+    "rxcui": "1900200",
+    "name_en": "WATER FOR INJECTION [RECORMON 5000]",
+    "tty": "SBD",
+    "nhi_code": "DHA00202230501",
+    "trade_name_tw": "",
+    "ingredient_name": "WATER FOR INJECTION [RECORMON 5000]",
+    "atc_code": "L01"
+  }
+]

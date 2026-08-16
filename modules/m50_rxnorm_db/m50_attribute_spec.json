@@ -1,0 +1,10 @@
+{
+  "_v": "1.0.0",
+  "allowed_attributes": {
+    "_v": "模組 Schema 版號",
+    "tty": "RxNorm Term Type",
+    "rxnorm_name_en": "RxNorm Official Name",
+    "atc_code": "WHO ATC Classification Code",
+    "nhi_code_mapping": "Mapped Taiwan NHI Drug Code"
+  }
+}

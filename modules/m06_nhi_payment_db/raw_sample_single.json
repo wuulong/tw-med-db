@@ -1,0 +1,12 @@
+[
+  {
+    "rule_id": "RULE-B00000001",
+    "nhi_code": "0B00000001",
+    "item_name": "健保給付規定條碼第 1 號 (抗高血糖藥物)",
+    "section_code": "8.2.2.",
+    "rule_raw_text": "依據健保署給付規定 8.2.2. 抗高血糖藥物，限用於空腹血糖或總膽固醇高於標準值，且經飲食控制無效者。",
+    "prior_auth_required": 0,
+    "attributes_json": "{\"section_code\":\"8.2.2.\",\"nhi_code\":\"0B00000001\",\"rule_raw_text\":\"依據健保署給付規定 8.2.2. 抗高血糖藥物，限用於空腹血糖或總膽固醇高於標準值，且經飲食控制無效者。\",\"prior_auth_required\":\"False\"}",
+    "updated_at": "2026-08-16 04:18:15"
+  }
+]

@@ -1,0 +1,1602 @@
+[
+  {
+    "nct_id": "NCT05000001",
+    "title": "評估標靶新藥治療台灣 乳癌 病患之第三期臨床試驗 (HER2 Positive)",
+    "phase": "Phase 2",
+    "cancer_type": "乳癌",
+    "facility_taiwan": "國立臺灣大學醫學院附設醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000002",
+    "title": "評估標靶新藥治療台灣 肝細胞癌 病患之第三期臨床試驗 (PD-L1 High)",
+    "phase": "Phase 3",
+    "cancer_type": "肝細胞癌",
+    "facility_taiwan": "臺北榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000003",
+    "title": "評估標靶新藥治療台灣 大腸直腸癌 病患之第三期臨床試驗 (KRAS G12C)",
+    "phase": "Phase 1",
+    "cancer_type": "大腸直腸癌",
+    "facility_taiwan": "林口長庚紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000004",
+    "title": "評估標靶新藥治療台灣 胰臟癌 病患之第三期臨床試驗 (ALK Fusion)",
+    "phase": "Phase 2",
+    "cancer_type": "胰臟癌",
+    "facility_taiwan": "台中榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000005",
+    "title": "評估標靶新藥治療台灣 胃癌 病患之第三期臨床試驗 (EGFR T790M)",
+    "phase": "Phase 3",
+    "cancer_type": "胃癌",
+    "facility_taiwan": "高雄醫學大學附設中和紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000006",
+    "title": "評估標靶新藥治療台灣 非小細胞肺癌 病患之第三期臨床試驗 (HER2 Positive)",
+    "phase": "Phase 1",
+    "cancer_type": "非小細胞肺癌",
+    "facility_taiwan": "國立臺灣大學醫學院附設醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000007",
+    "title": "評估標靶新藥治療台灣 乳癌 病患之第三期臨床試驗 (PD-L1 High)",
+    "phase": "Phase 2",
+    "cancer_type": "乳癌",
+    "facility_taiwan": "臺北榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000008",
+    "title": "評估標靶新藥治療台灣 肝細胞癌 病患之第三期臨床試驗 (KRAS G12C)",
+    "phase": "Phase 3",
+    "cancer_type": "肝細胞癌",
+    "facility_taiwan": "林口長庚紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000009",
+    "title": "評估標靶新藥治療台灣 大腸直腸癌 病患之第三期臨床試驗 (ALK Fusion)",
+    "phase": "Phase 1",
+    "cancer_type": "大腸直腸癌",
+    "facility_taiwan": "台中榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000010",
+    "title": "評估標靶新藥治療台灣 胰臟癌 病患之第三期臨床試驗 (EGFR T790M)",
+    "phase": "Phase 2",
+    "cancer_type": "胰臟癌",
+    "facility_taiwan": "高雄醫學大學附設中和紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000011",
+    "title": "評估標靶新藥治療台灣 胃癌 病患之第三期臨床試驗 (HER2 Positive)",
+    "phase": "Phase 3",
+    "cancer_type": "胃癌",
+    "facility_taiwan": "國立臺灣大學醫學院附設醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000012",
+    "title": "評估標靶新藥治療台灣 非小細胞肺癌 病患之第三期臨床試驗 (PD-L1 High)",
+    "phase": "Phase 1",
+    "cancer_type": "非小細胞肺癌",
+    "facility_taiwan": "臺北榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000013",
+    "title": "評估標靶新藥治療台灣 乳癌 病患之第三期臨床試驗 (KRAS G12C)",
+    "phase": "Phase 2",
+    "cancer_type": "乳癌",
+    "facility_taiwan": "林口長庚紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000014",
+    "title": "評估標靶新藥治療台灣 肝細胞癌 病患之第三期臨床試驗 (ALK Fusion)",
+    "phase": "Phase 3",
+    "cancer_type": "肝細胞癌",
+    "facility_taiwan": "台中榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000015",
+    "title": "評估標靶新藥治療台灣 大腸直腸癌 病患之第三期臨床試驗 (EGFR T790M)",
+    "phase": "Phase 1",
+    "cancer_type": "大腸直腸癌",
+    "facility_taiwan": "高雄醫學大學附設中和紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000016",
+    "title": "評估標靶新藥治療台灣 胰臟癌 病患之第三期臨床試驗 (HER2 Positive)",
+    "phase": "Phase 2",
+    "cancer_type": "胰臟癌",
+    "facility_taiwan": "國立臺灣大學醫學院附設醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000017",
+    "title": "評估標靶新藥治療台灣 胃癌 病患之第三期臨床試驗 (PD-L1 High)",
+    "phase": "Phase 3",
+    "cancer_type": "胃癌",
+    "facility_taiwan": "臺北榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000018",
+    "title": "評估標靶新藥治療台灣 非小細胞肺癌 病患之第三期臨床試驗 (KRAS G12C)",
+    "phase": "Phase 1",
+    "cancer_type": "非小細胞肺癌",
+    "facility_taiwan": "林口長庚紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000019",
+    "title": "評估標靶新藥治療台灣 乳癌 病患之第三期臨床試驗 (ALK Fusion)",
+    "phase": "Phase 2",
+    "cancer_type": "乳癌",
+    "facility_taiwan": "台中榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000020",
+    "title": "評估標靶新藥治療台灣 肝細胞癌 病患之第三期臨床試驗 (EGFR T790M)",
+    "phase": "Phase 3",
+    "cancer_type": "肝細胞癌",
+    "facility_taiwan": "高雄醫學大學附設中和紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000021",
+    "title": "評估標靶新藥治療台灣 大腸直腸癌 病患之第三期臨床試驗 (HER2 Positive)",
+    "phase": "Phase 1",
+    "cancer_type": "大腸直腸癌",
+    "facility_taiwan": "國立臺灣大學醫學院附設醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000022",
+    "title": "評估標靶新藥治療台灣 胰臟癌 病患之第三期臨床試驗 (PD-L1 High)",
+    "phase": "Phase 2",
+    "cancer_type": "胰臟癌",
+    "facility_taiwan": "臺北榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000023",
+    "title": "評估標靶新藥治療台灣 胃癌 病患之第三期臨床試驗 (KRAS G12C)",
+    "phase": "Phase 3",
+    "cancer_type": "胃癌",
+    "facility_taiwan": "林口長庚紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000024",
+    "title": "評估標靶新藥治療台灣 非小細胞肺癌 病患之第三期臨床試驗 (ALK Fusion)",
+    "phase": "Phase 1",
+    "cancer_type": "非小細胞肺癌",
+    "facility_taiwan": "台中榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000025",
+    "title": "評估標靶新藥治療台灣 乳癌 病患之第三期臨床試驗 (EGFR T790M)",
+    "phase": "Phase 2",
+    "cancer_type": "乳癌",
+    "facility_taiwan": "高雄醫學大學附設中和紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000026",
+    "title": "評估標靶新藥治療台灣 肝細胞癌 病患之第三期臨床試驗 (HER2 Positive)",
+    "phase": "Phase 3",
+    "cancer_type": "肝細胞癌",
+    "facility_taiwan": "國立臺灣大學醫學院附設醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000027",
+    "title": "評估標靶新藥治療台灣 大腸直腸癌 病患之第三期臨床試驗 (PD-L1 High)",
+    "phase": "Phase 1",
+    "cancer_type": "大腸直腸癌",
+    "facility_taiwan": "臺北榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000028",
+    "title": "評估標靶新藥治療台灣 胰臟癌 病患之第三期臨床試驗 (KRAS G12C)",
+    "phase": "Phase 2",
+    "cancer_type": "胰臟癌",
+    "facility_taiwan": "林口長庚紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000029",
+    "title": "評估標靶新藥治療台灣 胃癌 病患之第三期臨床試驗 (ALK Fusion)",
+    "phase": "Phase 3",
+    "cancer_type": "胃癌",
+    "facility_taiwan": "台中榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000030",
+    "title": "評估標靶新藥治療台灣 非小細胞肺癌 病患之第三期臨床試驗 (EGFR T790M)",
+    "phase": "Phase 1",
+    "cancer_type": "非小細胞肺癌",
+    "facility_taiwan": "高雄醫學大學附設中和紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000031",
+    "title": "評估標靶新藥治療台灣 乳癌 病患之第三期臨床試驗 (HER2 Positive)",
+    "phase": "Phase 2",
+    "cancer_type": "乳癌",
+    "facility_taiwan": "國立臺灣大學醫學院附設醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000032",
+    "title": "評估標靶新藥治療台灣 肝細胞癌 病患之第三期臨床試驗 (PD-L1 High)",
+    "phase": "Phase 3",
+    "cancer_type": "肝細胞癌",
+    "facility_taiwan": "臺北榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000033",
+    "title": "評估標靶新藥治療台灣 大腸直腸癌 病患之第三期臨床試驗 (KRAS G12C)",
+    "phase": "Phase 1",
+    "cancer_type": "大腸直腸癌",
+    "facility_taiwan": "林口長庚紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000034",
+    "title": "評估標靶新藥治療台灣 胰臟癌 病患之第三期臨床試驗 (ALK Fusion)",
+    "phase": "Phase 2",
+    "cancer_type": "胰臟癌",
+    "facility_taiwan": "台中榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000035",
+    "title": "評估標靶新藥治療台灣 胃癌 病患之第三期臨床試驗 (EGFR T790M)",
+    "phase": "Phase 3",
+    "cancer_type": "胃癌",
+    "facility_taiwan": "高雄醫學大學附設中和紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000036",
+    "title": "評估標靶新藥治療台灣 非小細胞肺癌 病患之第三期臨床試驗 (HER2 Positive)",
+    "phase": "Phase 1",
+    "cancer_type": "非小細胞肺癌",
+    "facility_taiwan": "國立臺灣大學醫學院附設醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000037",
+    "title": "評估標靶新藥治療台灣 乳癌 病患之第三期臨床試驗 (PD-L1 High)",
+    "phase": "Phase 2",
+    "cancer_type": "乳癌",
+    "facility_taiwan": "臺北榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000038",
+    "title": "評估標靶新藥治療台灣 肝細胞癌 病患之第三期臨床試驗 (KRAS G12C)",
+    "phase": "Phase 3",
+    "cancer_type": "肝細胞癌",
+    "facility_taiwan": "林口長庚紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000039",
+    "title": "評估標靶新藥治療台灣 大腸直腸癌 病患之第三期臨床試驗 (ALK Fusion)",
+    "phase": "Phase 1",
+    "cancer_type": "大腸直腸癌",
+    "facility_taiwan": "台中榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000040",
+    "title": "評估標靶新藥治療台灣 胰臟癌 病患之第三期臨床試驗 (EGFR T790M)",
+    "phase": "Phase 2",
+    "cancer_type": "胰臟癌",
+    "facility_taiwan": "高雄醫學大學附設中和紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000041",
+    "title": "評估標靶新藥治療台灣 胃癌 病患之第三期臨床試驗 (HER2 Positive)",
+    "phase": "Phase 3",
+    "cancer_type": "胃癌",
+    "facility_taiwan": "國立臺灣大學醫學院附設醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000042",
+    "title": "評估標靶新藥治療台灣 非小細胞肺癌 病患之第三期臨床試驗 (PD-L1 High)",
+    "phase": "Phase 1",
+    "cancer_type": "非小細胞肺癌",
+    "facility_taiwan": "臺北榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000043",
+    "title": "評估標靶新藥治療台灣 乳癌 病患之第三期臨床試驗 (KRAS G12C)",
+    "phase": "Phase 2",
+    "cancer_type": "乳癌",
+    "facility_taiwan": "林口長庚紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000044",
+    "title": "評估標靶新藥治療台灣 肝細胞癌 病患之第三期臨床試驗 (ALK Fusion)",
+    "phase": "Phase 3",
+    "cancer_type": "肝細胞癌",
+    "facility_taiwan": "台中榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000045",
+    "title": "評估標靶新藥治療台灣 大腸直腸癌 病患之第三期臨床試驗 (EGFR T790M)",
+    "phase": "Phase 1",
+    "cancer_type": "大腸直腸癌",
+    "facility_taiwan": "高雄醫學大學附設中和紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000046",
+    "title": "評估標靶新藥治療台灣 胰臟癌 病患之第三期臨床試驗 (HER2 Positive)",
+    "phase": "Phase 2",
+    "cancer_type": "胰臟癌",
+    "facility_taiwan": "國立臺灣大學醫學院附設醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000047",
+    "title": "評估標靶新藥治療台灣 胃癌 病患之第三期臨床試驗 (PD-L1 High)",
+    "phase": "Phase 3",
+    "cancer_type": "胃癌",
+    "facility_taiwan": "臺北榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000048",
+    "title": "評估標靶新藥治療台灣 非小細胞肺癌 病患之第三期臨床試驗 (KRAS G12C)",
+    "phase": "Phase 1",
+    "cancer_type": "非小細胞肺癌",
+    "facility_taiwan": "林口長庚紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000049",
+    "title": "評估標靶新藥治療台灣 乳癌 病患之第三期臨床試驗 (ALK Fusion)",
+    "phase": "Phase 2",
+    "cancer_type": "乳癌",
+    "facility_taiwan": "台中榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000050",
+    "title": "評估標靶新藥治療台灣 肝細胞癌 病患之第三期臨床試驗 (EGFR T790M)",
+    "phase": "Phase 3",
+    "cancer_type": "肝細胞癌",
+    "facility_taiwan": "高雄醫學大學附設中和紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000051",
+    "title": "評估標靶新藥治療台灣 大腸直腸癌 病患之第三期臨床試驗 (HER2 Positive)",
+    "phase": "Phase 1",
+    "cancer_type": "大腸直腸癌",
+    "facility_taiwan": "國立臺灣大學醫學院附設醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000052",
+    "title": "評估標靶新藥治療台灣 胰臟癌 病患之第三期臨床試驗 (PD-L1 High)",
+    "phase": "Phase 2",
+    "cancer_type": "胰臟癌",
+    "facility_taiwan": "臺北榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000053",
+    "title": "評估標靶新藥治療台灣 胃癌 病患之第三期臨床試驗 (KRAS G12C)",
+    "phase": "Phase 3",
+    "cancer_type": "胃癌",
+    "facility_taiwan": "林口長庚紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000054",
+    "title": "評估標靶新藥治療台灣 非小細胞肺癌 病患之第三期臨床試驗 (ALK Fusion)",
+    "phase": "Phase 1",
+    "cancer_type": "非小細胞肺癌",
+    "facility_taiwan": "台中榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000055",
+    "title": "評估標靶新藥治療台灣 乳癌 病患之第三期臨床試驗 (EGFR T790M)",
+    "phase": "Phase 2",
+    "cancer_type": "乳癌",
+    "facility_taiwan": "高雄醫學大學附設中和紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000056",
+    "title": "評估標靶新藥治療台灣 肝細胞癌 病患之第三期臨床試驗 (HER2 Positive)",
+    "phase": "Phase 3",
+    "cancer_type": "肝細胞癌",
+    "facility_taiwan": "國立臺灣大學醫學院附設醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000057",
+    "title": "評估標靶新藥治療台灣 大腸直腸癌 病患之第三期臨床試驗 (PD-L1 High)",
+    "phase": "Phase 1",
+    "cancer_type": "大腸直腸癌",
+    "facility_taiwan": "臺北榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000058",
+    "title": "評估標靶新藥治療台灣 胰臟癌 病患之第三期臨床試驗 (KRAS G12C)",
+    "phase": "Phase 2",
+    "cancer_type": "胰臟癌",
+    "facility_taiwan": "林口長庚紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000059",
+    "title": "評估標靶新藥治療台灣 胃癌 病患之第三期臨床試驗 (ALK Fusion)",
+    "phase": "Phase 3",
+    "cancer_type": "胃癌",
+    "facility_taiwan": "台中榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000060",
+    "title": "評估標靶新藥治療台灣 非小細胞肺癌 病患之第三期臨床試驗 (EGFR T790M)",
+    "phase": "Phase 1",
+    "cancer_type": "非小細胞肺癌",
+    "facility_taiwan": "高雄醫學大學附設中和紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000061",
+    "title": "評估標靶新藥治療台灣 乳癌 病患之第三期臨床試驗 (HER2 Positive)",
+    "phase": "Phase 2",
+    "cancer_type": "乳癌",
+    "facility_taiwan": "國立臺灣大學醫學院附設醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000062",
+    "title": "評估標靶新藥治療台灣 肝細胞癌 病患之第三期臨床試驗 (PD-L1 High)",
+    "phase": "Phase 3",
+    "cancer_type": "肝細胞癌",
+    "facility_taiwan": "臺北榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000063",
+    "title": "評估標靶新藥治療台灣 大腸直腸癌 病患之第三期臨床試驗 (KRAS G12C)",
+    "phase": "Phase 1",
+    "cancer_type": "大腸直腸癌",
+    "facility_taiwan": "林口長庚紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000064",
+    "title": "評估標靶新藥治療台灣 胰臟癌 病患之第三期臨床試驗 (ALK Fusion)",
+    "phase": "Phase 2",
+    "cancer_type": "胰臟癌",
+    "facility_taiwan": "台中榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000065",
+    "title": "評估標靶新藥治療台灣 胃癌 病患之第三期臨床試驗 (EGFR T790M)",
+    "phase": "Phase 3",
+    "cancer_type": "胃癌",
+    "facility_taiwan": "高雄醫學大學附設中和紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000066",
+    "title": "評估標靶新藥治療台灣 非小細胞肺癌 病患之第三期臨床試驗 (HER2 Positive)",
+    "phase": "Phase 1",
+    "cancer_type": "非小細胞肺癌",
+    "facility_taiwan": "國立臺灣大學醫學院附設醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000067",
+    "title": "評估標靶新藥治療台灣 乳癌 病患之第三期臨床試驗 (PD-L1 High)",
+    "phase": "Phase 2",
+    "cancer_type": "乳癌",
+    "facility_taiwan": "臺北榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000068",
+    "title": "評估標靶新藥治療台灣 肝細胞癌 病患之第三期臨床試驗 (KRAS G12C)",
+    "phase": "Phase 3",
+    "cancer_type": "肝細胞癌",
+    "facility_taiwan": "林口長庚紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000069",
+    "title": "評估標靶新藥治療台灣 大腸直腸癌 病患之第三期臨床試驗 (ALK Fusion)",
+    "phase": "Phase 1",
+    "cancer_type": "大腸直腸癌",
+    "facility_taiwan": "台中榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000070",
+    "title": "評估標靶新藥治療台灣 胰臟癌 病患之第三期臨床試驗 (EGFR T790M)",
+    "phase": "Phase 2",
+    "cancer_type": "胰臟癌",
+    "facility_taiwan": "高雄醫學大學附設中和紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000071",
+    "title": "評估標靶新藥治療台灣 胃癌 病患之第三期臨床試驗 (HER2 Positive)",
+    "phase": "Phase 3",
+    "cancer_type": "胃癌",
+    "facility_taiwan": "國立臺灣大學醫學院附設醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000072",
+    "title": "評估標靶新藥治療台灣 非小細胞肺癌 病患之第三期臨床試驗 (PD-L1 High)",
+    "phase": "Phase 1",
+    "cancer_type": "非小細胞肺癌",
+    "facility_taiwan": "臺北榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000073",
+    "title": "評估標靶新藥治療台灣 乳癌 病患之第三期臨床試驗 (KRAS G12C)",
+    "phase": "Phase 2",
+    "cancer_type": "乳癌",
+    "facility_taiwan": "林口長庚紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000074",
+    "title": "評估標靶新藥治療台灣 肝細胞癌 病患之第三期臨床試驗 (ALK Fusion)",
+    "phase": "Phase 3",
+    "cancer_type": "肝細胞癌",
+    "facility_taiwan": "台中榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000075",
+    "title": "評估標靶新藥治療台灣 大腸直腸癌 病患之第三期臨床試驗 (EGFR T790M)",
+    "phase": "Phase 1",
+    "cancer_type": "大腸直腸癌",
+    "facility_taiwan": "高雄醫學大學附設中和紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000076",
+    "title": "評估標靶新藥治療台灣 胰臟癌 病患之第三期臨床試驗 (HER2 Positive)",
+    "phase": "Phase 2",
+    "cancer_type": "胰臟癌",
+    "facility_taiwan": "國立臺灣大學醫學院附設醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000077",
+    "title": "評估標靶新藥治療台灣 胃癌 病患之第三期臨床試驗 (PD-L1 High)",
+    "phase": "Phase 3",
+    "cancer_type": "胃癌",
+    "facility_taiwan": "臺北榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000078",
+    "title": "評估標靶新藥治療台灣 非小細胞肺癌 病患之第三期臨床試驗 (KRAS G12C)",
+    "phase": "Phase 1",
+    "cancer_type": "非小細胞肺癌",
+    "facility_taiwan": "林口長庚紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000079",
+    "title": "評估標靶新藥治療台灣 乳癌 病患之第三期臨床試驗 (ALK Fusion)",
+    "phase": "Phase 2",
+    "cancer_type": "乳癌",
+    "facility_taiwan": "台中榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000080",
+    "title": "評估標靶新藥治療台灣 肝細胞癌 病患之第三期臨床試驗 (EGFR T790M)",
+    "phase": "Phase 3",
+    "cancer_type": "肝細胞癌",
+    "facility_taiwan": "高雄醫學大學附設中和紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000081",
+    "title": "評估標靶新藥治療台灣 大腸直腸癌 病患之第三期臨床試驗 (HER2 Positive)",
+    "phase": "Phase 1",
+    "cancer_type": "大腸直腸癌",
+    "facility_taiwan": "國立臺灣大學醫學院附設醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000082",
+    "title": "評估標靶新藥治療台灣 胰臟癌 病患之第三期臨床試驗 (PD-L1 High)",
+    "phase": "Phase 2",
+    "cancer_type": "胰臟癌",
+    "facility_taiwan": "臺北榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000083",
+    "title": "評估標靶新藥治療台灣 胃癌 病患之第三期臨床試驗 (KRAS G12C)",
+    "phase": "Phase 3",
+    "cancer_type": "胃癌",
+    "facility_taiwan": "林口長庚紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000084",
+    "title": "評估標靶新藥治療台灣 非小細胞肺癌 病患之第三期臨床試驗 (ALK Fusion)",
+    "phase": "Phase 1",
+    "cancer_type": "非小細胞肺癌",
+    "facility_taiwan": "台中榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000085",
+    "title": "評估標靶新藥治療台灣 乳癌 病患之第三期臨床試驗 (EGFR T790M)",
+    "phase": "Phase 2",
+    "cancer_type": "乳癌",
+    "facility_taiwan": "高雄醫學大學附設中和紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000086",
+    "title": "評估標靶新藥治療台灣 肝細胞癌 病患之第三期臨床試驗 (HER2 Positive)",
+    "phase": "Phase 3",
+    "cancer_type": "肝細胞癌",
+    "facility_taiwan": "國立臺灣大學醫學院附設醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000087",
+    "title": "評估標靶新藥治療台灣 大腸直腸癌 病患之第三期臨床試驗 (PD-L1 High)",
+    "phase": "Phase 1",
+    "cancer_type": "大腸直腸癌",
+    "facility_taiwan": "臺北榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000088",
+    "title": "評估標靶新藥治療台灣 胰臟癌 病患之第三期臨床試驗 (KRAS G12C)",
+    "phase": "Phase 2",
+    "cancer_type": "胰臟癌",
+    "facility_taiwan": "林口長庚紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000089",
+    "title": "評估標靶新藥治療台灣 胃癌 病患之第三期臨床試驗 (ALK Fusion)",
+    "phase": "Phase 3",
+    "cancer_type": "胃癌",
+    "facility_taiwan": "台中榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000090",
+    "title": "評估標靶新藥治療台灣 非小細胞肺癌 病患之第三期臨床試驗 (EGFR T790M)",
+    "phase": "Phase 1",
+    "cancer_type": "非小細胞肺癌",
+    "facility_taiwan": "高雄醫學大學附設中和紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000091",
+    "title": "評估標靶新藥治療台灣 乳癌 病患之第三期臨床試驗 (HER2 Positive)",
+    "phase": "Phase 2",
+    "cancer_type": "乳癌",
+    "facility_taiwan": "國立臺灣大學醫學院附設醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000092",
+    "title": "評估標靶新藥治療台灣 肝細胞癌 病患之第三期臨床試驗 (PD-L1 High)",
+    "phase": "Phase 3",
+    "cancer_type": "肝細胞癌",
+    "facility_taiwan": "臺北榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000093",
+    "title": "評估標靶新藥治療台灣 大腸直腸癌 病患之第三期臨床試驗 (KRAS G12C)",
+    "phase": "Phase 1",
+    "cancer_type": "大腸直腸癌",
+    "facility_taiwan": "林口長庚紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000094",
+    "title": "評估標靶新藥治療台灣 胰臟癌 病患之第三期臨床試驗 (ALK Fusion)",
+    "phase": "Phase 2",
+    "cancer_type": "胰臟癌",
+    "facility_taiwan": "台中榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000095",
+    "title": "評估標靶新藥治療台灣 胃癌 病患之第三期臨床試驗 (EGFR T790M)",
+    "phase": "Phase 3",
+    "cancer_type": "胃癌",
+    "facility_taiwan": "高雄醫學大學附設中和紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000096",
+    "title": "評估標靶新藥治療台灣 非小細胞肺癌 病患之第三期臨床試驗 (HER2 Positive)",
+    "phase": "Phase 1",
+    "cancer_type": "非小細胞肺癌",
+    "facility_taiwan": "國立臺灣大學醫學院附設醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000097",
+    "title": "評估標靶新藥治療台灣 乳癌 病患之第三期臨床試驗 (PD-L1 High)",
+    "phase": "Phase 2",
+    "cancer_type": "乳癌",
+    "facility_taiwan": "臺北榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000098",
+    "title": "評估標靶新藥治療台灣 肝細胞癌 病患之第三期臨床試驗 (KRAS G12C)",
+    "phase": "Phase 3",
+    "cancer_type": "肝細胞癌",
+    "facility_taiwan": "林口長庚紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000099",
+    "title": "評估標靶新藥治療台灣 大腸直腸癌 病患之第三期臨床試驗 (ALK Fusion)",
+    "phase": "Phase 1",
+    "cancer_type": "大腸直腸癌",
+    "facility_taiwan": "台中榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT05000100",
+    "title": "評估標靶新藥治療台灣 胰臟癌 病患之第三期臨床試驗 (EGFR T790M)",
+    "phase": "Phase 2",
+    "cancer_type": "胰臟癌",
+    "facility_taiwan": "高雄醫學大學附設中和紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000101",
+    "title": "評估標靶新藥與化療聯合治療台灣 Lung Cancer (NSCLC) 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Lung Cancer (NSCLC)",
+    "facility_taiwan": "國立臺灣大學醫學院附設醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000102",
+    "title": "評估標靶新藥與化療聯合治療台灣 Breast Cancer (HER2+) 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Breast Cancer (HER2+)",
+    "facility_taiwan": "臺北榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000103",
+    "title": "評估標靶新藥與化療聯合治療台灣 Colorectal Cancer 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Colorectal Cancer",
+    "facility_taiwan": "林口長庚紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000104",
+    "title": "評估標靶新藥與化療聯合治療台灣 Gastric Cancer 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Gastric Cancer",
+    "facility_taiwan": "台中榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000105",
+    "title": "評估標靶新藥與化療聯合治療台灣 Liver Cancer (HCC) 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Liver Cancer (HCC)",
+    "facility_taiwan": "高雄醫學大學附設中和紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000106",
+    "title": "評估標靶新藥與化療聯合治療台灣 Lung Cancer (NSCLC) 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Lung Cancer (NSCLC)",
+    "facility_taiwan": "國立臺灣大學醫學院附設醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000107",
+    "title": "評估標靶新藥與化療聯合治療台灣 Breast Cancer (HER2+) 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Breast Cancer (HER2+)",
+    "facility_taiwan": "臺北榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000108",
+    "title": "評估標靶新藥與化療聯合治療台灣 Colorectal Cancer 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Colorectal Cancer",
+    "facility_taiwan": "林口長庚紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000109",
+    "title": "評估標靶新藥與化療聯合治療台灣 Gastric Cancer 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Gastric Cancer",
+    "facility_taiwan": "台中榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000110",
+    "title": "評估標靶新藥與化療聯合治療台灣 Liver Cancer (HCC) 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Liver Cancer (HCC)",
+    "facility_taiwan": "高雄醫學大學附設中和紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000111",
+    "title": "評估標靶新藥與化療聯合治療台灣 Lung Cancer (NSCLC) 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Lung Cancer (NSCLC)",
+    "facility_taiwan": "國立臺灣大學醫學院附設醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000112",
+    "title": "評估標靶新藥與化療聯合治療台灣 Breast Cancer (HER2+) 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Breast Cancer (HER2+)",
+    "facility_taiwan": "臺北榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000113",
+    "title": "評估標靶新藥與化療聯合治療台灣 Colorectal Cancer 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Colorectal Cancer",
+    "facility_taiwan": "林口長庚紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000114",
+    "title": "評估標靶新藥與化療聯合治療台灣 Gastric Cancer 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Gastric Cancer",
+    "facility_taiwan": "台中榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000115",
+    "title": "評估標靶新藥與化療聯合治療台灣 Liver Cancer (HCC) 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Liver Cancer (HCC)",
+    "facility_taiwan": "高雄醫學大學附設中和紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000116",
+    "title": "評估標靶新藥與化療聯合治療台灣 Lung Cancer (NSCLC) 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Lung Cancer (NSCLC)",
+    "facility_taiwan": "國立臺灣大學醫學院附設醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000117",
+    "title": "評估標靶新藥與化療聯合治療台灣 Breast Cancer (HER2+) 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Breast Cancer (HER2+)",
+    "facility_taiwan": "臺北榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000118",
+    "title": "評估標靶新藥與化療聯合治療台灣 Colorectal Cancer 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Colorectal Cancer",
+    "facility_taiwan": "林口長庚紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000119",
+    "title": "評估標靶新藥與化療聯合治療台灣 Gastric Cancer 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Gastric Cancer",
+    "facility_taiwan": "台中榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000120",
+    "title": "評估標靶新藥與化療聯合治療台灣 Liver Cancer (HCC) 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Liver Cancer (HCC)",
+    "facility_taiwan": "高雄醫學大學附設中和紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000121",
+    "title": "評估標靶新藥與化療聯合治療台灣 Lung Cancer (NSCLC) 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Lung Cancer (NSCLC)",
+    "facility_taiwan": "國立臺灣大學醫學院附設醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000122",
+    "title": "評估標靶新藥與化療聯合治療台灣 Breast Cancer (HER2+) 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Breast Cancer (HER2+)",
+    "facility_taiwan": "臺北榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000123",
+    "title": "評估標靶新藥與化療聯合治療台灣 Colorectal Cancer 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Colorectal Cancer",
+    "facility_taiwan": "林口長庚紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000124",
+    "title": "評估標靶新藥與化療聯合治療台灣 Gastric Cancer 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Gastric Cancer",
+    "facility_taiwan": "台中榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000125",
+    "title": "評估標靶新藥與化療聯合治療台灣 Liver Cancer (HCC) 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Liver Cancer (HCC)",
+    "facility_taiwan": "高雄醫學大學附設中和紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000126",
+    "title": "評估標靶新藥與化療聯合治療台灣 Lung Cancer (NSCLC) 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Lung Cancer (NSCLC)",
+    "facility_taiwan": "國立臺灣大學醫學院附設醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000127",
+    "title": "評估標靶新藥與化療聯合治療台灣 Breast Cancer (HER2+) 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Breast Cancer (HER2+)",
+    "facility_taiwan": "臺北榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000128",
+    "title": "評估標靶新藥與化療聯合治療台灣 Colorectal Cancer 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Colorectal Cancer",
+    "facility_taiwan": "林口長庚紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000129",
+    "title": "評估標靶新藥與化療聯合治療台灣 Gastric Cancer 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Gastric Cancer",
+    "facility_taiwan": "台中榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000130",
+    "title": "評估標靶新藥與化療聯合治療台灣 Liver Cancer (HCC) 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Liver Cancer (HCC)",
+    "facility_taiwan": "高雄醫學大學附設中和紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000131",
+    "title": "評估標靶新藥與化療聯合治療台灣 Lung Cancer (NSCLC) 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Lung Cancer (NSCLC)",
+    "facility_taiwan": "國立臺灣大學醫學院附設醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000132",
+    "title": "評估標靶新藥與化療聯合治療台灣 Breast Cancer (HER2+) 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Breast Cancer (HER2+)",
+    "facility_taiwan": "臺北榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000133",
+    "title": "評估標靶新藥與化療聯合治療台灣 Colorectal Cancer 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Colorectal Cancer",
+    "facility_taiwan": "林口長庚紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000134",
+    "title": "評估標靶新藥與化療聯合治療台灣 Gastric Cancer 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Gastric Cancer",
+    "facility_taiwan": "台中榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000135",
+    "title": "評估標靶新藥與化療聯合治療台灣 Liver Cancer (HCC) 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Liver Cancer (HCC)",
+    "facility_taiwan": "高雄醫學大學附設中和紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000136",
+    "title": "評估標靶新藥與化療聯合治療台灣 Lung Cancer (NSCLC) 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Lung Cancer (NSCLC)",
+    "facility_taiwan": "國立臺灣大學醫學院附設醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000137",
+    "title": "評估標靶新藥與化療聯合治療台灣 Breast Cancer (HER2+) 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Breast Cancer (HER2+)",
+    "facility_taiwan": "臺北榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000138",
+    "title": "評估標靶新藥與化療聯合治療台灣 Colorectal Cancer 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Colorectal Cancer",
+    "facility_taiwan": "林口長庚紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000139",
+    "title": "評估標靶新藥與化療聯合治療台灣 Gastric Cancer 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Gastric Cancer",
+    "facility_taiwan": "台中榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000140",
+    "title": "評估標靶新藥與化療聯合治療台灣 Liver Cancer (HCC) 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Liver Cancer (HCC)",
+    "facility_taiwan": "高雄醫學大學附設中和紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000141",
+    "title": "評估標靶新藥與化療聯合治療台灣 Lung Cancer (NSCLC) 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Lung Cancer (NSCLC)",
+    "facility_taiwan": "國立臺灣大學醫學院附設醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000142",
+    "title": "評估標靶新藥與化療聯合治療台灣 Breast Cancer (HER2+) 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Breast Cancer (HER2+)",
+    "facility_taiwan": "臺北榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000143",
+    "title": "評估標靶新藥與化療聯合治療台灣 Colorectal Cancer 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Colorectal Cancer",
+    "facility_taiwan": "林口長庚紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000144",
+    "title": "評估標靶新藥與化療聯合治療台灣 Gastric Cancer 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Gastric Cancer",
+    "facility_taiwan": "台中榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000145",
+    "title": "評估標靶新藥與化療聯合治療台灣 Liver Cancer (HCC) 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Liver Cancer (HCC)",
+    "facility_taiwan": "高雄醫學大學附設中和紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000146",
+    "title": "評估標靶新藥與化療聯合治療台灣 Lung Cancer (NSCLC) 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Lung Cancer (NSCLC)",
+    "facility_taiwan": "國立臺灣大學醫學院附設醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000147",
+    "title": "評估標靶新藥與化療聯合治療台灣 Breast Cancer (HER2+) 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Breast Cancer (HER2+)",
+    "facility_taiwan": "臺北榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000148",
+    "title": "評估標靶新藥與化療聯合治療台灣 Colorectal Cancer 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Colorectal Cancer",
+    "facility_taiwan": "林口長庚紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000149",
+    "title": "評估標靶新藥與化療聯合治療台灣 Gastric Cancer 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Gastric Cancer",
+    "facility_taiwan": "台中榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000150",
+    "title": "評估標靶新藥與化療聯合治療台灣 Liver Cancer (HCC) 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Liver Cancer (HCC)",
+    "facility_taiwan": "高雄醫學大學附設中和紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000151",
+    "title": "評估標靶新藥與化療聯合治療台灣 Lung Cancer (NSCLC) 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Lung Cancer (NSCLC)",
+    "facility_taiwan": "國立臺灣大學醫學院附設醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000152",
+    "title": "評估標靶新藥與化療聯合治療台灣 Breast Cancer (HER2+) 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Breast Cancer (HER2+)",
+    "facility_taiwan": "臺北榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000153",
+    "title": "評估標靶新藥與化療聯合治療台灣 Colorectal Cancer 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Colorectal Cancer",
+    "facility_taiwan": "林口長庚紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000154",
+    "title": "評估標靶新藥與化療聯合治療台灣 Gastric Cancer 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Gastric Cancer",
+    "facility_taiwan": "台中榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000155",
+    "title": "評估標靶新藥與化療聯合治療台灣 Liver Cancer (HCC) 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Liver Cancer (HCC)",
+    "facility_taiwan": "高雄醫學大學附設中和紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000156",
+    "title": "評估標靶新藥與化療聯合治療台灣 Lung Cancer (NSCLC) 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Lung Cancer (NSCLC)",
+    "facility_taiwan": "國立臺灣大學醫學院附設醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000157",
+    "title": "評估標靶新藥與化療聯合治療台灣 Breast Cancer (HER2+) 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Breast Cancer (HER2+)",
+    "facility_taiwan": "臺北榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000158",
+    "title": "評估標靶新藥與化療聯合治療台灣 Colorectal Cancer 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Colorectal Cancer",
+    "facility_taiwan": "林口長庚紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000159",
+    "title": "評估標靶新藥與化療聯合治療台灣 Gastric Cancer 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Gastric Cancer",
+    "facility_taiwan": "台中榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000160",
+    "title": "評估標靶新藥與化療聯合治療台灣 Liver Cancer (HCC) 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Liver Cancer (HCC)",
+    "facility_taiwan": "高雄醫學大學附設中和紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000161",
+    "title": "評估標靶新藥與化療聯合治療台灣 Lung Cancer (NSCLC) 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Lung Cancer (NSCLC)",
+    "facility_taiwan": "國立臺灣大學醫學院附設醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000162",
+    "title": "評估標靶新藥與化療聯合治療台灣 Breast Cancer (HER2+) 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Breast Cancer (HER2+)",
+    "facility_taiwan": "臺北榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000163",
+    "title": "評估標靶新藥與化療聯合治療台灣 Colorectal Cancer 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Colorectal Cancer",
+    "facility_taiwan": "林口長庚紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000164",
+    "title": "評估標靶新藥與化療聯合治療台灣 Gastric Cancer 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Gastric Cancer",
+    "facility_taiwan": "台中榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000165",
+    "title": "評估標靶新藥與化療聯合治療台灣 Liver Cancer (HCC) 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Liver Cancer (HCC)",
+    "facility_taiwan": "高雄醫學大學附設中和紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000166",
+    "title": "評估標靶新藥與化療聯合治療台灣 Lung Cancer (NSCLC) 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Lung Cancer (NSCLC)",
+    "facility_taiwan": "國立臺灣大學醫學院附設醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000167",
+    "title": "評估標靶新藥與化療聯合治療台灣 Breast Cancer (HER2+) 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Breast Cancer (HER2+)",
+    "facility_taiwan": "臺北榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000168",
+    "title": "評估標靶新藥與化療聯合治療台灣 Colorectal Cancer 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Colorectal Cancer",
+    "facility_taiwan": "林口長庚紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000169",
+    "title": "評估標靶新藥與化療聯合治療台灣 Gastric Cancer 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Gastric Cancer",
+    "facility_taiwan": "台中榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000170",
+    "title": "評估標靶新藥與化療聯合治療台灣 Liver Cancer (HCC) 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Liver Cancer (HCC)",
+    "facility_taiwan": "高雄醫學大學附設中和紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000171",
+    "title": "評估標靶新藥與化療聯合治療台灣 Lung Cancer (NSCLC) 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Lung Cancer (NSCLC)",
+    "facility_taiwan": "國立臺灣大學醫學院附設醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000172",
+    "title": "評估標靶新藥與化療聯合治療台灣 Breast Cancer (HER2+) 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Breast Cancer (HER2+)",
+    "facility_taiwan": "臺北榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000173",
+    "title": "評估標靶新藥與化療聯合治療台灣 Colorectal Cancer 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Colorectal Cancer",
+    "facility_taiwan": "林口長庚紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000174",
+    "title": "評估標靶新藥與化療聯合治療台灣 Gastric Cancer 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Gastric Cancer",
+    "facility_taiwan": "台中榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000175",
+    "title": "評估標靶新藥與化療聯合治療台灣 Liver Cancer (HCC) 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Liver Cancer (HCC)",
+    "facility_taiwan": "高雄醫學大學附設中和紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000176",
+    "title": "評估標靶新藥與化療聯合治療台灣 Lung Cancer (NSCLC) 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Lung Cancer (NSCLC)",
+    "facility_taiwan": "國立臺灣大學醫學院附設醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000177",
+    "title": "評估標靶新藥與化療聯合治療台灣 Breast Cancer (HER2+) 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Breast Cancer (HER2+)",
+    "facility_taiwan": "臺北榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000178",
+    "title": "評估標靶新藥與化療聯合治療台灣 Colorectal Cancer 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Colorectal Cancer",
+    "facility_taiwan": "林口長庚紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000179",
+    "title": "評估標靶新藥與化療聯合治療台灣 Gastric Cancer 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Gastric Cancer",
+    "facility_taiwan": "台中榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000180",
+    "title": "評估標靶新藥與化療聯合治療台灣 Liver Cancer (HCC) 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Liver Cancer (HCC)",
+    "facility_taiwan": "高雄醫學大學附設中和紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000181",
+    "title": "評估標靶新藥與化療聯合治療台灣 Lung Cancer (NSCLC) 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Lung Cancer (NSCLC)",
+    "facility_taiwan": "國立臺灣大學醫學院附設醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000182",
+    "title": "評估標靶新藥與化療聯合治療台灣 Breast Cancer (HER2+) 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Breast Cancer (HER2+)",
+    "facility_taiwan": "臺北榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000183",
+    "title": "評估標靶新藥與化療聯合治療台灣 Colorectal Cancer 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Colorectal Cancer",
+    "facility_taiwan": "林口長庚紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000184",
+    "title": "評估標靶新藥與化療聯合治療台灣 Gastric Cancer 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Gastric Cancer",
+    "facility_taiwan": "台中榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000185",
+    "title": "評估標靶新藥與化療聯合治療台灣 Liver Cancer (HCC) 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Liver Cancer (HCC)",
+    "facility_taiwan": "高雄醫學大學附設中和紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000186",
+    "title": "評估標靶新藥與化療聯合治療台灣 Lung Cancer (NSCLC) 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Lung Cancer (NSCLC)",
+    "facility_taiwan": "國立臺灣大學醫學院附設醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000187",
+    "title": "評估標靶新藥與化療聯合治療台灣 Breast Cancer (HER2+) 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Breast Cancer (HER2+)",
+    "facility_taiwan": "臺北榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000188",
+    "title": "評估標靶新藥與化療聯合治療台灣 Colorectal Cancer 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Colorectal Cancer",
+    "facility_taiwan": "林口長庚紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000189",
+    "title": "評估標靶新藥與化療聯合治療台灣 Gastric Cancer 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Gastric Cancer",
+    "facility_taiwan": "台中榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000190",
+    "title": "評估標靶新藥與化療聯合治療台灣 Liver Cancer (HCC) 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Liver Cancer (HCC)",
+    "facility_taiwan": "高雄醫學大學附設中和紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000191",
+    "title": "評估標靶新藥與化療聯合治療台灣 Lung Cancer (NSCLC) 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Lung Cancer (NSCLC)",
+    "facility_taiwan": "國立臺灣大學醫學院附設醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000192",
+    "title": "評估標靶新藥與化療聯合治療台灣 Breast Cancer (HER2+) 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Breast Cancer (HER2+)",
+    "facility_taiwan": "臺北榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000193",
+    "title": "評估標靶新藥與化療聯合治療台灣 Colorectal Cancer 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Colorectal Cancer",
+    "facility_taiwan": "林口長庚紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000194",
+    "title": "評估標靶新藥與化療聯合治療台灣 Gastric Cancer 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Gastric Cancer",
+    "facility_taiwan": "台中榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000195",
+    "title": "評估標靶新藥與化療聯合治療台灣 Liver Cancer (HCC) 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Liver Cancer (HCC)",
+    "facility_taiwan": "高雄醫學大學附設中和紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000196",
+    "title": "評估標靶新藥與化療聯合治療台灣 Lung Cancer (NSCLC) 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Lung Cancer (NSCLC)",
+    "facility_taiwan": "國立臺灣大學醫學院附設醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000197",
+    "title": "評估標靶新藥與化療聯合治療台灣 Breast Cancer (HER2+) 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Breast Cancer (HER2+)",
+    "facility_taiwan": "臺北榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000198",
+    "title": "評估標靶新藥與化療聯合治療台灣 Colorectal Cancer 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Colorectal Cancer",
+    "facility_taiwan": "林口長庚紀念醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000199",
+    "title": "評估標靶新藥與化療聯合治療台灣 Gastric Cancer 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Gastric Cancer",
+    "facility_taiwan": "台中榮民總醫院",
+    "overall_status": "RECRUITING"
+  },
+  {
+    "nct_id": "NCT04000200",
+    "title": "評估標靶新藥與化療聯合治療台灣 Liver Cancer (HCC) 病患之多中心第三期臨床試驗",
+    "phase": "Phase 3",
+    "cancer_type": "Liver Cancer (HCC)",
+    "facility_taiwan": "高雄醫學大學附設中和紀念醫院",
+    "overall_status": "RECRUITING"
+  }
+]

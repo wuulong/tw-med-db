@@ -1,0 +1,1402 @@
+[
+  {
+    "profile_id": "TWCorePatientv1",
+    "resource_type": "Patient",
+    "profile_name_en": "TW Core TWCorePatient Profile v1",
+    "profile_name_zh": "台灣核心病人 Profile (版本 v1)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCorePatient"
+  },
+  {
+    "profile_id": "TWCoreMedicationRequestv2",
+    "resource_type": "MedicationRequest",
+    "profile_name_en": "TW Core TWCoreMedicationRequest Profile v2",
+    "profile_name_zh": "台灣核心藥品處方 Profile (版本 v2)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreMedicationRequest"
+  },
+  {
+    "profile_id": "TWCoreObservationLabv3",
+    "resource_type": "Observation",
+    "profile_name_en": "TW Core TWCoreObservationLab Profile v3",
+    "profile_name_zh": "台灣核心醫事檢驗 Observation Profile (版本 v3)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreObservationLab"
+  },
+  {
+    "profile_id": "TWCoreConditionv4",
+    "resource_type": "Condition",
+    "profile_name_en": "TW Core TWCoreCondition Profile v4",
+    "profile_name_zh": "台灣核心病情病情診斷 Condition Profile (版本 v4)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreCondition"
+  },
+  {
+    "profile_id": "TWCoreOrganizationv5",
+    "resource_type": "Organization",
+    "profile_name_en": "TW Core TWCoreOrganization Profile v5",
+    "profile_name_zh": "台灣核心醫事機構 Organization Profile (版本 v5)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreOrganization"
+  },
+  {
+    "profile_id": "TWCorePractitionerv6",
+    "resource_type": "Practitioner",
+    "profile_name_en": "TW Core TWCorePractitioner Profile v6",
+    "profile_name_zh": "台灣核心醫事人員 Practitioner Profile (版本 v6)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCorePractitioner"
+  },
+  {
+    "profile_id": "TWCoreEncounterv7",
+    "resource_type": "Encounter",
+    "profile_name_en": "TW Core TWCoreEncounter Profile v7",
+    "profile_name_zh": "台灣核心就醫門診 Encounter Profile (版本 v7)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreEncounter"
+  },
+  {
+    "profile_id": "TWCoreProcedurev8",
+    "resource_type": "Procedure",
+    "profile_name_en": "TW Core TWCoreProcedure Profile v8",
+    "profile_name_zh": "台灣核心處置處方 Procedure Profile (版本 v8)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreProcedure"
+  },
+  {
+    "profile_id": "TWCoreAllergyIntolerancev9",
+    "resource_type": "AllergyIntolerance",
+    "profile_name_en": "TW Core TWCoreAllergyIntolerance Profile v9",
+    "profile_name_zh": "台灣核心過敏史 AllergyIntolerance Profile (版本 v9)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreAllergyIntolerance"
+  },
+  {
+    "profile_id": "TWCoreDiagnosticReportv10",
+    "resource_type": "DiagnosticReport",
+    "profile_name_en": "TW Core TWCoreDiagnosticReport Profile v10",
+    "profile_name_zh": "台灣核心診斷報告 DiagnosticReport Profile (版本 v10)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreDiagnosticReport"
+  },
+  {
+    "profile_id": "TWCorePatientv11",
+    "resource_type": "Patient",
+    "profile_name_en": "TW Core TWCorePatient Profile v11",
+    "profile_name_zh": "台灣核心病人 Profile (版本 v11)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCorePatient"
+  },
+  {
+    "profile_id": "TWCoreMedicationRequestv12",
+    "resource_type": "MedicationRequest",
+    "profile_name_en": "TW Core TWCoreMedicationRequest Profile v12",
+    "profile_name_zh": "台灣核心藥品處方 Profile (版本 v12)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreMedicationRequest"
+  },
+  {
+    "profile_id": "TWCoreObservationLabv13",
+    "resource_type": "Observation",
+    "profile_name_en": "TW Core TWCoreObservationLab Profile v13",
+    "profile_name_zh": "台灣核心醫事檢驗 Observation Profile (版本 v13)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreObservationLab"
+  },
+  {
+    "profile_id": "TWCoreConditionv14",
+    "resource_type": "Condition",
+    "profile_name_en": "TW Core TWCoreCondition Profile v14",
+    "profile_name_zh": "台灣核心病情病情診斷 Condition Profile (版本 v14)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreCondition"
+  },
+  {
+    "profile_id": "TWCoreOrganizationv15",
+    "resource_type": "Organization",
+    "profile_name_en": "TW Core TWCoreOrganization Profile v15",
+    "profile_name_zh": "台灣核心醫事機構 Organization Profile (版本 v15)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreOrganization"
+  },
+  {
+    "profile_id": "TWCorePractitionerv16",
+    "resource_type": "Practitioner",
+    "profile_name_en": "TW Core TWCorePractitioner Profile v16",
+    "profile_name_zh": "台灣核心醫事人員 Practitioner Profile (版本 v16)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCorePractitioner"
+  },
+  {
+    "profile_id": "TWCoreEncounterv17",
+    "resource_type": "Encounter",
+    "profile_name_en": "TW Core TWCoreEncounter Profile v17",
+    "profile_name_zh": "台灣核心就醫門診 Encounter Profile (版本 v17)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreEncounter"
+  },
+  {
+    "profile_id": "TWCoreProcedurev18",
+    "resource_type": "Procedure",
+    "profile_name_en": "TW Core TWCoreProcedure Profile v18",
+    "profile_name_zh": "台灣核心處置處方 Procedure Profile (版本 v18)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreProcedure"
+  },
+  {
+    "profile_id": "TWCoreAllergyIntolerancev19",
+    "resource_type": "AllergyIntolerance",
+    "profile_name_en": "TW Core TWCoreAllergyIntolerance Profile v19",
+    "profile_name_zh": "台灣核心過敏史 AllergyIntolerance Profile (版本 v19)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreAllergyIntolerance"
+  },
+  {
+    "profile_id": "TWCoreDiagnosticReportv20",
+    "resource_type": "DiagnosticReport",
+    "profile_name_en": "TW Core TWCoreDiagnosticReport Profile v20",
+    "profile_name_zh": "台灣核心診斷報告 DiagnosticReport Profile (版本 v20)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreDiagnosticReport"
+  },
+  {
+    "profile_id": "TWCorePatientv21",
+    "resource_type": "Patient",
+    "profile_name_en": "TW Core TWCorePatient Profile v21",
+    "profile_name_zh": "台灣核心病人 Profile (版本 v21)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCorePatient"
+  },
+  {
+    "profile_id": "TWCoreMedicationRequestv22",
+    "resource_type": "MedicationRequest",
+    "profile_name_en": "TW Core TWCoreMedicationRequest Profile v22",
+    "profile_name_zh": "台灣核心藥品處方 Profile (版本 v22)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreMedicationRequest"
+  },
+  {
+    "profile_id": "TWCoreObservationLabv23",
+    "resource_type": "Observation",
+    "profile_name_en": "TW Core TWCoreObservationLab Profile v23",
+    "profile_name_zh": "台灣核心醫事檢驗 Observation Profile (版本 v23)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreObservationLab"
+  },
+  {
+    "profile_id": "TWCoreConditionv24",
+    "resource_type": "Condition",
+    "profile_name_en": "TW Core TWCoreCondition Profile v24",
+    "profile_name_zh": "台灣核心病情病情診斷 Condition Profile (版本 v24)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreCondition"
+  },
+  {
+    "profile_id": "TWCoreOrganizationv25",
+    "resource_type": "Organization",
+    "profile_name_en": "TW Core TWCoreOrganization Profile v25",
+    "profile_name_zh": "台灣核心醫事機構 Organization Profile (版本 v25)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreOrganization"
+  },
+  {
+    "profile_id": "TWCorePractitionerv26",
+    "resource_type": "Practitioner",
+    "profile_name_en": "TW Core TWCorePractitioner Profile v26",
+    "profile_name_zh": "台灣核心醫事人員 Practitioner Profile (版本 v26)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCorePractitioner"
+  },
+  {
+    "profile_id": "TWCoreEncounterv27",
+    "resource_type": "Encounter",
+    "profile_name_en": "TW Core TWCoreEncounter Profile v27",
+    "profile_name_zh": "台灣核心就醫門診 Encounter Profile (版本 v27)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreEncounter"
+  },
+  {
+    "profile_id": "TWCoreProcedurev28",
+    "resource_type": "Procedure",
+    "profile_name_en": "TW Core TWCoreProcedure Profile v28",
+    "profile_name_zh": "台灣核心處置處方 Procedure Profile (版本 v28)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreProcedure"
+  },
+  {
+    "profile_id": "TWCoreAllergyIntolerancev29",
+    "resource_type": "AllergyIntolerance",
+    "profile_name_en": "TW Core TWCoreAllergyIntolerance Profile v29",
+    "profile_name_zh": "台灣核心過敏史 AllergyIntolerance Profile (版本 v29)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreAllergyIntolerance"
+  },
+  {
+    "profile_id": "TWCoreDiagnosticReportv30",
+    "resource_type": "DiagnosticReport",
+    "profile_name_en": "TW Core TWCoreDiagnosticReport Profile v30",
+    "profile_name_zh": "台灣核心診斷報告 DiagnosticReport Profile (版本 v30)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreDiagnosticReport"
+  },
+  {
+    "profile_id": "TWCorePatientv31",
+    "resource_type": "Patient",
+    "profile_name_en": "TW Core TWCorePatient Profile v31",
+    "profile_name_zh": "台灣核心病人 Profile (版本 v31)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCorePatient"
+  },
+  {
+    "profile_id": "TWCoreMedicationRequestv32",
+    "resource_type": "MedicationRequest",
+    "profile_name_en": "TW Core TWCoreMedicationRequest Profile v32",
+    "profile_name_zh": "台灣核心藥品處方 Profile (版本 v32)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreMedicationRequest"
+  },
+  {
+    "profile_id": "TWCoreObservationLabv33",
+    "resource_type": "Observation",
+    "profile_name_en": "TW Core TWCoreObservationLab Profile v33",
+    "profile_name_zh": "台灣核心醫事檢驗 Observation Profile (版本 v33)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreObservationLab"
+  },
+  {
+    "profile_id": "TWCoreConditionv34",
+    "resource_type": "Condition",
+    "profile_name_en": "TW Core TWCoreCondition Profile v34",
+    "profile_name_zh": "台灣核心病情病情診斷 Condition Profile (版本 v34)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreCondition"
+  },
+  {
+    "profile_id": "TWCoreOrganizationv35",
+    "resource_type": "Organization",
+    "profile_name_en": "TW Core TWCoreOrganization Profile v35",
+    "profile_name_zh": "台灣核心醫事機構 Organization Profile (版本 v35)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreOrganization"
+  },
+  {
+    "profile_id": "TWCorePractitionerv36",
+    "resource_type": "Practitioner",
+    "profile_name_en": "TW Core TWCorePractitioner Profile v36",
+    "profile_name_zh": "台灣核心醫事人員 Practitioner Profile (版本 v36)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCorePractitioner"
+  },
+  {
+    "profile_id": "TWCoreEncounterv37",
+    "resource_type": "Encounter",
+    "profile_name_en": "TW Core TWCoreEncounter Profile v37",
+    "profile_name_zh": "台灣核心就醫門診 Encounter Profile (版本 v37)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreEncounter"
+  },
+  {
+    "profile_id": "TWCoreProcedurev38",
+    "resource_type": "Procedure",
+    "profile_name_en": "TW Core TWCoreProcedure Profile v38",
+    "profile_name_zh": "台灣核心處置處方 Procedure Profile (版本 v38)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreProcedure"
+  },
+  {
+    "profile_id": "TWCoreAllergyIntolerancev39",
+    "resource_type": "AllergyIntolerance",
+    "profile_name_en": "TW Core TWCoreAllergyIntolerance Profile v39",
+    "profile_name_zh": "台灣核心過敏史 AllergyIntolerance Profile (版本 v39)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreAllergyIntolerance"
+  },
+  {
+    "profile_id": "TWCoreDiagnosticReportv40",
+    "resource_type": "DiagnosticReport",
+    "profile_name_en": "TW Core TWCoreDiagnosticReport Profile v40",
+    "profile_name_zh": "台灣核心診斷報告 DiagnosticReport Profile (版本 v40)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreDiagnosticReport"
+  },
+  {
+    "profile_id": "TWCorePatientv41",
+    "resource_type": "Patient",
+    "profile_name_en": "TW Core TWCorePatient Profile v41",
+    "profile_name_zh": "台灣核心病人 Profile (版本 v41)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCorePatient"
+  },
+  {
+    "profile_id": "TWCoreMedicationRequestv42",
+    "resource_type": "MedicationRequest",
+    "profile_name_en": "TW Core TWCoreMedicationRequest Profile v42",
+    "profile_name_zh": "台灣核心藥品處方 Profile (版本 v42)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreMedicationRequest"
+  },
+  {
+    "profile_id": "TWCoreObservationLabv43",
+    "resource_type": "Observation",
+    "profile_name_en": "TW Core TWCoreObservationLab Profile v43",
+    "profile_name_zh": "台灣核心醫事檢驗 Observation Profile (版本 v43)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreObservationLab"
+  },
+  {
+    "profile_id": "TWCoreConditionv44",
+    "resource_type": "Condition",
+    "profile_name_en": "TW Core TWCoreCondition Profile v44",
+    "profile_name_zh": "台灣核心病情病情診斷 Condition Profile (版本 v44)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreCondition"
+  },
+  {
+    "profile_id": "TWCoreOrganizationv45",
+    "resource_type": "Organization",
+    "profile_name_en": "TW Core TWCoreOrganization Profile v45",
+    "profile_name_zh": "台灣核心醫事機構 Organization Profile (版本 v45)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreOrganization"
+  },
+  {
+    "profile_id": "TWCorePractitionerv46",
+    "resource_type": "Practitioner",
+    "profile_name_en": "TW Core TWCorePractitioner Profile v46",
+    "profile_name_zh": "台灣核心醫事人員 Practitioner Profile (版本 v46)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCorePractitioner"
+  },
+  {
+    "profile_id": "TWCoreEncounterv47",
+    "resource_type": "Encounter",
+    "profile_name_en": "TW Core TWCoreEncounter Profile v47",
+    "profile_name_zh": "台灣核心就醫門診 Encounter Profile (版本 v47)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreEncounter"
+  },
+  {
+    "profile_id": "TWCoreProcedurev48",
+    "resource_type": "Procedure",
+    "profile_name_en": "TW Core TWCoreProcedure Profile v48",
+    "profile_name_zh": "台灣核心處置處方 Procedure Profile (版本 v48)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreProcedure"
+  },
+  {
+    "profile_id": "TWCoreAllergyIntolerancev49",
+    "resource_type": "AllergyIntolerance",
+    "profile_name_en": "TW Core TWCoreAllergyIntolerance Profile v49",
+    "profile_name_zh": "台灣核心過敏史 AllergyIntolerance Profile (版本 v49)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreAllergyIntolerance"
+  },
+  {
+    "profile_id": "TWCoreDiagnosticReportv50",
+    "resource_type": "DiagnosticReport",
+    "profile_name_en": "TW Core TWCoreDiagnosticReport Profile v50",
+    "profile_name_zh": "台灣核心診斷報告 DiagnosticReport Profile (版本 v50)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreDiagnosticReport"
+  },
+  {
+    "profile_id": "TWCorePatientv51",
+    "resource_type": "Patient",
+    "profile_name_en": "TW Core TWCorePatient Profile v51",
+    "profile_name_zh": "台灣核心病人 Profile (版本 v51)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCorePatient"
+  },
+  {
+    "profile_id": "TWCoreMedicationRequestv52",
+    "resource_type": "MedicationRequest",
+    "profile_name_en": "TW Core TWCoreMedicationRequest Profile v52",
+    "profile_name_zh": "台灣核心藥品處方 Profile (版本 v52)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreMedicationRequest"
+  },
+  {
+    "profile_id": "TWCoreObservationLabv53",
+    "resource_type": "Observation",
+    "profile_name_en": "TW Core TWCoreObservationLab Profile v53",
+    "profile_name_zh": "台灣核心醫事檢驗 Observation Profile (版本 v53)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreObservationLab"
+  },
+  {
+    "profile_id": "TWCoreConditionv54",
+    "resource_type": "Condition",
+    "profile_name_en": "TW Core TWCoreCondition Profile v54",
+    "profile_name_zh": "台灣核心病情病情診斷 Condition Profile (版本 v54)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreCondition"
+  },
+  {
+    "profile_id": "TWCoreOrganizationv55",
+    "resource_type": "Organization",
+    "profile_name_en": "TW Core TWCoreOrganization Profile v55",
+    "profile_name_zh": "台灣核心醫事機構 Organization Profile (版本 v55)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreOrganization"
+  },
+  {
+    "profile_id": "TWCorePractitionerv56",
+    "resource_type": "Practitioner",
+    "profile_name_en": "TW Core TWCorePractitioner Profile v56",
+    "profile_name_zh": "台灣核心醫事人員 Practitioner Profile (版本 v56)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCorePractitioner"
+  },
+  {
+    "profile_id": "TWCoreEncounterv57",
+    "resource_type": "Encounter",
+    "profile_name_en": "TW Core TWCoreEncounter Profile v57",
+    "profile_name_zh": "台灣核心就醫門診 Encounter Profile (版本 v57)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreEncounter"
+  },
+  {
+    "profile_id": "TWCoreProcedurev58",
+    "resource_type": "Procedure",
+    "profile_name_en": "TW Core TWCoreProcedure Profile v58",
+    "profile_name_zh": "台灣核心處置處方 Procedure Profile (版本 v58)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreProcedure"
+  },
+  {
+    "profile_id": "TWCoreAllergyIntolerancev59",
+    "resource_type": "AllergyIntolerance",
+    "profile_name_en": "TW Core TWCoreAllergyIntolerance Profile v59",
+    "profile_name_zh": "台灣核心過敏史 AllergyIntolerance Profile (版本 v59)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreAllergyIntolerance"
+  },
+  {
+    "profile_id": "TWCoreDiagnosticReportv60",
+    "resource_type": "DiagnosticReport",
+    "profile_name_en": "TW Core TWCoreDiagnosticReport Profile v60",
+    "profile_name_zh": "台灣核心診斷報告 DiagnosticReport Profile (版本 v60)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreDiagnosticReport"
+  },
+  {
+    "profile_id": "TWCorePatientv61",
+    "resource_type": "Patient",
+    "profile_name_en": "TW Core TWCorePatient Profile v61",
+    "profile_name_zh": "台灣核心病人 Profile (版本 v61)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCorePatient"
+  },
+  {
+    "profile_id": "TWCoreMedicationRequestv62",
+    "resource_type": "MedicationRequest",
+    "profile_name_en": "TW Core TWCoreMedicationRequest Profile v62",
+    "profile_name_zh": "台灣核心藥品處方 Profile (版本 v62)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreMedicationRequest"
+  },
+  {
+    "profile_id": "TWCoreObservationLabv63",
+    "resource_type": "Observation",
+    "profile_name_en": "TW Core TWCoreObservationLab Profile v63",
+    "profile_name_zh": "台灣核心醫事檢驗 Observation Profile (版本 v63)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreObservationLab"
+  },
+  {
+    "profile_id": "TWCoreConditionv64",
+    "resource_type": "Condition",
+    "profile_name_en": "TW Core TWCoreCondition Profile v64",
+    "profile_name_zh": "台灣核心病情病情診斷 Condition Profile (版本 v64)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreCondition"
+  },
+  {
+    "profile_id": "TWCoreOrganizationv65",
+    "resource_type": "Organization",
+    "profile_name_en": "TW Core TWCoreOrganization Profile v65",
+    "profile_name_zh": "台灣核心醫事機構 Organization Profile (版本 v65)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreOrganization"
+  },
+  {
+    "profile_id": "TWCorePractitionerv66",
+    "resource_type": "Practitioner",
+    "profile_name_en": "TW Core TWCorePractitioner Profile v66",
+    "profile_name_zh": "台灣核心醫事人員 Practitioner Profile (版本 v66)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCorePractitioner"
+  },
+  {
+    "profile_id": "TWCoreEncounterv67",
+    "resource_type": "Encounter",
+    "profile_name_en": "TW Core TWCoreEncounter Profile v67",
+    "profile_name_zh": "台灣核心就醫門診 Encounter Profile (版本 v67)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreEncounter"
+  },
+  {
+    "profile_id": "TWCoreProcedurev68",
+    "resource_type": "Procedure",
+    "profile_name_en": "TW Core TWCoreProcedure Profile v68",
+    "profile_name_zh": "台灣核心處置處方 Procedure Profile (版本 v68)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreProcedure"
+  },
+  {
+    "profile_id": "TWCoreAllergyIntolerancev69",
+    "resource_type": "AllergyIntolerance",
+    "profile_name_en": "TW Core TWCoreAllergyIntolerance Profile v69",
+    "profile_name_zh": "台灣核心過敏史 AllergyIntolerance Profile (版本 v69)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreAllergyIntolerance"
+  },
+  {
+    "profile_id": "TWCoreDiagnosticReportv70",
+    "resource_type": "DiagnosticReport",
+    "profile_name_en": "TW Core TWCoreDiagnosticReport Profile v70",
+    "profile_name_zh": "台灣核心診斷報告 DiagnosticReport Profile (版本 v70)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreDiagnosticReport"
+  },
+  {
+    "profile_id": "TWCorePatientv71",
+    "resource_type": "Patient",
+    "profile_name_en": "TW Core TWCorePatient Profile v71",
+    "profile_name_zh": "台灣核心病人 Profile (版本 v71)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCorePatient"
+  },
+  {
+    "profile_id": "TWCoreMedicationRequestv72",
+    "resource_type": "MedicationRequest",
+    "profile_name_en": "TW Core TWCoreMedicationRequest Profile v72",
+    "profile_name_zh": "台灣核心藥品處方 Profile (版本 v72)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreMedicationRequest"
+  },
+  {
+    "profile_id": "TWCoreObservationLabv73",
+    "resource_type": "Observation",
+    "profile_name_en": "TW Core TWCoreObservationLab Profile v73",
+    "profile_name_zh": "台灣核心醫事檢驗 Observation Profile (版本 v73)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreObservationLab"
+  },
+  {
+    "profile_id": "TWCoreConditionv74",
+    "resource_type": "Condition",
+    "profile_name_en": "TW Core TWCoreCondition Profile v74",
+    "profile_name_zh": "台灣核心病情病情診斷 Condition Profile (版本 v74)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreCondition"
+  },
+  {
+    "profile_id": "TWCoreOrganizationv75",
+    "resource_type": "Organization",
+    "profile_name_en": "TW Core TWCoreOrganization Profile v75",
+    "profile_name_zh": "台灣核心醫事機構 Organization Profile (版本 v75)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreOrganization"
+  },
+  {
+    "profile_id": "TWCorePractitionerv76",
+    "resource_type": "Practitioner",
+    "profile_name_en": "TW Core TWCorePractitioner Profile v76",
+    "profile_name_zh": "台灣核心醫事人員 Practitioner Profile (版本 v76)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCorePractitioner"
+  },
+  {
+    "profile_id": "TWCoreEncounterv77",
+    "resource_type": "Encounter",
+    "profile_name_en": "TW Core TWCoreEncounter Profile v77",
+    "profile_name_zh": "台灣核心就醫門診 Encounter Profile (版本 v77)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreEncounter"
+  },
+  {
+    "profile_id": "TWCoreProcedurev78",
+    "resource_type": "Procedure",
+    "profile_name_en": "TW Core TWCoreProcedure Profile v78",
+    "profile_name_zh": "台灣核心處置處方 Procedure Profile (版本 v78)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreProcedure"
+  },
+  {
+    "profile_id": "TWCoreAllergyIntolerancev79",
+    "resource_type": "AllergyIntolerance",
+    "profile_name_en": "TW Core TWCoreAllergyIntolerance Profile v79",
+    "profile_name_zh": "台灣核心過敏史 AllergyIntolerance Profile (版本 v79)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreAllergyIntolerance"
+  },
+  {
+    "profile_id": "TWCoreDiagnosticReportv80",
+    "resource_type": "DiagnosticReport",
+    "profile_name_en": "TW Core TWCoreDiagnosticReport Profile v80",
+    "profile_name_zh": "台灣核心診斷報告 DiagnosticReport Profile (版本 v80)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreDiagnosticReport"
+  },
+  {
+    "profile_id": "TWCorePatientv81",
+    "resource_type": "Patient",
+    "profile_name_en": "TW Core TWCorePatient Profile v81",
+    "profile_name_zh": "台灣核心病人 Profile (版本 v81)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCorePatient"
+  },
+  {
+    "profile_id": "TWCoreMedicationRequestv82",
+    "resource_type": "MedicationRequest",
+    "profile_name_en": "TW Core TWCoreMedicationRequest Profile v82",
+    "profile_name_zh": "台灣核心藥品處方 Profile (版本 v82)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreMedicationRequest"
+  },
+  {
+    "profile_id": "TWCoreObservationLabv83",
+    "resource_type": "Observation",
+    "profile_name_en": "TW Core TWCoreObservationLab Profile v83",
+    "profile_name_zh": "台灣核心醫事檢驗 Observation Profile (版本 v83)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreObservationLab"
+  },
+  {
+    "profile_id": "TWCoreConditionv84",
+    "resource_type": "Condition",
+    "profile_name_en": "TW Core TWCoreCondition Profile v84",
+    "profile_name_zh": "台灣核心病情病情診斷 Condition Profile (版本 v84)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreCondition"
+  },
+  {
+    "profile_id": "TWCoreOrganizationv85",
+    "resource_type": "Organization",
+    "profile_name_en": "TW Core TWCoreOrganization Profile v85",
+    "profile_name_zh": "台灣核心醫事機構 Organization Profile (版本 v85)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreOrganization"
+  },
+  {
+    "profile_id": "TWCorePractitionerv86",
+    "resource_type": "Practitioner",
+    "profile_name_en": "TW Core TWCorePractitioner Profile v86",
+    "profile_name_zh": "台灣核心醫事人員 Practitioner Profile (版本 v86)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCorePractitioner"
+  },
+  {
+    "profile_id": "TWCoreEncounterv87",
+    "resource_type": "Encounter",
+    "profile_name_en": "TW Core TWCoreEncounter Profile v87",
+    "profile_name_zh": "台灣核心就醫門診 Encounter Profile (版本 v87)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreEncounter"
+  },
+  {
+    "profile_id": "TWCoreProcedurev88",
+    "resource_type": "Procedure",
+    "profile_name_en": "TW Core TWCoreProcedure Profile v88",
+    "profile_name_zh": "台灣核心處置處方 Procedure Profile (版本 v88)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreProcedure"
+  },
+  {
+    "profile_id": "TWCoreAllergyIntolerancev89",
+    "resource_type": "AllergyIntolerance",
+    "profile_name_en": "TW Core TWCoreAllergyIntolerance Profile v89",
+    "profile_name_zh": "台灣核心過敏史 AllergyIntolerance Profile (版本 v89)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreAllergyIntolerance"
+  },
+  {
+    "profile_id": "TWCoreDiagnosticReportv90",
+    "resource_type": "DiagnosticReport",
+    "profile_name_en": "TW Core TWCoreDiagnosticReport Profile v90",
+    "profile_name_zh": "台灣核心診斷報告 DiagnosticReport Profile (版本 v90)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreDiagnosticReport"
+  },
+  {
+    "profile_id": "TWCorePatientv91",
+    "resource_type": "Patient",
+    "profile_name_en": "TW Core TWCorePatient Profile v91",
+    "profile_name_zh": "台灣核心病人 Profile (版本 v91)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCorePatient"
+  },
+  {
+    "profile_id": "TWCoreMedicationRequestv92",
+    "resource_type": "MedicationRequest",
+    "profile_name_en": "TW Core TWCoreMedicationRequest Profile v92",
+    "profile_name_zh": "台灣核心藥品處方 Profile (版本 v92)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreMedicationRequest"
+  },
+  {
+    "profile_id": "TWCoreObservationLabv93",
+    "resource_type": "Observation",
+    "profile_name_en": "TW Core TWCoreObservationLab Profile v93",
+    "profile_name_zh": "台灣核心醫事檢驗 Observation Profile (版本 v93)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreObservationLab"
+  },
+  {
+    "profile_id": "TWCoreConditionv94",
+    "resource_type": "Condition",
+    "profile_name_en": "TW Core TWCoreCondition Profile v94",
+    "profile_name_zh": "台灣核心病情病情診斷 Condition Profile (版本 v94)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreCondition"
+  },
+  {
+    "profile_id": "TWCoreOrganizationv95",
+    "resource_type": "Organization",
+    "profile_name_en": "TW Core TWCoreOrganization Profile v95",
+    "profile_name_zh": "台灣核心醫事機構 Organization Profile (版本 v95)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreOrganization"
+  },
+  {
+    "profile_id": "TWCorePractitionerv96",
+    "resource_type": "Practitioner",
+    "profile_name_en": "TW Core TWCorePractitioner Profile v96",
+    "profile_name_zh": "台灣核心醫事人員 Practitioner Profile (版本 v96)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCorePractitioner"
+  },
+  {
+    "profile_id": "TWCoreEncounterv97",
+    "resource_type": "Encounter",
+    "profile_name_en": "TW Core TWCoreEncounter Profile v97",
+    "profile_name_zh": "台灣核心就醫門診 Encounter Profile (版本 v97)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreEncounter"
+  },
+  {
+    "profile_id": "TWCoreProcedurev98",
+    "resource_type": "Procedure",
+    "profile_name_en": "TW Core TWCoreProcedure Profile v98",
+    "profile_name_zh": "台灣核心處置處方 Procedure Profile (版本 v98)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreProcedure"
+  },
+  {
+    "profile_id": "TWCoreAllergyIntolerancev99",
+    "resource_type": "AllergyIntolerance",
+    "profile_name_en": "TW Core TWCoreAllergyIntolerance Profile v99",
+    "profile_name_zh": "台灣核心過敏史 AllergyIntolerance Profile (版本 v99)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreAllergyIntolerance"
+  },
+  {
+    "profile_id": "TWCoreDiagnosticReportv100",
+    "resource_type": "DiagnosticReport",
+    "profile_name_en": "TW Core TWCoreDiagnosticReport Profile v100",
+    "profile_name_zh": "台灣核心診斷報告 DiagnosticReport Profile (版本 v100)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreDiagnosticReport"
+  },
+  {
+    "profile_id": "TWCorePatientv101",
+    "resource_type": "Patient",
+    "profile_name_en": "TW Core TWCorePatient Profile v101",
+    "profile_name_zh": "台灣核心病人 Profile (版本 v101)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCorePatient"
+  },
+  {
+    "profile_id": "TWCoreMedicationRequestv102",
+    "resource_type": "MedicationRequest",
+    "profile_name_en": "TW Core TWCoreMedicationRequest Profile v102",
+    "profile_name_zh": "台灣核心藥品處方 Profile (版本 v102)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreMedicationRequest"
+  },
+  {
+    "profile_id": "TWCoreObservationLabv103",
+    "resource_type": "Observation",
+    "profile_name_en": "TW Core TWCoreObservationLab Profile v103",
+    "profile_name_zh": "台灣核心醫事檢驗 Observation Profile (版本 v103)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreObservationLab"
+  },
+  {
+    "profile_id": "TWCoreConditionv104",
+    "resource_type": "Condition",
+    "profile_name_en": "TW Core TWCoreCondition Profile v104",
+    "profile_name_zh": "台灣核心病情病情診斷 Condition Profile (版本 v104)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreCondition"
+  },
+  {
+    "profile_id": "TWCoreOrganizationv105",
+    "resource_type": "Organization",
+    "profile_name_en": "TW Core TWCoreOrganization Profile v105",
+    "profile_name_zh": "台灣核心醫事機構 Organization Profile (版本 v105)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreOrganization"
+  },
+  {
+    "profile_id": "TWCorePractitionerv106",
+    "resource_type": "Practitioner",
+    "profile_name_en": "TW Core TWCorePractitioner Profile v106",
+    "profile_name_zh": "台灣核心醫事人員 Practitioner Profile (版本 v106)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCorePractitioner"
+  },
+  {
+    "profile_id": "TWCoreEncounterv107",
+    "resource_type": "Encounter",
+    "profile_name_en": "TW Core TWCoreEncounter Profile v107",
+    "profile_name_zh": "台灣核心就醫門診 Encounter Profile (版本 v107)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreEncounter"
+  },
+  {
+    "profile_id": "TWCoreProcedurev108",
+    "resource_type": "Procedure",
+    "profile_name_en": "TW Core TWCoreProcedure Profile v108",
+    "profile_name_zh": "台灣核心處置處方 Procedure Profile (版本 v108)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreProcedure"
+  },
+  {
+    "profile_id": "TWCoreAllergyIntolerancev109",
+    "resource_type": "AllergyIntolerance",
+    "profile_name_en": "TW Core TWCoreAllergyIntolerance Profile v109",
+    "profile_name_zh": "台灣核心過敏史 AllergyIntolerance Profile (版本 v109)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreAllergyIntolerance"
+  },
+  {
+    "profile_id": "TWCoreDiagnosticReportv110",
+    "resource_type": "DiagnosticReport",
+    "profile_name_en": "TW Core TWCoreDiagnosticReport Profile v110",
+    "profile_name_zh": "台灣核心診斷報告 DiagnosticReport Profile (版本 v110)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreDiagnosticReport"
+  },
+  {
+    "profile_id": "TWCorePatientv111",
+    "resource_type": "Patient",
+    "profile_name_en": "TW Core TWCorePatient Profile v111",
+    "profile_name_zh": "台灣核心病人 Profile (版本 v111)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCorePatient"
+  },
+  {
+    "profile_id": "TWCoreMedicationRequestv112",
+    "resource_type": "MedicationRequest",
+    "profile_name_en": "TW Core TWCoreMedicationRequest Profile v112",
+    "profile_name_zh": "台灣核心藥品處方 Profile (版本 v112)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreMedicationRequest"
+  },
+  {
+    "profile_id": "TWCoreObservationLabv113",
+    "resource_type": "Observation",
+    "profile_name_en": "TW Core TWCoreObservationLab Profile v113",
+    "profile_name_zh": "台灣核心醫事檢驗 Observation Profile (版本 v113)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreObservationLab"
+  },
+  {
+    "profile_id": "TWCoreConditionv114",
+    "resource_type": "Condition",
+    "profile_name_en": "TW Core TWCoreCondition Profile v114",
+    "profile_name_zh": "台灣核心病情病情診斷 Condition Profile (版本 v114)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreCondition"
+  },
+  {
+    "profile_id": "TWCoreOrganizationv115",
+    "resource_type": "Organization",
+    "profile_name_en": "TW Core TWCoreOrganization Profile v115",
+    "profile_name_zh": "台灣核心醫事機構 Organization Profile (版本 v115)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreOrganization"
+  },
+  {
+    "profile_id": "TWCorePractitionerv116",
+    "resource_type": "Practitioner",
+    "profile_name_en": "TW Core TWCorePractitioner Profile v116",
+    "profile_name_zh": "台灣核心醫事人員 Practitioner Profile (版本 v116)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCorePractitioner"
+  },
+  {
+    "profile_id": "TWCoreEncounterv117",
+    "resource_type": "Encounter",
+    "profile_name_en": "TW Core TWCoreEncounter Profile v117",
+    "profile_name_zh": "台灣核心就醫門診 Encounter Profile (版本 v117)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreEncounter"
+  },
+  {
+    "profile_id": "TWCoreProcedurev118",
+    "resource_type": "Procedure",
+    "profile_name_en": "TW Core TWCoreProcedure Profile v118",
+    "profile_name_zh": "台灣核心處置處方 Procedure Profile (版本 v118)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreProcedure"
+  },
+  {
+    "profile_id": "TWCoreAllergyIntolerancev119",
+    "resource_type": "AllergyIntolerance",
+    "profile_name_en": "TW Core TWCoreAllergyIntolerance Profile v119",
+    "profile_name_zh": "台灣核心過敏史 AllergyIntolerance Profile (版本 v119)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreAllergyIntolerance"
+  },
+  {
+    "profile_id": "TWCoreDiagnosticReportv120",
+    "resource_type": "DiagnosticReport",
+    "profile_name_en": "TW Core TWCoreDiagnosticReport Profile v120",
+    "profile_name_zh": "台灣核心診斷報告 DiagnosticReport Profile (版本 v120)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreDiagnosticReport"
+  },
+  {
+    "profile_id": "TWCorePatientv121",
+    "resource_type": "Patient",
+    "profile_name_en": "TW Core TWCorePatient Profile v121",
+    "profile_name_zh": "台灣核心病人 Profile (版本 v121)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCorePatient"
+  },
+  {
+    "profile_id": "TWCoreMedicationRequestv122",
+    "resource_type": "MedicationRequest",
+    "profile_name_en": "TW Core TWCoreMedicationRequest Profile v122",
+    "profile_name_zh": "台灣核心藥品處方 Profile (版本 v122)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreMedicationRequest"
+  },
+  {
+    "profile_id": "TWCoreObservationLabv123",
+    "resource_type": "Observation",
+    "profile_name_en": "TW Core TWCoreObservationLab Profile v123",
+    "profile_name_zh": "台灣核心醫事檢驗 Observation Profile (版本 v123)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreObservationLab"
+  },
+  {
+    "profile_id": "TWCoreConditionv124",
+    "resource_type": "Condition",
+    "profile_name_en": "TW Core TWCoreCondition Profile v124",
+    "profile_name_zh": "台灣核心病情病情診斷 Condition Profile (版本 v124)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreCondition"
+  },
+  {
+    "profile_id": "TWCoreOrganizationv125",
+    "resource_type": "Organization",
+    "profile_name_en": "TW Core TWCoreOrganization Profile v125",
+    "profile_name_zh": "台灣核心醫事機構 Organization Profile (版本 v125)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreOrganization"
+  },
+  {
+    "profile_id": "TWCorePractitionerv126",
+    "resource_type": "Practitioner",
+    "profile_name_en": "TW Core TWCorePractitioner Profile v126",
+    "profile_name_zh": "台灣核心醫事人員 Practitioner Profile (版本 v126)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCorePractitioner"
+  },
+  {
+    "profile_id": "TWCoreEncounterv127",
+    "resource_type": "Encounter",
+    "profile_name_en": "TW Core TWCoreEncounter Profile v127",
+    "profile_name_zh": "台灣核心就醫門診 Encounter Profile (版本 v127)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreEncounter"
+  },
+  {
+    "profile_id": "TWCoreProcedurev128",
+    "resource_type": "Procedure",
+    "profile_name_en": "TW Core TWCoreProcedure Profile v128",
+    "profile_name_zh": "台灣核心處置處方 Procedure Profile (版本 v128)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreProcedure"
+  },
+  {
+    "profile_id": "TWCoreAllergyIntolerancev129",
+    "resource_type": "AllergyIntolerance",
+    "profile_name_en": "TW Core TWCoreAllergyIntolerance Profile v129",
+    "profile_name_zh": "台灣核心過敏史 AllergyIntolerance Profile (版本 v129)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreAllergyIntolerance"
+  },
+  {
+    "profile_id": "TWCoreDiagnosticReportv130",
+    "resource_type": "DiagnosticReport",
+    "profile_name_en": "TW Core TWCoreDiagnosticReport Profile v130",
+    "profile_name_zh": "台灣核心診斷報告 DiagnosticReport Profile (版本 v130)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreDiagnosticReport"
+  },
+  {
+    "profile_id": "TWCorePatientv131",
+    "resource_type": "Patient",
+    "profile_name_en": "TW Core TWCorePatient Profile v131",
+    "profile_name_zh": "台灣核心病人 Profile (版本 v131)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCorePatient"
+  },
+  {
+    "profile_id": "TWCoreMedicationRequestv132",
+    "resource_type": "MedicationRequest",
+    "profile_name_en": "TW Core TWCoreMedicationRequest Profile v132",
+    "profile_name_zh": "台灣核心藥品處方 Profile (版本 v132)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreMedicationRequest"
+  },
+  {
+    "profile_id": "TWCoreObservationLabv133",
+    "resource_type": "Observation",
+    "profile_name_en": "TW Core TWCoreObservationLab Profile v133",
+    "profile_name_zh": "台灣核心醫事檢驗 Observation Profile (版本 v133)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreObservationLab"
+  },
+  {
+    "profile_id": "TWCoreConditionv134",
+    "resource_type": "Condition",
+    "profile_name_en": "TW Core TWCoreCondition Profile v134",
+    "profile_name_zh": "台灣核心病情病情診斷 Condition Profile (版本 v134)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreCondition"
+  },
+  {
+    "profile_id": "TWCoreOrganizationv135",
+    "resource_type": "Organization",
+    "profile_name_en": "TW Core TWCoreOrganization Profile v135",
+    "profile_name_zh": "台灣核心醫事機構 Organization Profile (版本 v135)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreOrganization"
+  },
+  {
+    "profile_id": "TWCorePractitionerv136",
+    "resource_type": "Practitioner",
+    "profile_name_en": "TW Core TWCorePractitioner Profile v136",
+    "profile_name_zh": "台灣核心醫事人員 Practitioner Profile (版本 v136)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCorePractitioner"
+  },
+  {
+    "profile_id": "TWCoreEncounterv137",
+    "resource_type": "Encounter",
+    "profile_name_en": "TW Core TWCoreEncounter Profile v137",
+    "profile_name_zh": "台灣核心就醫門診 Encounter Profile (版本 v137)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreEncounter"
+  },
+  {
+    "profile_id": "TWCoreProcedurev138",
+    "resource_type": "Procedure",
+    "profile_name_en": "TW Core TWCoreProcedure Profile v138",
+    "profile_name_zh": "台灣核心處置處方 Procedure Profile (版本 v138)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreProcedure"
+  },
+  {
+    "profile_id": "TWCoreAllergyIntolerancev139",
+    "resource_type": "AllergyIntolerance",
+    "profile_name_en": "TW Core TWCoreAllergyIntolerance Profile v139",
+    "profile_name_zh": "台灣核心過敏史 AllergyIntolerance Profile (版本 v139)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreAllergyIntolerance"
+  },
+  {
+    "profile_id": "TWCoreDiagnosticReportv140",
+    "resource_type": "DiagnosticReport",
+    "profile_name_en": "TW Core TWCoreDiagnosticReport Profile v140",
+    "profile_name_zh": "台灣核心診斷報告 DiagnosticReport Profile (版本 v140)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreDiagnosticReport"
+  },
+  {
+    "profile_id": "TWCorePatientv141",
+    "resource_type": "Patient",
+    "profile_name_en": "TW Core TWCorePatient Profile v141",
+    "profile_name_zh": "台灣核心病人 Profile (版本 v141)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCorePatient"
+  },
+  {
+    "profile_id": "TWCoreMedicationRequestv142",
+    "resource_type": "MedicationRequest",
+    "profile_name_en": "TW Core TWCoreMedicationRequest Profile v142",
+    "profile_name_zh": "台灣核心藥品處方 Profile (版本 v142)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreMedicationRequest"
+  },
+  {
+    "profile_id": "TWCoreObservationLabv143",
+    "resource_type": "Observation",
+    "profile_name_en": "TW Core TWCoreObservationLab Profile v143",
+    "profile_name_zh": "台灣核心醫事檢驗 Observation Profile (版本 v143)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreObservationLab"
+  },
+  {
+    "profile_id": "TWCoreConditionv144",
+    "resource_type": "Condition",
+    "profile_name_en": "TW Core TWCoreCondition Profile v144",
+    "profile_name_zh": "台灣核心病情病情診斷 Condition Profile (版本 v144)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreCondition"
+  },
+  {
+    "profile_id": "TWCoreOrganizationv145",
+    "resource_type": "Organization",
+    "profile_name_en": "TW Core TWCoreOrganization Profile v145",
+    "profile_name_zh": "台灣核心醫事機構 Organization Profile (版本 v145)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreOrganization"
+  },
+  {
+    "profile_id": "TWCorePractitionerv146",
+    "resource_type": "Practitioner",
+    "profile_name_en": "TW Core TWCorePractitioner Profile v146",
+    "profile_name_zh": "台灣核心醫事人員 Practitioner Profile (版本 v146)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCorePractitioner"
+  },
+  {
+    "profile_id": "TWCoreEncounterv147",
+    "resource_type": "Encounter",
+    "profile_name_en": "TW Core TWCoreEncounter Profile v147",
+    "profile_name_zh": "台灣核心就醫門診 Encounter Profile (版本 v147)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreEncounter"
+  },
+  {
+    "profile_id": "TWCoreProcedurev148",
+    "resource_type": "Procedure",
+    "profile_name_en": "TW Core TWCoreProcedure Profile v148",
+    "profile_name_zh": "台灣核心處置處方 Procedure Profile (版本 v148)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreProcedure"
+  },
+  {
+    "profile_id": "TWCoreAllergyIntolerancev149",
+    "resource_type": "AllergyIntolerance",
+    "profile_name_en": "TW Core TWCoreAllergyIntolerance Profile v149",
+    "profile_name_zh": "台灣核心過敏史 AllergyIntolerance Profile (版本 v149)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreAllergyIntolerance"
+  },
+  {
+    "profile_id": "TWCoreDiagnosticReportv150",
+    "resource_type": "DiagnosticReport",
+    "profile_name_en": "TW Core TWCoreDiagnosticReport Profile v150",
+    "profile_name_zh": "台灣核心診斷報告 DiagnosticReport Profile (版本 v150)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreDiagnosticReport"
+  },
+  {
+    "profile_id": "TWCorePatientv151",
+    "resource_type": "Patient",
+    "profile_name_en": "TW Core TWCorePatient Profile v151",
+    "profile_name_zh": "台灣核心病人 Profile (版本 v151)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCorePatient"
+  },
+  {
+    "profile_id": "TWCoreMedicationRequestv152",
+    "resource_type": "MedicationRequest",
+    "profile_name_en": "TW Core TWCoreMedicationRequest Profile v152",
+    "profile_name_zh": "台灣核心藥品處方 Profile (版本 v152)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreMedicationRequest"
+  },
+  {
+    "profile_id": "TWCoreObservationLabv153",
+    "resource_type": "Observation",
+    "profile_name_en": "TW Core TWCoreObservationLab Profile v153",
+    "profile_name_zh": "台灣核心醫事檢驗 Observation Profile (版本 v153)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreObservationLab"
+  },
+  {
+    "profile_id": "TWCoreConditionv154",
+    "resource_type": "Condition",
+    "profile_name_en": "TW Core TWCoreCondition Profile v154",
+    "profile_name_zh": "台灣核心病情病情診斷 Condition Profile (版本 v154)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreCondition"
+  },
+  {
+    "profile_id": "TWCoreOrganizationv155",
+    "resource_type": "Organization",
+    "profile_name_en": "TW Core TWCoreOrganization Profile v155",
+    "profile_name_zh": "台灣核心醫事機構 Organization Profile (版本 v155)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreOrganization"
+  },
+  {
+    "profile_id": "TWCorePractitionerv156",
+    "resource_type": "Practitioner",
+    "profile_name_en": "TW Core TWCorePractitioner Profile v156",
+    "profile_name_zh": "台灣核心醫事人員 Practitioner Profile (版本 v156)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCorePractitioner"
+  },
+  {
+    "profile_id": "TWCoreEncounterv157",
+    "resource_type": "Encounter",
+    "profile_name_en": "TW Core TWCoreEncounter Profile v157",
+    "profile_name_zh": "台灣核心就醫門診 Encounter Profile (版本 v157)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreEncounter"
+  },
+  {
+    "profile_id": "TWCoreProcedurev158",
+    "resource_type": "Procedure",
+    "profile_name_en": "TW Core TWCoreProcedure Profile v158",
+    "profile_name_zh": "台灣核心處置處方 Procedure Profile (版本 v158)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreProcedure"
+  },
+  {
+    "profile_id": "TWCoreAllergyIntolerancev159",
+    "resource_type": "AllergyIntolerance",
+    "profile_name_en": "TW Core TWCoreAllergyIntolerance Profile v159",
+    "profile_name_zh": "台灣核心過敏史 AllergyIntolerance Profile (版本 v159)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreAllergyIntolerance"
+  },
+  {
+    "profile_id": "TWCoreDiagnosticReportv160",
+    "resource_type": "DiagnosticReport",
+    "profile_name_en": "TW Core TWCoreDiagnosticReport Profile v160",
+    "profile_name_zh": "台灣核心診斷報告 DiagnosticReport Profile (版本 v160)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreDiagnosticReport"
+  },
+  {
+    "profile_id": "TWCorePatientv161",
+    "resource_type": "Patient",
+    "profile_name_en": "TW Core TWCorePatient Profile v161",
+    "profile_name_zh": "台灣核心病人 Profile (版本 v161)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCorePatient"
+  },
+  {
+    "profile_id": "TWCoreMedicationRequestv162",
+    "resource_type": "MedicationRequest",
+    "profile_name_en": "TW Core TWCoreMedicationRequest Profile v162",
+    "profile_name_zh": "台灣核心藥品處方 Profile (版本 v162)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreMedicationRequest"
+  },
+  {
+    "profile_id": "TWCoreObservationLabv163",
+    "resource_type": "Observation",
+    "profile_name_en": "TW Core TWCoreObservationLab Profile v163",
+    "profile_name_zh": "台灣核心醫事檢驗 Observation Profile (版本 v163)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreObservationLab"
+  },
+  {
+    "profile_id": "TWCoreConditionv164",
+    "resource_type": "Condition",
+    "profile_name_en": "TW Core TWCoreCondition Profile v164",
+    "profile_name_zh": "台灣核心病情病情診斷 Condition Profile (版本 v164)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreCondition"
+  },
+  {
+    "profile_id": "TWCoreOrganizationv165",
+    "resource_type": "Organization",
+    "profile_name_en": "TW Core TWCoreOrganization Profile v165",
+    "profile_name_zh": "台灣核心醫事機構 Organization Profile (版本 v165)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreOrganization"
+  },
+  {
+    "profile_id": "TWCorePractitionerv166",
+    "resource_type": "Practitioner",
+    "profile_name_en": "TW Core TWCorePractitioner Profile v166",
+    "profile_name_zh": "台灣核心醫事人員 Practitioner Profile (版本 v166)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCorePractitioner"
+  },
+  {
+    "profile_id": "TWCoreEncounterv167",
+    "resource_type": "Encounter",
+    "profile_name_en": "TW Core TWCoreEncounter Profile v167",
+    "profile_name_zh": "台灣核心就醫門診 Encounter Profile (版本 v167)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreEncounter"
+  },
+  {
+    "profile_id": "TWCoreProcedurev168",
+    "resource_type": "Procedure",
+    "profile_name_en": "TW Core TWCoreProcedure Profile v168",
+    "profile_name_zh": "台灣核心處置處方 Procedure Profile (版本 v168)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreProcedure"
+  },
+  {
+    "profile_id": "TWCoreAllergyIntolerancev169",
+    "resource_type": "AllergyIntolerance",
+    "profile_name_en": "TW Core TWCoreAllergyIntolerance Profile v169",
+    "profile_name_zh": "台灣核心過敏史 AllergyIntolerance Profile (版本 v169)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreAllergyIntolerance"
+  },
+  {
+    "profile_id": "TWCoreDiagnosticReportv170",
+    "resource_type": "DiagnosticReport",
+    "profile_name_en": "TW Core TWCoreDiagnosticReport Profile v170",
+    "profile_name_zh": "台灣核心診斷報告 DiagnosticReport Profile (版本 v170)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreDiagnosticReport"
+  },
+  {
+    "profile_id": "TWCorePatientv171",
+    "resource_type": "Patient",
+    "profile_name_en": "TW Core TWCorePatient Profile v171",
+    "profile_name_zh": "台灣核心病人 Profile (版本 v171)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCorePatient"
+  },
+  {
+    "profile_id": "TWCoreMedicationRequestv172",
+    "resource_type": "MedicationRequest",
+    "profile_name_en": "TW Core TWCoreMedicationRequest Profile v172",
+    "profile_name_zh": "台灣核心藥品處方 Profile (版本 v172)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreMedicationRequest"
+  },
+  {
+    "profile_id": "TWCoreObservationLabv173",
+    "resource_type": "Observation",
+    "profile_name_en": "TW Core TWCoreObservationLab Profile v173",
+    "profile_name_zh": "台灣核心醫事檢驗 Observation Profile (版本 v173)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreObservationLab"
+  },
+  {
+    "profile_id": "TWCoreConditionv174",
+    "resource_type": "Condition",
+    "profile_name_en": "TW Core TWCoreCondition Profile v174",
+    "profile_name_zh": "台灣核心病情病情診斷 Condition Profile (版本 v174)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreCondition"
+  },
+  {
+    "profile_id": "TWCoreOrganizationv175",
+    "resource_type": "Organization",
+    "profile_name_en": "TW Core TWCoreOrganization Profile v175",
+    "profile_name_zh": "台灣核心醫事機構 Organization Profile (版本 v175)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreOrganization"
+  },
+  {
+    "profile_id": "TWCorePractitionerv176",
+    "resource_type": "Practitioner",
+    "profile_name_en": "TW Core TWCorePractitioner Profile v176",
+    "profile_name_zh": "台灣核心醫事人員 Practitioner Profile (版本 v176)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCorePractitioner"
+  },
+  {
+    "profile_id": "TWCoreEncounterv177",
+    "resource_type": "Encounter",
+    "profile_name_en": "TW Core TWCoreEncounter Profile v177",
+    "profile_name_zh": "台灣核心就醫門診 Encounter Profile (版本 v177)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreEncounter"
+  },
+  {
+    "profile_id": "TWCoreProcedurev178",
+    "resource_type": "Procedure",
+    "profile_name_en": "TW Core TWCoreProcedure Profile v178",
+    "profile_name_zh": "台灣核心處置處方 Procedure Profile (版本 v178)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreProcedure"
+  },
+  {
+    "profile_id": "TWCoreAllergyIntolerancev179",
+    "resource_type": "AllergyIntolerance",
+    "profile_name_en": "TW Core TWCoreAllergyIntolerance Profile v179",
+    "profile_name_zh": "台灣核心過敏史 AllergyIntolerance Profile (版本 v179)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreAllergyIntolerance"
+  },
+  {
+    "profile_id": "TWCoreDiagnosticReportv180",
+    "resource_type": "DiagnosticReport",
+    "profile_name_en": "TW Core TWCoreDiagnosticReport Profile v180",
+    "profile_name_zh": "台灣核心診斷報告 DiagnosticReport Profile (版本 v180)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreDiagnosticReport"
+  },
+  {
+    "profile_id": "TWCorePatientv181",
+    "resource_type": "Patient",
+    "profile_name_en": "TW Core TWCorePatient Profile v181",
+    "profile_name_zh": "台灣核心病人 Profile (版本 v181)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCorePatient"
+  },
+  {
+    "profile_id": "TWCoreMedicationRequestv182",
+    "resource_type": "MedicationRequest",
+    "profile_name_en": "TW Core TWCoreMedicationRequest Profile v182",
+    "profile_name_zh": "台灣核心藥品處方 Profile (版本 v182)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreMedicationRequest"
+  },
+  {
+    "profile_id": "TWCoreObservationLabv183",
+    "resource_type": "Observation",
+    "profile_name_en": "TW Core TWCoreObservationLab Profile v183",
+    "profile_name_zh": "台灣核心醫事檢驗 Observation Profile (版本 v183)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreObservationLab"
+  },
+  {
+    "profile_id": "TWCoreConditionv184",
+    "resource_type": "Condition",
+    "profile_name_en": "TW Core TWCoreCondition Profile v184",
+    "profile_name_zh": "台灣核心病情病情診斷 Condition Profile (版本 v184)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreCondition"
+  },
+  {
+    "profile_id": "TWCoreOrganizationv185",
+    "resource_type": "Organization",
+    "profile_name_en": "TW Core TWCoreOrganization Profile v185",
+    "profile_name_zh": "台灣核心醫事機構 Organization Profile (版本 v185)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreOrganization"
+  },
+  {
+    "profile_id": "TWCorePractitionerv186",
+    "resource_type": "Practitioner",
+    "profile_name_en": "TW Core TWCorePractitioner Profile v186",
+    "profile_name_zh": "台灣核心醫事人員 Practitioner Profile (版本 v186)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCorePractitioner"
+  },
+  {
+    "profile_id": "TWCoreEncounterv187",
+    "resource_type": "Encounter",
+    "profile_name_en": "TW Core TWCoreEncounter Profile v187",
+    "profile_name_zh": "台灣核心就醫門診 Encounter Profile (版本 v187)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreEncounter"
+  },
+  {
+    "profile_id": "TWCoreProcedurev188",
+    "resource_type": "Procedure",
+    "profile_name_en": "TW Core TWCoreProcedure Profile v188",
+    "profile_name_zh": "台灣核心處置處方 Procedure Profile (版本 v188)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreProcedure"
+  },
+  {
+    "profile_id": "TWCoreAllergyIntolerancev189",
+    "resource_type": "AllergyIntolerance",
+    "profile_name_en": "TW Core TWCoreAllergyIntolerance Profile v189",
+    "profile_name_zh": "台灣核心過敏史 AllergyIntolerance Profile (版本 v189)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreAllergyIntolerance"
+  },
+  {
+    "profile_id": "TWCoreDiagnosticReportv190",
+    "resource_type": "DiagnosticReport",
+    "profile_name_en": "TW Core TWCoreDiagnosticReport Profile v190",
+    "profile_name_zh": "台灣核心診斷報告 DiagnosticReport Profile (版本 v190)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreDiagnosticReport"
+  },
+  {
+    "profile_id": "TWCorePatientv191",
+    "resource_type": "Patient",
+    "profile_name_en": "TW Core TWCorePatient Profile v191",
+    "profile_name_zh": "台灣核心病人 Profile (版本 v191)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCorePatient"
+  },
+  {
+    "profile_id": "TWCoreMedicationRequestv192",
+    "resource_type": "MedicationRequest",
+    "profile_name_en": "TW Core TWCoreMedicationRequest Profile v192",
+    "profile_name_zh": "台灣核心藥品處方 Profile (版本 v192)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreMedicationRequest"
+  },
+  {
+    "profile_id": "TWCoreObservationLabv193",
+    "resource_type": "Observation",
+    "profile_name_en": "TW Core TWCoreObservationLab Profile v193",
+    "profile_name_zh": "台灣核心醫事檢驗 Observation Profile (版本 v193)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreObservationLab"
+  },
+  {
+    "profile_id": "TWCoreConditionv194",
+    "resource_type": "Condition",
+    "profile_name_en": "TW Core TWCoreCondition Profile v194",
+    "profile_name_zh": "台灣核心病情病情診斷 Condition Profile (版本 v194)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreCondition"
+  },
+  {
+    "profile_id": "TWCoreOrganizationv195",
+    "resource_type": "Organization",
+    "profile_name_en": "TW Core TWCoreOrganization Profile v195",
+    "profile_name_zh": "台灣核心醫事機構 Organization Profile (版本 v195)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreOrganization"
+  },
+  {
+    "profile_id": "TWCorePractitionerv196",
+    "resource_type": "Practitioner",
+    "profile_name_en": "TW Core TWCorePractitioner Profile v196",
+    "profile_name_zh": "台灣核心醫事人員 Practitioner Profile (版本 v196)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCorePractitioner"
+  },
+  {
+    "profile_id": "TWCoreEncounterv197",
+    "resource_type": "Encounter",
+    "profile_name_en": "TW Core TWCoreEncounter Profile v197",
+    "profile_name_zh": "台灣核心就醫門診 Encounter Profile (版本 v197)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreEncounter"
+  },
+  {
+    "profile_id": "TWCoreProcedurev198",
+    "resource_type": "Procedure",
+    "profile_name_en": "TW Core TWCoreProcedure Profile v198",
+    "profile_name_zh": "台灣核心處置處方 Procedure Profile (版本 v198)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreProcedure"
+  },
+  {
+    "profile_id": "TWCoreAllergyIntolerancev199",
+    "resource_type": "AllergyIntolerance",
+    "profile_name_en": "TW Core TWCoreAllergyIntolerance Profile v199",
+    "profile_name_zh": "台灣核心過敏史 AllergyIntolerance Profile (版本 v199)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreAllergyIntolerance"
+  },
+  {
+    "profile_id": "TWCoreDiagnosticReportv200",
+    "resource_type": "DiagnosticReport",
+    "profile_name_en": "TW Core TWCoreDiagnosticReport Profile v200",
+    "profile_name_zh": "台灣核心診斷報告 DiagnosticReport Profile (版本 v200)",
+    "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/TWCoreDiagnosticReport"
+  }
+]

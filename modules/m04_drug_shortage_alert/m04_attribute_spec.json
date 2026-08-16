@@ -1,0 +1,27 @@
+{
+  "module_id": "M04",
+  "module_name": "drug_shortage_alert",
+  "description": "M04 台灣食藥署藥品回收與缺藥通報警訊屬性規格",
+  "allowed_attributes": {
+    "batch_number": {
+      "type": "string",
+      "description": "回收藥品批號"
+    },
+    "recall_level": {
+      "type": "string",
+      "description": "回收分級 (如: 第一級, 第二級)"
+    },
+    "reason": {
+      "type": "string",
+      "description": "回收與缺藥原因說明"
+    },
+    "announcement_date": {
+      "type": "string",
+      "description": "食藥署官方發文與公告日期"
+    },
+    "applicant_name": {
+      "type": "string",
+      "description": "許可證持有者 / 藥商名稱"
+    }
+  }
+}

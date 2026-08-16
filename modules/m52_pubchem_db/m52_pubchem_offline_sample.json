@@ -1,0 +1,1602 @@
+[
+  {
+    "cid": "1001",
+    "ingredient_name": "UNDECYLENATE ZINC",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - UNDECYLENATE ZINC",
+    "molecular_weight": 151.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.1",
+    "inchikey": "UNDECYLENATEZI-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1002",
+    "ingredient_name": "UNDECYLENIC ACID",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - UNDECYLENIC ACID",
+    "molecular_weight": 153.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.2",
+    "inchikey": "UNDECYLENICACI-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1003",
+    "ingredient_name": "GENTIAN VIOLET",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - GENTIAN VIOLET",
+    "molecular_weight": 154.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.3",
+    "inchikey": "GENTIANVIOLETA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1004",
+    "ingredient_name": "ETHACRIDINE LACTATE MONOHYDRATE (ACRINOL)",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - ETHACRIDINE LACTATE MONOHYDRATE (ACRINOL)",
+    "molecular_weight": 156.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.4",
+    "inchikey": "ETHACRIDINELAC-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1005",
+    "ingredient_name": "HYDROGEN PEROXIDE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - HYDROGEN PEROXIDE",
+    "molecular_weight": 157.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.5",
+    "inchikey": "HYDROGENPEROXI-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1006",
+    "ingredient_name": "CRESOL",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - CRESOL",
+    "molecular_weight": 159.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.6",
+    "inchikey": "CRESOLAAAAAAAA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1007",
+    "ingredient_name": "MERBROMIN",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - MERBROMIN",
+    "molecular_weight": 160.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.7",
+    "inchikey": "MERBROMINAAAAA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1008",
+    "ingredient_name": "IODINE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - IODINE",
+    "molecular_weight": 162.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.8",
+    "inchikey": "IODINEAAAAAAAA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1009",
+    "ingredient_name": "POTASSIUM IODIDE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - POTASSIUM IODIDE",
+    "molecular_weight": 163.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.9",
+    "inchikey": "POTASSIUMIODID-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1010",
+    "ingredient_name": "SODIUM BICARBONATE ( EQ TO SODIUM HYDROGEN CARBONATE)",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - SODIUM BICARBONATE ( EQ TO SODIUM HYDROGEN CARBONATE)",
+    "molecular_weight": 165.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.10",
+    "inchikey": "SODIUMBICARBON-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1011",
+    "ingredient_name": "ZINC OXIDE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - ZINC OXIDE",
+    "molecular_weight": 166.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.11",
+    "inchikey": "ZINCOXIDEAAAAA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1012",
+    "ingredient_name": "SULFUR SUBLIMED",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - SULFUR SUBLIMED",
+    "molecular_weight": 168.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.12",
+    "inchikey": "SULFURSUBLIMED-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1013",
+    "ingredient_name": "HYDROGEN PEROXIDE SOLUTION",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - HYDROGEN PEROXIDE SOLUTION",
+    "molecular_weight": 169.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.13",
+    "inchikey": "HYDROGENPEROXI-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1014",
+    "ingredient_name": "CYANOCOBALAMIN (VIT B12)",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - CYANOCOBALAMIN (VIT B12)",
+    "molecular_weight": 171.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.14",
+    "inchikey": "CYANOCOBALAMIN-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1015",
+    "ingredient_name": "GLYCINE (EQ TO AMINOACETIC ACID)(EQ TO GLYCOCOLL)",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - GLYCINE (EQ TO AMINOACETIC ACID)(EQ TO GLYCOCOLL)",
+    "molecular_weight": 172.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.15",
+    "inchikey": "GLYCINEEQTOAMI-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1016",
+    "ingredient_name": "COCARBOXYLASE (THIAMINE PYROPHOSPHATE)",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - COCARBOXYLASE (THIAMINE PYROPHOSPHATE)",
+    "molecular_weight": 174.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.16",
+    "inchikey": "COCARBOXYLASET-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1017",
+    "ingredient_name": "ADENOSINE PHOSPHATE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - ADENOSINE PHOSPHATE",
+    "molecular_weight": 175.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.17",
+    "inchikey": "ADENOSINEPHOSP-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1018",
+    "ingredient_name": "RESERPINE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - RESERPINE",
+    "molecular_weight": 177.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.18",
+    "inchikey": "RESERPINEAAAAA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1019",
+    "ingredient_name": "DYDROGESTERONE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - DYDROGESTERONE",
+    "molecular_weight": 178.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.19",
+    "inchikey": "DYDROGESTERONE-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1020",
+    "ingredient_name": "METRONIDAZOLE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - METRONIDAZOLE",
+    "molecular_weight": 180.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.20",
+    "inchikey": "METRONIDAZOLEA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1021",
+    "ingredient_name": "DIETHYLCARBAMAZINE CITRATE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - DIETHYLCARBAMAZINE CITRATE",
+    "molecular_weight": 181.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.21",
+    "inchikey": "DIETHYLCARBAMA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1022",
+    "ingredient_name": "PROPYLTHIOURACIL",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - PROPYLTHIOURACIL",
+    "molecular_weight": 183.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.22",
+    "inchikey": "PROPYLTHIOURAC-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1023",
+    "ingredient_name": "TETRACYCLINE HCL (EQ TO TETRACYCLINE HYDROCHLORIDE)",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - TETRACYCLINE HCL (EQ TO TETRACYCLINE HYDROCHLORIDE)",
+    "molecular_weight": 184.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.23",
+    "inchikey": "TETRACYCLINEHC-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1024",
+    "ingredient_name": "SODIUM PENTOSAN POLYSULPHATE ( EQ TO PENTOSAN POLYSULFATE SODIUM )",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - SODIUM PENTOSAN POLYSULPHATE ( EQ TO PENTOSAN POLYSULFATE SODIUM )",
+    "molecular_weight": 186.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.24",
+    "inchikey": "SODIUMPENTOSAN-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1025",
+    "ingredient_name": "BENZALBUTYRAMIDE BETA-",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - BENZALBUTYRAMIDE BETA-",
+    "molecular_weight": 187.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.25",
+    "inchikey": "BENZALBUTYRAMI-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1026",
+    "ingredient_name": "METRON S HCL",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - METRON S HCL",
+    "molecular_weight": 189.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.26",
+    "inchikey": "METRONSHCLAAAA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1027",
+    "ingredient_name": "MANNITOL",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - MANNITOL",
+    "molecular_weight": 190.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.27",
+    "inchikey": "MANNITOLAAAAAA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1028",
+    "ingredient_name": "NIACIN (NICOTINIC ACID)",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - NIACIN (NICOTINIC ACID)",
+    "molecular_weight": 192.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.28",
+    "inchikey": "NIACINNICOTINI-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1029",
+    "ingredient_name": "AMOBARBITAL SODIUM",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - AMOBARBITAL SODIUM",
+    "molecular_weight": 193.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.29",
+    "inchikey": "AMOBARBITALSOD-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1030",
+    "ingredient_name": "METHYLPARABEN (METHYL PARABEN) (METAGIN) (METHYL HYDROXYBENZOATE)(METHYL PARABEN)",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - METHYLPARABEN (METHYL PARABEN) (METAGIN) (METHYL HYDROXYBENZOATE)(METHYL PARABEN)",
+    "molecular_weight": 195.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.30",
+    "inchikey": "METHYLPARABENM-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1031",
+    "ingredient_name": "ETHYLPARABEN ( EQ TO ETHYL P-HYDROXYBENZOATE)(EQ TO ETHYL PARAHYDROXYBENZOATE)",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - ETHYLPARABEN ( EQ TO ETHYL P-HYDROXYBENZOATE)(EQ TO ETHYL PARAHYDROXYBENZOATE)",
+    "molecular_weight": 196.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.31",
+    "inchikey": "ETHYLPARABENEQ-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1032",
+    "ingredient_name": "NIKETHAMIDE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - NIKETHAMIDE",
+    "molecular_weight": 198.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.32",
+    "inchikey": "NIKETHAMIDEAAA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1033",
+    "ingredient_name": "BARBITAL",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - BARBITAL",
+    "molecular_weight": 199.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.33",
+    "inchikey": "BARBITALAAAAAA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1034",
+    "ingredient_name": "NIACINAMIDE (NICOTINAMIDE)",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - NIACINAMIDE (NICOTINAMIDE)",
+    "molecular_weight": 201.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.34",
+    "inchikey": "NIACINAMIDENIC-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1035",
+    "ingredient_name": "AMOBARBITAL",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - AMOBARBITAL",
+    "molecular_weight": 202.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.35",
+    "inchikey": "AMOBARBITALAAA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1036",
+    "ingredient_name": "SULFANILAMIDE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - SULFANILAMIDE",
+    "molecular_weight": 204.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.36",
+    "inchikey": "SULFANILAMIDEA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1037",
+    "ingredient_name": "SULFAMERAZINE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - SULFAMERAZINE",
+    "molecular_weight": 205.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.37",
+    "inchikey": "SULFAMERAZINEA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1038",
+    "ingredient_name": "EPHEDRINE L- HCL",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - EPHEDRINE L- HCL",
+    "molecular_weight": 207.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.38",
+    "inchikey": "EPHEDRINELHCLA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1039",
+    "ingredient_name": "OXYTETRACYCLINE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - OXYTETRACYCLINE",
+    "molecular_weight": 208.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.39",
+    "inchikey": "OXYTETRACYCLIN-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1040",
+    "ingredient_name": "KANAMYCIN (SULFATE)",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - KANAMYCIN (SULFATE)",
+    "molecular_weight": 210.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.40",
+    "inchikey": "KANAMYCINSULFA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1041",
+    "ingredient_name": "PHENIRAMINE MALEATE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - PHENIRAMINE MALEATE",
+    "molecular_weight": 211.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.41",
+    "inchikey": "PHENIRAMINEMAL-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1042",
+    "ingredient_name": "CALCIUM LEVULINATE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - CALCIUM LEVULINATE",
+    "molecular_weight": 213.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.42",
+    "inchikey": "CALCIUMLEVULIN-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1043",
+    "ingredient_name": "FERROUS FUMARATE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - FERROUS FUMARATE",
+    "molecular_weight": 214.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.43",
+    "inchikey": "FERROUSFUMARAT-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1044",
+    "ingredient_name": "ASPIRIN",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - ASPIRIN",
+    "molecular_weight": 216.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.44",
+    "inchikey": "ASPIRINAAAAAAA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1045",
+    "ingredient_name": "SULPYRINE (EQ TO DIPYRONE )",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - SULPYRINE (EQ TO DIPYRONE )",
+    "molecular_weight": 217.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.45",
+    "inchikey": "SULPYRINEEQTOD-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1046",
+    "ingredient_name": "NITRAZEPAM",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - NITRAZEPAM",
+    "molecular_weight": 219.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.46",
+    "inchikey": "NITRAZEPAMAAAA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1047",
+    "ingredient_name": "NITROFURANTOIN",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - NITROFURANTOIN",
+    "molecular_weight": 220.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.47",
+    "inchikey": "NITROFURANTOIN-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1048",
+    "ingredient_name": "PENTOBARBITAL",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - PENTOBARBITAL",
+    "molecular_weight": 222.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.48",
+    "inchikey": "PENTOBARBITALA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1049",
+    "ingredient_name": "VERAPAMIL HCL",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - VERAPAMIL HCL",
+    "molecular_weight": 223.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.49",
+    "inchikey": "VERAPAMILHCLAA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1050",
+    "ingredient_name": "PENTYLENETETRAZOL",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - PENTYLENETETRAZOL",
+    "molecular_weight": 225.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.50",
+    "inchikey": "PENTYLENETETRA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1051",
+    "ingredient_name": "CLOPENTHIXOL 2HCL",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - CLOPENTHIXOL 2HCL",
+    "molecular_weight": 226.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.51",
+    "inchikey": "CLOPENTHIXOLHC-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1052",
+    "ingredient_name": "ADENOSINE TRIPHOSPHATE SODIUM",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - ADENOSINE TRIPHOSPHATE SODIUM",
+    "molecular_weight": 228.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.52",
+    "inchikey": "ADENOSINETRIPH-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1053",
+    "ingredient_name": "TOLBUTAMIDE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - TOLBUTAMIDE",
+    "molecular_weight": 229.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.53",
+    "inchikey": "TOLBUTAMIDEAAA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1054",
+    "ingredient_name": "TAURINE (EQ TO 2-AMINOETHANE SULFONIC ACID)",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - TAURINE (EQ TO 2-AMINOETHANE SULFONIC ACID)",
+    "molecular_weight": 231.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.54",
+    "inchikey": "TAURINEEQTOAMI-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1055",
+    "ingredient_name": "PIPERAZINE PHOSPHATE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - PIPERAZINE PHOSPHATE",
+    "molecular_weight": 232.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.55",
+    "inchikey": "PIPERAZINEPHOS-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1056",
+    "ingredient_name": "CHLORPHENIRAMINE MALEATE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - CHLORPHENIRAMINE MALEATE",
+    "molecular_weight": 234.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.56",
+    "inchikey": "CHLORPHENIRAMI-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1057",
+    "ingredient_name": "SELENIUM SULFIDE (SELENIUM DISULFIDE)",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - SELENIUM SULFIDE (SELENIUM DISULFIDE)",
+    "molecular_weight": 235.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.57",
+    "inchikey": "SELENIUMSULFID-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1058",
+    "ingredient_name": "METHYLEPHEDRINE (N-METHYLEPHEDRINE)",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - METHYLEPHEDRINE (N-METHYLEPHEDRINE)",
+    "molecular_weight": 237.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.58",
+    "inchikey": "METHYLEPHEDRIN-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1059",
+    "ingredient_name": "CAMYLOFINE 2HCL(ACAMYLOPHENINE HYDROCHLORIDE)",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - CAMYLOFINE 2HCL(ACAMYLOPHENINE HYDROCHLORIDE)",
+    "molecular_weight": 238.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.59",
+    "inchikey": "CAMYLOFINEHCLA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1060",
+    "ingredient_name": "NAPHAZOLINE HCL",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - NAPHAZOLINE HCL",
+    "molecular_weight": 240.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.60",
+    "inchikey": "NAPHAZOLINEHCL-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1061",
+    "ingredient_name": "ACETYLPHENETURIDE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - ACETYLPHENETURIDE",
+    "molecular_weight": 241.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.61",
+    "inchikey": "ACETYLPHENETUR-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1062",
+    "ingredient_name": "EPHEDRINE HCL (EQ TO EPHEDRINE HYDROCHLORIDE)",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - EPHEDRINE HCL (EQ TO EPHEDRINE HYDROCHLORIDE)",
+    "molecular_weight": 243.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.62",
+    "inchikey": "EPHEDRINEHCLEQ-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1063",
+    "ingredient_name": "LOBELINE HCL",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - LOBELINE HCL",
+    "molecular_weight": 244.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.63",
+    "inchikey": "LOBELINEHCLAAA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1064",
+    "ingredient_name": "CYCLOVALONE (DIVANILLIDENECYCLOEXANONE)",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - CYCLOVALONE (DIVANILLIDENECYCLOEXANONE)",
+    "molecular_weight": 246.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.64",
+    "inchikey": "CYCLOVALONEDIV-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1065",
+    "ingredient_name": "MEBEVERINE HCL",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - MEBEVERINE HCL",
+    "molecular_weight": 247.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.65",
+    "inchikey": "MEBEVERINEHCLA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1066",
+    "ingredient_name": "CHLORPROPAMIDE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - CHLORPROPAMIDE",
+    "molecular_weight": 249.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.66",
+    "inchikey": "CHLORPROPAMIDE-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1067",
+    "ingredient_name": "RESCINNAMINE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - RESCINNAMINE",
+    "molecular_weight": 250.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.67",
+    "inchikey": "RESCINNAMINEAA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1068",
+    "ingredient_name": "PIPENZOLATE BROMIDE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - PIPENZOLATE BROMIDE",
+    "molecular_weight": 252.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.68",
+    "inchikey": "PIPENZOLATEBRO-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1069",
+    "ingredient_name": "PENICILLIN V",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - PENICILLIN V",
+    "molecular_weight": 253.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.69",
+    "inchikey": "PENICILLINVAAA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1070",
+    "ingredient_name": "PENICILLIN G POTASSIUM (BENZYLPENICILLIN POTASSIUM )",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - PENICILLIN G POTASSIUM (BENZYLPENICILLIN POTASSIUM )",
+    "molecular_weight": 255.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.70",
+    "inchikey": "PENICILLINGPOT-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1071",
+    "ingredient_name": "CHYMOTRYPSIN ALPHA-",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - CHYMOTRYPSIN ALPHA-",
+    "molecular_weight": 256.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.71",
+    "inchikey": "CHYMOTRYPSINAL-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1072",
+    "ingredient_name": "ALVERINE CITRATE(DIPROPYLINE CITRATE)",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - ALVERINE CITRATE(DIPROPYLINE CITRATE)",
+    "molecular_weight": 258.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.72",
+    "inchikey": "ALVERINECITRAT-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1073",
+    "ingredient_name": "ALVERINE TARTRATE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - ALVERINE TARTRATE",
+    "molecular_weight": 259.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.73",
+    "inchikey": "ALVERINETARTRA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1074",
+    "ingredient_name": "AMITRIPTYLINE (HCL)",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - AMITRIPTYLINE (HCL)",
+    "molecular_weight": 261.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.74",
+    "inchikey": "AMITRIPTYLINEH-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1075",
+    "ingredient_name": "CHLORDIAZEPOXIDE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - CHLORDIAZEPOXIDE",
+    "molecular_weight": 262.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.75",
+    "inchikey": "CHLORDIAZEPOXI-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1076",
+    "ingredient_name": "NEOSTIGMINE METHYLSULFATE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - NEOSTIGMINE METHYLSULFATE",
+    "molecular_weight": 264.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.76",
+    "inchikey": "NEOSTIGMINEMET-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1077",
+    "ingredient_name": "PYRIDOSTIGMINE BROMIDE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - PYRIDOSTIGMINE BROMIDE",
+    "molecular_weight": 265.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.77",
+    "inchikey": "PYRIDOSTIGMINE-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1078",
+    "ingredient_name": "NEOSTIGMINE BROMIDE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - NEOSTIGMINE BROMIDE",
+    "molecular_weight": 267.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.78",
+    "inchikey": "NEOSTIGMINEBRO-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1079",
+    "ingredient_name": "ISONIAZID",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - ISONIAZID",
+    "molecular_weight": 268.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.79",
+    "inchikey": "ISONIAZIDAAAAA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1080",
+    "ingredient_name": "TOCOPHEROL ACETATE ALPHA DL-",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - TOCOPHEROL ACETATE ALPHA DL-",
+    "molecular_weight": 270.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.80",
+    "inchikey": "TOCOPHEROLACET-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1081",
+    "ingredient_name": "VITAMIN A ACETATE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - VITAMIN A ACETATE",
+    "molecular_weight": 271.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.81",
+    "inchikey": "VITAMINAACETAT-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1082",
+    "ingredient_name": "DEXTROMETHORPHAN HBR",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - DEXTROMETHORPHAN HBR",
+    "molecular_weight": 273.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.82",
+    "inchikey": "DEXTROMETHORPH-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1083",
+    "ingredient_name": "DEHYDROEMETINE 2HCL",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - DEHYDROEMETINE 2HCL",
+    "molecular_weight": 274.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.83",
+    "inchikey": "DEHYDROEMETINE-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1084",
+    "ingredient_name": "ASCORBIC ACID (VIT C)",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - ASCORBIC ACID (VIT C)",
+    "molecular_weight": 276.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.84",
+    "inchikey": "ASCORBICACIDVI-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1085",
+    "ingredient_name": "LINCOMYCIN (HCL H2O)",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - LINCOMYCIN (HCL H2O)",
+    "molecular_weight": 277.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.85",
+    "inchikey": "LINCOMYCINHCLH-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1086",
+    "ingredient_name": "DIOCTYL SODIUM SULFOSUCCINATE(AEROSOL OT)",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - DIOCTYL SODIUM SULFOSUCCINATE(AEROSOL OT)",
+    "molecular_weight": 279.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.86",
+    "inchikey": "DIOCTYLSODIUMS-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1087",
+    "ingredient_name": "PHENOVALIN",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - PHENOVALIN",
+    "molecular_weight": 280.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.87",
+    "inchikey": "PHENOVALINAAAA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1088",
+    "ingredient_name": "TRIFLUOPERAZINE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - TRIFLUOPERAZINE",
+    "molecular_weight": 282.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.88",
+    "inchikey": "TRIFLUOPERAZIN-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1089",
+    "ingredient_name": "FERROUS SULFATE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - FERROUS SULFATE",
+    "molecular_weight": 283.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.89",
+    "inchikey": "FERROUSSULFATE-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1090",
+    "ingredient_name": "ASCORBATE MAGNESIUM",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - ASCORBATE MAGNESIUM",
+    "molecular_weight": 285.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.90",
+    "inchikey": "ASCORBATEMAGNE-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1091",
+    "ingredient_name": "TRIAMCINOLONE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - TRIAMCINOLONE",
+    "molecular_weight": 286.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.91",
+    "inchikey": "TRIAMCINOLONEA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1092",
+    "ingredient_name": "SULFADIAZINE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - SULFADIAZINE",
+    "molecular_weight": 288.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.92",
+    "inchikey": "SULFADIAZINEAA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1093",
+    "ingredient_name": "LYSINE L- HCL ( EQ TO L-LYSINE HCL)",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - LYSINE L- HCL ( EQ TO L-LYSINE HCL)",
+    "molecular_weight": 289.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.93",
+    "inchikey": "LYSINELHCLEQTO-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1094",
+    "ingredient_name": "ESTRADIOL ETHINYL (EQ TO ETHINYLOESTRADIOL)(EQ TO ETHINYLESTRADIOL)",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - ESTRADIOL ETHINYL (EQ TO ETHINYLOESTRADIOL)(EQ TO ETHINYLESTRADIOL)",
+    "molecular_weight": 291.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.94",
+    "inchikey": "ESTRADIOLETHIN-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1095",
+    "ingredient_name": "PYRILAMINE MALEATE (MEPYRAMINE MALEATE)",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - PYRILAMINE MALEATE (MEPYRAMINE MALEATE)",
+    "molecular_weight": 292.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.95",
+    "inchikey": "PYRILAMINEMALE-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1096",
+    "ingredient_name": "PHENYLEPHRINE HCL",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - PHENYLEPHRINE HCL",
+    "molecular_weight": 294.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.96",
+    "inchikey": "PHENYLEPHRINEH-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1097",
+    "ingredient_name": "CINERARIA MARITIMA",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - CINERARIA MARITIMA",
+    "molecular_weight": 295.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.97",
+    "inchikey": "CINERARIAMARIT-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1098",
+    "ingredient_name": "ECHOTHIOPHATE IODIDE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - ECHOTHIOPHATE IODIDE",
+    "molecular_weight": 297.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.98",
+    "inchikey": "ECHOTHIOPHATEI-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1099",
+    "ingredient_name": "THIOCTIC ACID (VIT B14ALPHA-LIPOIC ACID)",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - THIOCTIC ACID (VIT B14ALPHA-LIPOIC ACID)",
+    "molecular_weight": 298.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.99",
+    "inchikey": "THIOCTICACIDVI-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1100",
+    "ingredient_name": "MEPHENOXALONE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - MEPHENOXALONE",
+    "molecular_weight": 300.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.100",
+    "inchikey": "MEPHENOXALONEA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1101",
+    "ingredient_name": "TYROTHRICIN",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - TYROTHRICIN",
+    "molecular_weight": 301.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.101",
+    "inchikey": "TYROTHRICINAAA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1102",
+    "ingredient_name": "LANATOSIDE C",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - LANATOSIDE C",
+    "molecular_weight": 303.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.102",
+    "inchikey": "LANATOSIDECAAA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1103",
+    "ingredient_name": "THENALIDINE TARTRATE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - THENALIDINE TARTRATE",
+    "molecular_weight": 304.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.103",
+    "inchikey": "THENALIDINETAR-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1104",
+    "ingredient_name": "TROPENZILE METHYL BROMIDE (TROPENZILIUM BROMIDE)",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - TROPENZILE METHYL BROMIDE (TROPENZILIUM BROMIDE)",
+    "molecular_weight": 306.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.104",
+    "inchikey": "TROPENZILEMETH-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1105",
+    "ingredient_name": "PIPERYLON",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - PIPERYLON",
+    "molecular_weight": 307.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.105",
+    "inchikey": "PIPERYLONAAAAA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1106",
+    "ingredient_name": "PHENOLPHTHALEIN",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - PHENOLPHTHALEIN",
+    "molecular_weight": 309.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.106",
+    "inchikey": "PHENOLPHTHALEI-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1107",
+    "ingredient_name": "SORBITAN TRIOLEATE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - SORBITAN TRIOLEATE",
+    "molecular_weight": 310.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.107",
+    "inchikey": "SORBITANTRIOLE-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1108",
+    "ingredient_name": "LIGHT LIQUID PARAFFIN (LIGHT LIQUID PETROLATUM",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - LIGHT LIQUID PARAFFIN (LIGHT LIQUID PETROLATUM",
+    "molecular_weight": 312.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.108",
+    "inchikey": "LIGHTLIQUIDPAR-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1109",
+    "ingredient_name": "INOSITOL L-",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - INOSITOL L-",
+    "molecular_weight": 313.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.109",
+    "inchikey": "INOSITOLLAAAAA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1110",
+    "ingredient_name": "CORN STARCH (EQ TO STARCH MAYDIS)(EQ TO MAIZE STARCH)",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - CORN STARCH (EQ TO STARCH MAYDIS)(EQ TO MAIZE STARCH)",
+    "molecular_weight": 315.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.110",
+    "inchikey": "CORNSTARCHEQTO-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1111",
+    "ingredient_name": "OXACILLIN SODIUM",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - OXACILLIN SODIUM",
+    "molecular_weight": 316.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.111",
+    "inchikey": "OXACILLINSODIU-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1112",
+    "ingredient_name": "AMPICILLIN TRIHYDRATE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - AMPICILLIN TRIHYDRATE",
+    "molecular_weight": 318.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.112",
+    "inchikey": "AMPICILLINTRIH-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1113",
+    "ingredient_name": "AMPICILLIN SODIUM",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - AMPICILLIN SODIUM",
+    "molecular_weight": 319.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.113",
+    "inchikey": "AMPICILLINSODI-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1114",
+    "ingredient_name": "PYRIDOXINE HCL",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - PYRIDOXINE HCL",
+    "molecular_weight": 321.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.114",
+    "inchikey": "PYRIDOXINEHCLA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1115",
+    "ingredient_name": "SULFISOMIDINE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - SULFISOMIDINE",
+    "molecular_weight": 322.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.115",
+    "inchikey": "SULFISOMIDINEA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1116",
+    "ingredient_name": "L-VALINE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - L-VALINE",
+    "molecular_weight": 324.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.116",
+    "inchikey": "LVALINEAAAAAAA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1117",
+    "ingredient_name": "L-PHENYLALANINE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - L-PHENYLALANINE",
+    "molecular_weight": 325.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.117",
+    "inchikey": "LPHENYLALANINE-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1118",
+    "ingredient_name": "L-TRYPTOPHAN",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - L-TRYPTOPHAN",
+    "molecular_weight": 327.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.118",
+    "inchikey": "LTRYPTOPHANAAA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1119",
+    "ingredient_name": "OROTIC ACID (VIT B13)",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - OROTIC ACID (VIT B13)",
+    "molecular_weight": 328.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.119",
+    "inchikey": "OROTICACIDVITB-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1120",
+    "ingredient_name": "ISONIAZID METHANESULFONATE SODIUM",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - ISONIAZID METHANESULFONATE SODIUM",
+    "molecular_weight": 330.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.120",
+    "inchikey": "ISONIAZIDMETHA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1121",
+    "ingredient_name": "MEPROBAMATE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - MEPROBAMATE",
+    "molecular_weight": 331.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.121",
+    "inchikey": "MEPROBAMATEAAA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1122",
+    "ingredient_name": "AMINOCAPROIC ACID EPSILON-",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - AMINOCAPROIC ACID EPSILON-",
+    "molecular_weight": 333.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.122",
+    "inchikey": "AMINOCAPROICAC-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1123",
+    "ingredient_name": "SODIUM ASCORBATE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - SODIUM ASCORBATE",
+    "molecular_weight": 334.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.123",
+    "inchikey": "SODIUMASCORBAT-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1124",
+    "ingredient_name": "TRYPTOPHAN DL-",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - TRYPTOPHAN DL-",
+    "molecular_weight": 336.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.124",
+    "inchikey": "TRYPTOPHANDLAA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1125",
+    "ingredient_name": "BENZYDAMINE HCL",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - BENZYDAMINE HCL",
+    "molecular_weight": 337.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.125",
+    "inchikey": "BENZYDAMINEHCL-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1126",
+    "ingredient_name": "METHANDROSTENOLONE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - METHANDROSTENOLONE",
+    "molecular_weight": 339.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.126",
+    "inchikey": "METHANDROSTENO-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1127",
+    "ingredient_name": "METHYLPHENIDATE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - METHYLPHENIDATE",
+    "molecular_weight": 340.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.127",
+    "inchikey": "METHYLPHENIDAT-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1128",
+    "ingredient_name": "STREPTOMYCIN SULFATE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - STREPTOMYCIN SULFATE",
+    "molecular_weight": 342.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.128",
+    "inchikey": "STREPTOMYCINSU-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1129",
+    "ingredient_name": "DIHYDROSTREPTOMYCIN SULFATE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - DIHYDROSTREPTOMYCIN SULFATE",
+    "molecular_weight": 343.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.129",
+    "inchikey": "DIHYDROSTREPTO-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1130",
+    "ingredient_name": "PENICILLIN G PROCAINE (EQ TO BENZYLPENICILLIN PROCAINE)",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - PENICILLIN G PROCAINE (EQ TO BENZYLPENICILLIN PROCAINE)",
+    "molecular_weight": 345.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.130",
+    "inchikey": "PENICILLINGPRO-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1131",
+    "ingredient_name": "NEOMYCIN SULFATE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - NEOMYCIN SULFATE",
+    "molecular_weight": 346.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.131",
+    "inchikey": "NEOMYCINSULFAT-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1132",
+    "ingredient_name": "PENICILLIN V POTASSIUM (EQ TO PHENOXYMETHYL PENICILLIN POTASSIUM)",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - PENICILLIN V POTASSIUM (EQ TO PHENOXYMETHYL PENICILLIN POTASSIUM)",
+    "molecular_weight": 348.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.132",
+    "inchikey": "PENICILLINVPOT-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1133",
+    "ingredient_name": "DIETHYLTOLUAMIDE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - DIETHYLTOLUAMIDE",
+    "molecular_weight": 349.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.133",
+    "inchikey": "DIETHYLTOLUAMI-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1134",
+    "ingredient_name": "RUTIN",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - RUTIN",
+    "molecular_weight": 351.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.134",
+    "inchikey": "RUTINAAAAAAAAA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1135",
+    "ingredient_name": "CALCIUM GLYCEROPHOSPHATE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - CALCIUM GLYCEROPHOSPHATE",
+    "molecular_weight": 352.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.135",
+    "inchikey": "CALCIUMGLYCERO-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1136",
+    "ingredient_name": "ALUMINUM SILICATE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - ALUMINUM SILICATE",
+    "molecular_weight": 354.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.136",
+    "inchikey": "ALUMINUMSILICA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1137",
+    "ingredient_name": "HYOSCYAMINE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - HYOSCYAMINE",
+    "molecular_weight": 355.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.137",
+    "inchikey": "HYOSCYAMINEAAA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1138",
+    "ingredient_name": "METHYLTHIOURACIL",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - METHYLTHIOURACIL",
+    "molecular_weight": 357.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.138",
+    "inchikey": "METHYLTHIOURAC-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1139",
+    "ingredient_name": "MAGNESIUM TRISILICATE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - MAGNESIUM TRISILICATE",
+    "molecular_weight": 358.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.139",
+    "inchikey": "MAGNESIUMTRISI-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1140",
+    "ingredient_name": "BERBERINE HCL",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - BERBERINE HCL",
+    "molecular_weight": 360.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.140",
+    "inchikey": "BERBERINEHCLAA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1141",
+    "ingredient_name": "BISMUTH SUBSALICYLATE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - BISMUTH SUBSALICYLATE",
+    "molecular_weight": 361.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.141",
+    "inchikey": "BISMUTHSUBSALI-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1142",
+    "ingredient_name": "FLUORESCEIN SODIUM (URANIN)(URANIN YELLOW)",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - FLUORESCEIN SODIUM (URANIN)(URANIN YELLOW)",
+    "molecular_weight": 363.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.142",
+    "inchikey": "FLUORESCEINSOD-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1143",
+    "ingredient_name": "ALUMINUM HYDROXIDE GEL",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - ALUMINUM HYDROXIDE GEL",
+    "molecular_weight": 364.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.143",
+    "inchikey": "ALUMINUMHYDROX-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1144",
+    "ingredient_name": "SPARTEINE SULFATE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - SPARTEINE SULFATE",
+    "molecular_weight": 366.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.144",
+    "inchikey": "SPARTEINESULFA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1145",
+    "ingredient_name": "ERGONOVINE MALEATE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - ERGONOVINE MALEATE",
+    "molecular_weight": 367.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.145",
+    "inchikey": "ERGONOVINEMALE-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1146",
+    "ingredient_name": "CLOFENAMIDE (MONOCHLOROPHENAMIDE)",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - CLOFENAMIDE (MONOCHLOROPHENAMIDE)",
+    "molecular_weight": 369.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.146",
+    "inchikey": "CLOFENAMIDEMON-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1147",
+    "ingredient_name": "P-STEAROYLAMINOPHENYL TRIMETHYLAMMONIUM METHYLSULF",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - P-STEAROYLAMINOPHENYL TRIMETHYLAMMONIUM METHYLSULF",
+    "molecular_weight": 370.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.147",
+    "inchikey": "PSTEAROYLAMINO-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1148",
+    "ingredient_name": "VITAMIN A",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - VITAMIN A",
+    "molecular_weight": 372.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.148",
+    "inchikey": "VITAMINAAAAAAA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1149",
+    "ingredient_name": "ERGOCALCIFEROL (VIT D2CALCIFEROL)",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - ERGOCALCIFEROL (VIT D2CALCIFEROL)",
+    "molecular_weight": 373.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.149",
+    "inchikey": "ERGOCALCIFEROL-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1150",
+    "ingredient_name": "THIAMINE MONONITRATE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - THIAMINE MONONITRATE",
+    "molecular_weight": 375.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.150",
+    "inchikey": "THIAMINEMONONI-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1151",
+    "ingredient_name": "DIGITOXIN",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - DIGITOXIN",
+    "molecular_weight": 376.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.151",
+    "inchikey": "DIGITOXINAAAAA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1152",
+    "ingredient_name": "FOLIC ACID",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - FOLIC ACID",
+    "molecular_weight": 378.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.152",
+    "inchikey": "FOLICACIDAAAAA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1153",
+    "ingredient_name": "METHYLEPHEDRINE HCL",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - METHYLEPHEDRINE HCL",
+    "molecular_weight": 379.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.153",
+    "inchikey": "METHYLEPHEDRIN-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1154",
+    "ingredient_name": "RIBOFLAVIN (VIT B2)",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - RIBOFLAVIN (VIT B2)",
+    "molecular_weight": 381.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.154",
+    "inchikey": "RIBOFLAVINVITB-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1155",
+    "ingredient_name": "ETHENZAMIDE (ETHOXYBENZAMIDE)",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - ETHENZAMIDE (ETHOXYBENZAMIDE)",
+    "molecular_weight": 382.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.155",
+    "inchikey": "ETHENZAMIDEETH-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1156",
+    "ingredient_name": "DIBUCAINE HCL",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - DIBUCAINE HCL",
+    "molecular_weight": 384.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.156",
+    "inchikey": "DIBUCAINEHCLAA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1157",
+    "ingredient_name": "COLISTIN SODIUM METHANESULFONATE (COLISTIMETHATE SOD.)",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - COLISTIN SODIUM METHANESULFONATE (COLISTIMETHATE SOD.)",
+    "molecular_weight": 385.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.157",
+    "inchikey": "COLISTINSODIUM-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1158",
+    "ingredient_name": "MAGNESIUM ALUMINUM BISMUTH SILICATE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - MAGNESIUM ALUMINUM BISMUTH SILICATE",
+    "molecular_weight": 387.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.158",
+    "inchikey": "MAGNESIUMALUMI-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1159",
+    "ingredient_name": "MIKAMYCIN",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - MIKAMYCIN",
+    "molecular_weight": 388.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.159",
+    "inchikey": "MIKAMYCINAAAAA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1160",
+    "ingredient_name": "ANTIMONY SODIUM TARTRATE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - ANTIMONY SODIUM TARTRATE",
+    "molecular_weight": 390.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.160",
+    "inchikey": "ANTIMONYSODIUM-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1161",
+    "ingredient_name": "SULFAMONOMETHOXINE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - SULFAMONOMETHOXINE",
+    "molecular_weight": 391.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.161",
+    "inchikey": "SULFAMONOMETHO-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1162",
+    "ingredient_name": "IODOPYRACET",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - IODOPYRACET",
+    "molecular_weight": 393.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.162",
+    "inchikey": "IODOPYRACETAAA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1163",
+    "ingredient_name": "PROCAINE HCL",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - PROCAINE HCL",
+    "molecular_weight": 394.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.163",
+    "inchikey": "PROCAINEHCLAAA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1164",
+    "ingredient_name": "DIHYDROSTREPTOMYCIN (SULFATE)",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - DIHYDROSTREPTOMYCIN (SULFATE)",
+    "molecular_weight": 396.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.164",
+    "inchikey": "DIHYDROSTREPTO-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1165",
+    "ingredient_name": "PENICILLIN G SODIUM ( EQ TO BENZYLPENICILLIN SODIUM)",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - PENICILLIN G SODIUM ( EQ TO BENZYLPENICILLIN SODIUM)",
+    "molecular_weight": 397.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.165",
+    "inchikey": "PENICILLINGSOD-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1166",
+    "ingredient_name": "DIMENHYDRINATE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - DIMENHYDRINATE",
+    "molecular_weight": 399.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.166",
+    "inchikey": "DIMENHYDRINATE-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1167",
+    "ingredient_name": "EVANS BLUE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - EVANS BLUE",
+    "molecular_weight": 400.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.167",
+    "inchikey": "EVANSBLUEAAAAA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1168",
+    "ingredient_name": "PANTHENOL D- (EQ TO D-PANTHENOL)",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - PANTHENOL D- (EQ TO D-PANTHENOL)",
+    "molecular_weight": 402.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.168",
+    "inchikey": "PANTHENOLDEQTO-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1169",
+    "ingredient_name": "L-ISOLEUCINE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - L-ISOLEUCINE",
+    "molecular_weight": 403.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.169",
+    "inchikey": "LISOLEUCINEAAA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1170",
+    "ingredient_name": "OXYTOCIN",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - OXYTOCIN",
+    "molecular_weight": 405.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.170",
+    "inchikey": "OXYTOCINAAAAAA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1171",
+    "ingredient_name": "FERROUS GLUCONATE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - FERROUS GLUCONATE",
+    "molecular_weight": 406.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.171",
+    "inchikey": "FERROUSGLUCONA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1172",
+    "ingredient_name": "ERGOTAMINE TARTRATE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - ERGOTAMINE TARTRATE",
+    "molecular_weight": 408.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.172",
+    "inchikey": "ERGOTAMINETART-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1173",
+    "ingredient_name": "SQUILL (SCILLAE)",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - SQUILL (SCILLAE)",
+    "molecular_weight": 409.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.173",
+    "inchikey": "SQUILLSCILLAEA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1174",
+    "ingredient_name": "SULFISOMIDINE SODIUM",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - SULFISOMIDINE SODIUM",
+    "molecular_weight": 411.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.174",
+    "inchikey": "SULFISOMIDINES-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1175",
+    "ingredient_name": "THIAMINE DICETYLSULFATE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - THIAMINE DICETYLSULFATE",
+    "molecular_weight": 412.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.175",
+    "inchikey": "THIAMINEDICETY-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1176",
+    "ingredient_name": "DIPHENHYDRAMINE TANNATE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - DIPHENHYDRAMINE TANNATE",
+    "molecular_weight": 414.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.176",
+    "inchikey": "DIPHENHYDRAMIN-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1177",
+    "ingredient_name": "L-ASPARTIC ACID",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - L-ASPARTIC ACID",
+    "molecular_weight": 415.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.177",
+    "inchikey": "LASPARTICACIDA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1178",
+    "ingredient_name": "L-LEUCINE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - L-LEUCINE",
+    "molecular_weight": 417.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.178",
+    "inchikey": "LLEUCINEAAAAAA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1179",
+    "ingredient_name": "DL-METHYLEPHEDRINE HCL",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - DL-METHYLEPHEDRINE HCL",
+    "molecular_weight": 418.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.179",
+    "inchikey": "DLMETHYLEPHEDR-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1180",
+    "ingredient_name": "INOSITOL NIACINATE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - INOSITOL NIACINATE",
+    "molecular_weight": 420.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.180",
+    "inchikey": "INOSITOLNIACIN-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1181",
+    "ingredient_name": "SULFADIMETHOXINE SODIUM",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - SULFADIMETHOXINE SODIUM",
+    "molecular_weight": 421.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.181",
+    "inchikey": "SULFADIMETHOXI-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1182",
+    "ingredient_name": "METHYL HESPERIDIN",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - METHYL HESPERIDIN",
+    "molecular_weight": 423.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.182",
+    "inchikey": "METHYLHESPERID-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1183",
+    "ingredient_name": "L-THREONINE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - L-THREONINE",
+    "molecular_weight": 424.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.183",
+    "inchikey": "LTHREONINEAAAA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1184",
+    "ingredient_name": "HYDROXOCOBALAMIN",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - HYDROXOCOBALAMIN",
+    "molecular_weight": 426.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.184",
+    "inchikey": "HYDROXOCOBALAM-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1185",
+    "ingredient_name": "PANTOTHENATE D- CALCIUM",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - PANTOTHENATE D- CALCIUM",
+    "molecular_weight": 427.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.185",
+    "inchikey": "PANTOTHENATEDC-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1186",
+    "ingredient_name": "SELEXIPAG",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - SELEXIPAG",
+    "molecular_weight": 429.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.186",
+    "inchikey": "SELEXIPAGAAAAA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1187",
+    "ingredient_name": "ILOPROST",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - ILOPROST",
+    "molecular_weight": 430.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.187",
+    "inchikey": "ILOPROSTAAAAAA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1188",
+    "ingredient_name": "CHOLIC ACID",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - CHOLIC ACID",
+    "molecular_weight": 432.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.188",
+    "inchikey": "CHOLICACIDAAAA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1189",
+    "ingredient_name": "CARGLUMIC ACID",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - CARGLUMIC ACID",
+    "molecular_weight": 433.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.189",
+    "inchikey": "CARGLUMICACIDA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1190",
+    "ingredient_name": "NUSINERSEN",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - NUSINERSEN",
+    "molecular_weight": 435.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.190",
+    "inchikey": "NUSINERSENAAAA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1191",
+    "ingredient_name": "CLADRIBINE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - CLADRIBINE",
+    "molecular_weight": 436.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.191",
+    "inchikey": "CLADRIBINEAAAA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1192",
+    "ingredient_name": "FINGOLIMOD HCL",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - FINGOLIMOD HCL",
+    "molecular_weight": 438.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.192",
+    "inchikey": "FINGOLIMODHCLA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1193",
+    "ingredient_name": "MIGALASTAT HYDROCHLORIDE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - MIGALASTAT HYDROCHLORIDE",
+    "molecular_weight": 439.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.193",
+    "inchikey": "MIGALASTATHYDR-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1194",
+    "ingredient_name": "ANAGRELIDE HYDROCHLORIDE MONOHYDATE",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - ANAGRELIDE HYDROCHLORIDE MONOHYDATE",
+    "molecular_weight": 441.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.194",
+    "inchikey": "ANAGRELIDEHYDR-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1195",
+    "ingredient_name": "PATISIRAN SODIUM",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - PATISIRAN SODIUM",
+    "molecular_weight": 442.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.195",
+    "inchikey": "PATISIRANSODIU-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1196",
+    "ingredient_name": "SIPONIMOD FUMARIC ACID",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - SIPONIMOD FUMARIC ACID",
+    "molecular_weight": 444.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.196",
+    "inchikey": "SIPONIMODFUMAR-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1197",
+    "ingredient_name": "ICATIBANT",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - ICATIBANT",
+    "molecular_weight": 445.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.197",
+    "inchikey": "ICATIBANTAAAAA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1198",
+    "ingredient_name": "STIRIPENTOL",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - STIRIPENTOL",
+    "molecular_weight": 447.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.198",
+    "inchikey": "STIRIPENTOLAAA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1199",
+    "ingredient_name": "TREPROSTINIL",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - TREPROSTINIL",
+    "molecular_weight": 448.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.199",
+    "inchikey": "TREPROSTINILAA-UHFFFAOYSA-N"
+  },
+  {
+    "cid": "1200",
+    "ingredient_name": "RISDIPLAM",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - RISDIPLAM",
+    "molecular_weight": 450.0,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.200",
+    "inchikey": "RISDIPLAMAAAAA-UHFFFAOYSA-N"
+  }
+]

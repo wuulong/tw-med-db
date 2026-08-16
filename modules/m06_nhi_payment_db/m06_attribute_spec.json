@@ -1,0 +1,27 @@
+{
+  "module_id": "M06",
+  "module_name": "nhi_payment_db",
+  "description": "M06 台灣健保給付規定與自費比價屬性規格",
+  "allowed_attributes": {
+    "section_code": {
+      "type": "string",
+      "description": "給付規定章節代碼"
+    },
+    "nhi_code": {
+      "type": "string",
+      "description": "健保藥品或給付項目代碼"
+    },
+    "rule_raw_text": {
+      "type": "string",
+      "description": "健保給付規定原文條文"
+    },
+    "prior_auth_required": {
+      "type": "boolean",
+      "description": "是否需要事前審查 (Prior Authorization)"
+    },
+    "effective_date": {
+      "type": "string",
+      "description": "生效與發布日期"
+    }
+  }
+}

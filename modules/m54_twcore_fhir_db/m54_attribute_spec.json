@@ -1,0 +1,11 @@
+{
+  "_v": "1.0.0",
+  "allowed_attributes": {
+    "_v": "模組 Schema 版號",
+    "profile_id": "TW Core Profile ID",
+    "resource_type": "HL7 FHIR R4 Resource Type",
+    "profile_name_en": "Profile English Name",
+    "profile_name_zh": "Profile Chinese Translation Name",
+    "canonical_url": "TW Core IG Canonical URL"
+  }
+}

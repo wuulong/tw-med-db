@@ -1,0 +1,39 @@
+{
+  "module_id": "M01",
+  "module_name": "tw_drug_db",
+  "description": "M01 藥品許可證與健保價資料庫延伸屬性規格 (Attribute Spec)",
+  "allowed_attributes": {
+    "manufacturer": {
+      "type": "string",
+      "description": "主要製造商/申請商名稱"
+    },
+    "manufacturers": {
+      "type": "array",
+      "description": "全數製造商/分裝廠/貼標廠清單"
+    },
+    "updated_date": {
+      "type": "string",
+      "description": "官方最新異動日期"
+    },
+    "atc_code": {
+      "type": "string",
+      "description": "WHO ATC 國際藥理分類代碼"
+    },
+    "packaging": {
+      "type": "string",
+      "description": "包裝材質與規格說明"
+    },
+    "prescription_category": {
+      "type": "string",
+      "description": "藥品類別 (如: 醫師處方藥, 成藥, 指示藥)"
+    },
+    "cancel_reason": {
+      "type": "string",
+      "description": "藥品註銷理由"
+    },
+    "cancel_status": {
+      "type": "string",
+      "description": "藥品註銷狀態 (如: 已註銷)"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+[
+  {
+    "node_id": "NODE-0001",
+    "disease_code": "C50",
+    "stage_name": "方案選擇階段",
+    "title": "C50 (乳癌) 病患在 [方案選擇階段] 的臨床照護與導航手冊",
+    "key_tasks": "核心任務：完成該階段必要檢測、評估體能狀況，並參與醫病共享決策 (SDM)。",
+    "coping_strategies": "衛教應對：保持正向心理支持，若有嚴重副作用或發燒立即聯絡專科護理師。",
+    "attributes_json": "{\"disease_code\":\"C50\",\"stage_name\":\"方案選擇階段\",\"sdm_tool_available\":\"True\",\"category\":\"臨床照護地圖\"}",
+    "updated_at": "2026-08-16 04:18:22"
+  }
+]

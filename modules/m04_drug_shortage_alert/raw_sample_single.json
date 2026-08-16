@@ -1,0 +1,14 @@
+[
+  {
+    "recall_id": "REC-105年5月26日FDA風字第1051102888號(食藥署風管組)",
+    "lic_id": "衛署藥製字第025847號",
+    "product_name": "\"大豐\"安嗽喘錠２０公絲（歐希林）",
+    "applicant_name": "大豐製藥股份有限公司",
+    "batch_number": "2084201、4084201",
+    "recall_level": "第二級 ",
+    "reason": "未依GMP規定改包裝及儲存藥品、\n生產及銷毀紀錄填寫不實。",
+    "announcement_date": "2016/05/26",
+    "attributes_json": "{\"batch_number\":\"2084201、4084201\",\"recall_level\":\"第二級\",\"reason\":\"未依GMP規定改包裝及儲存藥品、\\n生產及銷毀紀錄填寫不實。\",\"announcement_date\":\"2016/05/26\",\"applicant_name\":\"大豐製藥股份有限公司\"}",
+    "updated_at": "2026-08-16 04:18:14"
+  }
+]

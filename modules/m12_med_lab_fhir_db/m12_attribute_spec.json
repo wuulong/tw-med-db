@@ -1,0 +1,23 @@
+{
+  "module_id": "M12",
+  "module_name": "med_lab_fhir_db",
+  "description": "M12 TW Core IG (FHIR R4) 與 LOINC 檢驗碼庫屬性規格",
+  "allowed_attributes": {
+    "loinc_num": {
+      "type": "string",
+      "description": "全球 LOINC 檢驗碼 (如: 2345-7)"
+    },
+    "unit": {
+      "type": "string",
+      "description": "檢驗單位 (如: mg/dL, g/dL)"
+    },
+    "fhir_resource_type": {
+      "type": "string",
+      "description": "TW Core IG FHIR Resource 類型 (Observation)"
+    },
+    "category": {
+      "type": "string",
+      "description": "檢驗類別 (生化/血液/腫瘤標籤)"
+    }
+  }
+}

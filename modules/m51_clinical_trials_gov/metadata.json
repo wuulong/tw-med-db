@@ -1,0 +1,9 @@
+{
+  "module_id": "M51",
+  "module_name": "clinical_trials_gov",
+  "description": "NIH ClinicalTrials.gov 在台招募中試驗 Gateway",
+  "table_name": "m51_ctgov_cache",
+  "record_count": 200,
+  "schema_version": "0.5.0",
+  "api_gateway": "NIH v2 API"
+}

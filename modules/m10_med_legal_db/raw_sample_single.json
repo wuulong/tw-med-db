@@ -1,0 +1,13 @@
+[
+  {
+    "jid": "TPSM,109,台上,92,20200109,1",
+    "title": "業務過失",
+    "specialty": "綜合臨床科",
+    "verdict": "PLAINTIFF_WIN",
+    "compensation_amount": 2000000,
+    "cause_of_action": "臨床防護性醫療爭點",
+    "summary": "【業務過失】原判決撤銷，發回臺灣高等法院。 理由一、本件原判決認定上訴人賴慶興為計程車司機，有其事實欄所載於民國105年9月25日晚間10時15分許，駕駛000-00（原判決誤載為「000-00」）號營業用小客車（下稱肇事計程車），在臺北市和平東路與建國南路交岔路口，應注意並能注意而",
+    "attributes_json": "{\"specialty\":\"綜合臨床科\",\"verdict\":\"PLAINTIFF_WIN\",\"compensation_amount\":\"2000000\",\"cause_of_action\":\"臨床防護性醫療爭點\"}",
+    "updated_at": "2026-08-16 04:18:19"
+  }
+]

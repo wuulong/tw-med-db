@@ -1,0 +1,23 @@
+{
+  "module_id": "M10",
+  "module_name": "med_legal_db",
+  "description": "M10 醫療過失裁判與訴訟防護庫屬性規格",
+  "allowed_attributes": {
+    "specialty": {
+      "type": "string",
+      "description": "涉案診療專科 (如: 婦產科, 整形外科, 急診)"
+    },
+    "verdict": {
+      "type": "string",
+      "description": "判決結果 (PLAINTIFF_WIN: 原告勝訴/醫師過失, DEFENDANT_WIN: 被告勝訴/無過失)"
+    },
+    "compensation_amount": {
+      "type": "integer",
+      "description": "判賠金額 (新台幣)"
+    },
+    "cause_of_action": {
+      "type": "string",
+      "description": "爭點起因 (如: 告知同意瑕疵, 術後併發症處理不當)"
+    }
+  }
+}

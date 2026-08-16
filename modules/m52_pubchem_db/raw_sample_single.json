@@ -1,0 +1,10 @@
+[
+  {
+    "cid": "1001",
+    "ingredient_name": "UNDECYLENATE ZINC",
+    "iupac_name": "(2S)-2-[[4-[[(2-amino-4-oxo-1H-pteridin-6-yl)methyl]amino]benzoyl]amino]pentanedioic acid - UNDECYLENATE ZINC",
+    "molecular_weight": 151.5,
+    "smiles": "CC(=O)NC1=CC=C(O)C=C1.1",
+    "inchikey": "UNDECYLENATEZI-UHFFFAOYSA-N"
+  }
+]

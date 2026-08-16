@@ -1,0 +1,13 @@
+{
+  "_v": "1.0.0",
+  "allowed_attributes": {
+    "_v": "模組 Schema 版號",
+    "atc_name_en": "WHO Official ATC English Name",
+    "atc_name_zh": "WHO ATC Chinese Translation Name",
+    "level": "ATC Tree Level (1-5)",
+    "parent_code": "Parent ATC Code",
+    "ddd_value": "Defined Daily Dose Value",
+    "ddd_unit": "DDD Unit (g, mg, U)",
+    "atc_code": "7-Character Official ATC Code"
+  }
+}

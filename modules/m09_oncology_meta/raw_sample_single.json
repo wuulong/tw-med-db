@@ -1,0 +1,13 @@
+[
+  {
+    "nct_id": "NCT05000001",
+    "title": "評估標靶新藥治療台灣 乳癌 病患之第三期臨床試驗 (HER2 Positive)",
+    "cancer_type": "乳癌",
+    "phase": "Phase 2",
+    "recruitment_status": "COMPLETED",
+    "biomarker": "HER2 Positive",
+    "eligibility_criteria": "適合條件：經組織切片確診為 乳癌，帶有 HER2 Positive 突變。",
+    "attributes_json": "{\"cancer_type\":\"乳癌\",\"phase\":\"Phase 2\",\"recruitment_status\":\"COMPLETED\",\"biomarker\":\"HER2 Positive\"}",
+    "updated_at": "2026-08-16 04:18:16"
+  }
+]

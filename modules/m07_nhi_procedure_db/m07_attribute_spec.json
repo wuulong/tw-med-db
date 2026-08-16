@@ -1,0 +1,23 @@
+{
+  "module_id": "M07",
+  "module_name": "nhi_procedure_db",
+  "description": "M07 台灣健保醫療服務處置與手術碼庫屬性規格",
+  "allowed_attributes": {
+    "icd10_pcs": {
+      "type": "string",
+      "description": "ICD-10-PCS 國際手術處置碼"
+    },
+    "nhi_points": {
+      "type": "integer",
+      "description": "健保給付點數"
+    },
+    "requires_inpatient": {
+      "type": "boolean",
+      "description": "是否需要住院執行 (1: 需住院, 0: 門診即可)"
+    },
+    "category": {
+      "type": "string",
+      "description": "診療項目章節分類"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "module_id": "M08",
+  "module_name": "rare_disease_db",
+  "description": "M08 國健署罕見疾病與孤兒藥名單屬性規格",
+  "allowed_attributes": {
+    "orphacode": {
+      "type": "string",
+      "description": "歐盟 Orphanet 罕病國際代碼"
+    },
+    "omim_id": {
+      "type": "string",
+      "description": "OMIM 人類孟德爾遺傳學 ID"
+    },
+    "gene_symbol": {
+      "type": "string",
+      "description": "致病基因官方符號 (如: SMN1)"
+    },
+    "category": {
+      "type": "string",
+      "description": "罕見疾病分類類別"
+    }
+  }
+}

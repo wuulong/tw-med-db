@@ -1,0 +1,9 @@
+{
+  "module_id": "M10",
+  "module_name": "med_legal_db",
+  "description": "司法院醫療過失裁判與糾紛訴訟庫",
+  "table_name": "m10_legal_cases",
+  "record_count": 1243,
+  "schema_version": "0.5.0",
+  "api_gateway": "司法院裁判書網"
+}

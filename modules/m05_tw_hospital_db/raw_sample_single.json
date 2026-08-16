@@ -1,0 +1,13 @@
+[
+  {
+    "hosp_id": "00HOSP-001",
+    "hosp_name": "國立臺灣大學醫學院附設醫院",
+    "hosp_type": "醫學中心",
+    "city": "臺北市",
+    "district": "",
+    "address": "臺北市中正區中山南路7號",
+    "phone": "02-23123456",
+    "attributes_json": "{\"hosp_type\":\"醫學中心\",\"city\":\"臺北市\",\"phone\":\"02-23123456\"}",
+    "updated_at": "2026-08-16 04:18:14"
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "_v": "1.0.0",
+  "allowed_attributes": {
+    "_v": "模組 Schema 版號",
+    "phase": "Clinical Trial Phase",
+    "overall_status": "Recruitment Status",
+    "cancer_type": "Target Oncology Type",
+    "facility_taiwan": "Participating Medical Centers in Taiwan",
+    "nct_id": "NIH NCT Identifier"
+  }
+}

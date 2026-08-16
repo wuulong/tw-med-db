@@ -1,0 +1,23 @@
+{
+  "module_id": "M11",
+  "module_name": "patient_journey_db",
+  "description": "M11 病患全程臨床旅程 GraphRAG 屬性規格",
+  "allowed_attributes": {
+    "disease_code": {
+      "type": "string",
+      "description": "疾病 ICD-10 代碼或名稱"
+    },
+    "stage_name": {
+      "type": "string",
+      "description": "臨床旅程階段名稱 (新確診/方案選擇/治療執行/副作用管理/長期追蹤)"
+    },
+    "sdm_tool_available": {
+      "type": "boolean",
+      "description": "是否具備醫病共享決策 (SDM) 輔助工具"
+    },
+    "category": {
+      "type": "string",
+      "description": "旅程分類類別"
+    }
+  }
+}

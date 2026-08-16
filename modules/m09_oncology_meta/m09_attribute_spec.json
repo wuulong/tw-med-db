@@ -1,0 +1,23 @@
+{
+  "module_id": "M09",
+  "module_name": "oncology_meta",
+  "description": "M09 癌症指引與 ClinicalTrials 台灣試驗屬性規格",
+  "allowed_attributes": {
+    "cancer_type": {
+      "type": "string",
+      "description": "癌症類別 (如: NSCLC, Breast Cancer)"
+    },
+    "phase": {
+      "type": "string",
+      "description": "臨床試驗階段 (Phase I~III)"
+    },
+    "recruitment_status": {
+      "type": "string",
+      "description": "招募狀態 (RECRUITING, COMPLETED)"
+    },
+    "biomarker": {
+      "type": "string",
+      "description": "致病或標靶基因突變標籤 (如: EGFR, ALK, KRAS)"
+    }
+  }
+}

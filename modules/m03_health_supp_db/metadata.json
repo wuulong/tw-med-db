@@ -1,0 +1,9 @@
+{
+  "module_id": "M03",
+  "module_name": "health_supp_db",
+  "description": "TFDA 健康食品許可證 (小綠人標章) 庫",
+  "table_name": "m03_health_supp_db",
+  "record_count": 565,
+  "schema_version": "0.5.0",
+  "api_gateway": "TFDA 健康食品網"
+}

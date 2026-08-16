@@ -1,0 +1,9 @@
+{
+  "module_id": "M04",
+  "module_name": "drug_shortage_alert",
+  "description": "TFDA 藥品回收與缺藥警訊通報庫",
+  "table_name": "m04_recalls",
+  "record_count": 1220,
+  "schema_version": "0.5.0",
+  "api_gateway": "TFDA 通報網"
+}

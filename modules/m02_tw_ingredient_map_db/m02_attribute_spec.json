@@ -1,0 +1,27 @@
+{
+  "module_id": "M02",
+  "module_name": "tw_ingredient_map_db",
+  "description": "M02 台灣藥物主成分字典與 RxNorm/WHO ATC 跨庫對照屬性規格",
+  "allowed_attributes": {
+    "atc_code": {
+      "type": "string",
+      "description": "WHO ATC 國際藥理 5 階分類碼 (如: N02BE01)"
+    },
+    "cas_number": {
+      "type": "string",
+      "description": "美國化學會 CAS 註冊號 (如: 103-90-2)"
+    },
+    "pubchem_cid": {
+      "type": "string",
+      "description": "NCBI PubChem 化合物 ID (如: 1983)"
+    },
+    "rxcui": {
+      "type": "string",
+      "description": "美國 NLM RxNorm 唯一識別碼 (如: 161)"
+    },
+    "synonyms": {
+      "type": "array",
+      "description": "同義字與別名清單 (如: Paracetamol, APAP)"
+    }
+  }
+}

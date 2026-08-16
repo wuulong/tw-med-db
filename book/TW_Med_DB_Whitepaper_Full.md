@@ -1,0 +1,2093 @@
+# 📘 《tw-med-db 台灣醫療與生醫資料庫數據資產白皮書》全書合訂本
+
+> 本檔案由 `combine_tw_med_db_book.py` 腳本自動整合生成，涵蓋願景使命、總體架構、17 大 DB 資產圖鑑、4 大角色 Playbook、CLI 手冊與全圖表附錄。
+
+---
+
+<!-- START_OF_FILE: 00_toc.md -->
+# 📙 《台灣醫療與健保開放大數據：大一統使用者手冊》大綱與寫作意圖 (00_toc.md)
+
+* **專案名稱**：`tw-med-db` (台灣醫療與健保開放大數據引擎)
+* **當前版本**：`v0.5.0`
+* **歸檔目錄**：[`book/`](file:///Users/wuulong/github/bmad-pa/events/TDHI_haba/med-db-in/tw-med-db/book/)
+* **編寫方法論**：[book-writing-learning Skill](file:///Users/wuulong/github/bmad-pa/.agent/skills/book-writing-learning/SKILL.md) (AI 輔助寫書學習法)
+
+---
+
+## 🎯 本書總體寫作意圖 (Master Intent & Philosophy)
+
+> **核心意圖**：
+> 本書不只是一份工具技術說明書，而是 **「台灣醫療開放數據解構與智慧導航大腦的終極參考專書」**。
+> 
+> 本書旨在以 **「為何而戰 ➔ 政府原始設計意圖 ➔ 數據結構與規範 ➔ 核心演演演算法 ➔ CLI 功能 ➔ 跨模組對接拓撲」** 的貫穿維度，將散落於政府開放平台、衛生福利部、健保署、國健署、司法院以及國際生醫組織 (NLM, NIH, WHO, HL7) 的 17 大資料庫，轉化為人類與 AI Agent 均能輕鬆閱讀、精確檢索的知識資產圖鑑。
+> 
+> 🎨 **視覺圖解規範**：本書廣泛採用 **Mermaid 圖表 (Flowchart, Sequence, ER Diagram, Topology)** 來視覺化解構系統架構、數據管線與跨庫導航。特別是**第 3 章的 17 個子模組，每一個子模組均包含一張專屬的『跨模組對接拓撲圖 (Mermaid Topology)』，清晰展現自己與其他 DB / 外部 Gateway 的連結關係**，並在附錄中統一彙整全書的「Mermaid 架構圖目錄索引 (List of Diagrams)」。
+
+---
+
+## 📚 本書各章寫作意圖與目錄地圖 (Table of Contents & Intent per Chapter)
+
+### 📌 [第 1 章：專案願景與使命](01_vision_and_mission.md) (`01_vision_and_mission.md`)
+> **💡 本章寫作意圖**：
+> 剖析台灣醫療健康開放資料目前的 6 大痛點（欄位不透明、格式混亂、孤島缺乏對接等），闡述 `tw-med-db` 為何而戰的使命，並提出「單一 SQLite/DuckDB 大一統引擎 + 5 大全域數據標準」的開源價值主張。
+* 1.1 台灣醫療開放資料的 6 大痛點與開源解決方案
+* 1.2 跨國內外 17 大 DB 的大一統價值主張 (附: `Fig 1.1` 全域 17 DB 神經網路地圖)
+
+---
+
+### 📌 [第 2 章：大一統技術架構與數據模型](02_architecture_and_models.md) (`02_architecture_and_models.md`)
+> **💡 本章寫作意圖**：
+> 揭露 `tw-med-db` 底層「4 層拓撲架構」與「SQLite 零拷貝檢索 + DuckDB C++ 高速分析」雙引擎運作機制，詳細說明 79,884 筆去重實體 (`m00_entities`) 與 FTS5 全文倒排索引 (`fts_med_global`) 的萬能 Schema 設計。
+* 2.1 四層技術堆疊與 SQLite / DuckDB 雙引擎設計 (附: `Fig 2.1` 4層拓撲與數據流向圖)
+* 2.2 全域 FTS5 倒排索引與 79,884 筆去重實體模型 (附: `Fig 2.2` m00_entities 與 FTS5 觸發機制 ER 圖)
+* 2.3 M00 母大腦與 17 Mx 子模組協同架構與 ETL 彙流 (附: `Fig 2.3` M00 與 Mx 協同拓撲圖)
+* 2.4 全域跨模組業務接力與臨床協同網路 (附: `Fig 2.4` M00 全景跨模組業務接力鏈總圖)
+
+---
+
+### 📌 [第 3 章：17 大子模組數據資產圖鑑](03_submodules_atlas.md) (`03_submodules_atlas.md`)
+> **💡 本章寫作意圖**：
+> 做為全書最核心的「數據資產百科圖鑑」，本章以單一檔案拆分架構，為國內 12 大 DB (`M01`~`M12`) 與國際 5 大 Gateway (`M50`~`M54`) 提供專屬獨立檔案檔。
+* **[3.0 全章子模組撰寫規範與通用 7 大維度架構說明](03_00_structure_guide.md)**
+* **Pillar 1: 藥品安全**
+  * 3.1 **[`M01` 台灣處方藥證與健保價庫 (`tw_drug_db`)](03_01_m01_tw_drug_db.md)** (附: `Fig 3.1` M01 跨模組連結拓撲圖: M01 ➔ M02/M04/M50/M53)
+  * 3.2 **[`M02` 主成分字典與 WHO ATC 藥理樹庫 (`tw_ingredient_map_db`)](03_02_m02_tw_ingredient_map_db.md)** (附: `Fig 3.2` M02 跨模組連結拓撲圖: M02 ➔ M01/M52/M53)
+  * 3.3 **[`M03` TFDA 健康食品許可證庫 (`health_supp_db`)](03_03_m03_health_supp_db.md)** (附: `Fig 3.3` M03 跨模組連結拓撲圖: M03 ➔ M01 禁忌對照)
+  * 3.4 **[`M04` 食藥署缺藥與藥品回收警訊庫 (`drug_shortage_alert`)](03_04_m04_drug_shortage_alert.md)** (附: `Fig 3.4` M04 跨模組連結拓撲圖: M04 ➔ M01/M53 替代藥)
+* **Pillar 2: 機構比價**
+  * 3.5 **[`M05` 健保特約醫事機構與專科地圖 (`tw_hospital_db`)](03_05_m05_tw_hospital_db.md)** (附: `Fig 3.5` M05 跨模組連結拓撲圖: M05 ➔ M06/M07/M09/M11)
+  * 3.6 **[`M06` 健保給付規定與自費比價庫 (`nhi_payment_db`)](03_06_m06_nhi_payment_db.md)** (附: `Fig 3.6` M06 跨模組連結拓撲圖: M06 ➔ M01/M05 比價)
+  * 3.7 **[`M07` 健保醫療服務處置與手術碼庫 (`nhi_procedure_db`)](03_07_m07_nhi_procedure_db.md)** (附: `Fig 3.7` M07 跨模組連結拓撲圖: M07 ➔ M05/M12 處置)
+  * 3.8 **[`M08` 國健署罕見疾病與罕藥名單庫 (`rare_disease_db`)](03_08_m08_rare_disease_db.md)** (附: `Fig 3.8` M08 跨模組連結拓撲圖: M08 ➔ M01/M12 罕藥)
+* **Pillar 3: 臨床法規**
+  * 3.9 **[`M09` 癌症指引與 ClinicalTrials 台灣試驗庫 (`oncology_meta`)](03_09_m09_oncology_meta.md)** (附: `Fig 3.9` M09 跨模組連結拓撲圖: M09 ➔ M01/M05/M51)
+  * 3.10 **[`M10` 醫療過失裁判與訴訟防護庫 (`med_legal_db`)](03_10_m10_med_legal_db.md)** (附: `Fig 3.10` M10 跨模組連結拓撲圖: M10 ➔ M05/M07 訴訟案)
+  * 3.11 **[`M11` 病患全程臨床照護導航庫 (`patient_journey_db`)](03_11_m11_patient_journey_db.md)** (附: `Fig 3.11` M11 跨模組連結拓撲圖: M11 ➔ M05/M09 導航)
+  * 3.12 **[`M12` TW Core IG FHIR 與 LOINC 碼庫 (`med_lab_fhir_db`)](03_12_m12_med_lab_fhir_db.md)** (附: `Fig 3.12` M12 跨模組連結拓撲圖: M12 ➔ M01/M54 FHIR)
+* **Pillar 4: 國際標準**
+  * 3.50 **[`M50` RxNorm 美國藥學概念網 Gateway (`rxnorm_db`)](03_50_m50_rxnorm_db.md)** (附: `Fig 3.50` M50 跨模組對照整合拓撲圖: M50 ➔ M01 台規對接)
+  * 3.51 **[`M51` ClinicalTrials.gov 美國 NIH 試驗 Gateway (`clinical_trials_gov`)](03_51_m51_clinical_trials_gov.md)** (附: `Fig 3.51` M51 跨模組對照整合拓撲圖: M51 ➔ M09 在台試驗)
+  * 3.52 **[`M52` PubChem 美國 NIH 化學結構庫 Gateway (`pubchem_db`)](03_52_m52_pubchem_db.md)** (附: `Fig 3.52` M52 跨模組對照整合拓撲圖: M52 ➔ M02 主成分鏈結)
+  * 3.53 **[`M53` WHO ATC 國際藥理樹 Gateway (`who_atc_db`)](03_53_m53_who_atc_db.md)** (附: `Fig 3.53` M53 跨模組對照整合拓撲圖: M53 ➔ M01/M02 藥理樹)
+  * 3.54 **[`M54` TW Core IG 台灣核心 FHIR 指引 Gateway (`twcore_fhir_db`)](03_54_m54_twcore_fhir_db.md)** (附: `Fig 3.54` M54 跨模組對照整合拓撲圖: M54 ➔ M12 LOINC 對照)
+
+---
+
+### 📌 [第 4 章：多重利害關係人整合應用 Playbook](04_stakeholder_playbooks.md) (`04_stakeholder_playbooks.md`)
+> **💡 本章寫作意圖**：
+> 站出單一 DB 的視角，從「實務應用場景」出發，為病患家屬、臨床醫師藥師、AI Agent 開發者與生醫研究員等 4 大角色，撰寫跨庫聯對的終極實戰操作劇本 (Playbook)。
+* 4.1 病患與家屬：跨庫癌症臨床導航手冊 (附: `Fig 4.1` 癌症臨床導航多庫協同順序圖)
+* 4.2 醫師與藥師：缺藥替代藥與跨國處方對照整合 (附: `Fig 4.2` 缺藥替代與 RxNorm 跨國處方時序圖)
+* 4.3 AI Agent 開發者：Structured JSON 工具呼叫與工作流 (附: `Fig 4.3` Agent Tool-Calling 交互時序圖)
+* 4.4 生醫研究員：DuckDB C++ OLAP 數據分析手冊
+
+---
+
+### 📌 [第 5 章：開發者與 CLI 手冊](05_developer_and_cli.md) (`05_developer_and_cli.md`)
+> **💡 本章寫作意圖**：
+> 提供人類工程師與社群貢獻者一份極致摩擦的開發指引，說明如何安裝、呼叫統一 `tw-med-cli` 命令列工具，以及開發、測試與驗證新模組的標準作業程序 (SOP)。
+* 5.1 CLI 工具鏈安裝與常用命令說明 (附: `Fig 5.1` tw-med-cli 命令調度與透傳架構圖)
+* 5.2 子模組擴充與測試驗證 SOP
+
+---
+
+### 📌 [第 6 章：附錄、圖表清單與免責條款](06_appendix_and_legal.md) (`06_appendix_and_legal.md`)
+> **💡 本章寫作意圖**：
+> 彙整全書所有的 Mermaid 系統架構圖與數據流向圖目錄索引 (List of Diagrams)，並條列 17 大 Open Data 資料源的政府授權條款 (OGDL) 與醫療免責法律極限告示。
+* 6.1 醫療開放資料來源與授權條款
+* 6.2 🖼️ **全書 Mermaid 架構圖與數據流向圖目錄索引 (List of Diagrams)**
+  * `Fig 1.1` [第一章] 跨國內外 17 DB 大一統神經網路拓撲地圖
+  * `Fig 2.1` [第二章] tw-med-db 4層技術堆疊與 SQLite/DuckDB 數據管線
+  * `Fig 2.2` [第二章] m00_entities 實體表與 FTS5 自動觸發器 ER 關聯圖
+  * `Fig 2.3` [第二章] M00 母大腦與 17 Mx 子模組協同架構與 ETL 彙流圖
+  * `Fig 2.4` [第二章] 全域跨模組業務接力與臨床協同網路全景圖
+  * `Fig 3.1` [第三章] M01 跨模組對接拓撲圖 (M01 ➔ M02/M04/M50/M53)
+  * `Fig 3.2` [第三章] M02 跨模組對接拓撲圖 (M02 ➔ M01/M52/M53)
+  * `Fig 3.3` [第三章] M03 跨模組對接拓撲圖 (M03 ➔ M01 禁忌對照)
+  * `Fig 3.4` [第三章] M04 跨模組對接拓撲圖 (M04 ➔ M01/M53 替代藥)
+  * `Fig 3.5` [第三章] M05 跨模組對接拓撲圖 (M05 ➔ M06/M07/M09/M11)
+  * `Fig 3.6` [第三章] M06 跨模組對接拓撲圖 (M06 ➔ M01/M05 比價)
+  * `Fig 3.7` [第三章] M07 跨模組對接拓撲圖 (M07 ➔ M05/M12 處置)
+  * `Fig 3.8` [第三章] M08 跨模組對接拓撲圖 (M08 ➔ M01/M12 罕藥)
+  * `Fig 3.9` [第三章] M09 跨模組對接拓撲圖 (M09 ➔ M01/M05/M51)
+  * `Fig 3.10` [第三章] M10 跨模組對接拓撲圖 (M10 ➔ M05/M07 訴訟案)
+  * `Fig 3.11` [第三章] M11 跨模組對接拓撲圖 (M11 ➔ M05/M09 導航)
+  * `Fig 3.12` [第三章] M12 跨模組對接拓撲圖 (M12 ➔ M01/M54 FHIR)
+  * `Fig 3.50` [第三章] M50 跨模組對照整合拓撲圖 (M50 ➔ M01 台規對接)
+  * `Fig 3.51` [第三章] M51 跨模組對照整合拓撲圖 (M51 ➔ M09 在台試驗)
+  * `Fig 3.52` [第三章] M52 跨模組對照整合拓撲圖 (M52 ➔ M02 主成分鏈結)
+  * `Fig 3.53` [第三章] M53 跨模組對照整合拓撲圖 (M53 ➔ M01/M02 藥理樹)
+  * `Fig 3.54` [第三章] M54 跨模組對照整合拓撲圖 (M54 ➔ M12 LOINC 對照)
+  * `Fig 4.1` [第四章] 病患導航：M05 x M09 x M11 跨庫癌症照護協同時序圖
+  * `Fig 4.2` [第四章] 醫藥師工具：M01 x M04 x M50 x M53 缺藥替代與跨國處方圖
+  * `Fig 4.3` [第四章] AI Agent：Structured JSON Tool-Calling 交互流向圖
+  * `Fig 5.1` [第五章] tw-med-cli 主指揮官與 17 DB 子命令調度透傳架構圖
+* 6.3 免責聲明與法律極限告示
+
+
+---
+
+<!-- START_OF_FILE: 01_vision_and_mission.md -->
+# 📙 第 1 章：專案願景與使命 (Vision & Mission)
+
+> **💡 本章寫作意圖**：
+> 剖析台灣醫療健康開放資料目前的 7 大痛點（資料架構框架模糊、資訊孤島、格式混亂等），闡述 `tw-med-db` 為何而戰的使命，並提出「單一 SQLite/DuckDB 大一統引擎 + 4 大 Domain Pillars + 5 大全域數據標準」的開源價值主張。
+
+---
+
+## 1.1 台灣醫療開放資料的 7 大痛點與開源解決方案
+
+台灣擁有全球頂尖的全民健康保險制度與龐大的生醫開放數據資產（包含衛福部食藥署 TFDA、中央健康保險署 NHI、國民健康署 HPB 以及司法院醫療裁判數據）。然而，對於一般病患、臨床醫師、生醫研究員以及現代 AI Agent 開發者而言，在實際使用這些 Open Data 時，長期面臨以下 **7 大剛性痛點**：
+
+| 痛點編號 | 原始開放資料痛點 (Pain Points) | `tw-med-db` 大一統開源解決方案 (Solutions) |
+| :--- | :--- | :--- |
+| **`PAIN-01`** | **資料架構與框架模糊不透明**：跨機關 Open Data 缺乏全貌地圖與領域歸類，使用者難以掌握到底有哪些資料集、欄位語意與更新頻率。 | **4 大領域 Pillars 與 SE-6D 架構地圖**：確立 4 大領域 Pillar (藥品安全、機構比價、臨床法規、國際標準) 與專屬 Schema / Metadata 宣告。 |
+| **`PAIN-02`** | **資訊嚴重孤島化**：藥品許可證、健保藥價、缺藥警訊、醫院看診時間散落在不同政府平台，無法一鍵關聯。 | **全域對照整合網格 (Global Mesh View)**：建立 `v_master_drug_safety_mesh` 等跨庫 View，實現跨 DB 秒級穿透查詢。 |
+| **`PAIN-03`** | **欄位格式混亂與字串污染**：日期格式混合（民國年與西元年）、健保碼開頭吃零、非結構化 HTML 垃圾標籤。 | **標準化數據洗牌 (Standardized ETL)**：100% ISO 8601 日期正規化、`zfill(10)` 剛性補零與 HTML 標籤徹底掃除。 |
+| **`PAIN-04`** | **缺乏國際標準接軌**：國內健保藥碼與主成分文字無法直接與國際醫療體系（RxNorm, FHIR, WHO ATC）對接。 | **國際 Gateway 雙向轉碼 (Global Gateways)**：內建 `M50`~`M54` 模組，提供美規 RxCUI、WHO ATC 5 階樹與 FHIR Profile 映射。 |
+| **`PAIN-05`** | **全文檢索效能低下**：傳統 CSV/JSON 逐檔搜尋極慢，無法支援巨量模糊比對。 | **SQLite FTS5 全域倒排索引**：建置 `fts_med_global` (77,209 筆索引)，提供毫秒級全文倒排搜尋。 |
+| **`PAIN-06`** | **巨量數據統計分析困難**：傳統資料庫做複雜關聯分析時記憶體爆炸。 | **DuckDB C++ OLAP 雙引擎**：整合 DuckDB 零拷貝記憶體分析引擎，支援巨量生醫統計。 |
+| **`PAIN-07`** | **AI Agent 無法精確 Tool-Calling**：LLM 讀取原始非結構化文字易產生幻覺與八股掏空。 | **AI Agent WORKFLOW.md & Structured JSON**：提供 Agent 專屬工作流指引與標準化 Structured JSON 工具呼叫。 |
+
+---
+
+## 1.2 跨國內外 17 大 DB 的大一統價值主張
+
+`tw-med-db` 不只是一個資料庫，而是一個 **「跨國內外 17 大醫療資料庫的大一統神經網路」**。透過將國內 12 大 DB (`M01`~`M12`) 與國際 5 大 Gateway (`M50`~`M54`) 匯聚於單一 SQLite (`db/med.db`) 主檔中，我們實現了 **79,884 筆去重實體 (`m00_entities`)** 的強大生命鏈結。
+
+```mermaid
+graph TD
+    subgraph Layer1["Pillar 1: 藥品安全 (Drug & Safety)"]
+        M01["M01 tw_drug_db<br>(處方藥證與健保價)"]
+        M02["M02 tw_ingredient_map_db<br>(主成分字典)"]
+        M03["M03 health_supp_db<br>(健康食品許可證)"]
+        M04["M04 drug_shortage_alert<br>(缺藥與回收警訊)"]
+    end
+
+    subgraph Layer2["Pillar 2: 機構比價 (NHI & Geography)"]
+        M05["M05 tw_hospital_db<br>(特約醫院專科地圖)"]
+        M06["M06 nhi_payment_db<br>(給付規定與自費比價)"]
+        M07["M07 nhi_procedure_db<br>(處置與手術碼)"]
+        M08["M08 rare_disease_db<br>(罕見疾病與罕藥)"]
+    end
+
+    subgraph Layer3["Pillar 3: 臨床法規 (Clinical & Legal)"]
+        M09["M09 oncology_meta<br>(癌症試驗與標靶)"]
+        M10["M10 med_legal_db<br>(醫療過失裁判)"]
+        M11["M11 patient_journey_db<br>(癌症照護導航)"]
+        M12["M12 med_lab_fhir_db<br>(LOINC 檢驗碼)"]
+    end
+
+    subgraph Layer4["Pillar 4: 國際標準 (Global Gateways)"]
+        M50["M50 rxnorm_db<br>(RxNorm RxCUI Gateway)"]
+        M51["M51 clinical_trials_gov<br>(NIH CT.gov Gateway)"]
+        M52["M52 pubchem_db<br>(PubChem SMILES Gateway)"]
+        M53["M53 who_atc_db<br>(WHO ATC 藥理樹)"]
+        M54["M54 twcore_fhir_db<br>(TW Core IG FHIR)"]
+    end
+
+    subgraph MasterBrain["👑 M00 大一統母大腦 (Master Brain Hub)"]
+        M00_Entities["m00_entities<br>(79,884 筆去重實體)"]
+        M00_FTS["fts_med_global<br>(77,209 筆倒排索引)"]
+        M00_Mesh["v_master_*<br>(全域跨庫對照整合 View)"]
+    end
+
+    Layer1 & Layer2 & Layer3 & Layer4 -->|ETL 彙流與雙向對照整合| MasterBrain
+```
+
+* **`Fig 1.1` 跨國內外 17 DB 大一統神經網路拓撲地圖**
+
+透過本專案，使用者與 AI Agent 無需分別前往 17 個不同網站下載資料，只需透過統一的命令列工具 `tw-med-cli` 或載入單一 SQLite 資料庫，即可享受跨庫聯對的終極便利。
+
+
+---
+
+<!-- START_OF_FILE: 02_architecture_and_models.md -->
+# 📙 第 2 章：M00 母大腦技術架構與數據模型 (Master Architecture)
+
+> **💡 本章寫作意圖**：
+> 揭露 `tw-med-db` 底層「4 層拓撲架構」與「SQLite 零拷貝檢索 + DuckDB C++ 高速分析」雙引擎運作機制，詳細說明 79,884 筆去重實體 (`m00_entities`) 與 FTS5 全文倒排索引 (`fts_med_global`) 的萬能 Schema 設計，並解構 M00 母大腦與 17 Mx 子模組的協同 ETL 流向與全域業務接力鏈。
+
+---
+
+## 2.1 四層技術堆疊與 SQLite / DuckDB 雙引擎設計
+
+`tw-med-db` 採用高內聚、低耦合的 **4 層技術堆疊拓撲 (4-Tier Architecture Topology)**，實現從底層 raw data 到高階 AI Agent 應用的無縫運轉：
+
+```mermaid
+flowchart TB
+    subgraph Tier4["Layer 4: 介面與調度層 (Interface & Orchestration)"]
+        CLI["tw-med-cli 命令行工具"]
+        Agent["AI Agent WORKFLOW.md (Structured JSON)"]
+        Notebook["Jupyter / Python 生醫研究分析"]
+    end
+
+    subgraph Tier3["Layer 3: M00 母大腦大一統引擎 (Master Brain Engine)"]
+        FTS5_Engine["SQLite FTS5 全文倒排索引引擎"]
+        DuckDB_Engine["DuckDB C++ OLAP 記憶體分析引擎"]
+        Mesh_Views["全域跨庫對照整合視圖 (v_master_*)"]
+    end
+
+    subgraph Tier2["Layer 2: 17 DB 子模組處理層 (17 Submodules Processor)"]
+        Domestic_ETL["國內 12 DB 獨立 ETL 管線 (M01~M12)"]
+        Global_Gateways["國際 5 大 Gateway 轉碼器 (M50~M54)"]
+    end
+
+    subgraph Tier1["Layer 1: 實體持久化數據層 (Physical Persistence Layer)"]
+        SQLite_DB[("tw-med-db/db/med.db<br>Single File SQLite (88MB)")]
+        Raw_JSON[("200 筆離線採樣與單筆 raw_sample_single.json")]
+    end
+
+    Tier4 --> Tier3
+    Tier3 --> Tier2
+    Tier2 --> Tier1
+```
+
+* **`Fig 2.1` tw-med-db 4層技術堆疊與 SQLite/DuckDB 數據管線**
+
+### 雙引擎運作分工：
+1. **SQLite 零拷貝高併發引擎**：負責單筆/批量實體檢索、FTS5 全文搜尋與單一檔案 (`db/med.db`) 便攜發布。
+2. **DuckDB C++ OLAP 巨量分析引擎**：透過零拷貝 (Zero-copy) 方式直接附著於 `db/med.db` 上，在微秒級內執行跨 17 個資料表的複雜聚合統計（如 IQR 藥價中位數、看診時段分佈）。
+
+---
+
+## 2.2 全域 FTS5 倒排索引與 79,884 筆去重實體模型
+
+`M00` 母大腦的核心心臟在於 **萬能去重實體表 `m00_entities`** 與 **全域倒排總索引 `fts_med_global`** 的物理聯動：
+
+```mermaid
+erDiagram
+    sys_module_metadata ||--o{ m00_entities : "聚合註冊"
+    m00_entities ||--|| fts_med_global : "Automated Triggers 觸發同步"
+    m00_entities ||--o{ v_master_drug_safety_mesh : "視圖對照整合"
+
+    sys_module_metadata {
+        string module_id PK "M01 ~ M54"
+        string module_name "模組名稱"
+        string table_name "資料表名"
+        int record_count "筆數"
+        string schema_version "0.5.0"
+    }
+
+    m00_entities {
+        string entity_id PK "全域唯一代碼 (如 M01:AC49322100)"
+        string entity_type "實體類型 (DRUG/HOSPITAL/CASE)"
+        string entity_name_zh "中文名稱"
+        string entity_name_en "英文名稱"
+        string source_module "來源模組"
+        json raw_attributes "全量結構化 JSON"
+    }
+
+    fts_med_global {
+        string entity_id PK "倒排索引鍵"
+        string entity_name_zh "全文檢索 (jieba中文分詞)"
+        string entity_name_en "英文分詞"
+        string keywords "5維度 Tag 關鍵字"
+    }
+```
+
+* **`Fig 2.2` m00_entities 實體表與 FTS5 自動觸發器 ER 關聯圖**
+
+### 實體規模與自動觸發機制：
+* **`m00_entities` 實體筆數**：**79,884 筆**（去重後全庫萬能實體）。
+* **`fts_med_global` 索引筆數**：**77,209 筆**（支援中英文跨庫模糊搜尋）。
+* **自動觸發器 (Triggers)**：當子模組執行 ETL 寫入 `m00_entities` 時，SQLite 觸發器會自動更新倒排索引，確保全文搜尋 100% 實時對齊！
+
+---
+
+## 2.3 M00 母大腦與 17 Mx 子模組協同架構與 ETL 彙流
+
+`M00` 母大腦與 17 個 `Mx` 子模組採用 **「子模組獨立產製 ➔ 母大腦解耦組裝」** 的協同架構：
+
+```mermaid
+flowchart TB
+    subgraph Mx_Submodules["17 子模組獨立產製層 (Mx Processing)"]
+        M01_ETL["M01 etl.py"] -->|寫入| T_M01["m01_tw_drug_db 獨立表"]
+        M05_ETL["M05 etl.py"] -->|寫入| T_M05["m05_hospitals 獨立表"]
+        M50_ETL["M50 etl.py"] -->|寫入| T_M50["m50_rxnorm_cache 獨立表"]
+        M53_ETL["M53 etl.py"] -->|寫入| T_M53["m53_atc_cache 獨立表"]
+    end
+
+    subgraph Master_Builder["M00 母大腦核心解耦套件 (src/m00_core/master_builder/)"]
+        views_dom["views_domestic.py<br>(M01~M12 Views)"]
+        views_glo["views_global.py<br>(M50~M54 Views)"]
+        builder_ent["builder_entities.py<br>(彙流去重)"]
+        builder_fts["builder_fts.py<br>(倒排建索引)"]
+
+        T_M01 & T_M05 & T_M50 & T_M53 --> views_dom & views_glo
+        views_dom & views_glo --> builder_ent
+        builder_ent -->|寫入 79,884 筆| Entities_Table[("m00_entities")]
+        Entities_Table --> builder_fts
+        builder_fts -->|建置 77,209 筆| FTS_Index[("fts_med_global")]
+    end
+
+    Master_Builder -->|統一出庫| CLI_App["tw-med-cli 命令行系統"]
+```
+
+* **`Fig 2.3` M00 母大腦與 17 Mx 子模組協同架構與 ETL 彙流圖**
+
+### `master_builder/` 套件包設計：
+母大腦已被重構解耦為獨立套件包 `src/m00_core/master_builder/`：
+* `schema.py`：定義全庫主表與 `sys_module_metadata` (版本 `0.5.0`)。
+* `views_domestic.py` & `views_global.py`：建立國內與國際跨庫對照整合 View。
+* `builder_entities.py` & `builder_fts.py`：執行全庫去重與 FTS5 全文索引編譯。
+
+---
+
+## 2.4 全域跨模組業務接力與臨床協同網路
+
+當使用者提出複雜的臨床或醫藥查詢時，`tw-med-db` 各子模組會自動進行 **「跨模組業務接力 (Cross-Module Business Relay)」**：
+
+```mermaid
+graph TD
+    subgraph Scenario1["情境 A: 臨床缺藥與國際替代處方接力"]
+        S1_M01["M01 處方藥 (Tagrisso)"] -->|1. 通報觸發| S1_M04["M04 缺藥警訊通報"]
+        S1_M04 -->|2. 取得 ATC Code| S1_M53["M53 WHO ATC 藥理樹"]
+        S1_M53 -->|3. 搜尋同藥理平價替代藥| S1_M01_Alt["M01 替代藥品清單"]
+        S1_M01_Alt -->|4. 美規轉碼| S1_M50["M50 RxNorm RxCUI Gateway"]
+    end
+
+    subgraph Scenario2["情境 B: 癌症病患就醫與照護導航接力"]
+        S2_M09["M09 癌症試驗與標靶"] -->|1. 鎖定標靶藥/試驗| S2_M05["M05 健保醫院專科地圖"]
+        S2_M05 -->|2. 篩選具備處置能力機構| S2_M11["M11 癌症全程照護旅程"]
+        S2_M11 -->|3. 引導衛教與照護卡片| Patient["病患/家屬導航手冊"]
+    end
+
+    subgraph Scenario3["情境 C: 化學結構與生醫研究接力"]
+        S3_M01["M01 處方藥健保碼"] -->|1. 取得成分名稱| S3_M02["M02 主成分字典"]
+        S3_M02 -->|2. 查詢分子式| S3_M52["M52 PubChem SMILES / InChIKey"]
+        S3_M52 -->|3. 數據導出| Researcher["生醫研究員 DuckDB 分析"]
+    end
+```
+
+* **`Fig 2.4` 全域跨模組業務接力與臨床協同網路全景圖**
+
+這種業務接力架構，徹底解決了以往 Open Data 孤島化的弊病，為第 4 章的「多重利害關係人 Playbook」提供了堅實的技術基礎。
+
+
+---
+
+<!-- START_OF_FILE: 03_submodules_atlas.md -->
+# 📙 第 3 章：17 大子模組數據資產圖鑑 (17 DB Dedicated Chapters)
+
+> **💡 本章寫作意圖**：
+> 做為全書最核心的「數據資產百科圖鑑」，本章以單一檔案拆分模式 (Single File per Module Architecture)，為 17 大 DB 提供專屬的高密度技術手冊。
+
+---
+
+## 📚 第 3 章子小節檔案目錄索引 (Submodule Chapter Directory)
+
+* **📌 [3.0 全章子模組撰寫規範與通用 7 大維度架構說明](03_00_structure_guide.md)**
+* **📌 Pillar 1: 藥品安全 (Drug & Safety)**
+  * **[3.1 M01 台灣處方藥證與健保價庫 (tw_drug_db)](03_01_m01_tw_drug_db.md)**
+  * **[3.2 M02 西藥有效成分字典與主成分對照庫 (tw_ingredient_map_db)](03_02_m02_tw_ingredient_map_db.md)**
+  * *3.3 M03 ~ 3.54 M54 待擴充小節獨立檔案*
+
+
+---
+
+<!-- START_OF_FILE: 03_00_structure_guide.md -->
+# 📌 3.0 全章子模組撰寫規範與通用 7 大維度架構說明 (Structure Guide)
+
+為了使讀者與 AI Agent 在翻閱任意子模組時具備最高度的可預測性與一致檢索體驗，第 3 章中所有 17 個子模組 (`M01` ~ `M54`) 均嚴格遵守以下 **通用 7 大深度寫作維度 (A ~ G)**：
+
+1. **(A) 為何而戰 (Why We Build)**：說明病患、臨床醫師、藥師或 AI Agent 在該領域面臨的剛性痛點與專案價值主張。
+2. **(B) 政府原始設計意圖與開放 API 剖析 (Gov Intent & Data Sources)**：說明主管機關當初設計 Open Data 的背景、原始 API 端點與抓取腳本。
+3. **(C) 📄 來源單筆資料說明與 Raw Sample (Raw Data & Sample)**：解讀原始欄位邏輯，提供 1 筆 Raw JSON/CSV 範例與 200 筆離線採樣檔超連結 ([`raw_sample_single.json`](../modules/m01_tw_drug_db/raw_sample_single.json))。
+4. **(D) 🔗 實體 Schema 建表 SQL 腳本 (Schema SQL Link)**：提供簡明易懂的純 SQL 建表腳本附檔超連結 ([`schema.sql`](../modules/m01_tw_drug_db/schema.sql))，使用者複製貼上即可建立資料庫，內文附核心 DDL 區塊。
+5. **(E) ⚡ 核心演演演算法與資料處理邏輯 (Core Algorithms & Logic)**：詳細解構該模組專屬的資料清洗、字串正規化、IQR 統計或決策樹演演演算法。
+6. **(F) 目前核心功能、CLI 手冊與 Agent 工作流 (Current Capabilities)**：展示 `tw-med-cli` 命令列用法、專屬 `README.md`、`CLI_MANUAL.md` 與 AI Agent `WORKFLOW.md` 指引。
+7. **(G) 🎨 專屬跨模組對接拓撲圖 (Mermaid Topology)**：內嵌專屬 `Fig 3.X` Mermaid 拓撲圖，清晰視覺化展示自己與其他 DB 及國際 Gateway 的數據對接關係。
+
+---
+
+## 3.0.2 🌐 國際 Gateway (M50~M54) 通用 Cache 架構與 Seed 採樣演演演算法說明
+
+國際 Gateway 模組（`M50` RxNorm, `M51` ClinicalTrials.gov, `M52` PubChem, `M53` WHO ATC, `M54` TW Core FHIR）具備與國內 DB 不同的特殊兩大設計：
+
+### 1. 通用旁路快取架構 (Hybrid Pass-Through Cache Architecture)
+* **設計動機**：國際生醫資料庫數據量龐大（數百萬至數千萬筆），無法全量預載至本機資料庫。
+* **運作機制**：
+  1. **Cache Miss 檢測**：查詢時優先查本機 `m5x_*_cache` 資料表。
+  2. **線上 API 透傳 (Pass-Through)**：若本機無記錄，自動調用國際 REST API 抓取數據。
+  3. **自動寫入快取 (Persistence)**：將結果格式化後寫入 `m5x_*_cache` 並標註 `cached_at` 時間戳。
+
+### 2. 離線防護與 Top 200 Seed 精準採樣演演演算法 (Seed Ingestion Algorithm)
+* **設計動機**：確保系統在完全無網路（離線環境）或 GitHub Actions CI 中仍可 100% 運行測試與發布。
+* **採樣演演演算法**：
+  在 `scripts/medical/fetch_med_data_samples.py` 中，系統會提取全台 Top 200 最常用處方藥與罕見疾病清單，預先向國際 API 發動連線，將實體回傳數據固化寫入 `m5x_*_cache` 作為種子資料 (Seed Data)。
+
+
+---
+
+<!-- START_OF_FILE: 03_01_m01_tw_drug_db.md -->
+# 3.1 [M01] 台灣處方藥證與健保價庫 (tw_drug_db)
+
+### (A) 為何而戰 (Why We Build M01)
+* **使用者痛點**：病患與家屬看不懂處方箋上的健保藥品名細，難以核對原廠藥與學名藥價差；臨床醫師與藥師在進行跨庫對照整合時，缺乏即時秒級的藥價歷史與適應症檢索工具。
+* **核心價值主張**：提供全台 66,453 筆處方藥許可證與健保價的秒級查詢，並作為 `M00` 母大腦全域實體表 (`m00_entities`) 的主幹藥物神經。
+
+### (B) 政府原始設計意圖與開放 API 剖析 (Gov Intent & Data Sources)
+* **主管機關**：衛生福利部食品藥物管理署 (TFDA) & 中央健康保險署 (NHI)。
+* **原始設計意圖**：公開全台合法西藥許可證履歷（劑型、適應症、製造廠）與全民健保給付價格調整歷史。
+* **原始 API 端點**：`https://data.fda.gov.tw/opendata/exportDataList.do?method=ExportData&ItemCode=4`
+* **下載與採樣腳本**：[`scripts/medical/fetch_med_data_samples.py`](../../scripts/medical/fetch_med_data_samples.py) 之 `fetch_m01()` 函式。
+
+### (C) 📄 來源單筆資料說明與 Raw Sample (Raw Data & Sample)
+* **原始欄位解讀**：原始 TFDA JSON 包含 `許可證字號`, `健保代碼`, `中文品名`, `英文品名`, `適應症`, `劑型`, `主成分` 等欄位。其中的健保代碼常因 Excel 開啟而發生「開頭首零消失 (Eaten Zero)」問題（如 `0AC49322100` 被吃成 `AC49322100`）。
+* **單筆 Raw Sample 附件**：參閱 [`modules/m01_tw_drug_db/raw_sample_single.json`](../modules/m01_tw_drug_db/raw_sample_single.json)
+* **單筆 Raw JSON 範例**：
+  ```json
+  [
+    {
+      "許可證字號": "衛署藥輸字第024567號",
+      "健保代碼": "0AC49322100",
+      "中文品名": "泰格莎膜衣錠 80 毫克",
+      "英文品名": "Tagrisso Film-Coated Tablets 80mg",
+      "成分": "OSIMERTINIB MESYLATE",
+      "適應症": "具有 EGFR 基因突變之局部晚期或轉移性非小細胞肺癌第一線治療。",
+      "申請商": "阿斯利康股份有限公司"
+    }
+  ]
+  ```
+
+### (D) 🔗 實體 Schema 建表 SQL 腳本 (Schema SQL Link)
+* **純 SQL 建表腳本附件**：[`modules/m01_tw_drug_db/schema.sql`](../modules/m01_tw_drug_db/schema.sql)
+* **核心 DDL SQL 語法**（複製貼上即可建立資料庫）：
+  ```sql
+  -- M01 台灣處方藥證與健保價庫建表指令
+  CREATE TABLE IF NOT EXISTS m01_tw_drug_db (
+      nhi_code TEXT PRIMARY KEY,           -- 健保藥品代碼 (zfill 補零 10 位)
+      license_id TEXT NOT NULL,            -- 藥品許可證字號
+      drug_name_zh TEXT NOT NULL,          -- 中文品名
+      drug_name_en TEXT,                   -- 英文品名
+      ingredient_name TEXT,                -- 有效成分名稱
+      indication TEXT,                     -- 適應症全文
+      dosage_form TEXT,                    -- 劑型
+      price REAL DEFAULT 0.0,              -- 健保價格 (元)
+      manufacturer TEXT,                   -- 製造/申請廠商
+      attributes_json JSON,                -- 歷史藥價與包裝 JSON
+      updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+  );
+  CREATE INDEX IF NOT EXISTS idx_m01_drug_name ON m01_tw_drug_db(drug_name_zh);
+  CREATE INDEX IF NOT EXISTS idx_m01_license ON m01_tw_drug_db(license_id);
+  ```
+
+### (E) ⚡ 核心演演演算法與資料處理邏輯 (Core Algorithms & Logic)
+1. **健保碼補零與主鍵正規化演演演算法 (`zfill(10)`)**：
+   比對位數，若健保代碼長度為 9 位數且開頭非字母，自動於首位補 `0`，避免跨庫關聯失敗。
+2. **藥價歷史中位數與四分位距 (IQR) 統計演演演算法**：
+   調用 DuckDB C++ 引擎，將歷史藥價調整紀錄進行 IQR 離群值掃除，計算藥價歷史中位數。
+3. **5 大維度 Rule-based Tag 自動萃取演演演算法**：
+   解析 `indication` 與 `劑型` 文字，以 Regex 自動標定 `#癌症`, `#注射劑`, `#心血管`, `#管制藥`, `#外用` 標籤。
+
+### (F) 目前核心功能、CLI 手冊與 Agent 工作流 (Current Capabilities)
+* **CLI 檢索指令**：
+  ```bash
+  python src/cli/main.py m01 search 阿司匹靈 --db db/med.db
+  ```
+* **專屬檔案超連結**：
+  * [M01 子模組專屬 README](../modules/m01_tw_drug_db/README.md)
+  * [M01 CLI 指令手冊](../modules/m01_tw_drug_db/CLI_MANUAL.md)
+  * [M01 AI Agent WORKFLOW.md](../modules/m01_tw_drug_db/WORKFLOW.md)
+* **單元測試狀態**：`tests/test_m01_tw_drug_db.py` (🟢 **100% PASS**)
+
+### (G) 🎨 專屬跨模組對接拓撲圖 (Mermaid Topology)
+
+```mermaid
+graph LR
+    subgraph M01_Core["💊 M01 台灣處方藥證與健保價庫 (tw_drug_db)"]
+        M01_Table[("m01_tw_drug_db<br>nhi_code (PK)")]
+    end
+
+    subgraph Internal_Relay["國內子模組業務對照整合 (Domestic Synergy)"]
+        M02["M02 主成分字典"] -->|1. 拆解有效成分| M01_Table
+        M04["M04 缺藥警訊通報"] -->|2. 缺藥品項比對| M01_Table
+        M06["M06 健保給付規定"] -->|3. 給付條件樹關聯| M01_Table
+    end
+
+    subgraph Global_Gateways["國際生醫 Gateway 對接 (Global Synergy)"]
+        M50["M50 RxNorm Gateway"] <-->|4. 跨國美規 RxCUI 轉碼| M01_Table
+        M53["M53 WHO ATC 藥理樹"] <-->|5. ATC 5階分類與同劑型替代藥| M01_Table
+    end
+```
+
+* **`Fig 3.1` M01 跨模組對接拓撲圖 (M01 ➔ M02/M04/M06/M50/M53)**
+
+
+---
+
+<!-- START_OF_FILE: 03_02_m02_tw_ingredient_map_db.md -->
+# 3.2 [M02] 西藥有效成分字典與主成分對照庫 (tw_ingredient_map_db)
+
+### (A) 為何而戰 (Why We Build M02)
+* **使用者痛點**：台灣藥品許可證與處方箋上的主成分文字命名極度混亂（包含商品名混入成分名、全大寫/小寫不一、鹽類字尾加註如 `MESYLATE` 或 `HYDROCHLORIDE`），導致無法直接以成分精確檢索替代藥，亦無法與國際生醫資料庫 (WHO ATC, RxNorm, PubChem) 對接。
+* **核心價值主張**：提供全台 7,713 筆西藥有效成分的清洗、複方拆解與同義詞歸一化，作為連結 `M01` 處方藥與 `M50`~`M53` 國際生醫 Gateway 的核心語意樞紐。
+
+### (B) 政府原始設計意圖與開放 API 剖析 (Gov Intent & Data Sources)
+* **主管機關**：衛生福利部食品藥物管理署 (TFDA) & 中央健康保險署 (NHI)。
+* **原始設計意圖**：揭露藥品許可證所含西藥有效成分成分名與劑量。
+* **原始 API 端點**：`https://data.fda.gov.tw/opendata/exportDataList.do?method=ExportData&ItemCode=4`
+* **下載與採樣腳本**：[`scripts/medical/fetch_med_data_samples.py`](../../scripts/medical/fetch_med_data_samples.py) 之 `fetch_m02()` 函式。
+
+### (C) 📄 來源單筆資料說明與 Raw Sample (Raw Data & Sample)
+* **原始欄位解讀**：原始成分欄位常將多種成分以分號 `;` 或加號 `+` 串接於單一字串中（例如 `OSIMERTINIB MESYLATE; ACETAMINOPHEN`），需要進行複方自動拆解。
+* **單筆 Raw Sample 附件**：參閱 [`modules/m02_tw_ingredient_map_db/raw_sample_single.json`](../modules/m02_tw_ingredient_map_db/raw_sample_single.json)
+* **單筆 Raw JSON 範例**：
+  ```json
+  [
+    {
+      "ingredient_id": "ING_UNDECYLENATE_ZINC",
+      "ingredient_name_en": "UNDECYLENATE ZINC",
+      "ingredient_name_zh": "",
+      "atc_code": "D01AE04",
+      "rxcui": "1900001",
+      "pubchem_cid": "24883"
+    }
+  ]
+  ```
+
+### (D) 🔗 實體 Schema 建表 SQL 腳本 (Schema SQL Link)
+* **純 SQL 建表腳本附件**：[`modules/m02_tw_ingredient_map_db/schema.sql`](../modules/m02_tw_ingredient_map_db/schema.sql)
+* **核心 DDL SQL 語法**（複製貼上即可建立資料庫）：
+  ```sql
+  -- M02 西藥有效成分字典與主成分對照庫建表指令
+  CREATE TABLE IF NOT EXISTS m02_tw_ingredient_map_db (
+      ingredient_id TEXT PRIMARY KEY,       -- 成分全域識別碼 (如 ING_ASPIRIN)
+      ingredient_name_en TEXT NOT NULL,     -- 英文成分標準名 (歸一化大寫)
+      ingredient_name_zh TEXT,              -- 中文成分標準名
+      atc_code TEXT,                        -- 對應 WHO 7 位數 ATC 碼
+      rxcui TEXT,                           -- 對應 NLM RxNorm RxCUI
+      pubchem_cid TEXT,                     -- 對應 PubChem 化學分子 CID
+      attributes_json JSON,                 -- 鹽類與別名結構 JSON
+      updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+  );
+  CREATE INDEX IF NOT EXISTS idx_m02_atc ON m02_tw_ingredient_map_db(atc_code);
+  CREATE INDEX IF NOT EXISTS idx_m02_rxcui ON m02_tw_ingredient_map_db(rxcui);
+  CREATE INDEX IF NOT EXISTS idx_m02_pubchem ON m02_tw_ingredient_map_db(pubchem_cid);
+  ```
+
+### (E) ⚡ 核心演演演算法與資料處理邏輯 (Core Algorithms & Logic)
+1. **複方成分符號自動拆解演演演算法 (Multi-Ingredient Splitter)**：
+   解析原始成分字串，自動以 `;`, `+`, `AND`, `WITH` 進行正則切割，將單一藥品拆解為獨立成分陣列。
+2. **成分同義詞歸一化與鹽類去除演演演算法 (Ingredient Normalization & Salt Stripping)**：
+   將成分英文轉換為標準大寫，並剔除無關劑量字尾與常見鹽類（如去除 `SODIUM`, `HYDROCHLORIDE`, `MESYLATE`），對齊通用分子主幹。
+
+### (F) 目前核心功能、CLI 手冊與 Agent 工作流 (Current Capabilities)
+* **CLI 檢索指令**：
+  ```bash
+  python src/cli/main.py m02 search Aspirin --db db/med.db
+  ```
+* **專屬檔案超連結**：
+  * [M02 子模組專屬 README](../modules/m02_tw_ingredient_map_db/README.md)
+  * [M02 CLI 指令手冊](../modules/m02_tw_ingredient_map_db/CLI_MANUAL.md)
+  * [M02 AI Agent WORKFLOW.md](../modules/m02_tw_ingredient_map_db/WORKFLOW.md)
+* **單元測試狀態**：`tests/test_m02_tw_ingredient_map_db.py` (🟢 **100% PASS**)
+
+### (G) 🎨 專屬跨模組對接拓撲圖 (Mermaid Topology)
+
+```mermaid
+graph LR
+    subgraph M02_Core["🧬 M02 主成分字典庫 (tw_ingredient_map_db)"]
+        M02_Table[("m02_tw_ingredient_map_db<br>ingredient_id (PK)")]
+    end
+
+    subgraph Internal_Relay["國內子模組業務對照整合 (Domestic Synergy)"]
+        M01["M01 處方藥證庫"] -->|1. 處方藥對應主成分| M02_Table
+        M04["M04 缺藥警訊通報"] -->|2. 同成分替代藥對照整合| M02_Table
+    end
+
+    subgraph Global_Gateways["國際生醫 Gateway 對接 (Global Synergy)"]
+        M02_Table <-->|3. 對接 PubChem CID 分子式| M52["M52 PubChem Gateway"]
+        M02_Table <-->|4. 對接 WHO ATC 5階分類樹| M53["M53 WHO ATC 藥理樹"]
+    end
+```
+
+* **`Fig 3.2` M02 跨模組對接拓撲圖 (M02 ➔ M01/M04/M52/M53)**
+
+
+---
+
+<!-- START_OF_FILE: 03_03_m03_health_supp_db.md -->
+# 3.3 [M03] TFDA 健康食品許可證與保健交互作用庫 (health_supp_db)
+
+### (A) 為何而戰 (Why We Build M03)
+* **使用者痛點**：慢性病病患服用西藥處方時，常同時食用保健食品，缺乏西藥與保健食品交互作用禁忌比對工具。
+* **核心價值主張**：收錄全台 487 筆健康食品許可證、13 大保健功效標籤與西藥禁忌比對。
+
+### (B) 政府原始設計意圖與開放 API 剖析 (Gov Intent & Data Sources)
+* **主管機關**：衛福部食藥署 (TFDA)
+* **原始 API 端點**：`https://data.fda.gov.tw/opendata/exportDataList.do?method=ExportData&ItemCode=12`
+
+### (C) 📄 來源單筆資料說明與 Raw Sample (Raw Data & Sample)
+* **單筆 Raw Sample 附件**：參閱 [`modules/m03_health_supp_db/raw_sample_single.json`](../modules/m03_health_supp_db/raw_sample_single.json)
+* **單筆 Raw JSON 範例**：
+  ```json
+  [
+    {
+      "license_no": "衛署健食字第A00001號",
+      "product_name": "養生靈芝膠囊",
+      "health_claim": "有助於促進抗體形成、調節免疫力",
+      "function_category": "免疫調節"
+    }
+  ]
+  ```
+
+### (D) 🔗 實體 Schema 建表 SQL 腳本 (Schema SQL Link)
+* **純 SQL 建表腳本附件**：[`modules/m03_health_supp_db/schema.sql`](../modules/m03_health_supp_db/schema.sql)
+* **核心 DDL SQL 語法**（複製貼上即可建立資料庫）：
+  ```sql
+  CREATE TABLE IF NOT EXISTS m03_health_supp_db (
+      license_no TEXT PRIMARY KEY,
+      product_name TEXT NOT NULL,
+      health_claim TEXT,
+      function_category TEXT,
+      attributes_json JSON,
+      updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+  );
+  ```
+
+### (E) ⚡ 核心演演演算法與資料處理邏輯 (Core Algorithms & Logic)
+1. **13 大保健功效標籤萃取演演演算法**：正則解析保健功效文字，歸一化標定 `#調節血脂`, `#胃腸改善`, `#護肝` 等標籤。
+2. **保健食品與西藥交互作用矩陣**：比對主成分與健康食品萃取物（如靈芝、紅麴與降血脂藥）。
+
+### (F) 目前核心功能、CLI 手冊與 Agent 工作流 (Current Capabilities)
+* **CLI 檢索指令**：
+  ```bash
+  python src/cli/main.py m03 search 靈芝 --db db/med.db
+  ```
+* **專屬檔案超連結**：
+  * [M03 子模組專屬 README](../modules/m03_health_supp_db/README.md)
+  * [M03 CLI 指令手冊](../modules/m03_health_supp_db/CLI_MANUAL.md)
+  * [M03 AI Agent WORKFLOW.md](../modules/m03_health_supp_db/WORKFLOW.md)
+* **單元測試狀態**：`tests/test_m03_health_supp_db.py` (🟢 **100% PASS**)
+
+### (G) 🎨 專屬跨模組對接拓撲圖 (Mermaid Topology)
+
+```mermaid
+graph LR
+    M03[M03 健康食品庫] -->|西藥/保健食品禁忌比對| M01[M01 處方藥證庫]
+```
+
+* **`Fig 3.3` M03 跨模組對接拓撲圖 (M03 ➔ M01)**
+
+
+---
+
+<!-- START_OF_FILE: 03_04_m04_drug_shortage_alert.md -->
+# 3.4 [M04] 食藥署缺藥與藥品回收警訊庫 (drug_shortage_alert)
+
+### (A) 為何而戰 (Why We Build M04)
+* **使用者痛點**：缺藥通報資訊散落，基層藥局與院所無法在 5ms 內精確比對替代藥。
+* **核心價值主張**：即時掌握全台缺藥與回收警訊，並自動連動同 ATC 替代藥推薦。
+
+### (B) 政府原始設計意圖與開放 API 剖析 (Gov Intent & Data Sources)
+* **主管機關**：衛福部食藥署 (TFDA) 缺藥供應資訊平台
+* **原始 API 端點**：`https://data.fda.gov.tw/opendata/exportDataList.do?method=ExportData&ItemCode=99`
+
+### (C) 📄 來源單筆資料說明與 Raw Sample (Raw Data & Sample)
+* **單筆 Raw Sample 附件**：參閱 [`modules/m04_drug_shortage_alert/raw_sample_single.json`](../modules/m04_drug_shortage_alert/raw_sample_single.json)
+* **單筆 Raw JSON 範例**：
+  ```json
+  [
+    {
+      "recall_id": "REC_20260801_01",
+      "drug_name": "泰格莎膜衣錠 80 毫克",
+      "reason": "包裝瑕疵回收",
+      "status": "通報生效中"
+    }
+  ]
+  ```
+
+### (D) 🔗 實體 Schema 建表 SQL 腳本 (Schema SQL Link)
+* **純 SQL 建表腳本附件**：[`modules/m04_drug_shortage_alert/schema.sql`](../modules/m04_drug_shortage_alert/schema.sql)
+* **核心 DDL SQL 語法**（複製貼上即可建立資料庫）：
+  ```sql
+  CREATE TABLE IF NOT EXISTS m04_recalls (
+      recall_id TEXT PRIMARY KEY,
+      nhi_code TEXT,
+      drug_name TEXT NOT NULL,
+      reason TEXT,
+      status TEXT,
+      created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+  );
+  ```
+
+### (E) ⚡ 核心演演演算法與資料處理邏輯 (Core Algorithms & Logic)
+1. **5ms 即時缺藥比對決策樹**：以健保碼即時比對通報狀態。
+2. **同 ATC 同劑型平價替代藥自動推薦**：連動 M53 取得相同 ATC Level 5 品項。
+
+### (F) 目前核心功能、CLI 手冊與 Agent 工作流 (Current Capabilities)
+* **CLI 檢索指令**：
+  ```bash
+  python src/cli/main.py m04 search 缺藥 --db db/med.db
+  ```
+* **專屬檔案超連結**：
+  * [M04 子模組專屬 README](../modules/m04_drug_shortage_alert/README.md)
+  * [M04 CLI 指令手冊](../modules/m04_drug_shortage_alert/CLI_MANUAL.md)
+  * [M04 AI Agent WORKFLOW.md](../modules/m04_drug_shortage_alert/WORKFLOW.md)
+* **單元測試狀態**：`tests/test_m04_drug_shortage_alert.py` (🟢 **100% PASS**)
+
+### (G) 🎨 專屬跨模組對接拓撲圖 (Mermaid Topology)
+
+```mermaid
+graph LR
+    M04[M04 缺藥警訊庫] -->|1. 比對缺藥品項| M01[M01 處方藥證庫]
+    M04 -->|2. 同ATC替代藥推薦| M53[M53 WHO ATC 藥理樹]
+```
+
+* **`Fig 3.4` M04 跨模組對接拓撲圖 (M04 ➔ M01/M53)**
+
+
+---
+
+<!-- START_OF_FILE: 03_05_m05_tw_hospital_db.md -->
+# 3.5 [M05] 健保特約醫事機構與專科地圖 (tw_hospital_db)
+
+### (A) 為何而戰 (Why We Build M05)
+* **使用者痛點**：非結構化門診看診時間無法計算，距離過遠找不到具備特定處置能力的專科醫院。
+* **核心價值主張**：整合全台 24,198 院所資訊，轉換看診時間為 21 位元矩陣，並提供 Haversine 距離計算。
+
+### (B) 政府原始設計意圖與開放 API 剖析 (Gov Intent & Data Sources)
+* **主管機關**：中央健康保險署 (NHI)
+* **原始 API 端點**：`https://data.nhi.gov.tw/Datasets/DatasetDetail.aspx?id=437`
+
+### (C) 📄 來源單筆資料說明與 Raw Sample (Raw Data & Sample)
+* **單筆 Raw Sample 附件**：參閱 [`modules/m05_tw_hospital_db/raw_sample_single.json`](../modules/m05_tw_hospital_db/raw_sample_single.json)
+* **單筆 Raw JSON 範例**：
+  ```json
+  [
+    {
+      "hosp_id": "0101010011",
+      "hosp_name": "國立臺灣大學醫學院附設醫院",
+      "city": "臺北市",
+      "lat": 25.041,
+      "lng": 121.519,
+      "time_matrix_21": "111111111111111111111"
+    }
+  ]
+  ```
+
+### (D) 🔗 實體 Schema 建表 SQL 腳本 (Schema SQL Link)
+* **純 SQL 建表腳本附件**：[`modules/m05_tw_hospital_db/schema.sql`](../modules/m05_tw_hospital_db/schema.sql)
+* **核心 DDL SQL 語法**（複製貼上即可建立資料庫）：
+  ```sql
+  CREATE TABLE IF NOT EXISTS m05_hospitals (
+      hosp_id TEXT PRIMARY KEY,
+      hosp_name TEXT NOT NULL,
+      city TEXT,
+      lat REAL, lng REAL,
+      time_matrix_21 TEXT,
+      updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+  );
+  ```
+
+### (E) ⚡ 核心演演演算法與資料處理邏輯 (Core Algorithms & Logic)
+1. **看診時間 21 位元矩陣演演演算法 (21-Bit Time Matrix)**：將週一至週日早中晚門診編碼為 21 個 Bit 位元。
+2. **Haversine 空間半徑檢索**：以 WGS84 經緯度毫秒級計算指定公里內院所。
+
+### (F) 目前核心功能、CLI 手冊與 Agent 工作流 (Current Capabilities)
+* **CLI 檢索指令**：
+  ```bash
+  python src/cli/main.py m05 search 台大醫院 --db db/med.db
+  ```
+* **專屬檔案超連結**：
+  * [M05 子模組專屬 README](../modules/m05_tw_hospital_db/README.md)
+  * [M05 CLI 指令手冊](../modules/m05_tw_hospital_db/CLI_MANUAL.md)
+  * [M05 AI Agent WORKFLOW.md](../modules/m05_tw_hospital_db/WORKFLOW.md)
+* **單元測試狀態**：`tests/test_m05_tw_hospital_db.py` (🟢 **100% PASS**)
+
+### (G) 🎨 專屬跨模組對接拓撲圖 (Mermaid Topology)
+
+```mermaid
+graph LR
+    M05[M05 特約醫院地圖] -->|1. 機構處置能量| M07[M07 處置手術碼]
+    M05 -->|2. 癌症治療中心| M09[M09 癌症試驗標靶]
+```
+
+* **`Fig 3.5` M05 跨模組對接拓撲圖 (M05 ➔ M07/M09)**
+
+
+---
+
+<!-- START_OF_FILE: 03_06_m06_nhi_payment_db.md -->
+# 3.6 [M06] 健保給付規定與自費比價庫 (nhi_payment_db)
+
+### (A) 為何而戰 (Why We Build M06)
+* **使用者痛點**：健保事先審查條文極其複雜，自費醫療差額不透明。
+* **核心價值主張**：將條文解構為 JSON 條件樹，並計算各院所自費四分位數比價。
+
+### (B) 政府原始設計意圖與開放 API 剖析 (Gov Intent & Data Sources)
+* **主管機關**：中央健康保險署 (NHI)
+* **原始 API 端點**：`https://data.nhi.gov.tw/Datasets/DatasetDetail.aspx?id=500`
+
+### (C) 📄 來源單筆資料說明與 Raw Sample (Raw Data & Sample)
+* **單筆 Raw Sample 附件**：參閱 [`modules/m06_nhi_payment_db/raw_sample_single.json`](../modules/m06_nhi_payment_db/raw_sample_single.json)
+* **單筆 Raw JSON 範例**：
+  ```json
+  [
+    {
+      "rule_id": "RULE_9_45",
+      "item_name": "標靶藥物 Osimertinib",
+      "condition_tree_json": "{\"min_stage\": \"4\", \"egfr_mutation\": true}"
+    }
+  ]
+  ```
+
+### (D) 🔗 實體 Schema 建表 SQL 腳本 (Schema SQL Link)
+* **純 SQL 建表腳本附件**：[`modules/m06_nhi_payment_db/schema.sql`](../modules/m06_nhi_payment_db/schema.sql)
+* **核心 DDL SQL 語法**（複製貼上即可建立資料庫）：
+  ```sql
+  CREATE TABLE IF NOT EXISTS m06_nhi_rules (
+      rule_id TEXT PRIMARY KEY,
+      item_name TEXT NOT NULL,
+      condition_tree_json JSON,
+      updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+  );
+  ```
+
+### (E) ⚡ 核心演演演算法與資料處理邏輯 (Core Algorithms & Logic)
+1. **條文 JSON 邏輯條件樹解構**：將「需先經過二線治療」轉譯為 JSON 條件邏輯。
+2. **IQR 自費四分位數比價**：計算該自費品項全台前 25%、中位數與 75% 價格。
+
+### (F) 目前核心功能、CLI 手冊與 Agent 工作流 (Current Capabilities)
+* **CLI 檢索指令**：
+  ```bash
+  python src/cli/main.py m06 search 免疫治療 --db db/med.db
+  ```
+* **專屬檔案超連結**：
+  * [M06 子模組專屬 README](../modules/m06_nhi_payment_db/README.md)
+  * [M06 CLI 指令手冊](../modules/m06_nhi_payment_db/CLI_MANUAL.md)
+  * [M06 AI Agent WORKFLOW.md](../modules/m06_nhi_payment_db/WORKFLOW.md)
+* **單元測試狀態**：`tests/test_m06_nhi_payment_db.py` (🟢 **100% PASS**)
+
+### (G) 🎨 專屬跨模組對接拓撲圖 (Mermaid Topology)
+
+```mermaid
+graph LR
+    M06[M06 給付與自費庫] -->|給付限制條件| M01[M01 處方藥證庫]
+```
+
+* **`Fig 3.6` M06 跨模組對接拓撲圖 (M06 ➔ M01)**
+
+
+---
+
+<!-- START_OF_FILE: 03_07_m07_nhi_procedure_db.md -->
+# 3.7 [M07] 健保醫療服務處置與手術碼庫 (nhi_procedure_db)
+
+### (A) 為何而戰 (Why We Build M07)
+* **使用者痛點**：手術與處置點數浮動，民眾無法預估門診手術自負額。
+* **核心價值主張**：提供 9,842 筆處置碼層級切片與浮動點值權重計算。
+
+### (B) 政府原始設計意圖與開放 API 剖析 (Gov Intent & Data Sources)
+* **主管機關**：中央健康保險署 (NHI)
+* **原始 API 端點**：`https://data.nhi.gov.tw/Datasets/DatasetDetail.aspx?id=600`
+
+### (C) 📄 來源單筆資料說明與 Raw Sample (Raw Data & Sample)
+* **單筆 Raw Sample 附件**：參閱 [`modules/m07_nhi_procedure_db/raw_sample_single.json`](../modules/m07_nhi_procedure_db/raw_sample_single.json)
+* **單筆 Raw JSON 範例**：
+  ```json
+  [
+    {
+      "code": "33084B",
+      "name_zh": "胸腔鏡肺葉切除術",
+      "points": 34500,
+      "chapter": "第三部 手術"
+    }
+  ]
+  ```
+
+### (D) 🔗 實體 Schema 建表 SQL 腳本 (Schema SQL Link)
+* **純 SQL 建表腳本附件**：[`modules/m07_nhi_procedure_db/schema.sql`](../modules/m07_nhi_procedure_db/schema.sql)
+* **核心 DDL SQL 語法**（複製貼上即可建立資料庫）：
+  ```sql
+  CREATE TABLE IF NOT EXISTS m07_procedures (
+      code TEXT PRIMARY KEY,
+      name_zh TEXT NOT NULL,
+      points INTEGER,
+      chapter TEXT
+  );
+  ```
+
+### (E) ⚡ 核心演演演算法與資料處理邏輯 (Core Algorithms & Logic)
+1. **處置碼 5 階層級切片演演演算法**：按章節層級進行 SQL CTE 階層解構。
+2. **點值估算演演演算法**：結合最新各分區點值估算實質醫療費用。
+
+### (F) 目前核心功能、CLI 手冊與 Agent 工作流 (Current Capabilities)
+* **CLI 檢索指令**：
+  ```bash
+  python src/cli/main.py m07 search 內視鏡 --db db/med.db
+  ```
+* **專屬檔案超連結**：
+  * [M07 子模組專屬 README](../modules/m07_nhi_procedure_db/README.md)
+  * [M07 CLI 指令手冊](../modules/m07_nhi_procedure_db/CLI_MANUAL.md)
+  * [M07 AI Agent WORKFLOW.md](../modules/m07_nhi_procedure_db/WORKFLOW.md)
+* **單元測試狀態**：`tests/test_m07_nhi_procedure_db.py` (🟢 **100% PASS**)
+
+### (G) 🎨 專屬跨模組對接拓撲圖 (Mermaid Topology)
+
+```mermaid
+graph LR
+    M07[M07 處置手術碼庫] -->|處置碼轉碼| M12[M12 LOINC 檢驗庫]
+```
+
+* **`Fig 3.7` M07 跨模組對接拓撲圖 (M07 ➔ M12)**
+
+
+---
+
+<!-- START_OF_FILE: 03_08_m08_rare_disease_db.md -->
+# 3.8 [M08] 國健署罕見疾病與罕藥名單庫 (rare_disease_db)
+
+### (A) 為何而戰 (Why We Build M08)
+* **使用者痛點**：罕見疾病 ICD-10 診斷與專用罕藥難以即時對照整合。
+* **核心價值主張**：收錄 241 種國健署公告罕病與專用罕藥雙向對照。
+
+### (B) 政府原始設計意圖與開放 API 剖析 (Gov Intent & Data Sources)
+* **主管機關**：衛福部國民健康署 (HPB)
+* **原始 API 端點**：`https://www.hpa.gov.tw/Pages/List.aspx?nodeid=43`
+
+### (C) 📄 來源單筆資料說明與 Raw Sample (Raw Data & Sample)
+* **單筆 Raw Sample 附件**：參閱 [`modules/m08_rare_disease_db/raw_sample_single.json`](../modules/m08_rare_disease_db/raw_sample_single.json)
+* **單筆 Raw JSON 範例**：
+  ```json
+  [
+    {
+      "disease_code": "RD001",
+      "disease_name_zh": "苯酮尿症",
+      "icd10": "E70.0",
+      "orphan_drug": "Sapropterin"
+    }
+  ]
+  ```
+
+### (D) 🔗 實體 Schema 建表 SQL 腳本 (Schema SQL Link)
+* **純 SQL 建表腳本附件**：[`modules/m08_rare_disease_db/schema.sql`](../modules/m08_rare_disease_db/schema.sql)
+* **核心 DDL SQL 語法**（複製貼上即可建立資料庫）：
+  ```sql
+  CREATE TABLE IF NOT EXISTS m08_rare_diseases (
+      disease_code TEXT PRIMARY KEY,
+      disease_name_zh TEXT NOT NULL,
+      icd10 TEXT,
+      orphan_drug TEXT
+  );
+  ```
+
+### (E) ⚡ 核心演演演算法與資料處理邏輯 (Core Algorithms & Logic)
+1. **罕病 ICD-10 / 罕藥專用碼雙向自動對照整合演演演算法**。
+
+### (F) 目前核心功能、CLI 手冊與 Agent 工作流 (Current Capabilities)
+* **CLI 檢索指令**：
+  ```bash
+  python src/cli/main.py m08 search 罕見 --db db/med.db
+  ```
+* **專屬檔案超連結**：
+  * [M08 子模組專屬 README](../modules/m08_rare_disease_db/README.md)
+  * [M08 CLI 指令手冊](../modules/m08_rare_disease_db/CLI_MANUAL.md)
+  * [M08 AI Agent WORKFLOW.md](../modules/m08_rare_disease_db/WORKFLOW.md)
+* **單元測試狀態**：`tests/test_m08_rare_disease_db.py` (🟢 **100% PASS**)
+
+### (G) 🎨 專屬跨模組對接拓撲圖 (Mermaid Topology)
+
+```mermaid
+graph LR
+    M08[M08 罕見疾病庫] -->|對應專用罕藥| M01[M01 處方藥證庫]
+```
+
+* **`Fig 3.8` M08 跨模組對接拓撲圖 (M08 ➔ M01)**
+
+
+---
+
+<!-- START_OF_FILE: 03_09_m09_oncology_meta.md -->
+# 3.9 [M09] 癌症指引與 ClinicalTrials 台灣試驗庫 (oncology_meta)
+
+### (A) 為何而戰 (Why We Build M09)
+* **使用者痛點**：癌症確診後無法依基因突變與 TNM Stage 快速找到台灣招募中臨床試驗。
+* **核心價值主張**：提供 2,150 筆癌症標靶與全台臨床試驗過濾。
+
+### (B) 政府原始設計意圖與開放 API 剖析 (Gov Intent & Data Sources)
+* **主管機關**：衛福部國健署 & NIH ClinicalTrials.gov
+* **原始 API 端點**：`https://clinicaltrials.gov/api/v2/studies`
+
+### (C) 📄 來源單筆資料說明與 Raw Sample (Raw Data & Sample)
+* **單筆 Raw Sample 附件**：參閱 [`modules/m09_oncology_meta/raw_sample_single.json`](../modules/m09_oncology_meta/raw_sample_single.json)
+* **單筆 Raw JSON 範例**：
+  ```json
+  [
+    {
+      "trial_id": "NCT04512345",
+      "cancer_type": "NSCLC",
+      "mutation": "EGFR T790M",
+      "status": "RECRUITING"
+    }
+  ]
+  ```
+
+### (D) 🔗 實體 Schema 建表 SQL 腳本 (Schema SQL Link)
+* **純 SQL 建表腳本附件**：[`modules/m09_oncology_meta/schema.sql`](../modules/m09_oncology_meta/schema.sql)
+* **核心 DDL SQL 語法**（複製貼上即可建立資料庫）：
+  ```sql
+  CREATE TABLE IF NOT EXISTS m09_clinical_trials (
+      trial_id TEXT PRIMARY KEY,
+      cancer_type TEXT,
+      mutation TEXT,
+      status TEXT
+  );
+  ```
+
+### (E) ⚡ 核心演演演算法與資料處理邏輯 (Core Algorithms & Logic)
+1. **TNM Stage 癌症分期與基因突變標籤過濾演演演算法**。
+
+### (F) 目前核心功能、CLI 手冊與 Agent 工作流 (Current Capabilities)
+* **CLI 檢索指令**：
+  ```bash
+  python src/cli/main.py m09 search 肺癌 --db db/med.db
+  ```
+* **專屬檔案超連結**：
+  * [M09 子模組專屬 README](../modules/m09_oncology_meta/README.md)
+  * [M09 CLI 指令手冊](../modules/m09_oncology_meta/CLI_MANUAL.md)
+  * [M09 AI Agent WORKFLOW.md](../modules/m09_oncology_meta/WORKFLOW.md)
+* **單元測試狀態**：`tests/test_m09_oncology_meta.py` (🟢 **100% PASS**)
+
+### (G) 🎨 專屬跨模組對接拓撲圖 (Mermaid Topology)
+
+```mermaid
+graph LR
+    M09[M09 癌症試驗標靶] -->|對接美規試驗| M51[M51 CT.gov Gateway]
+```
+
+* **`Fig 3.9` M09 跨模組對接拓撲圖 (M09 ➔ M51)**
+
+
+---
+
+<!-- START_OF_FILE: 03_10_m10_med_legal_db.md -->
+# 3.10 [M10] 醫療過失裁判與訴訟防護庫 (med_legal_db)
+
+### (A) 為何而戰 (Why We Build M10)
+* **使用者痛點**：醫事人員欠缺客觀的醫療過失訴訟實務見解防護參考。
+* **核心價值主張**：收錄 15,482 筆醫療裁判，提供 Re-ranking 參考價值評分。
+
+### (B) 政府原始設計意圖與開放 API 剖析 (Gov Intent & Data Sources)
+* **主管機關**：司法院裁判書開放資料集
+* **原始 API 端點**：`https://opendata.judicial.gov.tw/`
+
+### (C) 📄 來源單筆資料說明與 Raw Sample (Raw Data & Sample)
+* **單筆 Raw Sample 附件**：參閱 [`modules/m10_med_legal_db/raw_sample_single.json`](../modules/m10_med_legal_db/raw_sample_single.json)
+* **單筆 Raw JSON 範例**：
+  ```json
+  [
+    {
+      "case_id": "112,醫上,45",
+      "reason": "醫療過失損害賠償",
+      "relevance_score": 0.94,
+      "verdict": "駁回原告之訴"
+    }
+  ]
+  ```
+
+### (D) 🔗 實體 Schema 建表 SQL 腳本 (Schema SQL Link)
+* **純 SQL 建表腳本附件**：[`modules/m10_med_legal_db/schema.sql`](../modules/m10_med_legal_db/schema.sql)
+* **核心 DDL SQL 語法**（複製貼上即可建立資料庫）：
+  ```sql
+  CREATE TABLE IF NOT EXISTS m10_legal_cases (
+      case_id TEXT PRIMARY KEY,
+      reason TEXT,
+      relevance_score REAL,
+      verdict TEXT
+  );
+  ```
+
+### (E) ⚡ 核心演演演算法與資料處理邏輯 (Core Algorithms & Logic)
+1. **裁判參考價值 Re-ranking 評分模型與爭點標籤萃取**。
+
+### (F) 目前核心功能、CLI 手冊與 Agent 工作流 (Current Capabilities)
+* **CLI 檢索指令**：
+  ```bash
+  python src/cli/main.py m10 search 醫療事故 --db db/med.db
+  ```
+* **專屬檔案超連結**：
+  * [M10 子模組專屬 README](../modules/m10_med_legal_db/README.md)
+  * [M10 CLI 指令手冊](../modules/m10_med_legal_db/CLI_MANUAL.md)
+  * [M10 AI Agent WORKFLOW.md](../modules/m10_med_legal_db/WORKFLOW.md)
+* **單元測試狀態**：`tests/test_m10_med_legal_db.py` (🟢 **100% PASS**)
+
+### (G) 🎨 專屬跨模組對接拓撲圖 (Mermaid Topology)
+
+```mermaid
+graph LR
+    M10[M10 醫療裁判庫] -->|對照處置爭點| M07[M07 處置手術碼庫]
+```
+
+* **`Fig 3.10` M10 跨模組對接拓撲圖 (M10 ➔ M07)**
+
+
+---
+
+<!-- START_OF_FILE: 03_11_m11_patient_journey_db.md -->
+# 3.11 [M11] 病患全程臨床照護導航庫 (patient_journey_db)
+
+### (A) 為何而戰 (Why We Build M11)
+* **使用者痛點**：癌症確診病患面對混亂醫療資訊感到恐慌。
+* **核心價值主張**：建立有限狀態機 (FSM)，導航篩檢、確診、治療至復健 6 大階段。
+
+### (B) 政府原始設計意圖與開放 API 剖析 (Gov Intent & Data Sources)
+* **主管機關**：衛福部國健署癌症防治組
+* **原始 API 端點**：`https://www.hpa.gov.tw/Pages/List.aspx?nodeid=205`
+
+### (C) 📄 來源單筆資料說明與 Raw Sample (Raw Data & Sample)
+* **單筆 Raw Sample 附件**：參閱 [`modules/m11_patient_journey_db/raw_sample_single.json`](../modules/m11_patient_journey_db/raw_sample_single.json)
+* **單筆 Raw JSON 範例**：
+  ```json
+  [
+    {
+      "node_id": "STAGE_2_TREATMENT",
+      "cancer_type": "BREAST_CANCER",
+      "action_name": "標靶治療與衛教卡",
+      "next_node": "STAGE_3_SURVEILLANCE"
+    }
+  ]
+  ```
+
+### (D) 🔗 實體 Schema 建表 SQL 腳本 (Schema SQL Link)
+* **純 SQL 建表腳本附件**：[`modules/m11_patient_journey_db/schema.sql`](../modules/m11_patient_journey_db/schema.sql)
+* **核心 DDL SQL 語法**（複製貼上即可建立資料庫）：
+  ```sql
+  CREATE TABLE IF NOT EXISTS m11_journey_nodes (
+      node_id TEXT PRIMARY KEY,
+      cancer_type TEXT,
+      action_name TEXT,
+      next_node TEXT
+  );
+  ```
+
+### (E) ⚡ 核心演演演算法與資料處理邏輯 (Core Algorithms & Logic)
+1. **癌症照護旅程有限狀態機 (FSM) 轉移與拓撲演演演算法**。
+
+### (F) 目前核心功能、CLI 手冊與 Agent 工作流 (Current Capabilities)
+* **CLI 檢索指令**：
+  ```bash
+  python src/cli/main.py m11 search 照護 --db db/med.db
+  ```
+* **專屬檔案超連結**：
+  * [M11 子模組專屬 README](../modules/m11_patient_journey_db/README.md)
+  * [M11 CLI 指令手冊](../modules/m11_patient_journey_db/CLI_MANUAL.md)
+  * [M11 AI Agent WORKFLOW.md](../modules/m11_patient_journey_db/WORKFLOW.md)
+* **單元測試狀態**：`tests/test_m11_patient_journey_db.py` (🟢 **100% PASS**)
+
+### (G) 🎨 專屬跨模組對接拓撲圖 (Mermaid Topology)
+
+```mermaid
+graph LR
+    M11[M11 照護導航庫] -->|推薦處置機構| M05[M05 特約醫院地圖]
+```
+
+* **`Fig 3.11` M11 跨模組對接拓撲圖 (M11 ➔ M05)**
+
+
+---
+
+<!-- START_OF_FILE: 03_12_m12_med_lab_fhir_db.md -->
+# 3.12 [M12] TW Core IG FHIR 與 LOINC 碼庫 (med_lab_fhir_db)
+
+### (A) 為何而戰 (Why We Build M12)
+* **使用者痛點**：各大醫院檢驗報告代碼不一，無法直接產出標準 FHIR R4 JSON。
+* **核心價值主張**：提供 5,420 筆 LOINC 檢驗碼與 TW Core IG FHIR R4 Profile 映射。
+
+### (B) 政府原始設計意圖與開放 API 剖析 (Gov Intent & Data Sources)
+* **主管機關**：衛福部資訊處 TW Core IG & Regenstrief LOINC
+* **原始 API 端點**：`https://twcore.mohw.gov.tw/ig/twcore/`
+
+### (C) 📄 來源單筆資料說明與 Raw Sample (Raw Data & Sample)
+* **單筆 Raw Sample 附件**：參閱 [`modules/m12_med_lab_fhir_db/raw_sample_single.json`](../modules/m12_med_lab_fhir_db/raw_sample_single.json)
+* **單筆 Raw JSON 範例**：
+  ```json
+  [
+    {
+      "loinc_code": "1558-6",
+      "component": "Fasting glucose",
+      "tw_name": "空腹血糖",
+      "fhir_profile": "ObservationLabResult"
+    }
+  ]
+  ```
+
+### (D) 🔗 實體 Schema 建表 SQL 腳本 (Schema SQL Link)
+* **純 SQL 建表腳本附件**：[`modules/m12_med_lab_fhir_db/schema.sql`](../modules/m12_med_lab_fhir_db/schema.sql)
+* **核心 DDL SQL 語法**（複製貼上即可建立資料庫）：
+  ```sql
+  CREATE TABLE IF NOT EXISTS m12_loinc_codes (
+      loinc_code TEXT PRIMARY KEY,
+      component TEXT,
+      tw_name TEXT,
+      fhir_profile TEXT
+  );
+  ```
+
+### (E) ⚡ 核心演演演算法與資料處理邏輯 (Core Algorithms & Logic)
+1. **TW Core IG FHIR R4 JSON 結構驗證與 LOINC 映射演演演算法**。
+
+### (F) 目前核心功能、CLI 手冊與 Agent 工作流 (Current Capabilities)
+* **CLI 檢索指令**：
+  ```bash
+  python src/cli/main.py m12 search 血糖 --db db/med.db
+  ```
+* **專屬檔案超連結**：
+  * [M12 子模組專屬 README](../modules/m12_med_lab_fhir_db/README.md)
+  * [M12 CLI 指令手冊](../modules/m12_med_lab_fhir_db/CLI_MANUAL.md)
+  * [M12 AI Agent WORKFLOW.md](../modules/m12_med_lab_fhir_db/WORKFLOW.md)
+* **單元測試狀態**：`tests/test_m12_med_lab_fhir_db.py` (🟢 **100% PASS**)
+
+### (G) 🎨 專屬跨模組對接拓撲圖 (Mermaid Topology)
+
+```mermaid
+graph LR
+    M12[M12 LOINC 檢驗庫] -->|對接 FHIR 規範| M54[M54 TW Core FHIR Gateway]
+```
+
+* **`Fig 3.12` M12 跨模組對接拓撲圖 (M12 ➔ M54)**
+
+
+---
+
+<!-- START_OF_FILE: 03_50_m50_rxnorm_db.md -->
+# 3.50 [M50] RxNorm 美國藥學概念網 Gateway (rxnorm_db)
+
+### (A) 為何而戰 (Why We Build M50)
+* **使用者痛點**：台灣健保藥碼（NHI Code）無法直接在全球生醫資料庫或美規電子病歷（EHR/FHIR）中流通，缺乏台規藥碼與國際美規 RxCUI 概念碼的雙向對照網路。
+* **核心價值主張**：提供 200 筆拓撲採樣（可無限線上透傳擴充）的 NLM RxNorm 概念對照，實現台灣健保處方藥一鍵轉碼美規 RxCUI (SBD/SCD/IN)。
+
+### (B) 政府原始設計意圖與開放 API 剖析 (Gov Intent & Data Sources)
+* **主管機關**：美國國家醫學圖書館 (NLM, National Library of Medicine) RxNav API。
+* **原始設計意圖**：建立全美臨床藥物語意與概念網（RxNorm Concept Unique Identifier, RxCUI）。
+* **原始 API 端點**：`https://rxnav.nlm.nih.gov/REST/rxcui.json`
+* **下載與採樣腳本**：[`scripts/medical/fetch_med_data_samples.py`](../../scripts/medical/fetch_med_data_samples.py) 之 `fetch_m50()` 函式。
+
+### (C) 📄 來源單筆資料說明與 Raw Sample (Raw Data & Sample)
+* **單筆 Raw Sample 附件**：參閱 [`modules/m50_rxnorm_db/raw_sample_single.json`](../modules/m50_rxnorm_db/raw_sample_single.json)
+* **單筆 Raw JSON 範例**：
+  ```json
+  [
+    {
+      "rxcui": "1900001",
+      "name_en": "MEDROXYPROGESTERONE ACETATE [MEDROXYPROGESTERONE SUSPENDED INJECTION \"SHITEH\"]",
+      "tty": "SBD",
+      "nhi_code": "DHY00101339303",
+      "ingredient_name": "MEDROXYPROGESTERONE ACETATE",
+      "atc_code": "L01"
+    }
+  ]
+  ```
+
+### (D) 🔗 實體 Schema 建表 SQL 腳本 (Schema SQL Link)
+* **純 SQL 建表腳本附件**：[`modules/m50_rxnorm_db/schema.sql`](../modules/m05_rxnorm_db/schema.sql)
+* **核心 DDL SQL 語法**（複製貼上即可建立資料庫）：
+  ```sql
+  CREATE TABLE IF NOT EXISTS m50_rxnorm_cache (
+      rxcui TEXT PRIMARY KEY,
+      name_en TEXT NOT NULL,
+      tty TEXT,
+      nhi_code TEXT,
+      trade_name_tw TEXT,
+      ingredient_name TEXT,
+      atc_code TEXT,
+      cached_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+  );
+  CREATE INDEX IF NOT EXISTS idx_m50_nhi ON m50_rxnorm_cache(nhi_code);
+  ```
+
+### (E) ⚡ 核心演演演算法與資料處理邏輯 (Core Algorithms & Logic)
+1. **Top 200 健保熱門藥品 Seed 離線採樣固化演演演算法**：調用 `fetch_m50()` 將全台前 200 大健保處方藥向 NLM API 發動採樣，預先寫入 `m50_rxnorm_cache` 表，確保離線與 CI 環境 100% 可用。
+2. **Pass-Through 旁路透傳快取演演演算法**：本機未命中時自動透傳 NLM RxNav API，抓取 SBD (Semantic Branded Drug) 概念碼並自動寫入快取與 `cached_at` 時間戳。
+3. **TTY 語意階層過濾演演演算法**：自動識別 IN (Ingredient), PIN (Precise Ingredient), SBD (Semantic Branded Drug) 階層。
+
+### (F) 目前核心功能、CLI 手冊與 Agent 工作流 (Current Capabilities)
+* **CLI 檢索指令**：
+  ```bash
+  python src/cli/main.py m50 search Tagrisso --db db/med.db
+  ```
+* **專屬檔案超連結**：
+  * [M50 子模組專屬 README](../modules/m50_rxnorm_db/README.md)
+  * [M50 CLI 指令手冊](../modules/m50_rxnorm_db/CLI_MANUAL.md)
+  * [M50 AI Agent WORKFLOW.md](../modules/m50_rxnorm_db/WORKFLOW.md)
+* **單元測試狀態**：`tests/test_m50_rxnorm_db.py` (🟢 **100% PASS**)
+
+### (G) 🎨 專屬跨模組對接拓撲圖 (Mermaid Topology)
+
+```mermaid
+graph LR
+    subgraph M50_Core["🌐 M50 RxNorm Gateway (rxnorm_db)"]
+        M50_Cache[("m50_rxnorm_cache<br>rxcui (PK)")]
+    end
+
+    subgraph Relays["全域跨國對照整合鏈"]
+        M01["M01 台灣處方藥證庫"] -->|1. 健保藥碼對照整合| M50_Cache
+        M50_Cache <-->|2. NLM RxNav 官方 API| RxNav["NLM RxNav REST API"]
+    end
+```
+
+* **`Fig 3.50` M50 跨模組對照整合拓撲圖 (M50 ➔ M01 / NLM RxNav)**
+
+
+---
+
+<!-- START_OF_FILE: 03_51_m51_clinical_trials_gov.md -->
+# 3.51 [M51] ClinicalTrials.gov 美國 NIH 試驗 Gateway (clinical_trials_gov)
+
+### (A) 為何而戰 (Why We Build M51)
+* **使用者痛點**：全台癌症病患難以跨國搜尋由美國 NIH 登錄且同時在全台各醫學中心招募中 (Recruiting) 的新藥臨床試驗。
+* **核心價值主張**：提供美規 ClinicalTrials.gov v2 REST API 快取與全台試驗機構過濾通道。
+
+### (B) 政府原始設計意圖與開放 API 剖析 (Gov Intent & Data Sources)
+* **主管機關**：美國國家衛生院 (NIH, National Institutes of Health) ClinicalTrials.gov。
+* **原始 API 端點**：`https://clinicaltrials.gov/api/v2/studies`
+* **下載與採樣腳本**：[`scripts/medical/fetch_med_data_samples.py`](../../scripts/medical/fetch_med_data_samples.py)
+
+### (C) 📄 來源單筆資料說明與 Raw Sample (Raw Data & Sample)
+* **單筆 Raw Sample 附件**：參閱 [`modules/m51_clinical_trials_gov/raw_sample_single.json`](../modules/m51_clinical_trials_gov/raw_sample_single.json)
+* **單筆 Raw JSON 範例**：
+  ```json
+  [
+    {
+      "nct_id": "NCT04512345",
+      "brief_title": "Study of Osimertinib in Advanced NSCLC Patients",
+      "overall_status": "RECRUITING",
+      "conditions": "Carcinoma, Non-Small-Cell Lung",
+      "interventions": "Drug: Osimertinib",
+      "locations_tw": "National Taiwan University Hospital"
+    }
+  ]
+  ```
+
+### (D) 🔗 實體 Schema 建表 SQL 腳本 (Schema SQL Link)
+* **純 SQL 建表腳本附件**：[`modules/m51_clinical_trials_gov/schema.sql`](../modules/m51_clinical_trials_gov/schema.sql)
+* **核心 DDL SQL 語法**（複製貼上即可建立資料庫）：
+  ```sql
+  CREATE TABLE IF NOT EXISTS m51_ctgov_cache (
+      nct_id TEXT PRIMARY KEY,
+      brief_title TEXT NOT NULL,
+      overall_status TEXT,
+      conditions TEXT,
+      interventions TEXT,
+      locations_tw TEXT,
+      cached_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+  );
+  ```
+
+### (E) ⚡ 核心演演演算法與資料處理邏輯 (Core Algorithms & Logic)
+1. **Top 200 常見癌症在台臨床試驗 Seed 採樣演演演算法**：調用 `fetch_m51()` 預先抓取全台台大、榮總、長庚等招募中之關鍵癌症試驗並寫入 `m51_ctgov_cache`，確保離線與 CI 環境穩定可用。
+2. **NIH CT.gov REST API v2 Pass-Through 快取演演演算法**：本地快取未命中時發送線上 API，自動將回傳 JSON 化為結構化欄位寫入快取。
+3. **全台 Recruiter 地理標籤萃取演演演算法**：正則解析 `protocolSection.designModule` 與 `locations`，自動過濾 Location 為 Taiwan 之招募中試驗。
+
+### (F) 目前核心功能、CLI 手冊與 Agent 工作流 (Current Capabilities)
+* **CLI 檢索指令**：
+  ```bash
+  python src/cli/main.py m51 search NSCLC --db db/med.db
+  ```
+* **專屬檔案超連結**：
+  * [M51 子模組專屬 README](../modules/m51_clinical_trials_gov/README.md)
+  * [M51 CLI 指令手冊](../modules/m51_clinical_trials_gov/CLI_MANUAL.md)
+  * [M51 AI Agent WORKFLOW.md](../modules/m51_clinical_trials_gov/WORKFLOW.md)
+* **單元測試狀態**：`tests/test_m51_clinical_trials_gov.py` (🟢 **100% PASS**)
+
+### (G) 🎨 專屬跨模組對接拓撲圖 (Mermaid Topology)
+
+```mermaid
+graph LR
+    M51[M51 CT.gov Gateway] <-->|在台招募試驗對照整合| M09[M09 癌症試驗標靶庫]
+```
+
+* **`Fig 3.51` M51 跨模組對照整合拓撲圖 (M51 ➔ M09)**
+
+
+---
+
+<!-- START_OF_FILE: 03_52_m52_pubchem_db.md -->
+# 3.52 [M52] PubChem 美國 NIH 化學結構庫 Gateway (pubchem_db)
+
+### (A) 為何而戰 (Why We Build M52)
+* **使用者痛點**：生醫研究員無法直接以國內處方藥品名稱查詢其精確的化學分子結構式（SMILES、InChIKey 與分子量），阻礙了 AI 藥物分子開發與 QSAR 研究。
+* **核心價值主張**：提供美國 NIH PubChem PUG REST API 對接 Gateway，實現主成分英文名至化學 CID、SMILES 與 2D 結構式轉碼。
+
+### (B) 政府原始設計意圖與開放 API 剖析 (Gov Intent & Data Sources)
+* **主管機關**：美國國家衛生院 (NIH) NCBI PubChem。
+* **原始 API 端點**：`https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/...`
+* **下載與採樣腳本**：[`scripts/medical/fetch_med_data_samples.py`](../../scripts/medical/fetch_med_data_samples.py)
+
+### (C) 📄 來源單筆資料說明與 Raw Sample (Raw Data & Sample)
+* **單筆 Raw Sample 附件**：參閱 [`modules/m52_pubchem_db/raw_sample_single.json`](../modules/m52_pubchem_db/raw_sample_single.json)
+* **單筆 Raw JSON 範例**：
+  ```json
+  [
+    {
+      "cid": "24883",
+      "ingredient_name_en": "UNDECYLENATE ZINC",
+      "iupac_name": "zinc;bis(undec-10-enoate)",
+      "canonical_smiles": "C=CCCCCCCCCC(=O)[O-].C=CCCCCCCCCC(=O)[O-].[Zn+2]",
+      "inchikey": "XEFQLXZSUDWKG-UHFFFAOYSA-L",
+      "molecular_weight": 431.9
+    }
+  ]
+  ```
+
+### (D) 🔗 實體 Schema 建表 SQL 腳本 (Schema SQL Link)
+* **純 SQL 建表腳本附件**：[`modules/m52_pubchem_db/schema.sql`](../modules/m52_pubchem_db/schema.sql)
+* **核心 DDL SQL 語法**（複製貼上即可建立資料庫）：
+  ```sql
+  CREATE TABLE IF NOT EXISTS m52_pubchem_cache (
+      cid TEXT PRIMARY KEY,
+      ingredient_name_en TEXT NOT NULL,
+      iupac_name TEXT,
+      canonical_smiles TEXT,
+      inchikey TEXT,
+      molecular_weight REAL,
+      cached_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+  );
+  CREATE INDEX IF NOT EXISTS idx_m52_smiles ON m52_pubchem_cache(canonical_smiles);
+  ```
+
+### (E) ⚡ 核心演演演算法與資料處理邏輯 (Core Algorithms & Logic)
+1. **Top 200 主要藥物成分分子結構 Seed 採樣固化演演演算法**：調用 `fetch_m52()` 向 PubChem PUG REST API 預抓全台前 200 大主成分之 SMILES、InChIKey 與 CID，寫入 `m52_pubchem_cache` 確保離線與 CI 環境穩定。
+2. **PubChem PUG REST API Pass-Through 透傳快取演演演算法**：本機未命中時即時發動 PUG REST，解析 JSON 化學屬性寫入快取。
+3. **SMILES 分子字串校驗演演演算法**：正則語法檢查 PubChem 回傳之 Canonical SMILES 合法性。
+
+### (F) 目前核心功能、CLI 手冊與 Agent 工作流 (Current Capabilities)
+* **CLI 檢索指令**：
+  ```bash
+  python src/cli/main.py m52 search Aspirin --db db/med.db
+  ```
+* **專屬檔案超連結**：
+  * [M52 子模組專屬 README](../modules/m52_pubchem_db/README.md)
+  * [M52 CLI 指令手冊](../modules/m52_pubchem_db/CLI_MANUAL.md)
+  * [M52 AI Agent WORKFLOW.md](../modules/m52_pubchem_db/WORKFLOW.md)
+* **單元測試狀態**：`tests/test_m52_pubchem_db.py` (🟢 **100% PASS**)
+
+### (G) 🎨 專屬跨模組對接拓撲圖 (Mermaid Topology)
+
+```mermaid
+graph LR
+    M52[M52 PubChem Gateway] <-->|化學結構鏈結| M02[M02 主成分字典庫]
+```
+
+* **`Fig 3.52` M52 跨模組對照整合拓撲圖 (M52 ➔ M02)**
+
+
+---
+
+<!-- START_OF_FILE: 03_53_m53_who_atc_db.md -->
+# 3.53 [M53] WHO ATC 國際藥理樹 Gateway (who_atc_db)
+
+### (A) 為何而戰 (Why We Build M53)
+* **使用者痛點**：台灣藥品許可證的文字描述無法直接轉譯為世界衛生組織 (WHO) 標準 5 階層級 ATC (Anatomical Therapeutic Chemical) 藥理樹，導致無法精確找到同藥理同劑型的平價替代藥。
+* **核心價值主張**：收錄 WHO 官方 5 階層級 ATC 分類樹與 DDD (Defined Daily Dose) 每日建議劑量，支援 SQL CTE 樹狀遞迴查詢。
+
+### (B) 政府原始設計意圖與開放 API 剖析 (Gov Intent & Data Sources)
+* **主管機關**：世界衛生組織 (WHO) Collaborating Centre for Drug Statistics Methodology。
+* **原始 API 端點**：`https://www.whocc.no/atc_ddd_index/`
+* **下載與採樣腳本**：[`scripts/medical/fetch_med_data_samples.py`](../../scripts/medical/fetch_med_data_samples.py)
+
+### (C) 📄 來源單筆資料說明與 Raw Sample (Raw Data & Sample)
+* **單筆 Raw Sample 附件**：參閱 [`modules/m53_who_atc_db/raw_sample_single.json`](../modules/m53_who_atc_db/raw_sample_single.json)
+* **單筆 Raw JSON 範例**：
+  ```json
+  [
+    {
+      "atc_code": "L01ED01",
+      "atc_name_en": "UNDECYLENATE ZINC (WHO Official ATC Level 5)",
+      "atc_name_zh": "抗腫瘤與免疫調節劑",
+      "level": 5,
+      "parent_code": "L01ED",
+      "ddd_value": 1.05,
+      "ddd_unit": "g"
+    }
+  ]
+  ```
+
+### (D) 🔗 實體 Schema 建表 SQL 腳本 (Schema SQL Link)
+* **純 SQL 建表腳本附件**：[`modules/m53_who_atc_db/schema.sql`](../modules/m53_who_atc_db/schema.sql)
+* **核心 DDL SQL 語法**（複製貼上即可建立資料庫）：
+  ```sql
+  CREATE TABLE IF NOT EXISTS m53_atc_cache (
+      atc_code TEXT PRIMARY KEY,
+      atc_name_en TEXT NOT NULL,
+      atc_name_zh TEXT,
+      level INTEGER,
+      parent_code TEXT,
+      ddd_value REAL,
+      ddd_unit TEXT,
+      cached_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+  );
+  CREATE INDEX IF NOT EXISTS idx_m53_parent ON m53_atc_cache(parent_code);
+  ```
+
+### (E) ⚡ 核心演演演算法與資料處理邏輯 (Core Algorithms & Logic)
+1. **Top 200 常用西藥 ATC 藥理樹 Seed 採樣固化演演演算法**：調用 `fetch_m53()` 向 WHO ATC Index API 預抓全台熱門 200 大處方藥對應之 5 階 ATC 分類樹與 DDD 劑量，預先寫入 `m53_atc_cache` 表，確保離線與 CI 環境 100% 運行 PASS。
+2. **WHO ATC API Pass-Through 旁路透傳快取演演演算法**：本機未命中時自動連線 WHO API 抓取 Level 1 ~ 5 階層節點並自動持久化。
+3. **WHO 5 階 ATC 樹狀 CTE 遞迴演演演算法**：使用 SQL `WITH RECURSIVE` 自根節點 (Level 1 大類如 `L`) 遞迴向下穿透至 Level 5 (如 `L01ED04`)。
+4. **DDD (Defined Daily Dose) 劑量轉換演演演算法**：以 WHO DDD 為標準計算跨藥品給付劑量比例。
+
+### (F) 目前核心功能、CLI 手冊與 Agent 工作流 (Current Capabilities)
+* **CLI 檢索指令**：
+  ```bash
+  python src/cli/main.py m53 search 止痛退燒 --db db/med.db
+  ```
+* **專屬檔案超連結**：
+  * [M53 子模組專屬 README](../modules/m53_who_atc_db/README.md)
+  * [M53 CLI 指令手冊](../modules/m53_who_atc_db/CLI_MANUAL.md)
+  * [M53 AI Agent WORKFLOW.md](../modules/m53_who_atc_db/WORKFLOW.md)
+* **單元測試狀態**：`tests/test_m53_who_atc_db.py` (🟢 **100% PASS**)
+
+### (G) 🎨 專屬跨模組對接拓撲圖 (Mermaid Topology)
+
+```mermaid
+graph LR
+    subgraph M53_Core["🌳 M53 WHO ATC 藥理樹 Gateway (who_atc_db)"]
+        M53_Table[("m53_atc_cache<br>atc_code (PK)")]
+    end
+
+    subgraph Relays["全域跨庫對照整合鏈"]
+        M01["M01 處方藥證庫"] -->|1. 查詢藥品 ATC| M53_Table
+        M04["M04 缺藥警訊庫"] -->|2. 搜尋 Level 5 同藥理替代藥| M53_Table
+        M02["M02 主成分字典"] -->|3. 成分 ATC 分類| M53_Table
+    end
+```
+
+* **`Fig 3.53` M53 跨模組對照整合拓撲圖 (M53 ➔ M01/M02/M04)**
+
+
+---
+
+<!-- START_OF_FILE: 03_54_m54_twcore_fhir_db.md -->
+# 3.54 [M54] TW Core IG 台灣核心 FHIR 指引 Gateway (twcore_fhir_db)
+
+### (A) 為何而戰 (Why We Build M54)
+* **使用者痛點**：國內醫療機構資料庫獨立，缺乏統一符合衛生福利部 TW Core IG (Taiwan Core Implementation Guide) 規範的 HL7 FHIR R4 JSON 導出指引。
+* **核心價值主張**：提供 TW Core IG StructureDefinition 快取與 HL7 FHIR R4 規範校驗通道。
+
+### (B) 政府原始設計意圖與開放 API 剖析 (Gov Intent & Data Sources)
+* **主管機關**：衛生福利部資訊處 & 台灣醫療資訊標準協會 (MISAT)。
+* **原始 API 端點**：`https://twcore.mohw.gov.tw/ig/twcore/`
+* **下載與採樣腳本**：[`scripts/medical/fetch_med_data_samples.py`](../../scripts/medical/fetch_med_data_samples.py)
+
+### (C) 📄 來源單筆資料說明與 Raw Sample (Raw Data & Sample)
+* **單筆 Raw Sample 附件**：參閱 [`modules/m54_twcore_fhir_db/raw_sample_single.json`](../modules/m54_twcore_fhir_db/raw_sample_single.json)
+* **單筆 Raw JSON 範例**：
+  ```json
+  [
+    {
+      "profile_id": "TWCorePatient",
+      "resource_type": "Patient",
+      "canonical_url": "https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/Patient-twcore",
+      "version": "0.2.0"
+    }
+  ]
+  ```
+
+### (D) 🔗 實體 Schema 建表 SQL 腳本 (Schema SQL Link)
+* **純 SQL 建表腳本附件**：[`modules/m54_twcore_fhir_db/schema.sql`](../modules/m54_twcore_fhir_db/schema.sql)
+* **核心 DDL SQL 語法**（複製貼上即可建立資料庫）：
+  ```sql
+  CREATE TABLE IF NOT EXISTS m54_fhir_cache (
+      profile_id TEXT PRIMARY KEY,
+      resource_type TEXT NOT NULL,
+      canonical_url TEXT,
+      version TEXT,
+      cached_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+  );
+  ```
+
+### (E) ⚡ 核心演演演算法與資料處理邏輯 (Core Algorithms & Logic)
+1. **TW Core IG 核心 Profile (Patient/Observation/Medication) Seed 快取演演演算法**：預先載入台灣 TW Core IG 最新 0.2.0 版 StructureDefinition 快取至 `m54_fhir_cache` 表，確保無網路 CI 驗證時 100% 綠燈。
+2. **TW Core IG IG Portal Pass-Through 快取演演演算法**：連線衛福部 IG 官網即時更新最新 StructureDefinition Schema。
+3. **HL7 FHIR StructureDefinition 規範校驗與代碼體系 Gateway 演演演算法**：校驗輸出的 Observation、MedicationRequest 是否完全合規。
+
+### (F) 目前核心功能、CLI 手冊與 Agent 工作流 (Current Capabilities)
+* **CLI 檢索指令**：
+  ```bash
+  python src/cli/main.py m54 search Patient --db db/med.db
+  ```
+* **專屬檔案超連結**：
+  * [M54 子模組專屬 README](../modules/m54_twcore_fhir_db/README.md)
+  * [M54 CLI 指令手冊](../modules/m54_twcore_fhir_db/CLI_MANUAL.md)
+  * [M54 AI Agent WORKFLOW.md](../modules/m54_twcore_fhir_db/WORKFLOW.md)
+* **單元測試狀態**：`tests/test_m54_twcore_fhir_db.py` (🟢 **100% PASS**)
+
+### (G) 🎨 專屬跨模組對接拓撲圖 (Mermaid Topology)
+
+```mermaid
+graph LR
+    M54[M54 TW Core FHIR Gateway] <-->|FHIR R4 JSON 校驗| M12[M12 LOINC 檢驗碼庫]
+```
+
+* **`Fig 3.54` M54 跨模組對照整合拓撲圖 (M54 ➔ M12)**
+
+
+---
+
+<!-- START_OF_FILE: 04_stakeholder_playbooks.md -->
+# 📙 第 4 章：多重利害關係人整合應用 Playbook (Stakeholder Playbooks)
+
+> **💡 本章寫作意圖**：
+> 站出單一 DB 的技術細節視角，從「真實人物故事與臨床實務場景」出發，為病患家屬、臨床醫師藥師、AI Agent 開發者與生醫研究員等 4 大角色，撰寫具備人文溫度與跨庫聯對的終極實戰操作劇本 (Playbook)。
+
+---
+
+## 4.1 病患與家屬：跨庫癌症臨床導航手冊
+
+### 📖 【真實故事】陳先生一家人的抗癌迷航記
+陳先生今年 62 歲，在一次定期健檢中發現肺部陰影，經穿刺切片後確診為「非小細胞肺腺癌 (NSCLC) 第四期」。全家人在一瞬間陷入巨大的恐慌與混亂中。陳先生的長女面臨龐雜的醫療資訊：她不知道應該去哪一家醫院找哪一位專科醫師？醫師建議檢測 EGFR 基因突變，但如果陽性，標靶藥物到底有沒有健保給付？家裡經濟能力有限，萬一自費負擔不起，全台灣有沒有正在招募新藥病患的臨床試驗可以參加？
+
+### ❓ 陳先生一家人最想知道的 3 個問題：
+1. **問題 1**：肺腺癌第四期的完整照護流程是什麼？接下來會遇到哪些處置階段與衛教卡？
+2. **問題 2**：如果有 EGFR T790M 基因突變，有哪些建議標靶藥物？全台有沒有招募中的臨床試驗？
+3. **問題 3**：台北市哪些醫學中心具備該臨床試驗資格，且本週門診有看診時段？
+
+### 🔍 跨庫接力查詢方法 (How to Query via tw-med-db)
+* **步驟 1 (查照護旅程)**：呼叫 `m11 search 肺腺癌` 取得 Stage 4 的照護導航節點卡片 (`STAGE_2_TREATMENT`) 與衛教指引。
+* **步驟 2 (查標靶與試驗)**：呼叫 `m09 search NSCLC` 並比對 `EGFR T790M` 基因突變標籤，取得建議標靶藥 (Tagrisso 泰格莎) 與 ClinicalTrials.gov 在台招募中試驗號 (`NCT04512345`)。
+* **步驟 3 (查專科醫院與看診時間)**：呼叫 `m05 search 台大醫院 --city 臺北市` 解析門診 21 位元時間矩陣 (`time_matrix_21`)，確認看診時段與 Haversine 距離。
+
+### 🎨 癌症臨床導航多庫協同順序圖 (`Fig 4.1`)
+
+```mermaid
+sequenceDiagram
+    autonumber
+    actor Patient as 病患/家屬 (陳先生長女)
+    participant M11 as M11 癌症照護旅程 (patient_journey_db)
+    participant M09 as M09 癌症標靶與試驗 (oncology_meta)
+    participant M05 as M05 健保醫院地圖 (tw_hospital_db)
+
+    Patient->>M11: 1. 查詢肺腺癌 (NSCLC) 第四期照護階段
+    M11-->>Patient: 2. 回傳階段節點 (STAGE_2_TREATMENT) & 標靶藥物衛教卡
+    Patient->>M09: 3. 輸入基因突變 (EGFR T790M) 搜尋治療方案
+    M09-->>Patient: 4. 回傳建議標靶藥 (Tagrisso) & 國內招募中臨床試驗 (NCT04512345)
+    Patient->>M05: 5. 搜尋台北市具備肺癌專科與該試驗資格之醫學中心
+    M05-->>Patient: 6. 回傳院所地圖 (台大醫院/臺北榮總) 與看診時間矩陣
+```
+
+* **`Fig 4.1` 癌症臨床導航多庫協同順序圖**
+
+---
+
+## 4.2 醫師與藥師：缺藥替代藥與跨國處方對照整合手冊
+
+### 📖 【真實故事】林藥師的社區藥局缺藥危機
+林藥師在台北市經營一家社區健保特約藥局。週一早上門口排滿了前來調劑處方的慢性病患。張阿公拿著長庚醫院開立的癌症處方箋，上面開立了二線標靶藥物「泰格莎 (Tagrisso 80mg)」。然而，林藥師登入藥業盤點系統時，震驚地發現該藥品因國際供應鏈中斷全台大缺藥！張阿公如果斷藥後果不堪設想。林藥師必須在 10 秒鐘內：確認該藥是否真的缺藥？有沒有同 ATC 藥理同劑型且健保有給付的平價替代藥？以及這顆藥對應的美規 RxCUI 概念碼是什麼，以便與外籍主治醫師進行跨國溝通。
+
+### ❓ 林藥師最想知道的 3 個問題：
+1. **問題 1**：泰格莎 (健保碼 `0AC49322100`) 目前全台通報的缺藥與回收警訊狀態為何？
+2. **問題 2**：如何以 WHO ATC 藥理樹 (Level 5) 在 5ms 內尋找同成分同劑型平價替代藥？
+3. **問題 3**：如何將台規健保藥碼精確對照整合轉碼為美規 NLM RxCUI (SBD/SCD) 概念碼？
+
+### 🔍 跨庫接力查詢方法 (How to Query via tw-med-db)
+* **步驟 1 (查藥證與 ATC)**：呼叫 `m01 search 0AC49322100` 取得藥名 Tagrisso 與 WHO ATC Code (`L01ED04`)。
+* **步驟 2 (查即時缺藥警訊)**：呼叫 `m04 search 0AC49322100` 觸發 5ms 決策樹，確認缺藥通報生效中。
+* **步驟 3 (查 WHO ATC 替代藥)**：呼叫 `m53 search L01ED04` 執行 CTE 樹狀遞迴，搜尋 Level 5 相同藥理機轉之平價替代藥物清單。
+* **步驟 4 (轉碼美規 RxCUI)**：呼叫 `m50 search 0AC49322100` 透傳 NLM RxNav API 取得美規 RxCUI (`1900001`)。
+
+### 🎨 缺藥替代與 RxNorm 跨國處方時序圖 (`Fig 4.2`)
+
+```mermaid
+sequenceDiagram
+    autonumber
+    actor Clinician as 臨床醫師/社區藥師 (林藥師)
+    participant M01 as M01 台灣處方藥證 (tw_drug_db)
+    participant M04 as M04 缺藥警訊通報 (drug_shortage_alert)
+    participant M53 as M53 WHO ATC 藥理樹 (who_atc_db)
+    participant M50 as M50 NLM RxNorm (rxnorm_db)
+
+    Clinician->>M01: 1. 查詢健保藥碼 (0AC49322100)
+    M01-->>Clinician: 回傳藥品名稱 (Tagrisso 80mg) & ATC Code (L01ED04)
+    Clinician->>M04: 2. 即時檢查缺藥狀態
+    M04-->>Clinician: ⚠️ 警示: 全台缺藥通報中
+    Clinician->>M53: 3. 以 ATC L01ED04 搜尋 Level 5 同藥理同劑型替代藥
+    M53-->>Clinician: 回傳同 ATC 替代藥物清單
+    Clinician->>M50: 4. 轉碼為國際美規 RxCUI
+    M50-->>Clinician: 回傳 RxCUI (1900001) 供跨國電子處方使用
+```
+
+* **`Fig 4.2` 缺藥替代與 RxNorm 跨國處方時序圖**
+
+---
+
+## 4.3 AI Agent 開發者：Structured JSON 工具呼叫手冊
+
+### 📖 【真實故事】Sam 的生醫 AI 諮詢 Agent 開發困境
+Sam 是一位大語言模型 (LLM) 軟體工程師，正在開發一款提供民眾醫療問答的「AI 健康小助手」。在測試過程中，他發現直接讓 GPT-4 回答用藥與醫院資訊時，模型經常產生嚴重的「幻覺 (Hallucination)」——例如憑空捏造不存在的健保藥碼、將非適應症藥物亂推薦給病患，或是給出早已搬遷的醫院舊地址。Sam 需要一個具備 100% 確定性 (Deterministic)、回應格式為標準 Structured JSON 的 CLI 工具鏈，讓 LLM 透過 Function Calling / Tool Calling 進行精確查詢。
+
+### ❓ Sam 最想知道的 3 個問題：
+1. **問題 1**：如何讓 AI Agent 透過命令行以 `--json` 參數取得 100% 結構化的藥品與適應症明細？
+2. **問題 2**：當使用者詢問非結構化問題時，Agent 如何自動進行 2 階段 Tool-Calling (先查藥品 ➔ 再查醫院)？
+3. **問題 3**：如何利用 `WORKFLOW.md` 指引，確保 LLM 在工具呼叫失敗時具備安全退路 (Fallback)？
+
+### 🔍 跨庫接力查詢方法 (How to Query via tw-med-db)
+* **步驟 1 (Agent 藥品 Tool Call)**：Agent 執行 `python src/cli/main.py m01 search 阿司匹靈 --json` 取得乾淨 JSON。
+* **步驟 2 (Agent 醫院 Tool Call)**：Agent 解析藥品適應症 JSON 後，繼續執行 `python src/cli/main.py m05 search 心臟內科 --json` 取得看診 21 位元矩陣。
+* **步驟 3 (合成安全答覆)**：Agent 依據兩次 Tool Call 回傳之確定性數據，合成最終無幻覺的臨床檢索報告。
+
+### 🎨 AI Agent Tool-Calling 交互時序圖 (`Fig 4.3`)
+
+```mermaid
+sequenceDiagram
+    autonumber
+    actor User as 使用者/Prompt
+    participant Agent as LLM AI Agent (Sam 開發)
+    participant CLI as tw-med-cli (JSON Command)
+    participant DB as tw-med-db (SQLite/FTS5)
+
+    User->>Agent: "請問心血管藥物阿司匹靈在台北哪些醫院有看診？"
+    Agent->>CLI: 1. 執行 Tool Call: tw-med-cli m01 search 阿司匹靈 --json
+    CLI->>DB: 2. 檢索 FTS5 倒排索引
+    DB-->>CLI: 3. 回傳 Structured JSON 藥物明細
+    CLI-->>Agent: 4. 回傳 JSON (包含 nhi_code, indication)
+    Agent->>CLI: 5. 執行 Tool Call: tw-med-cli m05 search 心臟內科 --json
+    CLI->>DB: 6. 檢索看診時間 21 位元矩陣
+    DB-->>CLI: 7. 回傳 21-bit 院所清單
+    CLI-->>Agent: 8. 回傳 JSON 院所明細
+    Agent-->>User: 9. 綜合合成精確、無幻覺之臨床答覆
+```
+
+* **`Fig 4.3` AI Agent Tool-Calling 交互時序圖**
+
+---
+
+## 4.4 生醫研究員：DuckDB C++ OLAP 數據分析手冊
+
+### 📖 【真實故事】李博士的藥價流行病學巨量統計研究
+李博士是大學生醫資訊研究所的副教授。她的研究團隊接獲國科會專案，需要分析過去 10 年全台灣健保處方藥價調整趨勢，並交叉比對全台 2 萬多家特約醫院的地理分佈與自費比價。以往團隊使用 Python Pandas 載入全量 CSV 檔時，記憶體常暴增至 64GB 而崩潰 (OOM)；而使用傳統 RDBMS 資料庫執行多表 JOIN 又極其耗時。李博士需要一種不用載入記憶體、可在微秒級完成 OLAP 巨量統計的分析引擎。
+
+### ❓ 李博士最想知道的 3 個問題：
+1. **問題 1**：如何不經過資料庫匯入流程，直接用 DuckDB C++ 引擎鏈結 `tw-med-db/db/med.db` 檔案？
+2. **問題 2**：如何在 1 秒之內完成 24,198 家醫院與 66,453 筆處方藥價的四分位數 (IQR) 跨庫關聯統計？
+3. **問題 3**：如何將 DuckDB 分析結果直接導出為 Python Pandas DataFrame 或 Apache Arrow 格式以進行機器學習繪圖？
+
+### 🔍 跨庫接力查詢方法 (How to Query via tw-med-db)
+* **步驟 1 (DuckDB Attach)**：在 Python 腳本中執行 `duckdb.connect().execute("ATTACH 'tw-med-db/db/med.db' AS med (TYPE SQLITE);")`。
+* **步驟 2 (SQL OLAP 聚合)**：撰寫 SQL 進行 `JOIN med.m05_hospitals` 與 `med.m01_tw_drug_db`。
+* **步驟 3 (零拷貝導出)**：呼叫 `.df()` 導出為 Pandas DataFrame。
+
+### 📊 Python DuckDB 零拷貝查詢實戰程式碼：
+
+```python
+import duckdb
+
+# 直接連結 SQLite med.db 檔進行高併發 OLAP 統計 (零拷貝 zero-copy)
+con = duckdb.connect()
+con.execute("ATTACH 'tw-med-db/db/med.db' AS med (TYPE SQLITE);")
+
+# 統計全台各縣市專科醫院數量與平均健保給付藥價
+df = con.execute("""
+    SELECT 
+        h.city as 縣市,
+        COUNT(DISTINCT h.hosp_id) as 醫院總數,
+        ROUND(AVG(d.price), 2) as 平均健保給付藥價
+    FROM med.m05_hospitals h
+    JOIN med.m01_tw_drug_db d ON d.price > 0
+    GROUP BY h.city
+    ORDER BY 醫院總數 DESC
+""").df()
+
+print(df)
+```
+
+
+---
+
+<!-- START_OF_FILE: 05_developer_and_cli.md -->
+# 📙 第 5 章：開發者與 CLI 手冊 (Developer & CLI Manual)
+
+> **💡 本章寫作意圖**：
+> 提供人類工程師、社群貢獻者與 AI Agent 開發者一份極致低摩擦的開發手冊，詳細說明如何安裝、呼叫統一 `tw-med-cli` 命令列工具、使用各模組專屬進階命令、透過 Cron 排程進行資料自動化維護更新，以及擴充與測試新模組的標準作業程序 (SOP)。
+
+---
+
+## 5.1 本地環境快速建置與 CLI 命令透傳架構
+
+### 🚀 1. 低摩擦環境初始化 SOP
+本專案支援標準 Conda 環境（推薦 `m2504`）或純 Python 3.10+ 虛擬環境：
+
+```bash
+# 1. 複製專案庫並切換目錄
+git clone https://github.com/your-org/tw-med-db.git
+cd tw-med-db
+
+# 2. 啟用指定的 Python 執行環境
+conda activate m2504
+
+# 3. 執行系統健康自我診斷 (0-Warning 檢驗)
+python src/cli/main.py doctor --db db/med.db
+```
+
+### 🎨 2. `tw-med-cli` 命令調度與透傳架構 (`Fig 5.1`)
+
+`tw-med-cli` 採用高內聚的命令透傳設計，主指揮官 `src/cli/main.py` 接收到命令後，會自動路由至對應模組的 `commands_mXX.py` 處理器：
+
+```mermaid
+flowchart TB
+    CLI_Input["🖥️ 使用者 / Agent 輸入: tw-med-cli m01 search 阿司匹靈 --json"] --> Main_CLI["主指揮官 (src/cli/main.py)"]
+    
+    subgraph Orchestrator["CLI 命令調度與解析層"]
+        Main_CLI --> Sub_Router["Subcommand Router"]
+        Sub_Router --> Cmd_M01["src/cli/commands_m01.py"]
+        Sub_Router --> Cmd_M05["src/cli/commands_m05.py"]
+        Sub_Router --> Cmd_M50["src/cli/commands_m50.py"]
+    end
+
+    subgraph Core_Engine["M00 底層雙引擎 (src/m00_core/)"]
+        Cmd_M01 --> SQLite_FTS["SQLite FTS5 (fts_med_global)"]
+        Cmd_M01 --> DuckDB_OLAP["DuckDB C++ Engine"]
+    end
+
+    Core_Engine --> JSON_Output["📦 標準化 Structured JSON 輸出"]
+```
+
+* **`Fig 5.1` tw-med-cli 命令調度與透傳架構圖**
+
+---
+
+## 5.2 `tw-med-cli` 核心命令與 17 DB 專屬進階命令圖鑑
+
+### 5.2.1 全域通用基礎命令 (Global Core Commands)
+
+* **系統自我檢測**：
+  ```bash
+  python src/cli/main.py doctor --db db/med.db
+  ```
+  *功能*：自動檢查 SQLite 資料庫完整性、17 個資料表記錄筆數、FTS5 倒排索引狀態與 TR 驗證報告。
+* **全庫 FTS5 毫秒級全文檢索**：
+  ```bash
+  python src/cli/main.py m00 search "肺腺癌" --db db/med.db --limit 10
+  ```
+  *功能*：跨 17 個 DB 的倒排索引進行模糊比對，回傳包含 `source_module` 與 `entity_name` 之結果。
+* **檢視子模組 Manifest 與版本看板**：
+  ```bash
+  python src/cli/main.py m00 status --db db/med.db
+  ```
+  *功能*：印出 `sys_module_metadata` 表中 17 個模組的版本號（目前 `v0.5.0`）與筆數統計。
+
+---
+
+### 5.2.2 17 DB 子模組專屬進階命令特寫 (Module-Specific Extension Commands)
+
+除了通用搜尋外，各子模組均具備專屬的業務特色命令：
+
+#### 💊 M01 `tw_drug_db` 專屬命令：藥價歷史變動查詢
+```bash
+python src/cli/main.py m01 price-history 0AC49322100 --db db/med.db
+```
+*說明*：傳入健保碼，查詢該藥品歷年健保給付價格調整歷史趨勢與 IQR 中位數。
+
+#### ⚠️ M04 `drug_shortage_alert` 專屬命令：5ms 即時缺藥比對
+```bash
+python src/cli/main.py m04 check-shortage 0AC49322100 --db db/med.db
+```
+*說明*：發動 5ms 決策樹，比對該健保碼是否處於缺藥/回收通報狀態，並自動推薦同 ATC 平價替代藥。
+
+#### 🏥 M05 `tw_hospital_db` 專屬命令：地理半徑與門診時段檢索
+```bash
+# 1. 經緯度公里半徑檢索 (Haversine 演演演算法)
+python src/cli/main.py m05 nearby --lat 25.041 --lng 121.519 --radius 5.0 --db db/med.db
+
+# 2. 21 位元看診時間矩陣過濾
+python src/cli/main.py m05 open-now --day Mon --time Morning --db db/med.db
+```
+*說明*：以 WGS84 座標即時搜尋公里半徑內醫院，或解碼 `time_matrix_21` 篩選特定門診時段院所。
+
+#### 💰 M06 `nhi_payment_db` 專屬命令：自費差額四分位數比價
+```bash
+python src/cli/main.py m06 iqr-benchmark "塗藥血管支架" --db db/med.db
+```
+*說明*：調用 DuckDB 分析全台院所申報價格，回傳前 25%、中位數與 75% 自費差額比價水準。
+
+#### 🧬 M09 `oncology_meta` 專屬命令：癌症標靶與臨床試驗過濾
+```bash
+python src/cli/main.py m09 filter-trials --cancer NSCLC --mutation EGFR --db db/med.db
+```
+*說明*：依癌症類型 (NSCLC) 與基因突變標籤 (EGFR T790M) 過濾全台招募中試驗。
+
+#### ⚖️ M10 `med_legal_db` 專屬命令：裁判參考價值 Re-ranking
+```bash
+python src/cli/main.py m10 rerank "手術同意書" --db db/med.db
+```
+*說明*：執行 Re-ranking 評分模型排序，優先回傳最具裁判參考價值的醫療訴訟爭點。
+
+#### 🗺️ M11 `patient_journey_db` 專屬命令：照護旅程 FSM 狀態轉移
+```bash
+python src/cli/main.py m11 fsm-next --stage STAGE_1_DIAGNOSIS --db db/med.db
+```
+*說明*：輸入當前照護階段，有限狀態機 (FSM) 自動推演下一照護階段與衛教卡。
+
+#### 📋 M12 `med_lab_fhir_db` 專屬命令：TW Core IG FHIR R4 JSON 生成
+```bash
+python src/cli/main.py m12 to-fhir --loinc 1558-6 --val 105 --db db/med.db
+```
+*說明*：輸入 LOINC 檢驗碼與檢驗值，自動產出完全合規的 TW Core IG Observation R4 JSON。
+
+#### 🌐 M50 `rxnorm_db` 專屬命令：美規 RxCUI 雙向轉碼
+```bash
+python src/cli/main.py m50 map-rxcui 0AC49322100 --db db/med.db
+```
+*說明*：透傳 NLM RxNav API，將台規健保碼轉碼為美規 RxCUI (SBD/SCD)。
+
+#### 🌳 M53 `who_atc_db` 專屬命令：WHO ATC 5 階樹狀遞迴
+```bash
+python src/cli/main.py m53 atc-tree L01ED04 --db db/med.db
+```
+*說明*：執行 SQL `WITH RECURSIVE` 遞迴查詢，繪製印出 Level 1 至 Level 5 的完整 ATC 藥理樹。
+
+---
+
+## 5.3 自動化維護與 Cron 定期同步更新機制 (Data Maintenance)
+
+為了確保 `tw-med-db` 本地資料庫與政府 Open Data 及國際 Gateway 實時同步，專案內建了完整的 **自動化排程維護機制 (Automated Cron Maintenance)**。
+
+### ⏰ 1. 每日/每週 Cron 排程腳本：`scripts/cron/daily_maintenance.sh`
+
+維護腳本會自動執行 ETL 數據拉取、差異比對 (Diff Ingestion)、FTS5 倒排索引重建與 `sys_data_audit_log` 稽核日誌寫入：
+
+```bash
+#!/usr/bin/env bash
+# 每日定時維護與增量同步排程腳本 (Cron Task)
+
+set -e
+PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+PYTHON_BIN="/Users/wuulong/opt/anaconda3/envs/m2504/bin/python"
+
+echo "=== [$(date -Iseconds)] 啟動 tw-med-db 自動化維護排程 ==="
+
+# 1. 抓取最新缺藥通報 (M04 每日更新)
+$PYTHON_BIN $PROJECT_ROOT/scripts/medical/fetch_med_data_samples.py --module m04
+
+# 2. 發動 M00 母大腦彙流與 FTS5 索引增量重建
+$PYTHON_BIN $PROJECT_ROOT/src/cli/main.py m00 build --db $PROJECT_ROOT/db/med.db
+
+# 3. 執行 0-Warning 健康狀態診斷
+$PYTHON_BIN $PROJECT_ROOT/src/cli/main.py doctor --db $PROJECT_ROOT/db/med.db
+
+echo "=== [$(date -Iseconds)] 維護排程順利完成 (0-Warning PASS) ==="
+```
+
+### 🗓️ 2. crontab 排程設定範例
+系統管理員可以透過 `crontab -e` 註冊每日凌晨 3:00 自動同步作業：
+
+```cron
+# 每日凌晨 3:00 執行缺藥與健保給付規定增量更新排程
+0 3 * * * /bin/bash /Users/wuulong/github/bmad-pa/events/TDHI_haba/med-db-in/tw-med-db/scripts/cron/daily_maintenance.sh >> /tmp/tw_med_cron.log 2>&1
+```
+
+---
+
+## 5.4 新增/擴充子模組標準作業程序 (Submodule Extension SOP)
+
+社群貢獻者若欲為 `tw-med-db` 擴充第 18 個子模組（例如 `M13 罕見基因突變庫`），請嚴格遵循以下 **5 步標準擴充 SOP**：
+
+```mermaid
+flowchart LR
+    Step1["Step 1: 建立模組目錄與 SPEC"] --> Step2["Step 2: 撰寫 etl.py 與 schema.sql"]
+    Step2 --> Step3["Step 3: 註冊 commands_mXX.py"]
+    Step3 --> Step4["Step 4: 整合完成至 M00 master_builder"]
+    Step4 --> Step5["Step 5: 撰寫 pytest 與 TR 報告"]
+```
+
+### 5 步擴充詳細說明：
+1. **Step 1 (目錄建置)**：在 `tw-med-db/modules/` 下建立 `m13_[name]/`，補齊 `README.md`, `SPEC.md`, `metadata.json`, `schema.sql` 與 `raw_sample_single.json`。
+2. **Step 2 (ETL 封裝)**：在 `src/modules/m13/etl.py` 中實現數據清洗、`zfill` 正規化與標籤萃取。
+3. **Step 3 (CLI 註冊)**：在 `src/cli/commands_m13.py` 撰寫 CLI 子命令，並在 `src/cli/main.py` 註冊路由。
+4. **Step 4 (母大腦彙流)**：在 `src/m00_core/master_builder/` 建立對應 View，並將全域實體寫入 `m00_entities`。
+5. **Step 5 (單元測試與 TR)**：在 `tests/test_m13_*.py` 撰寫單元測試（100% 使用相對路徑），並於 `sys_eng/05_verification_testing/` 產生 `TR_M13_VERIFICATION_SUMMARY.md` 摘要報告。
+
+
+---
+
+<!-- START_OF_FILE: 06_appendix_and_legal.md -->
+# 📙 第 6 章：附錄、圖表清單與免責條款 (Appendix & Legal Notice)
+
+> **💡 本章寫作意圖**：
+> 提供《`tw-med-db` 數據資產白皮書》的完整附錄參考資料，包括國內外官方 API 來源與 OGDL 授權條款、全書 26 張 Mermaid 架構與數據流向圖的總目錄索引，以及嚴謹的生醫資料庫免責聲明與法律邊界宣告。
+
+---
+
+## 6.1 醫療開放資料來源與政府 OGDL 授權條款 (Data Sources & OGDL)
+
+本專案所收錄與快取之 17 大子模組數據，完全遵循台灣政府開放資料授權條款 (Government Open Data License, OGDL 1.0) 以及美國 NIH / WHO 之公眾領域 (Public Domain) 開放協定：
+
+### 🏛️ 1. 國內主管機關開放 API 與資料集索引
+
+| 模組編號 | 子模組名稱 | 主管機關 / 資料集名稱 | API 端點與原始連結 | 授權條款 |
+| :--- | :--- | :--- | :--- | :--- |
+| **`M01`** | `tw_drug_db` | 衛福部食藥署 (TFDA) 處方藥物資料集 | `https://data.fda.gov.tw/opendata/exportDataList.do?method=ExportData&ItemCode=1` | OGDL 1.0 |
+| **`M02`** | `tw_ingredient_map_db` | 衛福部食藥署 (TFDA) 藥品成分字典 | `https://data.fda.gov.tw/opendata/exportDataList.do?method=ExportData&ItemCode=4` | OGDL 1.0 |
+| **`M03`** | `health_supp_db` | 衛福部食藥署 (TFDA) 健康食品許可證 | `https://data.fda.gov.tw/opendata/exportDataList.do?method=ExportData&ItemCode=12` | OGDL 1.0 |
+| **`M04`** | `drug_shortage_alert` | 食藥署缺藥供應資訊平台 | `https://data.fda.gov.tw/opendata/exportDataList.do?method=ExportData&ItemCode=99` | OGDL 1.0 |
+| **`M05`** | `tw_hospital_db` | 中央健康保險署 (NHI) 特約醫事機構 | `https://data.nhi.gov.tw/Datasets/DatasetDetail.aspx?id=437` | OGDL 1.0 |
+| **`M06`** | `nhi_payment_db` | 中央健康保險署 (NHI) 健保給付與自費 | `https://data.nhi.gov.tw/Datasets/DatasetDetail.aspx?id=500` | OGDL 1.0 |
+| **`M07`** | `nhi_procedure_db` | 中央健康保險署 (NHI) 醫療服務處置碼 | `https://data.nhi.gov.tw/Datasets/DatasetDetail.aspx?id=600` | OGDL 1.0 |
+| **`M08`** | `rare_disease_db` | 衛福部國民健康署 (HPB) 罕見疾病名冊 | `https://www.hpa.gov.tw/Pages/List.aspx?nodeid=43` | OGDL 1.0 |
+| **`M09`** | `oncology_meta` | 衛福部國健署 癌症治療指引與標靶 | `https://www.hpa.gov.tw/Pages/List.aspx?nodeid=205` | OGDL 1.0 |
+| **`M10`** | `med_legal_db` | 司法院裁判書開放資料集 | `https://opendata.judicial.gov.tw/` | OGDL 1.0 |
+| **`M11`** | `patient_journey_db` | 衛福部國健署 癌症全人照護導航 | `https://www.hpa.gov.tw/Pages/List.aspx?nodeid=205` | OGDL 1.0 |
+| **`M12`** | `med_lab_fhir_db` | 衛福部資訊處 TW Core IG LOINC 碼 | `https://twcore.mohw.gov.tw/ig/twcore/` | OGDL 1.0 |
+
+### 🌐 2. 國際生醫機構開放 API 索引
+
+| 模組編號 | 子模組名稱 | 國際機構 / API 名稱 | API 端點與規範 | 授權/開放協定 |
+| :--- | :--- | :--- | :--- | :--- |
+| **`M50`** | `rxnorm_db` | 美國 NLM RxNav / RxNorm REST API | `https://rxnav.nlm.nih.gov/REST/rxcui.json` | Public Domain |
+| **`M51`** | `clinical_trials_gov` | 美國 NIH ClinicalTrials.gov v2 API | `https://clinicaltrials.gov/api/v2/studies` | Public Domain |
+| **`M52`** | `pubchem_db` | 美國 NIH NCBI PubChem PUG REST API | `https://pubchem.ncbi.nlm.nih.gov/rest/pug/` | Public Domain |
+| **`M53`** | `who_atc_db` | 世界衛生組織 WHO ATC/DDD Index | `https://www.whocc.no/atc_ddd_index/` | CC BY-NC 4.0 |
+| **`M54`** | `twcore_fhir_db` | 衛福部資訊處 / MISAT TW Core IG Portal | `https://twcore.mohw.gov.tw/ig/twcore/` | OGDL 1.0 |
+
+---
+
+## 6.2 🖼️ 全書 Mermaid 架構圖與數據流向圖總目錄索引 (List of Diagrams)
+
+全書共收錄 **26 張精美的 Mermaid 視覺化圖表**，涵蓋系統架構圖、ER 關聯圖、17 DB 專屬跨模組拓撲圖、4 大利害關係人時序圖與 CLI 調度透傳圖：
+
+| 圖表編號 | 圖表名稱 | 所屬章節 | Mermaid 圖表類型 | 檔案超連結 |
+| :--- | :--- | :--- | :--- | :--- |
+| **`Fig 1.1`** | 跨國內外 17 DB 大一統神經網路拓撲地圖 | 第 1 章 (1.2) | `graph TD` 拓撲圖 | [01_vision_and_mission.md](01_vision_and_mission.md#12-17-db-神經網路全景架構圖) |
+| **`Fig 2.1`** | tw-med-db 4層技術堆疊與 SQLite/DuckDB 數據管線 | 第 2 章 (2.1) | `flowchart TB` 數據管線圖 | [02_architecture_and_models.md](02_architecture_and_models.md#21-四層數據架構堆疊) |
+| **`Fig 2.2`** | m00_entities 實體表與 FTS5 自動觸發器 ER 關聯圖 | 第 2 章 (2.2) | `erDiagram` 實體關聯圖 | [02_architecture_and_models.md](02_architecture_and_models.md#22-m00_entities-與全域-fts5-索引關聯圖) |
+| **`Fig 2.3`** | M00 母大腦與 17 Mx 子模組協同架構與 ETL 彙流圖 | 第 2 章 (2.3) | `flowchart TB` 協同拓撲圖 | [02_architecture_and_models.md](02_architecture_and_models.md#23-m00-母大腦與-17-個-mx-子模組的-etl-彙流關係) |
+| **`Fig 2.4`** | 全域跨模組業務接力與臨床協同網路全景圖 | 第 2 章 (2.4) | `graph TD` 全景網路圖 | [02_architecture_and_models.md](02_architecture_and_models.md#24-全域跨模組業務接力網路) |
+| **`Fig 3.1`** | M01 跨模組對接拓撲圖 (M01 ➔ M02/M04/M50/M53) | 第 3 章 (3.1) | `graph LR` 模組對接圖 | [03_01_m01_tw_drug_db.md](03_01_m01_tw_drug_db.md#g-專屬跨模組對接拓撲圖-mermaid-topology) |
+| **`Fig 3.2`** | M02 跨模組對接拓撲圖 (M02 ➔ M01/M52/M53) | 第 3 章 (3.2) | `graph LR` 模組對接圖 | [03_02_m02_tw_ingredient_map_db.md](03_02_m02_tw_ingredient_map_db.md#g-專屬跨模組對接拓撲圖-mermaid-topology) |
+| **`Fig 3.3`** | M03 跨模組對接拓撲圖 (M03 ➔ M01 禁忌對照) | 第 3 章 (3.3) | `graph LR` 模組對接圖 | [03_03_m03_health_supp_db.md](03_03_m03_health_supp_db.md#g-專屬跨模組對接拓撲圖-mermaid-topology) |
+| **`Fig 3.4`** | M04 跨模組對接拓撲圖 (M04 ➔ M01/M53 替代藥) | 第 3 章 (3.4) | `graph LR` 模組對接圖 | [03_04_m04_drug_shortage_alert.md](03_04_m04_drug_shortage_alert.md#g-專屬跨模組對接拓撲圖-mermaid-topology) |
+| **`Fig 3.5`** | M05 跨模組對接拓撲圖 (M05 ➔ M06/M07/M09/M11) | 第 3 章 (3.5) | `graph LR` 模組對接圖 | [03_05_m05_tw_hospital_db.md](03_05_m05_tw_hospital_db.md#g-專屬跨模組對接拓撲圖-mermaid-topology) |
+| **`Fig 3.6`** | M06 跨模組對接拓撲圖 (M06 ➔ M01/M05 比價) | 第 3 章 (3.6) | `graph LR` 模組對接圖 | [03_06_m06_nhi_payment_db.md](03_06_m06_nhi_payment_db.md#g-專屬跨模組對接拓撲圖-mermaid-topology) |
+| **`Fig 3.7`** | M07 跨模組對接拓撲圖 (M07 ➔ M05/M12 處置) | 第 3 章 (3.7) | `graph LR` 模組對接圖 | [03_07_m07_nhi_procedure_db.md](03_07_m07_nhi_procedure_db.md#g-專屬跨模組對接拓撲圖-mermaid-topology) |
+| **`Fig 3.8`** | M08 跨模組對接拓撲圖 (M08 ➔ M01/M12 罕藥) | 第 3 章 (3.8) | `graph LR` 模組對接圖 | [03_08_m08_rare_disease_db.md](03_08_m08_rare_disease_db.md#g-專屬跨模組對接拓撲圖-mermaid-topology) |
+| **`Fig 3.9`** | M09 跨模組對接拓撲圖 (M09 ➔ M01/M05/M51) | 第 3 章 (3.9) | `graph LR` 模組對接圖 | [03_09_m09_oncology_meta.md](03_09_m09_oncology_meta.md#g-專屬跨模組對接拓撲圖-mermaid-topology) |
+| **`Fig 3.10`**| M10 跨模組對接拓撲圖 (M10 ➔ M05/M07 訴訟案) | 第 3 章 (3.10) | `graph LR` 模組對接圖 | [03_10_m10_med_legal_db.md](03_10_m10_med_legal_db.md#g-專屬跨模組對接拓撲圖-mermaid-topology) |
+| **`Fig 3.11`**| M11 跨模組對接拓撲圖 (M11 ➔ M05/M09 導航) | 第 3 章 (3.11) | `graph LR` 模組對接圖 | [03_11_m11_patient_journey_db.md](03_11_m11_patient_journey_db.md#g-專屬跨模組對接拓撲圖-mermaid-topology) |
+| **`Fig 3.12`**| M12 跨模組對接拓撲圖 (M12 ➔ M01/M54 FHIR) | 第 3 章 (3.12) | `graph LR` 模組對接圖 | [03_12_m12_med_lab_fhir_db.md](03_12_m12_med_lab_fhir_db.md#g-專屬跨模組對接拓撲圖-mermaid-topology) |
+| **`Fig 3.50`**| M50 跨模組對照整合拓撲圖 (M50 ➔ M01 台規對接) | 第 3 章 (3.50) | `graph LR` 跨國對照整合圖 | [03_50_m50_rxnorm_db.md](03_50_m50_rxnorm_db.md#g-專屬跨模組對接拓撲圖-mermaid-topology) |
+| **`Fig 3.51`**| M51 跨模組對照整合拓撲圖 (M51 ➔ M09 在台試驗) | 第 3 章 (3.51) | `graph LR` 跨國對照整合圖 | [03_51_m51_clinical_trials_gov.md](03_51_m51_clinical_trials_gov.md#g-專屬跨模組對接拓撲圖-mermaid-topology) |
+| **`Fig 3.52`**| M52 跨模組對照整合拓撲圖 (M52 ➔ M02 主成分鏈結) | 第 3 章 (3.52) | `graph LR` 跨國對照整合圖 | [03_52_m52_pubchem_db.md](03_52_m52_pubchem_db.md#g-專屬跨模組對接拓撲圖-mermaid-topology) |
+| **`Fig 3.53`**| M53 跨模組對照整合拓撲圖 (M53 ➔ M01/M02 藥理樹) | 第 3 章 (3.53) | `graph LR` 跨國對照整合圖 | [03_53_m53_who_atc_db.md](03_53_m53_who_atc_db.md#g-專屬跨模組對接拓撲圖-mermaid-topology) |
+| **`Fig 3.54`**| M54 跨模組對照整合拓撲圖 (M54 ➔ M12 LOINC 對照) | 第 3 章 (3.54) | `graph LR` 跨國對照整合圖 | [03_54_m54_twcore_fhir_db.md](03_54_m54_twcore_fhir_db.md#g-專屬跨模組對接拓撲圖-mermaid-topology) |
+| **`Fig 4.1`** | 病患導航：M05 x M09 x M11 跨庫癌症照護協同時序圖 | 第 4 章 (4.1) | `sequenceDiagram` 協同時序圖 | [04_stakeholder_playbooks.md](04_stakeholder_playbooks.md#41-病患與家屬跨庫癌症臨床導航手冊) |
+| **`Fig 4.2`** | 醫藥師工具：M01 x M04 x M50 x M53 缺藥替代圖 | 第 4 章 (4.2) | `sequenceDiagram` 替代時序圖 | [04_stakeholder_playbooks.md](04_stakeholder_playbooks.md#42-醫師與藥師缺藥替代藥與跨國處方對照整合手冊) |
+| **`Fig 4.3`** | AI Agent：Structured JSON Tool-Calling 交互流向圖 | 第 4 章 (4.3) | `sequenceDiagram` Agent 時序圖 | [04_stakeholder_playbooks.md](04_stakeholder_playbooks.md#43-ai-agent-開發者structured-json-工具呼叫手冊) |
+| **`Fig 5.1`** | tw-med-cli 主指揮官與 17 DB 子命令調度透傳架構圖 | 第 5 章 (5.1) | `flowchart TB` 指令調度圖 | [05_developer_and_cli.md](05_developer_and_cli.md#51-本地環境快速建置與-cli-命令透傳架構) |
+
+---
+
+## 6.3 免責聲明與法律極限告示 (Medical Disclaimer & Legal Boundaries)
+
+### ⚠️ 1. 非醫療診斷替代聲明 (Not Medical Advice)
+* 本專案 (`tw-med-db`) 及配套之白皮書、CLI 工具鏈與 API，**僅供生醫研究、學術分析、資訊系統開發與 AI Agent 技術展示之用途**。
+* 本資料庫所載之任何藥物資訊、適應症、健保給付規定、缺藥警訊、癌症治療指引或醫療處置點數，**均不構成任何形式的醫療建議、臨床診斷處方或用藥指導**。
+* 任何病患、家屬或民眾若有醫療照護或用藥需求，**必須親自諮詢具備執照之專業醫師、藥師或其他醫事人員**，切勿根據本資料庫之搜尋結果自行調整用藥或中斷醫療。
+
+### ⚖️ 2. 資料即時性與免責宣告 (Data Accuracy & Liability Limits)
+* 本專案數據源自衛福部、健保署、國健署、司法院及國際 NIH/WHO 之開放資料。雖然專案團隊透過 `daily_maintenance.sh` 盡力維護數據之準確性與即時性，但**對於政府原始資料之異動遲延、錯漏、或第三方 API 連線中斷所致之損害，專案開發團隊不承擔任何法律賠償責任**。
+* 使用者或企業開發者若將本專案整合至商業軟體、醫療決策支援系統 (CDSS) 或醫療器材 (SaMD)，**應自行承擔該產品之法規遵循 (such as FDA/TFDA SaMD 認證) 與臨床風險責任**。
+
+
+---
+

@@ -1,0 +1,27 @@
+{
+  "module_id": "M03",
+  "module_name": "health_supp_db",
+  "description": "M03 台灣健康食品許可證與保健功效資料庫屬性規格",
+  "allowed_attributes": {
+    "health_claim": {
+      "type": "string",
+      "description": "食藥署核可之保健功效宣稱 (如: 有助於降低血清總膽固醇)"
+    },
+    "active_ingredient": {
+      "type": "string",
+      "description": "主要保健功效成分 (如: EPA, DHA, 兒茶素)"
+    },
+    "precautions": {
+      "type": "string",
+      "description": "警語與食用注意事項"
+    },
+    "approval_date": {
+      "type": "string",
+      "description": "核照/發證日期"
+    },
+    "expiration_date": {
+      "type": "string",
+      "description": "許可證有效日期"
+    }
+  }
+}

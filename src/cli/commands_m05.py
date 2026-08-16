@@ -1,0 +1,70 @@
+"""
+commands_m05.py - M05 tw_hospital_db CLI 命令介面組件
+"""
+
+import os
+import json
+import sqlite3
+import typer
+from modules.m05_tw_hospital_db.etl import process_m05_etl
+from modules.m05_tw_hospital_db.fts import create_m05_fts, search_m05_fts
+from modules.m05_tw_hospital_db.metadata_gen import generate_m05_metadata
+from src.m00_core.utils_db import get_sqlite_connection
+
+m05_app = typer.Typer(name="m05", help="M05 台灣健保特約醫事機構與專科地圖庫 CLI")
+
+
+@m05_app.command("build")
+def build(
+    sample_file: str = typer.Option("med_poc_samples/hospitals_sample.json", "--sample", "-s", help="來源資料檔路徑"),
+    db_path: str = typer.Option("tw-med-db/db/med.db", "--db", "-d", help="實體 SQLite 資料庫路徑"),
+    manifest_path: str = typer.Option("tw-med-db/metadata.json", "--manifest", "-m", help="Manifest 輸出路徑")
+):
+    """
+    執行 M05 資料庫建置：健保特約醫院與診所洗牌與 FTS5 全文索引。
+    """
+    typer.echo(f"🚀 開始建置 M05 tw_hospital_db -> {db_path}")
+    dir_name = os.path.dirname(db_path)
+    if dir_name:
+        os.makedirs(dir_name, exist_ok=True)
+
+    count = process_m05_etl(sample_file, db_path)
+
+    conn = get_sqlite_connection(db_path)
+    create_m05_fts(conn)
+    conn.close()
+
+    generate_m05_metadata(db_path, count, manifest_path)
+    typer.echo(f"✅ M05 建置完成！共寫入 {count} 筆健保特約醫院/診所紀錄，實體 DB 位於: {db_path}")
+
+
+@m05_app.command("search")
+def search(
+    query: str = typer.Argument(..., help="檢索關鍵字 (例如: 台大醫院, 榮總, 診所, 台北市)"),
+    db_path: str = typer.Option("tw-med-db/db/med.db", "--db", "-d", help="實體 SQLite 資料庫路徑"),
+    limit: int = typer.Option(5, "--limit", "-l", help="回傳筆數限制")
+):
+    """
+    執行 M05 健保特約醫事機構檢索。
+    """
+    if not os.path.exists(db_path):
+        typer.echo(f"❌ 找不到實體資料庫: {db_path}，請先執行 'tw-med-cli m05 build'", err=True)
+        raise typer.Exit(code=1)
+
+    conn = get_sqlite_connection(db_path)
+    results = search_m05_fts(conn, query, limit=limit)
+    conn.close()
+
+    if not results:
+        typer.echo(f"🔍 查無匹配醫事機構: '{query}'")
+        return
+
+    typer.echo(f"\n🏥 M05 健保特約醫事機構檢索結果 (關鍵字: '{query}', 共 {len(results)} 筆):")
+    typer.echo("=" * 80)
+    for idx, row in enumerate(results, 1):
+        typer.echo(f"[{idx}] 醫事代碼: {row.get('hosp_id')}")
+        typer.echo(f"    機構名稱: {row.get('hosp_name')}")
+        typer.echo(f"    機構類別: {row.get('hosp_type') or '(未標註)'}")
+        typer.echo(f"    縣市行政區: {row.get('city') or '(未標註)'}")
+        typer.echo(f"    機構地址: {row.get('address')}")
+        typer.echo("-" * 80)

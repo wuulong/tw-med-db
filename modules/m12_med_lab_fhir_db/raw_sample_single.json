@@ -1,0 +1,12 @@
+[
+  {
+    "loinc_num": "1001-2",
+    "component_zh": "糖化血色素 (HbA1c) (第1型檢測)",
+    "unit": "%",
+    "ref_range_min": 4.0,
+    "ref_range_max": 5.699999999999999,
+    "fhir_resource_type": "Observation",
+    "attributes_json": "{\"loinc_num\":\"1001-2\",\"unit\":\"%\",\"fhir_resource_type\":\"Observation\",\"category\":\"臨床檢驗與生化項目\"}",
+    "updated_at": "2026-08-16 04:18:22"
+  }
+]

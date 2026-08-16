@@ -1,0 +1,9 @@
+{
+  "module_id": "M53",
+  "module_name": "who_atc_db",
+  "description": "WHO 5 階 ATC 藥理分類樹與 DDD 劑量 Gateway",
+  "table_name": "m53_atc_cache",
+  "record_count": 200,
+  "schema_version": "0.5.0",
+  "api_gateway": "WHO ATC API"
+}
