@@ -40,10 +40,10 @@
   );
   ```
 
-### (E) ⚡ 核心演演演算法與資料處理邏輯 (Core Algorithms & Logic)
-1. **Top 200 常見癌症在台臨床試驗 Seed 採樣演演演算法**：調用 `fetch_m51()` 預先抓取全台台大、榮總、長庚等招募中之關鍵癌症試驗並寫入 `m51_ctgov_cache`，確保離線與 CI 環境穩定可用。
-2. **NIH CT.gov REST API v2 Pass-Through 快取演演演算法**：本地快取未命中時發送線上 API，自動將回傳 JSON 化為結構化欄位寫入快取。
-3. **全台 Recruiter 地理標籤萃取演演演算法**：正則解析 `protocolSection.designModule` 與 `locations`，自動過濾 Location 為 Taiwan 之招募中試驗。
+### (E) ⚡ 核心演演演演演算法與資料處理邏輯 (Core Algorithms & Logic)
+1. **Top 200 常見癌症在台臨床試驗 Seed 採樣演演演演演算法**：調用 `fetch_m51()` 預先抓取全台台大、榮總、長庚等招募中之關鍵癌症試驗並寫入 `m51_ctgov_cache`，確保離線與 CI 環境穩定可用。
+2. **NIH CT.gov REST API v2 Pass-Through 快取演演演演演算法**：本地快取未命中時發送線上 API，自動將回傳 JSON 化為結構化欄位寫入快取。
+3. **全台 Recruiter 地理標籤萃取演演演演演算法**：正則解析 `protocolSection.designModule` 與 `locations`，自動過濾 Location 為 Taiwan 之招募中試驗。
 
 ### (F) 目前核心功能、CLI 手冊與 Agent 工作流 (Current Capabilities)
 * **CLI 檢索指令**：

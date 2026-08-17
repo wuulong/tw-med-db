@@ -36,10 +36,10 @@
   );
   ```
 
-### (E) ⚡ 核心演演演算法與資料處理邏輯 (Core Algorithms & Logic)
-1. **TW Core IG 核心 Profile (Patient/Observation/Medication) Seed 快取演演演算法**：預先載入台灣 TW Core IG 最新 0.2.0 版 StructureDefinition 快取至 `m54_fhir_cache` 表，確保無網路 CI 驗證時 100% 綠燈。
-2. **TW Core IG IG Portal Pass-Through 快取演演演算法**：連線衛福部 IG 官網即時更新最新 StructureDefinition Schema。
-3. **HL7 FHIR StructureDefinition 規範校驗與代碼體系 Gateway 演演演算法**：校驗輸出的 Observation、MedicationRequest 是否完全合規。
+### (E) ⚡ 核心演演演演演算法與資料處理邏輯 (Core Algorithms & Logic)
+1. **TW Core IG 核心 Profile (Patient/Observation/Medication) Seed 快取演演演演演算法**：預先載入台灣 TW Core IG 最新 0.2.0 版 StructureDefinition 快取至 `m54_fhir_cache` 表，確保無網路 CI 驗證時 100% 綠燈。
+2. **TW Core IG IG Portal Pass-Through 快取演演演演演算法**：連線衛福部 IG 官網即時更新最新 StructureDefinition Schema。
+3. **HL7 FHIR StructureDefinition 規範校驗與代碼體系 Gateway 演演演演演算法**：校驗輸出的 Observation、MedicationRequest 是否完全合規。
 
 ### (F) 目前核心功能、CLI 手冊與 Agent 工作流 (Current Capabilities)
 * **CLI 檢索指令**：

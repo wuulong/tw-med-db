@@ -19,7 +19,7 @@
 > **核心意圖**：
 > 本書不只是一份工具技術說明書，而是 **「台灣醫療開放數據解構與智慧導航大腦的終極參考專書」**。
 > 
-> 本書旨在以 **「為何而戰 ➔ 政府原始設計意圖 ➔ 數據結構與規範 ➔ 核心演演演算法 ➔ CLI 功能 ➔ 跨模組對接拓撲」** 的貫穿維度，將散落於政府開放平台、衛生福利部、健保署、國健署、司法院以及國際生醫組織 (NLM, NIH, WHO, HL7) 的 17 大資料庫，轉化為人類與 AI Agent 均能輕鬆閱讀、精確檢索的知識資產圖鑑。
+> 本書旨在以 **「為何而戰 ➔ 政府原始設計意圖 ➔ 數據結構與規範 ➔ 核心演演演演演算法 ➔ CLI 功能 ➔ 跨模組對接拓撲」** 的貫穿維度，將散落於政府開放平台、衛生福利部、健保署、國健署、司法院以及國際生醫組織 (NLM, NIH, WHO, HL7) 的 17 大資料庫，轉化為人類與 AI Agent 均能輕鬆閱讀、精確檢索的知識資產圖鑑。
 > 
 > 🎨 **視覺圖解規範**：本書廣泛採用 **Mermaid 圖表 (Flowchart, Sequence, ER Diagram, Topology)** 來視覺化解構系統架構、數據管線與跨庫導航。特別是**第 3 章的 17 個子模組，每一個子模組均包含一張專屬的『跨模組對接拓撲圖 (Mermaid Topology)』，清晰展現自己與其他 DB / 外部 Gateway 的連結關係**，並在附錄中統一彙整全書的「Mermaid 架構圖目錄索引 (List of Diagrams)」。
 
@@ -70,6 +70,7 @@
   * 3.52 **[`M52` PubChem 美國 NIH 化學結構庫 Gateway (`pubchem_db`)](03_52_m52_pubchem_db.md)** (附: `Fig 3.52` M52 跨模組對照整合拓撲圖: M52 ➔ M02 主成分鏈結)
   * 3.53 **[`M53` WHO ATC 國際藥理樹 Gateway (`who_atc_db`)](03_53_m53_who_atc_db.md)** (附: `Fig 3.53` M53 跨模組對照整合拓撲圖: M53 ➔ M01/M02 藥理樹)
   * 3.54 **[`M54` TW Core IG 台灣核心 FHIR 指引 Gateway (`twcore_fhir_db`)](03_54_m54_twcore_fhir_db.md)** (附: `Fig 3.54` M54 跨模組對照整合拓撲圖: M54 ➔ M12 LOINC 對照)
+  * 3.55 **[`M55` MIMIC-IV 美國重症臨床資料庫 Gateway (`mimic_iv_db`)](03_55_m55_mimic_iv_db.md)** (附: `Fig 3.55` M55 跨模組對照整合拓撲圖: M55 ➔ M01/M50/M12 對照)
 
 ---
 
@@ -395,13 +396,13 @@ graph TD
 2. **(B) 政府原始設計意圖與開放 API 剖析 (Gov Intent & Data Sources)**：說明主管機關當初設計 Open Data 的背景、原始 API 端點與抓取腳本。
 3. **(C) 📄 來源單筆資料說明與 Raw Sample (Raw Data & Sample)**：解讀原始欄位邏輯，提供 1 筆 Raw JSON/CSV 範例與 200 筆離線採樣檔超連結 ([`raw_sample_single.json`](../modules/m01_tw_drug_db/raw_sample_single.json))。
 4. **(D) 🔗 實體 Schema 建表 SQL 腳本 (Schema SQL Link)**：提供簡明易懂的純 SQL 建表腳本附檔超連結 ([`schema.sql`](../modules/m01_tw_drug_db/schema.sql))，使用者複製貼上即可建立資料庫，內文附核心 DDL 區塊。
-5. **(E) ⚡ 核心演演演算法與資料處理邏輯 (Core Algorithms & Logic)**：詳細解構該模組專屬的資料清洗、字串正規化、IQR 統計或決策樹演演演算法。
+5. **(E) ⚡ 核心演演演演演算法與資料處理邏輯 (Core Algorithms & Logic)**：詳細解構該模組專屬的資料清洗、字串正規化、IQR 統計或決策樹演演演演演算法。
 6. **(F) 目前核心功能、CLI 手冊與 Agent 工作流 (Current Capabilities)**：展示 `tw-med-cli` 命令列用法、專屬 `README.md`、`CLI_MANUAL.md` 與 AI Agent `WORKFLOW.md` 指引。
 7. **(G) 🎨 專屬跨模組對接拓撲圖 (Mermaid Topology)**：內嵌專屬 `Fig 3.X` Mermaid 拓撲圖，清晰視覺化展示自己與其他 DB 及國際 Gateway 的數據對接關係。
 
 ---
 
-## 3.0.2 🌐 國際 Gateway (M50~M54) 通用 Cache 架構與 Seed 採樣演演演算法說明
+## 3.0.2 🌐 國際 Gateway (M50~M54) 通用 Cache 架構與 Seed 採樣演演演演演算法說明
 
 國際 Gateway 模組（`M50` RxNorm, `M51` ClinicalTrials.gov, `M52` PubChem, `M53` WHO ATC, `M54` TW Core FHIR）具備與國內 DB 不同的特殊兩大設計：
 
@@ -412,9 +413,9 @@ graph TD
   2. **線上 API 透傳 (Pass-Through)**：若本機無記錄，自動調用國際 REST API 抓取數據。
   3. **自動寫入快取 (Persistence)**：將結果格式化後寫入 `m5x_*_cache` 並標註 `cached_at` 時間戳。
 
-### 2. 離線防護與 Top 200 Seed 精準採樣演演演算法 (Seed Ingestion Algorithm)
+### 2. 離線防護與 Top 200 Seed 精準採樣演演演演演算法 (Seed Ingestion Algorithm)
 * **設計動機**：確保系統在完全無網路（離線環境）或 GitHub Actions CI 中仍可 100% 運行測試與發布。
-* **採樣演演演算法**：
+* **採樣演演演演演算法**：
   在 `scripts/medical/fetch_med_data_samples.py` 中，系統會提取全台 Top 200 最常用處方藥與罕見疾病清單，預先向國際 API 發動連線，將實體回傳數據固化寫入 `m5x_*_cache` 作為種子資料 (Seed Data)。
 
 
@@ -473,12 +474,12 @@ graph TD
   CREATE INDEX IF NOT EXISTS idx_m01_license ON m01_tw_drug_db(license_id);
   ```
 
-### (E) ⚡ 核心演演演算法與資料處理邏輯 (Core Algorithms & Logic)
-1. **健保碼補零與主鍵正規化演演演算法 (`zfill(10)`)**：
+### (E) ⚡ 核心演演演演演算法與資料處理邏輯 (Core Algorithms & Logic)
+1. **健保碼補零與主鍵正規化演演演演演算法 (`zfill(10)`)**：
    比對位數，若健保代碼長度為 9 位數且開頭非字母，自動於首位補 `0`，避免跨庫關聯失敗。
-2. **藥價歷史中位數與四分位距 (IQR) 統計演演演算法**：
+2. **藥價歷史中位數與四分位距 (IQR) 統計演演演演演算法**：
    調用 DuckDB C++ 引擎，將歷史藥價調整紀錄進行 IQR 離群值掃除，計算藥價歷史中位數。
-3. **5 大維度 Rule-based Tag 自動萃取演演演算法**：
+3. **5 大維度 Rule-based Tag 自動萃取演演演演演算法**：
    解析 `indication` 與 `劑型` 文字，以 Regex 自動標定 `#癌症`, `#注射劑`, `#心血管`, `#管制藥`, `#外用` 標籤。
 
 ### (F) 目前核心功能、CLI 手冊與 Agent 工作流 (Current Capabilities)
@@ -567,10 +568,10 @@ graph LR
   CREATE INDEX IF NOT EXISTS idx_m02_pubchem ON m02_tw_ingredient_map_db(pubchem_cid);
   ```
 
-### (E) ⚡ 核心演演演算法與資料處理邏輯 (Core Algorithms & Logic)
-1. **複方成分符號自動拆解演演演算法 (Multi-Ingredient Splitter)**：
+### (E) ⚡ 核心演演演演演算法與資料處理邏輯 (Core Algorithms & Logic)
+1. **複方成分符號自動拆解演演演演演算法 (Multi-Ingredient Splitter)**：
    解析原始成分字串，自動以 `;`, `+`, `AND`, `WITH` 進行正則切割，將單一藥品拆解為獨立成分陣列。
-2. **成分同義詞歸一化與鹽類去除演演演算法 (Ingredient Normalization & Salt Stripping)**：
+2. **成分同義詞歸一化與鹽類去除演演演演演算法 (Ingredient Normalization & Salt Stripping)**：
    將成分英文轉換為標準大寫，並剔除無關劑量字尾與常見鹽類（如去除 `SODIUM`, `HYDROCHLORIDE`, `MESYLATE`），對齊通用分子主幹。
 
 ### (F) 目前核心功能、CLI 手冊與 Agent 工作流 (Current Capabilities)
@@ -647,8 +648,8 @@ graph LR
   );
   ```
 
-### (E) ⚡ 核心演演演算法與資料處理邏輯 (Core Algorithms & Logic)
-1. **13 大保健功效標籤萃取演演演算法**：正則解析保健功效文字，歸一化標定 `#調節血脂`, `#胃腸改善`, `#護肝` 等標籤。
+### (E) ⚡ 核心演演演演演算法與資料處理邏輯 (Core Algorithms & Logic)
+1. **13 大保健功效標籤萃取演演演演演算法**：正則解析保健功效文字，歸一化標定 `#調節血脂`, `#胃腸改善`, `#護肝` 等標籤。
 2. **保健食品與西藥交互作用矩陣**：比對主成分與健康食品萃取物（如靈芝、紅麴與降血脂藥）。
 
 ### (F) 目前核心功能、CLI 手冊與 Agent 工作流 (Current Capabilities)
@@ -713,7 +714,7 @@ graph LR
   );
   ```
 
-### (E) ⚡ 核心演演演算法與資料處理邏輯 (Core Algorithms & Logic)
+### (E) ⚡ 核心演演演演演算法與資料處理邏輯 (Core Algorithms & Logic)
 1. **5ms 即時缺藥比對決策樹**：以健保碼即時比對通報狀態。
 2. **同 ATC 同劑型平價替代藥自動推薦**：連動 M53 取得相同 ATC Level 5 品項。
 
@@ -782,8 +783,8 @@ graph LR
   );
   ```
 
-### (E) ⚡ 核心演演演算法與資料處理邏輯 (Core Algorithms & Logic)
-1. **看診時間 21 位元矩陣演演演算法 (21-Bit Time Matrix)**：將週一至週日早中晚門診編碼為 21 個 Bit 位元。
+### (E) ⚡ 核心演演演演演算法與資料處理邏輯 (Core Algorithms & Logic)
+1. **看診時間 21 位元矩陣演演演演演算法 (21-Bit Time Matrix)**：將週一至週日早中晚門診編碼為 21 個 Bit 位元。
 2. **Haversine 空間半徑檢索**：以 WGS84 經緯度毫秒級計算指定公里內院所。
 
 ### (F) 目前核心功能、CLI 手冊與 Agent 工作流 (Current Capabilities)
@@ -846,7 +847,7 @@ graph LR
   );
   ```
 
-### (E) ⚡ 核心演演演算法與資料處理邏輯 (Core Algorithms & Logic)
+### (E) ⚡ 核心演演演演演算法與資料處理邏輯 (Core Algorithms & Logic)
 1. **條文 JSON 邏輯條件樹解構**：將「需先經過二線治療」轉譯為 JSON 條件邏輯。
 2. **IQR 自費四分位數比價**：計算該自費品項全台前 25%、中位數與 75% 價格。
 
@@ -910,9 +911,9 @@ graph LR
   );
   ```
 
-### (E) ⚡ 核心演演演算法與資料處理邏輯 (Core Algorithms & Logic)
-1. **處置碼 5 階層級切片演演演算法**：按章節層級進行 SQL CTE 階層解構。
-2. **點值估算演演演算法**：結合最新各分區點值估算實質醫療費用。
+### (E) ⚡ 核心演演演演演算法與資料處理邏輯 (Core Algorithms & Logic)
+1. **處置碼 5 階層級切片演演演演演算法**：按章節層級進行 SQL CTE 階層解構。
+2. **點值估算演演演演演算法**：結合最新各分區點值估算實質醫療費用。
 
 ### (F) 目前核心功能、CLI 手冊與 Agent 工作流 (Current Capabilities)
 * **CLI 檢索指令**：
@@ -974,8 +975,8 @@ graph LR
   );
   ```
 
-### (E) ⚡ 核心演演演算法與資料處理邏輯 (Core Algorithms & Logic)
-1. **罕病 ICD-10 / 罕藥專用碼雙向自動對照整合演演演算法**。
+### (E) ⚡ 核心演演演演演算法與資料處理邏輯 (Core Algorithms & Logic)
+1. **罕病 ICD-10 / 罕藥專用碼雙向自動對照整合演演演演演算法**。
 
 ### (F) 目前核心功能、CLI 手冊與 Agent 工作流 (Current Capabilities)
 * **CLI 檢索指令**：
@@ -1037,8 +1038,8 @@ graph LR
   );
   ```
 
-### (E) ⚡ 核心演演演算法與資料處理邏輯 (Core Algorithms & Logic)
-1. **TNM Stage 癌症分期與基因突變標籤過濾演演演算法**。
+### (E) ⚡ 核心演演演演演算法與資料處理邏輯 (Core Algorithms & Logic)
+1. **TNM Stage 癌症分期與基因突變標籤過濾演演演演演算法**。
 
 ### (F) 目前核心功能、CLI 手冊與 Agent 工作流 (Current Capabilities)
 * **CLI 檢索指令**：
@@ -1100,7 +1101,7 @@ graph LR
   );
   ```
 
-### (E) ⚡ 核心演演演算法與資料處理邏輯 (Core Algorithms & Logic)
+### (E) ⚡ 核心演演演演演算法與資料處理邏輯 (Core Algorithms & Logic)
 1. **裁判參考價值 Re-ranking 評分模型與爭點標籤萃取**。
 
 ### (F) 目前核心功能、CLI 手冊與 Agent 工作流 (Current Capabilities)
@@ -1163,8 +1164,8 @@ graph LR
   );
   ```
 
-### (E) ⚡ 核心演演演算法與資料處理邏輯 (Core Algorithms & Logic)
-1. **癌症照護旅程有限狀態機 (FSM) 轉移與拓撲演演演算法**。
+### (E) ⚡ 核心演演演演演算法與資料處理邏輯 (Core Algorithms & Logic)
+1. **癌症照護旅程有限狀態機 (FSM) 轉移與拓撲演演演演演算法**。
 
 ### (F) 目前核心功能、CLI 手冊與 Agent 工作流 (Current Capabilities)
 * **CLI 檢索指令**：
@@ -1226,8 +1227,8 @@ graph LR
   );
   ```
 
-### (E) ⚡ 核心演演演算法與資料處理邏輯 (Core Algorithms & Logic)
-1. **TW Core IG FHIR R4 JSON 結構驗證與 LOINC 映射演演演算法**。
+### (E) ⚡ 核心演演演演演算法與資料處理邏輯 (Core Algorithms & Logic)
+1. **TW Core IG FHIR R4 JSON 結構驗證與 LOINC 映射演演演演演算法**。
 
 ### (F) 目前核心功能、CLI 手冊與 Agent 工作流 (Current Capabilities)
 * **CLI 檢索指令**：
@@ -1298,10 +1299,10 @@ graph LR
   CREATE INDEX IF NOT EXISTS idx_m50_nhi ON m50_rxnorm_cache(nhi_code);
   ```
 
-### (E) ⚡ 核心演演演算法與資料處理邏輯 (Core Algorithms & Logic)
-1. **Top 200 健保熱門藥品 Seed 離線採樣固化演演演算法**：調用 `fetch_m50()` 將全台前 200 大健保處方藥向 NLM API 發動採樣，預先寫入 `m50_rxnorm_cache` 表，確保離線與 CI 環境 100% 可用。
-2. **Pass-Through 旁路透傳快取演演演算法**：本機未命中時自動透傳 NLM RxNav API，抓取 SBD (Semantic Branded Drug) 概念碼並自動寫入快取與 `cached_at` 時間戳。
-3. **TTY 語意階層過濾演演演算法**：自動識別 IN (Ingredient), PIN (Precise Ingredient), SBD (Semantic Branded Drug) 階層。
+### (E) ⚡ 核心演演演演演算法與資料處理邏輯 (Core Algorithms & Logic)
+1. **Top 200 健保熱門藥品 Seed 離線採樣固化演演演演演算法**：調用 `fetch_m50()` 將全台前 200 大健保處方藥向 NLM API 發動採樣，預先寫入 `m50_rxnorm_cache` 表，確保離線與 CI 環境 100% 可用。
+2. **Pass-Through 旁路透傳快取演演演演演算法**：本機未命中時自動透傳 NLM RxNav API，抓取 SBD (Semantic Branded Drug) 概念碼並自動寫入快取與 `cached_at` 時間戳。
+3. **TTY 語意階層過濾演演演演演算法**：自動識別 IN (Ingredient), PIN (Precise Ingredient), SBD (Semantic Branded Drug) 階層。
 
 ### (F) 目前核心功能、CLI 手冊與 Agent 工作流 (Current Capabilities)
 * **CLI 檢索指令**：
@@ -1376,10 +1377,10 @@ graph LR
   );
   ```
 
-### (E) ⚡ 核心演演演算法與資料處理邏輯 (Core Algorithms & Logic)
-1. **Top 200 常見癌症在台臨床試驗 Seed 採樣演演演算法**：調用 `fetch_m51()` 預先抓取全台台大、榮總、長庚等招募中之關鍵癌症試驗並寫入 `m51_ctgov_cache`，確保離線與 CI 環境穩定可用。
-2. **NIH CT.gov REST API v2 Pass-Through 快取演演演算法**：本地快取未命中時發送線上 API，自動將回傳 JSON 化為結構化欄位寫入快取。
-3. **全台 Recruiter 地理標籤萃取演演演算法**：正則解析 `protocolSection.designModule` 與 `locations`，自動過濾 Location 為 Taiwan 之招募中試驗。
+### (E) ⚡ 核心演演演演演算法與資料處理邏輯 (Core Algorithms & Logic)
+1. **Top 200 常見癌症在台臨床試驗 Seed 採樣演演演演演算法**：調用 `fetch_m51()` 預先抓取全台台大、榮總、長庚等招募中之關鍵癌症試驗並寫入 `m51_ctgov_cache`，確保離線與 CI 環境穩定可用。
+2. **NIH CT.gov REST API v2 Pass-Through 快取演演演演演算法**：本地快取未命中時發送線上 API，自動將回傳 JSON 化為結構化欄位寫入快取。
+3. **全台 Recruiter 地理標籤萃取演演演演演算法**：正則解析 `protocolSection.designModule` 與 `locations`，自動過濾 Location 為 Taiwan 之招募中試驗。
 
 ### (F) 目前核心功能、CLI 手冊與 Agent 工作流 (Current Capabilities)
 * **CLI 檢索指令**：
@@ -1448,10 +1449,10 @@ graph LR
   CREATE INDEX IF NOT EXISTS idx_m52_smiles ON m52_pubchem_cache(canonical_smiles);
   ```
 
-### (E) ⚡ 核心演演演算法與資料處理邏輯 (Core Algorithms & Logic)
-1. **Top 200 主要藥物成分分子結構 Seed 採樣固化演演演算法**：調用 `fetch_m52()` 向 PubChem PUG REST API 預抓全台前 200 大主成分之 SMILES、InChIKey 與 CID，寫入 `m52_pubchem_cache` 確保離線與 CI 環境穩定。
-2. **PubChem PUG REST API Pass-Through 透傳快取演演演算法**：本機未命中時即時發動 PUG REST，解析 JSON 化學屬性寫入快取。
-3. **SMILES 分子字串校驗演演演算法**：正則語法檢查 PubChem 回傳之 Canonical SMILES 合法性。
+### (E) ⚡ 核心演演演演演算法與資料處理邏輯 (Core Algorithms & Logic)
+1. **Top 200 主要藥物成分分子結構 Seed 採樣固化演演演演演算法**：調用 `fetch_m52()` 向 PubChem PUG REST API 預抓全台前 200 大主成分之 SMILES、InChIKey 與 CID，寫入 `m52_pubchem_cache` 確保離線與 CI 環境穩定。
+2. **PubChem PUG REST API Pass-Through 透傳快取演演演演演算法**：本機未命中時即時發動 PUG REST，解析 JSON 化學屬性寫入快取。
+3. **SMILES 分子字串校驗演演演演演算法**：正則語法檢查 PubChem 回傳之 Canonical SMILES 合法性。
 
 ### (F) 目前核心功能、CLI 手冊與 Agent 工作流 (Current Capabilities)
 * **CLI 檢索指令**：
@@ -1522,11 +1523,11 @@ graph LR
   CREATE INDEX IF NOT EXISTS idx_m53_parent ON m53_atc_cache(parent_code);
   ```
 
-### (E) ⚡ 核心演演演算法與資料處理邏輯 (Core Algorithms & Logic)
-1. **Top 200 常用西藥 ATC 藥理樹 Seed 採樣固化演演演算法**：調用 `fetch_m53()` 向 WHO ATC Index API 預抓全台熱門 200 大處方藥對應之 5 階 ATC 分類樹與 DDD 劑量，預先寫入 `m53_atc_cache` 表，確保離線與 CI 環境 100% 運行 PASS。
-2. **WHO ATC API Pass-Through 旁路透傳快取演演演算法**：本機未命中時自動連線 WHO API 抓取 Level 1 ~ 5 階層節點並自動持久化。
-3. **WHO 5 階 ATC 樹狀 CTE 遞迴演演演算法**：使用 SQL `WITH RECURSIVE` 自根節點 (Level 1 大類如 `L`) 遞迴向下穿透至 Level 5 (如 `L01ED04`)。
-4. **DDD (Defined Daily Dose) 劑量轉換演演演算法**：以 WHO DDD 為標準計算跨藥品給付劑量比例。
+### (E) ⚡ 核心演演演演演算法與資料處理邏輯 (Core Algorithms & Logic)
+1. **Top 200 常用西藥 ATC 藥理樹 Seed 採樣固化演演演演演算法**：調用 `fetch_m53()` 向 WHO ATC Index API 預抓全台熱門 200 大處方藥對應之 5 階 ATC 分類樹與 DDD 劑量，預先寫入 `m53_atc_cache` 表，確保離線與 CI 環境 100% 運行 PASS。
+2. **WHO ATC API Pass-Through 旁路透傳快取演演演演演算法**：本機未命中時自動連線 WHO API 抓取 Level 1 ~ 5 階層節點並自動持久化。
+3. **WHO 5 階 ATC 樹狀 CTE 遞迴演演演演演算法**：使用 SQL `WITH RECURSIVE` 自根節點 (Level 1 大類如 `L`) 遞迴向下穿透至 Level 5 (如 `L01ED04`)。
+4. **DDD (Defined Daily Dose) 劑量轉換演演演演演算法**：以 WHO DDD 為標準計算跨藥品給付劑量比例。
 
 ### (F) 目前核心功能、CLI 手冊與 Agent 工作流 (Current Capabilities)
 * **CLI 檢索指令**：
@@ -1598,10 +1599,10 @@ graph LR
   );
   ```
 
-### (E) ⚡ 核心演演演算法與資料處理邏輯 (Core Algorithms & Logic)
-1. **TW Core IG 核心 Profile (Patient/Observation/Medication) Seed 快取演演演算法**：預先載入台灣 TW Core IG 最新 0.2.0 版 StructureDefinition 快取至 `m54_fhir_cache` 表，確保無網路 CI 驗證時 100% 綠燈。
-2. **TW Core IG IG Portal Pass-Through 快取演演演算法**：連線衛福部 IG 官網即時更新最新 StructureDefinition Schema。
-3. **HL7 FHIR StructureDefinition 規範校驗與代碼體系 Gateway 演演演算法**：校驗輸出的 Observation、MedicationRequest 是否完全合規。
+### (E) ⚡ 核心演演演演演算法與資料處理邏輯 (Core Algorithms & Logic)
+1. **TW Core IG 核心 Profile (Patient/Observation/Medication) Seed 快取演演演演演算法**：預先載入台灣 TW Core IG 最新 0.2.0 版 StructureDefinition 快取至 `m54_fhir_cache` 表，確保無網路 CI 驗證時 100% 綠燈。
+2. **TW Core IG IG Portal Pass-Through 快取演演演演演算法**：連線衛福部 IG 官網即時更新最新 StructureDefinition Schema。
+3. **HL7 FHIR StructureDefinition 規範校驗與代碼體系 Gateway 演演演演演算法**：校驗輸出的 Observation、MedicationRequest 是否完全合規。
 
 ### (F) 目前核心功能、CLI 手冊與 Agent 工作流 (Current Capabilities)
 * **CLI 檢索指令**：
@@ -1622,6 +1623,137 @@ graph LR
 ```
 
 * **`Fig 3.54` M54 跨模組對照整合拓撲圖 (M54 ➔ M12)**
+
+
+---
+
+<!-- START_OF_FILE: 03_55_m55_mimic_iv_db.md -->
+# 3.55 [M55] MIMIC-IV 美國重症臨床資料庫 Gateway (mimic_iv_db)
+
+### (A) 為何而戰 (Why We Build M55)
+* **使用者痛點**：全台醫學中心與臨床研究員缺乏能將美規重症 ICU 數據（包含護理監視器 Vital Signs 時間序列、SOFA 分數、重症處方）直接與台灣健保藥碼 (`M01`) 及 LOINC 檢驗 (`M12`) 雙向對照轉碼的輕量中樞。
+* **核心價值主張**：收錄美國 MIT / BIDMC MIMIC-IV 重症臨床開放資料庫，提供 DuckDB 零拷貝解析、旁路透傳快取 (Pass-Through Cache) 與台規健保對照能力。
+
+### (B) 政府與機構原始設計意圖與開放 API 剖析 (Gov Intent & Data Sources)
+* **主管機關**：美國麻省理工學院 (MIT) PhysioNet / BIDMC。
+* **原始 API/資料庫端點**：`https://physionet.org/content/mimic-iv-demo/2.2/`
+* **資料庫表格設計**：
+  - `m55_hosp_*` (22 張全院病歷實體表：包含 patients, admissions, prescriptions, labevents, diagnoses_icd)
+  - `m55_icu_*` (9 張重症病房實體表：包含 icustays, chartevents, inputevents, outputevents)
+  - `m55_mimic_cache` (由 31 張實體表即時 Join 組成的動態 View)
+
+#### 🏛️ 31 張原生實體表 ER 關聯架構圖 (Fig 3.55a 31-Table ER Diagram)
+
+```mermaid
+erDiagram
+    %% Core Patient & Stay Entities
+    m55_hosp_patients ||--o{ m55_hosp_admissions : "subject_id (1:N)"
+    m55_hosp_patients ||--o{ m55_icu_icustays : "subject_id (1:N)"
+    m55_hosp_admissions ||--o{ m55_icu_icustays : "hadm_id (1:N)"
+
+    %% Hosp Clinical Entities
+    m55_hosp_patients ||--o{ m55_hosp_diagnoses_icd : "subject_id"
+    m55_hosp_diagnoses_icd }|--|| m55_hosp_d_icd_diagnoses : "icd_code & icd_version"
+
+    m55_hosp_patients ||--o{ m55_hosp_procedures_icd : "subject_id"
+    m55_hosp_procedures_icd }|--|| m55_hosp_d_icd_procedures : "icd_code & icd_version"
+
+    m55_hosp_patients ||--o{ m55_hosp_prescriptions : "subject_id"
+    m55_hosp_patients ||--o{ m55_hosp_pharmacy : "subject_id"
+    m55_hosp_patients ||--o{ m55_hosp_emar : "subject_id"
+    m55_hosp_emar ||--o{ m55_hosp_emar_detail : "emar_id"
+
+    m55_hosp_patients ||--o{ m55_hosp_labevents : "subject_id"
+    m55_hosp_labevents }|--|| m55_hosp_d_labitems : "itemid"
+
+    %% ICU Critical Care Entities
+    m55_icu_icustays ||--o{ m55_icu_chartevents : "stay_id"
+    m55_icu_chartevents }|--|| m55_icu_d_items : "itemid"
+
+    m55_icu_icustays ||--o{ m55_icu_inputevents : "stay_id"
+    m55_icu_inputevents }|--|| m55_icu_d_items : "itemid"
+
+    m55_icu_icustays ||--o{ m55_icu_outputevents : "stay_id"
+    m55_icu_outputevents }|--|| m55_icu_d_items : "itemid"
+```
+
+* **`Fig 3.55a` M55 MIMIC-IV 31 張實體資料表 ER 關聯圖**
+
+### (C) 📄 來源單筆資料說明與 Raw Sample (Raw Data & Sample)
+* **單筆 Raw Sample 附件**：參閱 [`modules/m55_mimic_iv_db/raw_sample_single.json`](../modules/m55_mimic_iv_db/raw_sample_single.json)
+* **單筆 Raw JSON 範例**：
+  ```json
+  [
+    {
+      "subject_id": 10000032,
+      "hadm_id": 22595853,
+      "stay_id": 39553978,
+      "gender": "F",
+      "anchor_age": 52,
+      "diagnoses_icd": [{"icd_code": "5715", "icd_version": 9, "long_title": "Cirrhosis of liver"}],
+      "prescriptions": [{"drug": "Furosemide", "ndc": "00074405301", "rxcui": "4603", "nhi_code": "0AC49322100"}],
+      "vitals_summary": {"heart_rate_mean": 88.5, "sbp_mean": 115.0, "spo2_mean": 98.2, "gcs_min": 15}
+    }
+  ]
+  ```
+
+### (D) 🔗 實體 Schema 建表 SQL 腳本 (Schema SQL Link)
+* **純 SQL 建表腳本附件**：[`modules/m55_mimic_iv_db/schema.sql`](../modules/m55_mimic_iv_db/schema.sql)
+* **核心 DDL SQL 語法**（複製貼上即可建立 View 視圖）：
+  ```sql
+  CREATE VIEW IF NOT EXISTS m55_mimic_cache AS
+  SELECT 
+      p.subject_id,
+      (SELECT a.hadm_id FROM m55_hosp_admissions a WHERE a.subject_id = p.subject_id LIMIT 1) AS hadm_id,
+      (SELECT i.stay_id FROM m55_icu_icustays i WHERE i.subject_id = p.subject_id LIMIT 1) AS stay_id,
+      p.gender,
+      p.anchor_age,
+      (
+          SELECT json_group_array(json_object(
+              'icd_code', d.icd_code,
+              'icd_version', d.icd_version,
+              'long_title', COALESCE(dict.long_title, '')
+          ))
+          FROM m55_hosp_diagnoses_icd d
+          LEFT JOIN m55_hosp_d_icd_diagnoses dict 
+            ON d.icd_code = dict.icd_code AND d.icd_version = dict.icd_version
+          WHERE d.subject_id = p.subject_id
+      ) AS diagnoses_icd_json
+  FROM m55_hosp_patients p;
+  ```
+
+### (E) ⚡ 核心演演算法與資料處理邏輯 (Core Algorithms & Logic)
+1. **DuckDB C++ 零拷貝平行剖析演演算法**：平行剖析 31 個 `.csv.gz` 資料表並寫入 31 張 `m55_hosp_*` 與 `m55_icu_*` 實體表。
+2. **種子保護與旁路快取透傳演演算法**：標記 `is_seed = 1` 確保離線 Demo 數據安全。
+3. **NDC/RxCUI ➔ 台規健保藥碼 (M01) 跨國轉碼演演算法**。
+4. **LOINC/ItemID ➔ TW Core IG FHIR R4 轉碼演演算法**。
+
+### (F) 目前核心功能、CLI 手冊與 Agent 工作流 (Current Capabilities)
+* **基礎與 4 大高階臨床加值 CLI 命令**：
+  ```bash
+  python src/cli/main.py m55 search 10000032 --json
+  python src/cli/main.py m55 early-warning 10014729  # 1. SOFA/NEWS2 評分
+  python src/cli/main.py m55 risk-tags 10014729      # 2. Sepsis-3/AKI 標籤
+  python src/cli/main.py m55 benchmark-nhi 10014729  # 3. 健保給付/自費比價
+  python src/cli/main.py m55 icu-trajectory 10014729 # 4. ICU 拔管脫離軌跡
+  ```
+* **專屬檔案超連結**：
+  * [M55 子模組專屬 README](../modules/m55_mimic_iv_db/README.md)
+  * [M55 31 表實體與 View 架構圖](../modules/m55_mimic_iv_db/ARCHITECTURE_DIAGRAM.md)
+  * [M55 CLI 指令手冊](../modules/m55_mimic_iv_db/CLI_MANUAL.md)
+  * [M55 AI Agent WORKFLOW.md](../modules/m55_mimic_iv_db/WORKFLOW.md)
+* **單元測試狀態**：`tests/test_m55_mimic_iv_db.py` (🟢 **100% PASS - 4/4 深度測試項通過**)
+
+### (G) 🎨 專屬跨模組對接拓撲圖 (Mermaid Topology)
+
+```mermaid
+graph LR
+    M55[M55 MIMIC-IV Gateway] <-->|1. 處方轉碼| M01[M01 處方藥證庫]
+    M55 <-->|2. 美規 RxCUI 對照| M50[M50 RxNorm Gateway]
+    M55 <-->|3. LOINC 檢驗對照| M12[M12 LOINC 檢驗碼庫]
+```
+
+* **`Fig 3.55b` M55 跨模組對照拓撲圖 (M55 ➔ M01/M50/M12)**
 
 
 ---
@@ -1887,7 +2019,7 @@ python src/cli/main.py m04 check-shortage 0AC49322100 --db db/med.db
 
 #### 🏥 M05 `tw_hospital_db` 專屬命令：地理半徑與門診時段檢索
 ```bash
-# 1. 經緯度公里半徑檢索 (Haversine 演演演算法)
+# 1. 經緯度公里半徑檢索 (Haversine 演演演演演算法)
 python src/cli/main.py m05 nearby --lat 25.041 --lng 121.519 --radius 5.0 --db db/med.db
 
 # 2. 21 位元看診時間矩陣過濾

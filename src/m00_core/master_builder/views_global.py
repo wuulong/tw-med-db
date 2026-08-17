@@ -9,7 +9,8 @@ GLOBAL_HARVEST_QUERIES = [
     ("m51_ctgov_cache", "SELECT nct_id, 'CTGOV_TRIAL', title, phase, 'tw-med-db://m51/' || nct_id FROM m51_ctgov_cache"),
     ("m52_pubchem_cache", "SELECT cid, 'PUBCHEM_COMPOUND', ingredient_name, inchikey, 'tw-med-db://m52/' || cid FROM m52_pubchem_cache"),
     ("m53_atc_cache", "SELECT atc_code, 'WHO_ATC_NODE', atc_name_en, parent_code, 'tw-med-db://m53/' || atc_code FROM m53_atc_cache"),
-    ("m54_fhir_cache", "SELECT profile_id, 'TWCORE_FHIR_PROFILE', profile_name_en, resource_type, 'tw-med-db://m54/' || profile_id FROM m54_fhir_cache")
+    ("m54_fhir_cache", "SELECT profile_id, 'TWCORE_FHIR_PROFILE', profile_name_en, resource_type, 'tw-med-db://m54/' || profile_id FROM m54_fhir_cache"),
+    ("m55_mimic_cache", "SELECT CAST(subject_id AS TEXT), 'MIMIC_PATIENT', 'MIMIC-IV Patient ' || CAST(subject_id AS TEXT), gender || ' ' || CAST(anchor_age AS TEXT) || 'yo', 'tw-med-db://m55/' || CAST(subject_id AS TEXT) FROM m55_mimic_cache")
 ]
 
 

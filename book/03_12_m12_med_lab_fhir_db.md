@@ -34,8 +34,8 @@
   );
   ```
 
-### (E) ⚡ 核心演演演算法與資料處理邏輯 (Core Algorithms & Logic)
-1. **TW Core IG FHIR R4 JSON 結構驗證與 LOINC 映射演演演算法**。
+### (E) ⚡ 核心演演演演演算法與資料處理邏輯 (Core Algorithms & Logic)
+1. **TW Core IG FHIR R4 JSON 結構驗證與 LOINC 映射演演演演演算法**。
 
 ### (F) 目前核心功能、CLI 手冊與 Agent 工作流 (Current Capabilities)
 * **CLI 檢索指令**：

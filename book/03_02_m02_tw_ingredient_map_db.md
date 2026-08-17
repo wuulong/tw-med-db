@@ -47,10 +47,10 @@
   CREATE INDEX IF NOT EXISTS idx_m02_pubchem ON m02_tw_ingredient_map_db(pubchem_cid);
   ```
 
-### (E) ⚡ 核心演演演算法與資料處理邏輯 (Core Algorithms & Logic)
-1. **複方成分符號自動拆解演演演算法 (Multi-Ingredient Splitter)**：
+### (E) ⚡ 核心演演演演演算法與資料處理邏輯 (Core Algorithms & Logic)
+1. **複方成分符號自動拆解演演演演演算法 (Multi-Ingredient Splitter)**：
    解析原始成分字串，自動以 `;`, `+`, `AND`, `WITH` 進行正則切割，將單一藥品拆解為獨立成分陣列。
-2. **成分同義詞歸一化與鹽類去除演演演算法 (Ingredient Normalization & Salt Stripping)**：
+2. **成分同義詞歸一化與鹽類去除演演演演演算法 (Ingredient Normalization & Salt Stripping)**：
    將成分英文轉換為標準大寫，並剔除無關劑量字尾與常見鹽類（如去除 `SODIUM`, `HYDROCHLORIDE`, `MESYLATE`），對齊通用分子主幹。
 
 ### (F) 目前核心功能、CLI 手冊與 Agent 工作流 (Current Capabilities)

@@ -89,7 +89,7 @@ python src/cli/main.py m04 check-shortage 0AC49322100 --db db/med.db
 
 #### 🏥 M05 `tw_hospital_db` 專屬命令：地理半徑與門診時段檢索
 ```bash
-# 1. 經緯度公里半徑檢索 (Haversine 演演演算法)
+# 1. 經緯度公里半徑檢索 (Haversine 演演演演演算法)
 python src/cli/main.py m05 nearby --lat 25.041 --lng 121.519 --radius 5.0 --db db/med.db
 
 # 2. 21 位元看診時間矩陣過濾

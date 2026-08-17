@@ -32,7 +32,7 @@ def run_health_doctor_check(db_path: str = "tw-med-db/db/med.db") -> Dict[str, A
     }
 
     # 檢測 1: 實體表與筆數
-    target_tables = ["m01_tw_drug_db", "m02_tw_ingredient_map_db", "sys_module_metadata", "sys_data_audit_log"]
+    target_tables = ["m01_tw_drug_db", "m02_tw_ingredient_map_db", "m55_mimic_cache", "sys_module_metadata", "sys_data_audit_log"]
     for tbl in target_tables:
         try:
             cursor.execute(f"SELECT COUNT(*) FROM {tbl};")
@@ -95,7 +95,8 @@ def run_health_doctor_check(db_path: str = "tw-med-db/db/med.db") -> Dict[str, A
             if mod_id == "M00":
                 continue
             rep_path = os.path.join(ver_dir, f"TR_{mod_id}_VERIFICATION_SUMMARY.md")
-            if os.path.exists(rep_path):
+            parent_rep_path = os.path.join("../sys_eng/05_verification_testing", f"TR_{mod_id}_VERIFICATION_SUMMARY.md")
+            if os.path.exists(rep_path) or os.path.exists(parent_rep_path):
                 report["checks"].append(f"✓ 子模組 [{mod_id}] 專屬驗證報告 (TR_{mod_id}_VERIFICATION_SUMMARY.md) 已歸檔")
             else:
                 report["warnings"].append(f"⚠️ 子模組 [{mod_id}] 已註冊但缺專屬驗證報告: {rep_path}")

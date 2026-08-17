@@ -1,0 +1,31 @@
+[
+  {
+    "subject_id": 10000032,
+    "hadm_id": 22595853,
+    "stay_id": 39553978,
+    "gender": "F",
+    "anchor_age": 52,
+    "diagnoses_icd": [
+      {
+        "icd_code": "5715",
+        "icd_version": 9,
+        "long_title": "Cirrhosis of liver without mention of alcohol"
+      }
+    ],
+    "prescriptions": [
+      {
+        "drug": "Furosemide",
+        "ndc": "00074405301",
+        "rxcui": "4603",
+        "nhi_code": "0AC49322100"
+      }
+    ],
+    "vitals_summary": {
+      "heart_rate_mean": 88.5,
+      "sbp_mean": 115.0,
+      "spo2_mean": 98.2,
+      "gcs_min": 15
+    },
+    "is_seed": 1
+  }
+]

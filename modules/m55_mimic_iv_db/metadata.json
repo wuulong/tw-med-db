@@ -1,0 +1,10 @@
+{
+  "module_code": "M55",
+  "module_name": "mimic_iv_db",
+  "name_zh": "MIMIC-IV 美國重症臨床資料庫 Gateway",
+  "version": "0.5.0",
+  "status": "stable",
+  "author": "Antigravity Team",
+  "description": "收錄美國 MIT/BIDMC MIMIC-IV 全院病歷與 ICU 重症數據，提供 DuckDB 零拷貝解析、旁路快取與台規健保碼雙向對照轉碼通道。",
+  "dependencies": ["M01", "M06", "M12", "M50"]
+}

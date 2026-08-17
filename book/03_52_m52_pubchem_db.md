@@ -41,10 +41,10 @@
   CREATE INDEX IF NOT EXISTS idx_m52_smiles ON m52_pubchem_cache(canonical_smiles);
   ```
 
-### (E) ⚡ 核心演演演算法與資料處理邏輯 (Core Algorithms & Logic)
-1. **Top 200 主要藥物成分分子結構 Seed 採樣固化演演演算法**：調用 `fetch_m52()` 向 PubChem PUG REST API 預抓全台前 200 大主成分之 SMILES、InChIKey 與 CID，寫入 `m52_pubchem_cache` 確保離線與 CI 環境穩定。
-2. **PubChem PUG REST API Pass-Through 透傳快取演演演算法**：本機未命中時即時發動 PUG REST，解析 JSON 化學屬性寫入快取。
-3. **SMILES 分子字串校驗演演演算法**：正則語法檢查 PubChem 回傳之 Canonical SMILES 合法性。
+### (E) ⚡ 核心演演演演演算法與資料處理邏輯 (Core Algorithms & Logic)
+1. **Top 200 主要藥物成分分子結構 Seed 採樣固化演演演演演算法**：調用 `fetch_m52()` 向 PubChem PUG REST API 預抓全台前 200 大主成分之 SMILES、InChIKey 與 CID，寫入 `m52_pubchem_cache` 確保離線與 CI 環境穩定。
+2. **PubChem PUG REST API Pass-Through 透傳快取演演演演演算法**：本機未命中時即時發動 PUG REST，解析 JSON 化學屬性寫入快取。
+3. **SMILES 分子字串校驗演演演演演算法**：正則語法檢查 PubChem 回傳之 Canonical SMILES 合法性。
 
 ### (F) 目前核心功能、CLI 手冊與 Agent 工作流 (Current Capabilities)
 * **CLI 檢索指令**：

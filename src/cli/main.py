@@ -20,6 +20,7 @@ from src.cli.commands_m51 import m51_app
 from src.cli.commands_m52 import m52_app
 from src.cli.commands_m53 import m53_app
 from src.cli.commands_m54 import m54_app
+from src.cli.commands_m55 import m55_app
 from src.cli.commands_m00 import m00_app, status as status_cmd, search_global as search_cmd, doctor as doctor_cmd
 
 app = typer.Typer(
@@ -47,6 +48,7 @@ app.add_typer(m51_app, name="m51")
 app.add_typer(m52_app, name="m52")
 app.add_typer(m53_app, name="m53")
 app.add_typer(m54_app, name="m54")
+app.add_typer(m55_app, name="m55")
 
 # 掛載頂層快捷命令
 app.command("status")(status_cmd)
