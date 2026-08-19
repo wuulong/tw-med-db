@@ -1,0 +1,9 @@
+{
+  "module_id": "M13",
+  "module_name": "tw_med_device_db",
+  "description": "TFDA 醫療器材許可證與說明書庫",
+  "table_name": "m13_tw_med_device_db",
+  "record_count": 66459,
+  "schema_version": "1.0.0",
+  "api_gateway": "TFDA 食品藥物管理署"
+}

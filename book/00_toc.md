@@ -57,6 +57,8 @@
   * 3.10 **[`M10` 醫療過失裁判與訴訟防護庫 (`med_legal_db`)](03_10_m10_med_legal_db.md)** (附: `Fig 3.10` M10 跨模組連結拓撲圖: M10 ➔ M05/M07 訴訟案)
   * 3.11 **[`M11` 病患全程臨床照護導航庫 (`patient_journey_db`)](03_11_m11_patient_journey_db.md)** (附: `Fig 3.11` M11 跨模組連結拓撲圖: M11 ➔ M05/M09 導航)
   * 3.12 **[`M12` TW Core IG FHIR 與 LOINC 碼庫 (`med_lab_fhir_db`)](03_12_m12_med_lab_fhir_db.md)** (附: `Fig 3.12` M12 跨模組連結拓撲圖: M12 ➔ M01/M54 FHIR)
+  * 3.13 **[`M13` 醫療器材許可證與說明書庫 (`tw_med_device_db`)](03_13_m13_tw_med_device_db.md)**
+  * 3.14 **[`M14` 疾管署傳染病與疫苗據點網 (`cdc_epidemic_db`)](03_14_m14_cdc_epidemic_db.md)**
 * **Pillar 4: 國際標準**
   * 3.50 **[`M50` RxNorm 美國藥學概念網 Gateway (`rxnorm_db`)](03_50_m50_rxnorm_db.md)** (附: `Fig 3.50` M50 跨模組對照整合拓撲圖: M50 ➔ M01 台規對接)
   * 3.51 **[`M51` ClinicalTrials.gov 美國 NIH 試驗 Gateway (`clinical_trials_gov`)](03_51_m51_clinical_trials_gov.md)** (附: `Fig 3.51` M51 跨模組對照整合拓撲圖: M51 ➔ M09 在台試驗)

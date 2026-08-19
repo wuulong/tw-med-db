@@ -1,0 +1,9 @@
+{
+  "module_id": "M14",
+  "module_name": "cdc_epidemic_db",
+  "description": "疾管署傳染病與疫苗據點網",
+  "table_name": "m14_cdc_epidemic_db",
+  "record_count": 187908,
+  "schema_version": "1.0.0",
+  "api_gateway": "CDC 衛生福利部疾病管制署"
+}

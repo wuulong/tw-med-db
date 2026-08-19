@@ -44,7 +44,11 @@ def rebuild_fts_med_global(conn: sqlite3.Connection) -> int:
         # M53
         "INSERT INTO fts_med_global (entity_type, entity_id, title, subtitle, content) SELECT 'WHO_ATC_NODE', atc_code, atc_name_en, COALESCE(atc_name_zh, '') || ' (L' || level || ')', 'Parent: ' || COALESCE(parent_code, '') || ' DDD: ' || COALESCE(ddd_value, 0) || COALESCE(ddd_unit, '') FROM m53_atc_cache;",
         # M54
-        "INSERT INTO fts_med_global (entity_type, entity_id, title, subtitle, content) SELECT 'TWCORE_FHIR_PROFILE', profile_id, profile_name_en, COALESCE(profile_name_zh, '') || ' (' || resource_type || ')', canonical_url FROM m54_fhir_cache;"
+        "INSERT INTO fts_med_global (entity_type, entity_id, title, subtitle, content) SELECT 'TWCORE_FHIR_PROFILE', profile_id, profile_name_en, COALESCE(profile_name_zh, '') || ' (' || resource_type || ')', canonical_url FROM m54_fhir_cache;",
+        # M13
+        "INSERT INTO fts_med_global (entity_type, entity_id, title, subtitle, content) SELECT 'MED_DEVICE', licence_id, device_name_c, COALESCE(applicant_name, '') || ' (' || COALESCE(category_code, '') || ')', COALESCE(manufacturer_name, '') || ' ' || COALESCE(attributes_json, '') FROM m13_tw_med_device_db;",
+        # M14
+        "INSERT INTO fts_med_global (entity_type, entity_id, title, subtitle, content) SELECT 'EPIDEMIC_POINT', point_id, facility_name, COALESCE(service_type, '') || ' (' || COALESCE(city, '') || ')', COALESCE(address, '') || ' ' || COALESCE(attributes_json, '') FROM m14_cdc_epidemic_db;"
     ]
 
     for q in fts_queries:

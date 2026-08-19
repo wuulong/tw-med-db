@@ -16,12 +16,30 @@ DOMESTIC_HARVEST_QUERIES = [
     ("m09_clinical_trials", "SELECT nct_id, 'ONCOLOGY_TRIAL', title, cancer_type, 'tw-med-db://m09/' || nct_id FROM m09_clinical_trials"),
     ("m10_legal_cases", "SELECT jid, 'MED_LEGAL', title, specialty, 'tw-med-db://m10/' || jid FROM m10_legal_cases"),
     ("m11_journey_nodes", "SELECT node_id, 'PATIENT_JOURNEY', title, stage_name, 'tw-med-db://m11/' || node_id FROM m11_journey_nodes"),
-    ("m12_loinc_codes", "SELECT loinc_num, 'LAB_LOINC', component_zh, unit, 'tw-med-db://m12/' || loinc_num FROM m12_loinc_codes")
+    ("m12_loinc_codes", "SELECT loinc_num, 'LAB_LOINC', component_zh, unit, 'tw-med-db://m12/' || loinc_num FROM m12_loinc_codes"),
+    ("m13_tw_med_device_db", "SELECT licence_id, 'MED_DEVICE', device_name_c, applicant_name, 'tw-med-db://m13/' || licence_id FROM m13_tw_med_device_db"),
+    ("m14_cdc_epidemic_db", "SELECT point_id, 'EPIDEMIC_POINT', facility_name, service_type, 'tw-med-db://m14/' || point_id FROM m14_cdc_epidemic_db")
 ]
 
 
 def create_domestic_views(cursor: sqlite3.Cursor):
-    """建立國內 M01~M12 專屬全域對照 View"""
+    """建立國內 M01~M14 專屬全域對照 View"""
+    # M14 x M05 特約院所與疫苗據點 View
+    cursor.execute("""
+    CREATE VIEW IF NOT EXISTS v_m14_epidemic_hospital_mesh AS
+    SELECT 
+        e.point_id,
+        e.facility_name,
+        e.service_type,
+        e.city,
+        e.district,
+        e.address,
+        h.hosp_id,
+        h.hosp_type,
+        h.services
+    FROM m14_cdc_epidemic_db e
+    LEFT JOIN m05_hospitals h ON e.facility_name = h.hosp_name;
+    """)
     # M01 全域藥品查詢 View
     cursor.execute("""
     CREATE VIEW IF NOT EXISTS v_med_global_drugs AS
