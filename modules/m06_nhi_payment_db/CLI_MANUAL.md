@@ -3,7 +3,7 @@
 * **模組代號**：`M06`
 * **資料庫名稱**：`m06_nhi_rules`
 * **描述**：台灣健保給付規定、事前審查條文與自費比價資料庫
-* **實體 CLI 次命令**：`tw-med-cli m06` (定義於 [src/cli/commands_m06.py](file:///Users/wuulong/github/bmad-pa/events/TDHI_haba/med-db-in/src/cli/commands_m06.py))
+* **實體 CLI 次命令**：`tw-med-cli m06` (定義於 [src/cli/commands_m06.py](src/cli/commands_m06.py))
 * **最後更新**：2026-08-16
 
 ---

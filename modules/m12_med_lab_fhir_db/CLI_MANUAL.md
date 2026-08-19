@@ -3,7 +3,7 @@
 * **模組代號**：`M12`
 * **資料庫名稱**：`m12_loinc_codes`
 * **描述**：TW Core IG (FHIR R4) 與 LOINC 國際標準檢驗碼對照資料庫
-* **實體 CLI 次命令**：`tw-med-cli m12` (定義於 [src/cli/commands_m12.py](file:///Users/wuulong/github/bmad-pa/events/TDHI_haba/med-db-in/src/cli/commands_m12.py))
+* **實體 CLI 次命令**：`tw-med-cli m12` (定義於 [src/cli/commands_m12.py](src/cli/commands_m12.py))
 * **最後更新**：2026-08-16
 
 ---

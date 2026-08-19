@@ -3,7 +3,7 @@
 * **模組代號**：`M11`
 * **資料庫名稱**：`m11_journey_nodes`
 * **描述**：台灣病患全程臨床旅程 GraphRAG 照護資料庫
-* **實體 CLI 次命令**：`tw-med-cli m11` (定義於 [src/cli/commands_m11.py](file:///Users/wuulong/github/bmad-pa/events/TDHI_haba/med-db-in/src/cli/commands_m11.py))
+* **實體 CLI 次命令**：`tw-med-cli m11` (定義於 [src/cli/commands_m11.py](src/cli/commands_m11.py))
 * **最後更新**：2026-08-16
 
 ---

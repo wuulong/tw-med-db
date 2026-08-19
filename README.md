@@ -43,16 +43,16 @@
 
 ```bash
 # 1. 執行全系統健康診斷 Doctor Check
-PYTHONPATH=. /Users/wuulong/opt/anaconda3/envs/m2504/bin/python src/cli/main.py doctor --db db/med.db
+PYTHONPATH=. python src/cli/main.py doctor --db db/med.db
 
 # 2. 全域 FTS5 全文跨庫搜尋 (如檢索藥名 Tagrisso)
-PYTHONPATH=. /Users/wuulong/opt/anaconda3/envs/m2504/bin/python src/cli/main.py search Tagrisso --db db/med.db
+PYTHONPATH=. python src/cli/main.py search Tagrisso --db db/med.db
 
 # 3. 執行獨立子模組指令 (如 M53 WHO ATC 藥理樹檢索)
-PYTHONPATH=. /Users/wuulong/opt/anaconda3/envs/m2504/bin/python src/cli/main.py m53 search 止痛退燒 --db db/med.db
+PYTHONPATH=. python src/cli/main.py m53 search 止痛退燒 --db db/med.db
 
 # 4. 執行 M00 全大腦 13 項跨庫對合測試
-PYTHONPATH=. /Users/wuulong/opt/anaconda3/envs/m2504/bin/python tests/test_m00_comprehensive_governance.py
+PYTHONPATH=. python tests/test_m00_comprehensive_governance.py
 ```
 
 ---

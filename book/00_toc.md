@@ -2,8 +2,8 @@
 
 * **專案名稱**：`tw-med-db` (台灣醫療與健保開放大數據引擎)
 * **當前版本**：`v0.5.0`
-* **歸檔目錄**：[`book/`](file:///Users/wuulong/github/bmad-pa/events/TDHI_haba/med-db-in/tw-med-db/book/)
-* **編寫方法論**：[book-writing-learning Skill](file:///Users/wuulong/github/bmad-pa/.agent/skills/book-writing-learning/SKILL.md) (AI 輔助寫書學習法)
+* **歸檔目錄**：[`book/`](tw-med-db/book/)
+* **編寫方法論**：[book-writing-learning Skill](.agent/skills/book-writing-learning/SKILL.md) (AI 輔助寫書學習法)
 
 ---
 

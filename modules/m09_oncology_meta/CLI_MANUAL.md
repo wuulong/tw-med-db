@@ -3,7 +3,7 @@
 * **模組代號**：`M09`
 * **資料庫名稱**：`m09_clinical_trials`
 * **描述**：台灣癌症臨床診療指引與 ClinicalTrials.gov 台灣試驗對合庫
-* **實體 CLI 次命令**：`tw-med-cli m09` (定義於 [src/cli/commands_m09.py](file:///Users/wuulong/github/bmad-pa/events/TDHI_haba/med-db-in/src/cli/commands_m09.py))
+* **實體 CLI 次命令**：`tw-med-cli m09` (定義於 [src/cli/commands_m09.py](src/cli/commands_m09.py))
 * **最後更新**：2026-08-16
 
 ---

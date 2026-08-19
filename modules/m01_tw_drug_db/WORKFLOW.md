@@ -3,7 +3,7 @@
 * **目標對象**：LLM / AI Agent / Autonomous Assistant / Sovereign Health Agent
 * **模組代號**：`M01` (TFDA 藥品許可證與健保藥價庫)
 * **版本號**：`v0.5.0`
-* **檔案位置**：[events/TDHI_haba/med-db-in/modules/m01_tw_drug_db/WORKFLOW.md](file:///Users/wuulong/github/bmad-pa/events/TDHI_haba/med-db-in/modules/m01_tw_drug_db/WORKFLOW.md)
+* **檔案位置**：[events/TDHI_haba/med-db-in/modules/m01_tw_drug_db/WORKFLOW.md](modules/m01_tw_drug_db/WORKFLOW.md)
 
 ---
 

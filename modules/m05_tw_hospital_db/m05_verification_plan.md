@@ -2,7 +2,7 @@
 
 * **模組代號**：`M05` (台灣健保特約醫事機構與專科地圖庫)
 * **特有資產**：全台 23,000+ 家健保特約醫院/診所實體資料、醫事機構代碼 zfill 10 碼正規化、醫事類別、縣市行政區、門診時段與能力網格 View
-* **檔案位置**：[events/TDHI_haba/med-db-in/modules/m05_tw_hospital_db/m05_verification_plan.md](file:///Users/wuulong/github/bmad-pa/events/TDHI_haba/med-db-in/modules/m05_tw_hospital_db/m05_verification_plan.md)
+* **檔案位置**：[events/TDHI_haba/med-db-in/modules/m05_tw_hospital_db/m05_verification_plan.md](modules/m05_tw_hospital_db/m05_verification_plan.md)
 
 ---
 

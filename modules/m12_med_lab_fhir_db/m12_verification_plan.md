@@ -2,7 +2,7 @@
 
 * **模組代號**：`M12` (TW Core IG FHIR R4 與 LOINC 檢驗碼庫)
 * **特有資產**：全球 LOINC 檢驗碼對照、男女參考值範圍 (`ref_range_min` / `ref_range_max`)、HL7 FHIR Resource (Observation) 標籤與全景 Mesh View (`v_fhir_lab_clinical_mesh`)
-* **檔案位置**：[events/TDHI_haba/med-db-in/modules/m12_med_lab_fhir_db/m12_verification_plan.md](file:///Users/wuulong/github/bmad-pa/events/TDHI_haba/med-db-in/modules/m12_med_lab_fhir_db/m12_verification_plan.md)
+* **檔案位置**：[events/TDHI_haba/med-db-in/modules/m12_med_lab_fhir_db/m12_verification_plan.md](modules/m12_med_lab_fhir_db/m12_verification_plan.md)
 
 ---
 

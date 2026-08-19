@@ -2,7 +2,7 @@
 
 * **模組代號**：`M09` (台灣癌症臨床指引與 ClinicalTrials 試驗庫)
 * **特有資產**：ClinicalTrials.gov 美國/台灣試驗 ID (NCT ID)、癌別分類 (NSCLC, Breast Cancer)、Phase 階段、基因標記 (EGFR, PD-L1) 與試驗醫院 View (`v_oncology_trial_hospitals`)
-* **檔案位置**：[events/TDHI_haba/med-db-in/modules/m09_oncology_meta/m09_verification_plan.md](file:///Users/wuulong/github/bmad-pa/events/TDHI_haba/med-db-in/modules/m09_oncology_meta/m09_verification_plan.md)
+* **檔案位置**：[events/TDHI_haba/med-db-in/modules/m09_oncology_meta/m09_verification_plan.md](modules/m09_oncology_meta/m09_verification_plan.md)
 
 ---
 

@@ -2,7 +2,7 @@
 
 * **模組代號**：`M07` (台灣健保醫療服務處置與手術碼庫)
 * **特有資產**：健保處置與手術點數碼、ICD-10-PCS 國際手術碼對合、門診/住院劃分、點數與 M05 醫院能力網格 View (`v_procedure_hospitals`)
-* **檔案位置**：[events/TDHI_haba/med-db-in/modules/m07_nhi_procedure_db/m07_verification_plan.md](file:///Users/wuulong/github/bmad-pa/events/TDHI_haba/med-db-in/modules/m07_nhi_procedure_db/m07_verification_plan.md)
+* **檔案位置**：[events/TDHI_haba/med-db-in/modules/m07_nhi_procedure_db/m07_verification_plan.md](modules/m07_nhi_procedure_db/m07_verification_plan.md)
 
 ---
 

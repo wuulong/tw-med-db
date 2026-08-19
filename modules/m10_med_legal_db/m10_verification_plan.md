@@ -1,9 +1,9 @@
 # 🧪 `M10 med-legal-db` 醫療過失裁判與訴訟防護全量 LJMeta 驗證計畫書 (Dedicated Verification Plan)
 
 * **模組代號**：`M10` (台灣醫療過失裁判與訴訟防護庫 - LJMeta 全量對接版)
-* **架構哲學**：**不重複建庫**。透過 DuckDB 超高速掃描 `LJMeta` Parquet，對接系統現有 `law_db` (全國法規/醫療法第63, 82條) 與 [legal-case-scorer SKILL](file:///Users/wuulong/github/bmad-pa/.agent/skills/legal-case-scorer/SKILL.md) 裁判評分器。
+* **架構哲學**：**不重複建庫**。透過 DuckDB 超高速掃描 `LJMeta` Parquet，對接系統現有 `law_db` (全國法規/醫療法第63, 82條) 與 [legal-case-scorer SKILL](.agent/skills/legal-case-scorer/SKILL.md) 裁判評分器。
 * **特有資產**：全量 1,194 筆醫療判決實體、專科過失判賠金額與風險統計 View (`v_specialty_legal_risk_stats`)、醫療法規對對接 Grounding View (`v_med_law_statutes`)
-* **檔案位置**：[events/TDHI_haba/med-db-in/modules/m10_med_legal_db/m10_verification_plan.md](file:///Users/wuulong/github/bmad-pa/events/TDHI_haba/med-db-in/modules/m10_med_legal_db/m10_verification_plan.md)
+* **檔案位置**：[events/TDHI_haba/med-db-in/modules/m10_med_legal_db/m10_verification_plan.md](modules/m10_med_legal_db/m10_verification_plan.md)
 
 ---
 

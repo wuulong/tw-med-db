@@ -2,7 +2,7 @@
 
 * **模組代號**：`M52` (PubChem 美國 NIH 化學分子結構庫)
 * **特有資產**：PubChem CID (Compound ID)、IUPAC 化學名、InChIKey、SMILES 分子結構字串
-* **檔案位置**：[events/TDHI_haba/med-db-in/modules/m52_pubchem_db/m52_verification_plan.md](file:///Users/wuulong/github/bmad-pa/events/TDHI_haba/med-db-in/modules/m52_pubchem_db/m52_verification_plan.md)
+* **檔案位置**：[events/TDHI_haba/med-db-in/modules/m52_pubchem_db/m52_verification_plan.md](modules/m52_pubchem_db/m52_verification_plan.md)
 
 ---
 

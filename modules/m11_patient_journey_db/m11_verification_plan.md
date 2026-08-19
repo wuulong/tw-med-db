@@ -2,7 +2,7 @@
 
 * **模組代號**：`M11` (台灣病患全程臨床旅程 GraphRAG 庫)
 * **特有資產**：5 大旅程階段 (新確診 ➔ 方案選擇 ➔ 治療執行 ➔ 副作用管理 ➔ 長期追蹤)、ICD-10 疾病代碼、醫病共享決策 (SDM) 標籤與全景 Mesh View (`v_patient_journey_mesh`)
-* **檔案位置**：[events/TDHI_haba/med-db-in/modules/m11_patient_journey_db/m11_verification_plan.md](file:///Users/wuulong/github/bmad-pa/events/TDHI_haba/med-db-in/modules/m11_patient_journey_db/m11_verification_plan.md)
+* **檔案位置**：[events/TDHI_haba/med-db-in/modules/m11_patient_journey_db/m11_verification_plan.md](modules/m11_patient_journey_db/m11_verification_plan.md)
 
 ---
 

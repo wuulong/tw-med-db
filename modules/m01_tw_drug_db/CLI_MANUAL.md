@@ -4,7 +4,7 @@
 * **專案名稱**：`tw-drug-db` (TFDA 藥品許可證與 NHI 健保藥價庫)
 * **版本號**：`v0.1.0`
 * **最後更新**：2026-08-15
-* **檔案位置**：[events/TDHI_haba/med-db-in/modules/m01_tw_drug_db/manuals/tw-drug-cli.md](file:///Users/wuulong/github/bmad-pa/events/TDHI_haba/med-db-in/modules/m01_tw_drug_db/manuals/tw-drug-cli.md)
+* **檔案位置**：[events/TDHI_haba/med-db-in/modules/m01_tw_drug_db/manuals/tw-drug-cli.md](modules/m01_tw_drug_db/manuals/tw-drug-cli.md)
 
 ---
 

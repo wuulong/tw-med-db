@@ -2,7 +2,7 @@
 
 * **模組代號**：`M50` (RxNorm 美國藥學概念網數據庫)
 * **特有資產**：NLM RxCUI 概念碼 (7位數)、RxNorm 藥名拓撲網、台灣健保藥碼對照表
-* **檔案位置**：[events/TDHI_haba/med-db-in/modules/m50_rxnorm_db/m50_verification_plan.md](file:///Users/wuulong/github/bmad-pa/events/TDHI_haba/med-db-in/modules/m50_rxnorm_db/m50_verification_plan.md)
+* **檔案位置**：[events/TDHI_haba/med-db-in/modules/m50_rxnorm_db/m50_verification_plan.md](modules/m50_rxnorm_db/m50_verification_plan.md)
 
 ---
 

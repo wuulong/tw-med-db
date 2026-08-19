@@ -2,7 +2,7 @@
 
 * **模組代號**：`M02` (主成分字典與 WHO ATC 藥理樹庫)
 * **特有資產**：單方/複方主成分英中文名稱、WHO ATC 5 階分類碼切片、成份劑量字串
-* **檔案位置**：[events/TDHI_haba/med-db-in/modules/m02_tw_ingredient_map_db/m02_verification_plan.md](file:///Users/wuulong/github/bmad-pa/events/TDHI_haba/med-db-in/modules/m02_tw_ingredient_map_db/m02_verification_plan.md)
+* **檔案位置**：[events/TDHI_haba/med-db-in/modules/m02_tw_ingredient_map_db/m02_verification_plan.md](modules/m02_tw_ingredient_map_db/m02_verification_plan.md)
 
 ---
 

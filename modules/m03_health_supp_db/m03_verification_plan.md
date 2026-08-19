@@ -2,7 +2,7 @@
 
 * **模組代號**：`M03` (台灣健康食品許可證與保健功效資料庫)
 * **特有資產**：565 筆食藥署小綠人認證許可證、保健功效宣稱、功效成分、警語與注意事項、西藥交互作用對照表
-* **檔案位置**：[events/TDHI_haba/med-db-in/modules/m03_health_supp_db/m03_verification_plan.md](file:///Users/wuulong/github/bmad-pa/events/TDHI_haba/med-db-in/modules/m03_health_supp_db/m03_verification_plan.md)
+* **檔案位置**：[events/TDHI_haba/med-db-in/modules/m03_health_supp_db/m03_verification_plan.md](modules/m03_health_supp_db/m03_verification_plan.md)
 
 ---
 

@@ -2,7 +2,7 @@
 
 * **模組代號**：`M01` (台灣藥品許可證與健保價庫)
 * **特有資產**：7.2 萬筆 TFDA 藥品許可證、健保藥碼、歷史價格點數、適應症與冷藏/管制標籤
-* **檔案位置**：[events/TDHI_haba/med-db-in/modules/m01_tw_drug_db/m01_verification_plan.md](file:///Users/wuulong/github/bmad-pa/events/TDHI_haba/med-db-in/modules/m01_tw_drug_db/m01_verification_plan.md)
+* **檔案位置**：[events/TDHI_haba/med-db-in/modules/m01_tw_drug_db/m01_verification_plan.md](modules/m01_tw_drug_db/m01_verification_plan.md)
 
 ---
 

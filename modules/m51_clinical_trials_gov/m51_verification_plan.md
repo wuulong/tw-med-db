@@ -2,7 +2,7 @@
 
 * **模組代號**：`M51` (ClinicalTrials.gov 美國 NIH 國際臨床試驗網)
 * **特有資產**：NIH NCT ID、全球臨床試驗階段 (Phase 1~4)、台灣試驗機構 (Facility) 與招募狀態
-* **檔案位置**：[events/TDHI_haba/med-db-in/modules/m51_clinical_trials_gov/m51_verification_plan.md](file:///Users/wuulong/github/bmad-pa/events/TDHI_haba/med-db-in/modules/m51_clinical_trials_gov/m51_verification_plan.md)
+* **檔案位置**：[events/TDHI_haba/med-db-in/modules/m51_clinical_trials_gov/m51_verification_plan.md](modules/m51_clinical_trials_gov/m51_verification_plan.md)
 
 ---
 

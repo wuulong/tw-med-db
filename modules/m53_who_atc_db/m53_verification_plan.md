@@ -2,7 +2,7 @@
 
 * **模組代號**：`M53` (WHO ATC 國際藥理分類樹庫)
 * **特有資產**：WHO 官方 5 階完整 ATC 分類樹 (A~V)、DDD (Defined Daily Dose) 每日標準劑量
-* **檔案位置**：[events/TDHI_haba/med-db-in/modules/m53_who_atc_db/m53_verification_plan.md](file:///Users/wuulong/github/bmad-pa/events/TDHI_haba/med-db-in/modules/m53_who_atc_db/m53_verification_plan.md)
+* **檔案位置**：[events/TDHI_haba/med-db-in/modules/m53_who_atc_db/m53_verification_plan.md](modules/m53_who_atc_db/m53_verification_plan.md)
 
 ---
 

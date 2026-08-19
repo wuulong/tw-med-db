@@ -2,7 +2,7 @@
 
 * **模組代號**：`M06` (台灣健保給付規定與自費比價庫)
 * **特有資產**：健保給付規定原文條文、事前審查 (Prior Authorization) 標註、10碼健保碼 zfill 正規化、自費比價 View (`v_self_pay_comparison`)
-* **檔案位置**：[events/TDHI_haba/med-db-in/modules/m06_nhi_payment_db/m06_verification_plan.md](file:///Users/wuulong/github/bmad-pa/events/TDHI_haba/med-db-in/modules/m06_nhi_payment_db/m06_verification_plan.md)
+* **檔案位置**：[events/TDHI_haba/med-db-in/modules/m06_nhi_payment_db/m06_verification_plan.md](modules/m06_nhi_payment_db/m06_verification_plan.md)
 
 ---
 

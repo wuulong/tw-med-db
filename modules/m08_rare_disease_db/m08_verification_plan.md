@@ -2,7 +2,7 @@
 
 * **模組代號**：`M08` (台灣國健署罕見疾病與孤兒藥名單庫)
 * **特有資產**：國健署罕病公告編號、歐盟 Orphanet ORPHAcode 代碼、OMIM 基因 ID、致病基因符號與罕病照護中心 View (`v_rare_disease_centers`)
-* **檔案位置**：[events/TDHI_haba/med-db-in/modules/m08_rare_disease_db/m08_verification_plan.md](file:///Users/wuulong/github/bmad-pa/events/TDHI_haba/med-db-in/modules/m08_rare_disease_db/m08_verification_plan.md)
+* **檔案位置**：[events/TDHI_haba/med-db-in/modules/m08_rare_disease_db/m08_verification_plan.md](modules/m08_rare_disease_db/m08_verification_plan.md)
 
 ---
 

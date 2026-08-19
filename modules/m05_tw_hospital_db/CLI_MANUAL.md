@@ -3,7 +3,7 @@
 * **模組代號**：`M05`
 * **資料庫名稱**：`m05_hospitals`
 * **描述**：台灣健保特約醫事機構與專科醫院地圖資料庫
-* **實體 CLI 次命令**：`tw-med-cli m05` (定義於 [src/cli/commands_m05.py](file:///Users/wuulong/github/bmad-pa/events/TDHI_haba/med-db-in/src/cli/commands_m05.py))
+* **實體 CLI 次命令**：`tw-med-cli m05` (定義於 [src/cli/commands_m05.py](src/cli/commands_m05.py))
 * **最後更新**：2026-08-16
 
 ---

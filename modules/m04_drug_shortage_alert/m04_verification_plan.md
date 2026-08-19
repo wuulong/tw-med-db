@@ -2,7 +2,7 @@
 
 * **模組代號**：`M04` (食藥署缺藥與藥品回收警訊庫)
 * **特有資產**：1,710 筆食藥署實體藥品回收與缺藥通報公告、回收批號、回收分級 Class 1/2、原因與替代藥連動 View
-* **檔案位置**：[events/TDHI_haba/med-db-in/modules/m04_drug_shortage_alert/m04_verification_plan.md](file:///Users/wuulong/github/bmad-pa/events/TDHI_haba/med-db-in/modules/m04_drug_shortage_alert/m04_verification_plan.md)
+* **檔案位置**：[events/TDHI_haba/med-db-in/modules/m04_drug_shortage_alert/m04_verification_plan.md](modules/m04_drug_shortage_alert/m04_verification_plan.md)
 
 ---
 

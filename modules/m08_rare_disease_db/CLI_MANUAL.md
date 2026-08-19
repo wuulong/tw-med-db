@@ -3,7 +3,7 @@
 * **模組代號**：`M08`
 * **資料庫名稱**：`m08_rare_diseases`
 * **描述**：台灣衛福部國健署公告罕見疾病名單、孤兒藥與基因編碼庫
-* **實體 CLI 次命令**：`tw-med-cli m08` (定義於 [src/cli/commands_m08.py](file:///Users/wuulong/github/bmad-pa/events/TDHI_haba/med-db-in/src/cli/commands_m08.py))
+* **實體 CLI 次命令**：`tw-med-cli m08` (定義於 [src/cli/commands_m08.py](src/cli/commands_m08.py))
 * **最後更新**：2026-08-16
 
 ---

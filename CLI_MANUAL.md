@@ -4,7 +4,7 @@
 * **專案名稱**：`tw-med-db` (國內 12 大 DB 母專案)
 * **架構版本**：`v1.0.0 Advanced Spec`
 * **最後更新**：2026-08-16
-* **檔案位置**：[CLI_MANUAL.md](file:///Users/wuulong/github/bmad-pa/events/TDHI_haba/med-db-in/CLI_MANUAL.md)
+* **檔案位置**：[CLI_MANUAL.md](CLI_MANUAL.md)
 
 ---
 

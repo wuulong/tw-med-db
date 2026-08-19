@@ -3,7 +3,7 @@
 * **模組代號**：`M07`
 * **資料庫名稱**：`m07_procedures`
 * **描述**：台灣健保醫療服務處置、手術碼與 ICD-10-PCS 對照資料庫
-* **實體 CLI 次命令**：`tw-med-cli m07` (定義於 [src/cli/commands_m07.py](file:///Users/wuulong/github/bmad-pa/events/TDHI_haba/med-db-in/src/cli/commands_m07.py))
+* **實體 CLI 次命令**：`tw-med-cli m07` (定義於 [src/cli/commands_m07.py](src/cli/commands_m07.py))
 * **最後更新**：2026-08-16
 
 ---
