@@ -9,7 +9,7 @@ import typer
 from modules.m04_drug_shortage_alert.etl import process_m04_etl
 from modules.m04_drug_shortage_alert.fts import create_m04_fts, search_m04_fts
 from modules.m04_drug_shortage_alert.metadata_gen import generate_m04_metadata
-from src.m00_core.utils_db import get_sqlite_connection
+from src.m00_core.utils_db import get_sqlite_connection, resolve_db_path
 
 m04_app = typer.Typer(name="m04", help="M04 台灣食藥署缺藥與藥品回收警訊庫 CLI")
 
@@ -68,3 +68,37 @@ def search(
         typer.echo(f"    回收批號: {row.get('batch_number') or '(未標註)'}")
         typer.echo(f"    回收與缺藥原因: {row.get('reason')}")
         typer.echo("-" * 80)
+
+
+@m04_app.command("status")
+def status(
+    db_path: str = typer.Option("db/med.db", "--db", "-d", help="實體 SQLite 資料庫路徑"),
+    json_mode: bool = typer.Option(False, "--json", "-j", help="單行緊湊 JSON 輸出")
+):
+    """[CGS v2.0] 查看 M04 (drug_shortage_alert) 專屬實體表與 FTS5 筆數看板"""
+    resolved = resolve_db_path(db_path)
+    if not os.path.exists(resolved):
+        typer.echo(f"❌ 找不到實體資料庫: {db_path}", err=True)
+        raise typer.Exit(code=1)
+    conn = get_sqlite_connection(resolved)
+    cursor = conn.cursor()
+    counts = {}
+    target_tables = ['m04_recalls', 'm04_recalls_fts']
+    for t in target_tables:
+        try:
+            cursor.execute(f"SELECT COUNT(*) FROM {t};");
+            counts[t] = cursor.fetchone()[0]
+        except Exception:
+            pass
+    conn.close()
+
+    if json_mode:
+        import json
+        print(json.dumps({"module": "M04", "name": "drug_shortage_alert", "counts": counts}, ensure_ascii=False, separators=(',', ':')))
+        return
+
+    typer.echo(f"\n🏥 M04 drug_shortage_alert 模組數據看板:")
+    typer.echo("=" * 80)
+    for t, c in counts.items():
+        typer.echo(f"  • {t:<35}: {c} 筆")
+    typer.echo("=" * 80)

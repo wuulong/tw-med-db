@@ -9,7 +9,7 @@ import typer
 from modules.m10_med_legal_db.etl import process_m10_etl
 from modules.m10_med_legal_db.fts import create_m10_fts, search_m10_fts
 from modules.m10_med_legal_db.metadata_gen import generate_m10_metadata
-from src.m00_core.utils_db import get_sqlite_connection
+from src.m00_core.utils_db import get_sqlite_connection, resolve_db_path
 
 m10_app = typer.Typer(name="m10", help="M10 台灣醫療過失裁判與訴訟防護庫 CLI")
 
@@ -68,3 +68,37 @@ def search(
         typer.echo(f"    爭點起因: {row.get('cause_of_action') or '(未標註)'}")
         typer.echo(f"    判賠金額: NT$ {row.get('compensation_amount'):,} 元")
         typer.echo("-" * 80)
+
+
+@m10_app.command("status")
+def status(
+    db_path: str = typer.Option("db/med.db", "--db", "-d", help="實體 SQLite 資料庫路徑"),
+    json_mode: bool = typer.Option(False, "--json", "-j", help="單行緊湊 JSON 輸出")
+):
+    """[CGS v2.0] 查看 M10 (med_legal_db) 專屬實體表與 FTS5 筆數看板"""
+    resolved = resolve_db_path(db_path)
+    if not os.path.exists(resolved):
+        typer.echo(f"❌ 找不到實體資料庫: {db_path}", err=True)
+        raise typer.Exit(code=1)
+    conn = get_sqlite_connection(resolved)
+    cursor = conn.cursor()
+    counts = {}
+    target_tables = ['m10_legal_cases', 'm10_legal_cases_fts']
+    for t in target_tables:
+        try:
+            cursor.execute(f"SELECT COUNT(*) FROM {t};");
+            counts[t] = cursor.fetchone()[0]
+        except Exception:
+            pass
+    conn.close()
+
+    if json_mode:
+        import json
+        print(json.dumps({"module": "M10", "name": "med_legal_db", "counts": counts}, ensure_ascii=False, separators=(',', ':')))
+        return
+
+    typer.echo(f"\n🏥 M10 med_legal_db 模組數據看板:")
+    typer.echo("=" * 80)
+    for t, c in counts.items():
+        typer.echo(f"  • {t:<35}: {c} 筆")
+    typer.echo("=" * 80)

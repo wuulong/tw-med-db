@@ -8,7 +8,7 @@ from typing import Optional
 from modules.m01_tw_drug_db.etl import process_m01_etl, create_m01_schema
 from modules.m01_tw_drug_db.fts import create_m01_fts, search_m01_fts
 from modules.m01_tw_drug_db.metadata_gen import generate_m01_metadata
-from src.m00_core.utils_db import get_sqlite_connection
+from src.m00_core.utils_db import get_sqlite_connection, resolve_db_path
 
 m01_app = typer.Typer(name="m01", help="M01 台灣藥品許可證與健保價資料庫 CLI")
 
@@ -144,4 +144,38 @@ def price_history(
     for row in rows:
         ratio_str = f"-{row['price_drop_ratio'] * 100:.1f}%" if row['price_drop_ratio'] > 0 else "持平"
         typer.echo(f"  🗓️ 生效日期: {row['effective_date']} | 健保單價: ${row['price']} NTD (變動: {ratio_str})")
+    typer.echo("=" * 80)
+
+
+@m01_app.command("status")
+def status(
+    db_path: str = typer.Option("db/med.db", "--db", "-d", help="實體 SQLite 資料庫路徑"),
+    json_mode: bool = typer.Option(False, "--json", "-j", help="單行緊湊 JSON 輸出")
+):
+    """[CGS v2.0] 查看 M01 (tw_drug_db) 專屬實體表與 FTS5 筆數看板"""
+    resolved = resolve_db_path(db_path)
+    if not os.path.exists(resolved):
+        typer.echo(f"❌ 找不到實體資料庫: {db_path}", err=True)
+        raise typer.Exit(code=1)
+    conn = get_sqlite_connection(resolved)
+    cursor = conn.cursor()
+    counts = {}
+    target_tables = ['m01_tw_drug_db', 'm01_price_history', 'm01_tw_drug_db_fts']
+    for t in target_tables:
+        try:
+            cursor.execute(f"SELECT COUNT(*) FROM {t};");
+            counts[t] = cursor.fetchone()[0]
+        except Exception:
+            pass
+    conn.close()
+
+    if json_mode:
+        import json
+        print(json.dumps({"module": "M01", "name": "tw_drug_db", "counts": counts}, ensure_ascii=False, separators=(',', ':')))
+        return
+
+    typer.echo(f"\n🏥 M01 tw_drug_db 模組數據看板:")
+    typer.echo("=" * 80)
+    for t, c in counts.items():
+        typer.echo(f"  • {t:<35}: {c} 筆")
     typer.echo("=" * 80)

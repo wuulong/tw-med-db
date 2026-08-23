@@ -9,7 +9,7 @@ import typer
 from modules.m08_rare_disease_db.etl import process_m08_etl
 from modules.m08_rare_disease_db.fts import create_m08_fts, search_m08_fts
 from modules.m08_rare_disease_db.metadata_gen import generate_m08_metadata
-from src.m00_core.utils_db import get_sqlite_connection
+from src.m00_core.utils_db import get_sqlite_connection, resolve_db_path
 
 m08_app = typer.Typer(name="m08", help="M08 台灣國健署罕見疾病與孤兒藥名單庫 CLI")
 
@@ -67,3 +67,37 @@ def search(
         typer.echo(f"    疾病名稱: {row.get('name_zh')}")
         typer.echo(f"    OMIM ID: {row.get('omim_id') or '(未標註)'}")
         typer.echo("-" * 80)
+
+
+@m08_app.command("status")
+def status(
+    db_path: str = typer.Option("db/med.db", "--db", "-d", help="實體 SQLite 資料庫路徑"),
+    json_mode: bool = typer.Option(False, "--json", "-j", help="單行緊湊 JSON 輸出")
+):
+    """[CGS v2.0] 查看 M08 (rare_disease_db) 專屬實體表與 FTS5 筆數看板"""
+    resolved = resolve_db_path(db_path)
+    if not os.path.exists(resolved):
+        typer.echo(f"❌ 找不到實體資料庫: {db_path}", err=True)
+        raise typer.Exit(code=1)
+    conn = get_sqlite_connection(resolved)
+    cursor = conn.cursor()
+    counts = {}
+    target_tables = ['m08_rare_diseases', 'm08_rare_diseases_fts']
+    for t in target_tables:
+        try:
+            cursor.execute(f"SELECT COUNT(*) FROM {t};");
+            counts[t] = cursor.fetchone()[0]
+        except Exception:
+            pass
+    conn.close()
+
+    if json_mode:
+        import json
+        print(json.dumps({"module": "M08", "name": "rare_disease_db", "counts": counts}, ensure_ascii=False, separators=(',', ':')))
+        return
+
+    typer.echo(f"\n🏥 M08 rare_disease_db 模組數據看板:")
+    typer.echo("=" * 80)
+    for t, c in counts.items():
+        typer.echo(f"  • {t:<35}: {c} 筆")
+    typer.echo("=" * 80)

@@ -9,7 +9,7 @@ import typer
 from modules.m11_patient_journey_db.etl import process_m11_etl
 from modules.m11_patient_journey_db.fts import create_m11_fts, search_m11_fts
 from modules.m11_patient_journey_db.metadata_gen import generate_m11_metadata
-from src.m00_core.utils_db import get_sqlite_connection
+from src.m00_core.utils_db import get_sqlite_connection, resolve_db_path
 
 m11_app = typer.Typer(name="m11", help="M11 台灣病患全程臨床旅程 GraphRAG CLI")
 
@@ -67,3 +67,37 @@ def search(
         typer.echo(f"    核心任務: {row.get('key_tasks')}")
         typer.echo(f"    衛教策略: {row.get('coping_strategies')}")
         typer.echo("-" * 80)
+
+
+@m11_app.command("status")
+def status(
+    db_path: str = typer.Option("db/med.db", "--db", "-d", help="實體 SQLite 資料庫路徑"),
+    json_mode: bool = typer.Option(False, "--json", "-j", help="單行緊湊 JSON 輸出")
+):
+    """[CGS v2.0] 查看 M11 (patient_journey_db) 專屬實體表與 FTS5 筆數看板"""
+    resolved = resolve_db_path(db_path)
+    if not os.path.exists(resolved):
+        typer.echo(f"❌ 找不到實體資料庫: {db_path}", err=True)
+        raise typer.Exit(code=1)
+    conn = get_sqlite_connection(resolved)
+    cursor = conn.cursor()
+    counts = {}
+    target_tables = ['m11_journey_nodes', 'm11_journey_nodes_fts']
+    for t in target_tables:
+        try:
+            cursor.execute(f"SELECT COUNT(*) FROM {t};");
+            counts[t] = cursor.fetchone()[0]
+        except Exception:
+            pass
+    conn.close()
+
+    if json_mode:
+        import json
+        print(json.dumps({"module": "M11", "name": "patient_journey_db", "counts": counts}, ensure_ascii=False, separators=(',', ':')))
+        return
+
+    typer.echo(f"\n🏥 M11 patient_journey_db 模組數據看板:")
+    typer.echo("=" * 80)
+    for t, c in counts.items():
+        typer.echo(f"  • {t:<35}: {c} 筆")
+    typer.echo("=" * 80)

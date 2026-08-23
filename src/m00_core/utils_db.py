@@ -1,105 +1,73 @@
 """
-utils_db.py - m00_core 基礎設施通用資料庫工具
+utils_db.py - 統一資料庫路徑解析與連線工具
 """
 
 import os
-import sqlite3
-import json
 import re
-from typing import Dict, Any, Optional
+import json
+import sqlite3
+from typing import Any, Dict, Optional
 
-try:
-    import duckdb
-    HAS_DUCKDB = True
-except ImportError:
-    HAS_DUCKDB = False
-
-
-def get_sqlite_connection(db_path: str) -> sqlite3.Connection:
+def resolve_db_path(db_path: str) -> str:
     """
-    建立 SQLite 資料庫連線，並設定 WAL 模式與超時機制。
+    動態智慧解析與校正 db_path:
+    若傳入相對路徑 (如 'db/med.db' 或 'tw-med-db/db/med.db') 且當前 CWD 下不存在，
+    自動尋找專案內實體的 db/med.db 絕對路徑。
     """
-    conn = sqlite3.connect(db_path, timeout=30.0)
-    conn.execute("PRAGMA journal_mode=WAL;")
-    conn.execute("PRAGMA synchronous=NORMAL;")
-    conn.execute("PRAGMA foreign_keys=ON;")
+    if os.path.isabs(db_path) and os.path.exists(db_path):
+        return db_path
+
+    # 定位子專案內部 db/med.db
+    base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../.."))
+    canonical_path = os.path.join(base_dir, "db", "med.db")
+
+    if os.path.exists(canonical_path):
+        return canonical_path
+
+    # 若傳入的路徑在當前工作目錄下存在，則回傳
+    cwd_path = os.path.abspath(db_path)
+    if os.path.exists(cwd_path):
+        return cwd_path
+
+    return canonical_path
+
+def get_sqlite_connection(db_path: str = "db/med.db") -> sqlite3.Connection:
+    """取得校正路徑後的 SQLite 連線"""
+    resolved = resolve_db_path(db_path)
+    conn = sqlite3.connect(resolved)
     conn.row_factory = sqlite3.Row
     return conn
 
+def safe_fts_query_cleaner(query: str) -> str:
+    """清洗 FTS 查詢字串，防範特殊字元引發 OperationalError"""
+    if not query:
+        return ""
+    clean = re.sub(r'[^\w\s\u4e00-\u9fff]', ' ', str(query))
+    return clean.strip()
 
-def get_duckdb_connection(db_path: Optional[str] = None):
-    """
-    建立 DuckDB 資料庫連線 (若已安裝 duckdb)。
-    """
-    if not HAS_DUCKDB:
-        raise RuntimeError("duckdb 套件未安裝")
-    
-    if db_path:
-        return duckdb.connect(db_path)
-    return duckdb.connect(":memory:")
-
-
-def normalize_zfill(code: str, length: int = 10) -> str:
-    """
-    將代碼 (如藥價碼、醫院代碼) 進行補零正規化。
-    """
-    if not code:
-        return "0" * length
-    cleaned = str(code).strip()
-    return cleaned.zfill(length)
-
+def normalize_zfill(value: Any, width: int = 10) -> str:
+    """去除前後空白並補滿0"""
+    if not value:
+        return ""
+    val_str = str(value).strip()
+    return val_str.zfill(width) if val_str.isdigit() else val_str
 
 def strip_html_tags(text: str) -> str:
-    """
-    剝離非結構化文字中的 HTML 標籤。
-    """
+    """移除 HTML 標籤與多餘空白"""
     if not text:
         return ""
     clean = re.sub(r'<[^>]+>', '', str(text))
     return clean.strip()
 
-
-def safe_json_dumps(obj: Any) -> str:
-    """
-    將 Python 物件安全轉換為 JSON 字串 (用於 attributes_json 欄位)。
-    """
-    return json.dumps(obj, ensure_ascii=False, separators=(',', ':'))
-
-
-def build_attributes_json(data_dict: Dict[str, Any], spec_file_path: Optional[str] = None) -> str:
-    """
-    依據 Attribute Spec 規格檔校驗並過濾 raw data，產出合規的 attributes_json 字串。
-    """
-    if not spec_file_path or not os.path.exists(spec_file_path):
-        # 若未指定 Spec 檔或檔案不存在，則直接安全轉換全數非 None 欄位
-        filtered = {k: v for k, v in data_dict.items() if v is not None and v != ""}
-        return safe_json_dumps(filtered)
-
+def safe_json_dumps(data: Dict[str, Any]) -> str:
+    """安全地將 dict 序列化為 JSON 字串"""
     try:
-        with open(spec_file_path, 'r', encoding='utf-8') as f:
-            spec = json.load(f)
-        
-        allowed_keys = spec.get("allowed_attributes", {})
-        cleaned_attributes = {}
-        
-        for k, v in data_dict.items():
-            if k in allowed_keys and v is not None and v != "" and v != []:
-                if isinstance(v, (list, dict)):
-                    cleaned_attributes[k] = v
-                else:
-                    cleaned_attributes[k] = str(v).strip()
-        
-        return safe_json_dumps(cleaned_attributes)
+        return json.dumps(data, ensure_ascii=False, separators=(',', ':'))
     except Exception:
-        filtered = {k: v for k, v in data_dict.items() if v is not None and v != ""}
-        return safe_json_dumps(filtered)
+        return "{}"
 
-
-def safe_fts_query_cleaner(query: str) -> str:
-    """
-    [通用防禦] 清洗 FTS5 檢索關鍵字，自動去除可能引發 SQLite 語法錯誤之單雙引號與特殊字元。
-    """
-    if not query:
-        return '""'
-    cleaned = str(query).strip().replace('"', '').replace("'", "").replace('*', '').replace(':', '')
-    return f'"{cleaned}"'
+def build_attributes_json(extra_data: Dict[str, Any], schema_version: str = "1.0.0") -> str:
+    """建立剛性 _v 為第一個 key 的 attributes_json"""
+    payload = {"_v": schema_version}
+    payload.update(extra_data)
+    return safe_json_dumps(payload)

@@ -9,7 +9,7 @@ import typer
 from modules.m05_tw_hospital_db.etl import process_m05_etl
 from modules.m05_tw_hospital_db.fts import create_m05_fts, search_m05_fts
 from modules.m05_tw_hospital_db.metadata_gen import generate_m05_metadata
-from src.m00_core.utils_db import get_sqlite_connection
+from src.m00_core.utils_db import get_sqlite_connection, resolve_db_path
 
 m05_app = typer.Typer(name="m05", help="M05 台灣健保特約醫事機構與專科地圖庫 CLI")
 
@@ -68,3 +68,37 @@ def search(
         typer.echo(f"    縣市行政區: {row.get('city') or '(未標註)'}")
         typer.echo(f"    機構地址: {row.get('address')}")
         typer.echo("-" * 80)
+
+
+@m05_app.command("status")
+def status(
+    db_path: str = typer.Option("db/med.db", "--db", "-d", help="實體 SQLite 資料庫路徑"),
+    json_mode: bool = typer.Option(False, "--json", "-j", help="單行緊湊 JSON 輸出")
+):
+    """[CGS v2.0] 查看 M05 (tw_hospital_db) 專屬實體表與 FTS5 筆數看板"""
+    resolved = resolve_db_path(db_path)
+    if not os.path.exists(resolved):
+        typer.echo(f"❌ 找不到實體資料庫: {db_path}", err=True)
+        raise typer.Exit(code=1)
+    conn = get_sqlite_connection(resolved)
+    cursor = conn.cursor()
+    counts = {}
+    target_tables = ['m05_hospitals', 'm05_hospitals_fts']
+    for t in target_tables:
+        try:
+            cursor.execute(f"SELECT COUNT(*) FROM {t};");
+            counts[t] = cursor.fetchone()[0]
+        except Exception:
+            pass
+    conn.close()
+
+    if json_mode:
+        import json
+        print(json.dumps({"module": "M05", "name": "tw_hospital_db", "counts": counts}, ensure_ascii=False, separators=(',', ':')))
+        return
+
+    typer.echo(f"\n🏥 M05 tw_hospital_db 模組數據看板:")
+    typer.echo("=" * 80)
+    for t, c in counts.items():
+        typer.echo(f"  • {t:<35}: {c} 筆")
+    typer.echo("=" * 80)

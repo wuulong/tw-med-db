@@ -1,3 +1,4 @@
+import os
 """
 commands_m50.py - M50 Subcommand Group CLI 入口
 """
@@ -5,7 +6,7 @@ commands_m50.py - M50 Subcommand Group CLI 入口
 import typer
 from rich.console import Console
 from rich.table import Table
-from src.m00_core.utils_db import get_sqlite_connection
+from src.m00_core.utils_db import get_sqlite_connection, resolve_db_path
 from modules.m50_rxnorm_db.fts import search_m50_fts
 
 m50_app = typer.Typer(name="m50", help="M50 美國 RxNorm / RxCUI 國際藥學概念與跨國 Mapping 命令集")
@@ -36,3 +37,37 @@ def search_rxnorm(
         table.add_row(r["rxcui"], r["name_en"], r["tty"], r["nhi_code"])
 
     console.print(table)
+
+
+@m50_app.command("status")
+def status(
+    db_path: str = typer.Option("db/med.db", "--db", "-d", help="實體 SQLite 資料庫路徑"),
+    json_mode: bool = typer.Option(False, "--json", "-j", help="單行緊湊 JSON 輸出")
+):
+    """[CGS v2.0] 查看 M50 (rxnorm-db) 專屬實體表與 FTS5 筆數看板"""
+    resolved = resolve_db_path(db_path)
+    if not os.path.exists(resolved):
+        typer.echo(f"❌ 找不到實體資料庫: {db_path}", err=True)
+        raise typer.Exit(code=1)
+    conn = get_sqlite_connection(resolved)
+    cursor = conn.cursor()
+    counts = {}
+    target_tables = ['m50_rxnorm_cache', 'fts_m50_rxnorm']
+    for t in target_tables:
+        try:
+            cursor.execute(f"SELECT COUNT(*) FROM {t};");
+            counts[t] = cursor.fetchone()[0]
+        except Exception:
+            pass
+    conn.close()
+
+    if json_mode:
+        import json
+        print(json.dumps({"module": "M50", "name": "rxnorm-db", "counts": counts}, ensure_ascii=False, separators=(',', ':')))
+        return
+
+    typer.echo(f"\n🏥 M50 rxnorm-db 模組數據看板:")
+    typer.echo("=" * 80)
+    for t, c in counts.items():
+        typer.echo(f"  • {t:<35}: {c} 筆")
+    typer.echo("=" * 80)

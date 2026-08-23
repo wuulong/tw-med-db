@@ -1,3 +1,4 @@
+import os
 """
 commands_m55.py - M55 MIMIC-IV 美國重症臨床資料庫 Gateway CLI 命令集 (含 4 大加值功能)
 """
@@ -7,7 +8,7 @@ import typer
 import sqlite3
 from rich.console import Console
 from rich.table import Table
-from src.m00_core.utils_db import get_sqlite_connection
+from src.m00_core.utils_db import get_sqlite_connection, resolve_db_path
 
 m55_app = typer.Typer(name="m55", help="M55 MIMIC-IV 美國重症臨床資料庫 Gateway 命令集")
 console = Console()
@@ -282,3 +283,37 @@ def icu_trajectory(
     console.print(f"  2. 🫁 呼吸機輔助 (Mechanical Ventilation) ➔ 通過 SBT 呼吸脫離測試 (Weaning)")
     console.print(f"  3. 🟢 成功拔管 (Extubation) ➔ 轉至一般心臟內科普通病房 (Stage 3)")
     console.print(f"  4. 🏁 達成出院條件 (Discharge Ready)")
+
+
+@m55_app.command("status")
+def status(
+    db_path: str = typer.Option("db/med.db", "--db", "-d", help="實體 SQLite 資料庫路徑"),
+    json_mode: bool = typer.Option(False, "--json", "-j", help="單行緊湊 JSON 輸出")
+):
+    """[CGS v2.0] 查看 M55 (mimic_iv_db) 專屬實體表與 FTS5 筆數看板"""
+    resolved = resolve_db_path(db_path)
+    if not os.path.exists(resolved):
+        typer.echo(f"❌ 找不到實體資料庫: {db_path}", err=True)
+        raise typer.Exit(code=1)
+    conn = get_sqlite_connection(resolved)
+    cursor = conn.cursor()
+    counts = {}
+    target_tables = ['m55_mimic_cache', 'm55_hosp_patients', 'm55_hosp_admissions', 'm55_icu_icustays']
+    for t in target_tables:
+        try:
+            cursor.execute(f"SELECT COUNT(*) FROM {t};");
+            counts[t] = cursor.fetchone()[0]
+        except Exception:
+            pass
+    conn.close()
+
+    if json_mode:
+        import json
+        print(json.dumps({"module": "M55", "name": "mimic_iv_db", "counts": counts}, ensure_ascii=False, separators=(',', ':')))
+        return
+
+    typer.echo(f"\n🏥 M55 mimic_iv_db 模組數據看板:")
+    typer.echo("=" * 80)
+    for t, c in counts.items():
+        typer.echo(f"  • {t:<35}: {c} 筆")
+    typer.echo("=" * 80)

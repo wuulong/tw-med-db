@@ -5,7 +5,7 @@ commands_m00.py - M00 母大腦與全域治理 CLI 指令
 import os
 import typer
 from typing import Optional
-from src.m00_core.utils_db import get_sqlite_connection
+from src.m00_core.utils_db import get_sqlite_connection, resolve_db_path
 from src.m00_core.m00_global_views import create_m00_global_tables_and_views
 
 m00_app = typer.Typer(name="m00", help="M00 母大腦與全域治理 CLI")
@@ -18,11 +18,12 @@ def status(
     """
     [M00 全域] 查詢 tw-med-db 全庫已註冊子模組狀態與資料量看板。
     """
-    if not os.path.exists(db_path):
-        typer.echo(f"❌ 找不到實體資料庫: {db_path}，請先執行模組建置 (如 'tw-med-cli m01 build')", err=True)
+    resolved_path = resolve_db_path(db_path)
+    if not os.path.exists(resolved_path):
+        typer.echo(f"❌ 找不到實體資料庫: {db_path} (校正路徑: {resolved_path})", err=True)
         raise typer.Exit(code=1)
 
-    conn = get_sqlite_connection(db_path)
+    conn = get_sqlite_connection(resolved_path)
     # 確保 View 與 sys_module_metadata 存在
     create_m00_global_tables_and_views(conn)
     cursor = conn.cursor()

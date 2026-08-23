@@ -1,3 +1,4 @@
+import os
 """
 commands_m51.py - M51 Subcommand Group CLI 入口
 """
@@ -5,7 +6,7 @@ commands_m51.py - M51 Subcommand Group CLI 入口
 import typer
 from rich.console import Console
 from rich.table import Table
-from src.m00_core.utils_db import get_sqlite_connection
+from src.m00_core.utils_db import get_sqlite_connection, resolve_db_path
 from modules.m51_clinical_trials_gov.fts import search_m51_fts
 
 m51_app = typer.Typer(name="m51", help="M51 美國 NIH ClinicalTrials 國際臨床試驗與在台招募過濾命令集")
@@ -37,3 +38,37 @@ def search_trials(
         table.add_row(r["nct_id"], r["title"][:30] + "..." if len(r["title"]) > 30 else r["title"], r["phase"], r["cancer_type"], r["facility_taiwan"][:20] + "...")
 
     console.print(table)
+
+
+@m51_app.command("status")
+def status(
+    db_path: str = typer.Option("db/med.db", "--db", "-d", help="實體 SQLite 資料庫路徑"),
+    json_mode: bool = typer.Option(False, "--json", "-j", help="單行緊湊 JSON 輸出")
+):
+    """[CGS v2.0] 查看 M51 (clinical-trials-gov) 專屬實體表與 FTS5 筆數看板"""
+    resolved = resolve_db_path(db_path)
+    if not os.path.exists(resolved):
+        typer.echo(f"❌ 找不到實體資料庫: {db_path}", err=True)
+        raise typer.Exit(code=1)
+    conn = get_sqlite_connection(resolved)
+    cursor = conn.cursor()
+    counts = {}
+    target_tables = ['m51_ctgov_cache', 'fts_m51_ctgov']
+    for t in target_tables:
+        try:
+            cursor.execute(f"SELECT COUNT(*) FROM {t};");
+            counts[t] = cursor.fetchone()[0]
+        except Exception:
+            pass
+    conn.close()
+
+    if json_mode:
+        import json
+        print(json.dumps({"module": "M51", "name": "clinical-trials-gov", "counts": counts}, ensure_ascii=False, separators=(',', ':')))
+        return
+
+    typer.echo(f"\n🏥 M51 clinical-trials-gov 模組數據看板:")
+    typer.echo("=" * 80)
+    for t, c in counts.items():
+        typer.echo(f"  • {t:<35}: {c} 筆")
+    typer.echo("=" * 80)

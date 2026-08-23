@@ -9,7 +9,7 @@ import typer
 from modules.m06_nhi_payment_db.etl import process_m06_etl
 from modules.m06_nhi_payment_db.fts import create_m06_fts, search_m06_fts
 from modules.m06_nhi_payment_db.metadata_gen import generate_m06_metadata
-from src.m00_core.utils_db import get_sqlite_connection
+from src.m00_core.utils_db import get_sqlite_connection, resolve_db_path
 
 m06_app = typer.Typer(name="m06", help="M06 台灣健保給付規定與自費比價庫 CLI")
 
@@ -68,3 +68,37 @@ def search(
         typer.echo(f"    給付條文章節: {row.get('section_code') or '(未標註)'}")
         typer.echo(f"    給付規定摘要: {row.get('rule_raw_text')}")
         typer.echo("-" * 80)
+
+
+@m06_app.command("status")
+def status(
+    db_path: str = typer.Option("db/med.db", "--db", "-d", help="實體 SQLite 資料庫路徑"),
+    json_mode: bool = typer.Option(False, "--json", "-j", help="單行緊湊 JSON 輸出")
+):
+    """[CGS v2.0] 查看 M06 (nhi_payment_db) 專屬實體表與 FTS5 筆數看板"""
+    resolved = resolve_db_path(db_path)
+    if not os.path.exists(resolved):
+        typer.echo(f"❌ 找不到實體資料庫: {db_path}", err=True)
+        raise typer.Exit(code=1)
+    conn = get_sqlite_connection(resolved)
+    cursor = conn.cursor()
+    counts = {}
+    target_tables = ['m06_nhi_rules', 'm06_nhi_rules_fts']
+    for t in target_tables:
+        try:
+            cursor.execute(f"SELECT COUNT(*) FROM {t};");
+            counts[t] = cursor.fetchone()[0]
+        except Exception:
+            pass
+    conn.close()
+
+    if json_mode:
+        import json
+        print(json.dumps({"module": "M06", "name": "nhi_payment_db", "counts": counts}, ensure_ascii=False, separators=(',', ':')))
+        return
+
+    typer.echo(f"\n🏥 M06 nhi_payment_db 模組數據看板:")
+    typer.echo("=" * 80)
+    for t, c in counts.items():
+        typer.echo(f"  • {t:<35}: {c} 筆")
+    typer.echo("=" * 80)
