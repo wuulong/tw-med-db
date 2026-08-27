@@ -7,7 +7,7 @@ import gzip
 import csv
 import sqlite3
 
-demo_dir = '/Users/wuulong/github/bmad-pa/data/mimic_demo/mimic-iv-clinical-database-demo-2.2'
+demo_dir = './data/mimic_demo/mimic-iv-clinical-database-demo-2.2'
 db_path = 'db/med.db'
 
 def run_native_ingest():
