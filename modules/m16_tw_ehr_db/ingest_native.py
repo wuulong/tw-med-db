@@ -36,14 +36,16 @@ def run_native_ingest():
     cursor.execute("""
     CREATE TABLE m16_ehr_patients (
         patient_id TEXT PRIMARY KEY, official_id TEXT, mrn TEXT,
-        name_tw TEXT, gender TEXT, birth_date TEXT, city TEXT, organization TEXT
+        name_tw TEXT, gender TEXT, birth_date TEXT, city TEXT, organization TEXT,
+        data_origin INTEGER DEFAULT 1
     );
     """)
 
     cursor.execute("""
     CREATE TABLE m16_ehr_vitals (
         observation_id TEXT PRIMARY KEY, patient_id TEXT, loinc_code TEXT,
-        display_name TEXT, value_quantity REAL, unit TEXT, effective_datetime TEXT
+        display_name TEXT, value_quantity REAL, unit TEXT, effective_datetime TEXT,
+        data_origin INTEGER DEFAULT 1
     );
     """)
 
@@ -61,9 +63,9 @@ def run_native_ingest():
             city = "臺北市"
             organization = "衛生福利部臺北醫院"
             
-            cursor.execute("INSERT INTO m16_ehr_patients VALUES (?,?,?,?,?,?,?,?);", 
+            cursor.execute("INSERT INTO m16_ehr_patients VALUES (?,?,?,?,?,?,?,?,1);", 
                            (pid, official_id, mrn, name_tw, gender, birth_date, city, organization))
-            print(f"  ✓ 成功注入 TW Core Patient 實體資料: 病患 [{pid}] {name_tw}")
+            print(f"  ✓ 成功注入 TW Core Patient 實體資料: 病患 [{pid}] {name_tw} (data_origin = 1)")
 
     # 4. 解析 blood_pressure_example.json
     bp_file = os.path.join(demo_dir, "blood_pressure_example.json")
@@ -75,13 +77,13 @@ def run_native_ingest():
             effective_dt = v_json.get("effectiveDateTime", "2022-07-31T14:30:00+08:00")
             
             # 寫入收縮壓 (8480-6) 與 舒張壓 (8462-4)
-            cursor.execute("INSERT INTO m16_ehr_vitals VALUES (?,?,?,?,?,?,?);",
+            cursor.execute("INSERT INTO m16_ehr_vitals VALUES (?,?,?,?,?,?,?,1);",
                            (obs_id + "_sbp", pid, "8480-6", "Systolic blood pressure", 120.0, "mmHg", effective_dt))
-            cursor.execute("INSERT INTO m16_ehr_vitals VALUES (?,?,?,?,?,?,?);",
+            cursor.execute("INSERT INTO m16_ehr_vitals VALUES (?,?,?,?,?,?,?,1);",
                            (obs_id + "_dbp", pid, "8462-4", "Diastolic blood pressure", 80.0, "mmHg", effective_dt))
-            print(f"  ✓ 成功注入 TW Core Vital Sign 實體資料: Observation [{obs_id}] 收縮壓: 120 mmHg / 舒張壓: 80 mmHg")
+            print(f"  ✓ 成功注入 TW Core Vital Sign 實體資料: Observation [{obs_id}] 收縮壓: 120 mmHg / 舒張壓: 80 mmHg (data_origin = 1)")
 
-    # 5. 建立即時 View: m16_ehr_cache (is_seed = 1)
+    # 5. 建立即時 View: m16_ehr_cache (data_origin 支持)
     print("  -> 建立 m16_ehr_cache 即時 FHIR 臨床快取 View...")
     cursor.execute("""
     CREATE VIEW IF NOT EXISTS m16_ehr_cache AS
@@ -91,6 +93,7 @@ def run_native_ingest():
         p.official_id as official_id,
         p.gender as gender,
         p.organization as organization,
+        p.data_origin as data_origin,
         'E119 (Type 2 Diabetes)' as primary_condition,
         (
             SELECT json_group_array(json_object(

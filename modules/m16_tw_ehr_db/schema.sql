@@ -9,7 +9,8 @@ CREATE TABLE m16_ehr_patients (
     gender TEXT,
     birth_date TEXT,
     city TEXT,
-    organization TEXT
+    organization TEXT,
+    data_origin INTEGER DEFAULT 1
 );
 
 DROP TABLE IF EXISTS m16_ehr_vitals;
@@ -20,7 +21,8 @@ CREATE TABLE m16_ehr_vitals (
     display_name TEXT,
     value_quantity REAL,
     unit TEXT,
-    effective_datetime TEXT
+    effective_datetime TEXT,
+    data_origin INTEGER DEFAULT 1
 );
 
 DROP TABLE IF EXISTS m16_ehr_conditions;

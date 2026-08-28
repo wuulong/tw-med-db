@@ -183,7 +183,7 @@ def status(
     db_path: str = typer.Option("db/med.db", "--db", "-d", help="實體 SQLite 資料庫路徑"),
     json_mode: bool = typer.Option(False, "--json", "-j", help="單行緊湊 JSON 輸出")
 ):
-    """[CGS v2.0] 查看 M16 (tw_ehr_db) 專屬實體表與 FTS5 筆數看板"""
+    """[CGS v2.0] 查看 M16 (tw_ehr_db) 專屬實體表、data_origin 來源分組與 FTS5 看板"""
     resolved = resolve_db_path(db_path)
     if not os.path.exists(resolved):
         typer.echo(f"❌ 找不到實體資料庫: {db_path}", err=True)
@@ -194,20 +194,34 @@ def status(
     target_tables = ['m16_ehr_cache', 'm16_ehr_patients', 'm16_ehr_vitals']
     for t in target_tables:
         try:
-            cursor.execute(f"SELECT COUNT(*) FROM {t};");
+            cursor.execute(f"SELECT COUNT(*) FROM {t};")
             counts[t] = cursor.fetchone()[0]
         except Exception:
             pass
+
+    # data_origin 分組統計
+    origin_counts = {}
+    try:
+        cursor.execute("SELECT data_origin, COUNT(*) FROM m16_ehr_patients GROUP BY data_origin;")
+        for row in cursor.fetchall():
+            origin_name = "1 (SEED_OFFICIAL)" if row[0] == 1 else "2 (SYNTHEA_SANDBOX)"
+            origin_counts[origin_name] = row[1]
+    except Exception:
+        pass
     conn.close()
 
     if json_mode:
-        print(json.dumps({"module": "M16", "name": "tw_ehr_db", "counts": counts}, ensure_ascii=False, separators=(',', ':')))
+        print(json.dumps({"module": "M16", "name": "tw_ehr_db", "counts": counts, "data_origin_breakdown": origin_counts}, ensure_ascii=False, separators=(',', ':')))
         return
 
     typer.echo(f"\n🇹🇼 M16 tw_ehr_db 臨床電子病歷模組數據看板:")
     typer.echo("=" * 80)
     for t, c in counts.items():
         typer.echo(f"  • {t:<35}: {c} 筆")
+    typer.echo("-" * 80)
+    typer.echo("  • 數據來源分組 (data_origin breakdown):")
+    for org, cnt in origin_counts.items():
+        typer.echo(f"     - Origin {org:<25}: {cnt} 位病患")
     typer.echo("=" * 80)
 
 if __name__ == '__main__':

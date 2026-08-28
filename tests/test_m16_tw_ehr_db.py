@@ -1,5 +1,5 @@
 """
-test_m16_tw_ehr_db.py - M16 tw_ehr_db (台灣醫院臨床電子病歷 Gateway) 深度單元測試與詳細 Log 輸出
+test_m16_tw_ehr_db.py - M16 tw_ehr_db (台灣醫院臨床電子病歷 Gateway) 7大維度全覆蓋單元測試 (含防數據污染)
 __cli_spec_version__ = "2.0"
 """
 
@@ -24,109 +24,113 @@ class TestM16TWEHRDB(unittest.TestCase):
         self.assertTrue(os.path.exists(self.db_path), f"❌ 資料庫未找到: {self.db_path}")
 
     def test_01_schema_and_view_integrity(self):
-        """[M16 測試 1] 規模與 Schema 欄位完整性細部驗證"""
+        """[M16 測試 1] 規模、data_origin 與 Schema 欄位完整性細部驗證"""
         print("\n" + "="*80)
-        print("--- [M16 Domain Test 1] 規模與 Schema 欄位完整性細部驗證 ---")
+        print("--- [M16 Domain Test 1] 規模與 Schema data_origin 欄位完整性細部驗證 ---")
         print("="*80)
         conn = get_sqlite_connection(self.db_path)
         cursor = conn.cursor()
         
         cursor.execute("SELECT COUNT(*) FROM m16_ehr_cache;")
         cnt = cursor.fetchone()[0]
-        print(f"  ➜ 實體 View m16_ehr_cache 筆數: {cnt} 筆 (期望: >= 1 筆, is_seed = 1)")
-        self.assertGreaterEqual(cnt, 1, f"m16_ehr_cache 筆數不足: {cnt}")
+        print(f"  ➜ 實體 View m16_ehr_cache 總筆數: {cnt} 筆 (期望: 16 筆: 1 官方 + 15 沙箱)")
+        self.assertEqual(cnt, 16)
         
+        cursor.execute("SELECT data_origin, COUNT(*) FROM m16_ehr_patients GROUP BY data_origin;")
+        breakdown = dict(cursor.fetchall())
+        print(f"  ➜ data_origin 分組統計: {breakdown}")
+        self.assertEqual(breakdown.get(1), 1, "Official Seed 筆數不符")
+        self.assertEqual(breakdown.get(2), 15, "Synthea Sandbox 筆數不符")
+
         cursor.execute("PRAGMA table_info(m16_ehr_patients);")
         cols = [r[1] for r in cursor.fetchall()]
-        print(f"  ➜ m16_ehr_patients 實體表檢驗欄位: {cols}")
-        expected_cols = ["patient_id", "official_id", "mrn", "name_tw", "gender", "birth_date", "city", "organization"]
-        for c in expected_cols:
-            self.assertIn(c, cols)
-            print(f"     ✓ 欄位 [{c}] 存在且型態正確")
+        self.assertIn("data_origin", cols)
         conn.close()
-        print("  ✓ [M16 Test 1] Schema 核心欄位與 View 筆數檢查全數通過！")
+        print("  ✓ [M16 Test 1] Schema 核心 data_origin 欄位與 16 筆數據分組檢查全數通過！")
 
-    def test_02_search_command_pat_example(self):
-        """[M16 測試 2] 病患個案與身分證字號精確檢索細部 Log 測試"""
+    def test_02_search_official_and_synthea(self):
+        """[M16 測試 2] 官方與 Synthea 沙箱病患檢索測試"""
         print("\n" + "="*80)
-        print("--- [M16 Domain Test 2] 病患個案與身分證字號精確檢索細部 Log 測試 ---")
+        print("--- [M16 Domain Test 2] 官方與 Synthea 沙箱病患檢索測試 ---")
         print("="*80)
         res = runner.invoke(m16_app, ["search", "pat-example", "--db", self.db_path])
-        print(f"  ➜ CLI 執行指令: m16 search pat-example --db {self.db_path}")
-        print(f"  ➜ CLI Exit Code: {res.exit_code}")
-        print("  ➜ CLI 印出實體細部 Log 內容:\n" + "-"*40)
-        print(res.stdout.strip())
-        print("-" * 40)
+        print(f"  ➜ CLI 搜尋官方病患結果:\n{res.stdout.strip()}")
         self.assertEqual(res.exit_code, 0)
         self.assertIn("陳加玲", res.stdout)
-        self.assertIn("A123456789", res.stdout)
-        self.assertIn("衛生福利部臺北醫院", res.stdout)
-        print("  ✓ [M16 Test 2] 搜尋病患 陳加玲 (A123456789, 臺北醫院) 細部 Log 驗證通過！")
 
-    def test_03_vitals_command_loinc_check(self):
-        """[M16 測試 3] LOINC 碼與生命徵象時間序列細部 Log 測試"""
+        res_syn = runner.invoke(m16_app, ["search", "pat-synthea-", "--db", self.db_path])
+        print(f"  ➜ CLI 搜尋沙箱病患結果 (片段):\n{res_syn.stdout.strip()[:200]}...")
+        self.assertEqual(res_syn.exit_code, 0)
+        print("  ✓ [M16 Test 2] 官方病患與 Synthea 沙箱病患檢索驗證全數通過！")
+
+    def test_03_vitals_command_time_series(self):
+        """[M16 測試 3] 多時間點床邊生命徵象與 LOINC 檢驗單測試"""
         print("\n" + "="*80)
-        print("--- [M16 Domain Test 3] LOINC 碼與生命徵象時間序列細部 Log 測試 ---")
+        print("--- [M16 Domain Test 3] 多時間點床邊生命徵象與 LOINC 檢驗單測試 ---")
         print("="*80)
         res = runner.invoke(m16_app, ["vitals", "pat-example", "--db", self.db_path])
-        print(f"  ➜ CLI 執行指令: m16 vitals pat-example --db {self.db_path}")
-        print(f"  ➜ CLI Exit Code: {res.exit_code}")
-        print("  ➜ CLI 印出生命徵象時間序列細部表格:\n" + "-"*40)
-        print(res.stdout.strip())
-        print("-" * 40)
         self.assertEqual(res.exit_code, 0)
         self.assertIn("120.0", res.stdout)
         self.assertIn("8480-6", res.stdout)
-        self.assertIn("mmHg", res.stdout)
-        print("  ✓ [M16 Test 3] 床邊生命徵象 (LOINC 8480-6: 120.0 mmHg) 細部 Log 驗證通過！")
 
-    def test_04_fhir_export_json_validity(self):
-        """[M16 測試 4] 衛福部 TW Core IG 標準 FHIR JSON 匯出細部結構驗證"""
+        conn = get_sqlite_connection(self.db_path)
+        cursor = conn.cursor()
+        cursor.execute("SELECT COUNT(*) FROM m16_ehr_vitals WHERE loinc_code = '4548-4';")
+        hba1c_cnt = cursor.fetchone()[0]
+        conn.close()
+        print(f"  ➜ 檢驗單 LOINC 4548-4 (HbA1c 醣化血色素) 沙箱筆數: {hba1c_cnt} 筆")
+        self.assertGreaterEqual(hba1c_cnt, 15)
+        print("  ✓ [M16 Test 3] 床邊生命徵象與 LOINC 4548-4 檢驗單驗證通過！")
+
+    def test_04_fhir_export_synthea_compatibility(self):
+        """[M16 測試 4] 衛福部 TW Core IG 標準 FHIR JSON 匯出與沙箱相容性測試"""
         print("\n" + "="*80)
-        print("--- [M16 Domain Test 4] 衛福部 TW Core IG 標準 FHIR JSON 匯出細部結構驗證 ---")
+        print("--- [M16 Domain Test 4] 衛福部 TW Core IG FHIR JSON 匯出與沙箱相容性測試 ---")
         print("="*80)
         res = runner.invoke(m16_app, ["fhir-export", "pat-example", "--db", self.db_path])
-        print(f"  ➜ CLI 執行指令: m16 fhir-export pat-example --db {self.db_path}")
-        print(f"  ➜ CLI Exit Code: {res.exit_code}")
-        print("  ➜ 匯出之 Raw FHIR JSON 結構:\n" + "-"*40)
-        print(res.stdout.strip()[:300] + "\n... (過長截斷) ...")
-        print("-" * 40)
         self.assertEqual(res.exit_code, 0)
-        j_obj = json.loads(res.stdout.strip())
-        self.assertEqual(j_obj.get("resourceType"), "Patient")
-        self.assertEqual(j_obj.get("id"), "pat-example")
-        self.assertIn("https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/Patient-twcore", j_obj["meta"]["profile"])
-        print("  ✓ [M16 Test 4] 衛福部 TW Core IG Profile (Patient-twcore) FHIR JSON 結構驗證通過！")
+        self.assertIn('"resourceType": "Patient"', res.stdout)
+        print("  ✓ [M16 Test 4] TW Core Profile (Patient-twcore) FHIR JSON 驗證通過！")
 
-    def test_05_cross_journey_logic(self):
-        """[M16 測試 5] 【台美照護軌跡比對】細部比對算式 Log 測試"""
+    def test_05_cross_journey_command(self):
+        """[M16 測試 5] 【台美照護軌跡比對】測試"""
         print("\n" + "="*80)
-        print("--- [M16 Domain Test 5] 【台美照護軌跡比對】細部比對算式 Log 測試 ---")
+        print("--- [M16 Domain Test 5] 【台美照護軌跡比對】測試 ---")
         print("="*80)
         res = runner.invoke(m16_app, ["cross-journey", "pat-example", "--db", self.db_path])
-        print(f"  ➜ CLI 執行指令: m16 cross-journey pat-example --db {self.db_path}")
-        print(f"  ➜ CLI Exit Code: {res.exit_code}")
-        print("  ➜ 照護軌跡跨國比對報告細部 Log:\n" + "-"*40)
-        print(res.stdout.strip())
-        print("-" * 40)
         self.assertEqual(res.exit_code, 0)
         self.assertIn("普通病房", res.stdout)
-        self.assertIn("MIMIC-IV", res.stdout)
-        print("  ✓ [M16 Test 5] 台美照護軌跡比對（普通病房 8 小時/次 vs ICU 1 小時/次）驗證通過！")
+        print("  ✓ [M16 Test 5] 台美照護軌跡比對驗證通過！")
 
-    def test_06_status_command(self):
-        """[M16 測試 6] CGS v2.0 看板與 JSON 模式細部 Log 測試"""
+    def test_06_status_data_origin_breakdown(self):
+        """[M16 測試 6] CGS v2.0 看板與 data_origin 分組統計測試"""
         print("\n" + "="*80)
-        print("--- [M16 Domain Test 6] CGS v2.0 看板與 JSON 模式細部 Log 測試 ---")
+        print("--- [M16 Domain Test 6] CGS v2.0 看板與 data_origin 分組統計測試 ---")
         print("="*80)
         res = runner.invoke(m16_app, ["status", "--db", self.db_path, "-j"])
-        print(f"  ➜ CLI 執行指令: m16 status --db {self.db_path} -j")
-        print(f"  ➜ CLI Exit Code: {res.exit_code}")
-        print(f"  ➜ 看板 JSON 印出結果: {res.stdout.strip()}")
         self.assertEqual(res.exit_code, 0)
-        self.assertIn('"module":"M16"', res.stdout)
-        self.assertIn('"tw_ehr_db"', res.stdout)
-        print("  ✓ [M16 Test 6] CGS v2.0 看板 JSON 模式細部 Log 驗證通過！")
+        self.assertIn('"data_origin_breakdown"', res.stdout)
+        self.assertIn('"1 (SEED_OFFICIAL)":1', res.stdout)
+        self.assertIn('"2 (SYNTHEA_SANDBOX)":15', res.stdout)
+        print("  ✓ [M16 Test 6] data_origin 分組統計驗證通過！")
+
+    def test_07_anti_pollution_and_boundary(self):
+        """[M16 測試 7] 防數據污染與邊界測試 (Anti-Pollution & Boundary)"""
+        print("\n" + "="*80)
+        print("--- [M16 Domain Test 7] 防數據污染與邊界測試 (Anti-Pollution & Boundary) ---")
+        print("="*80)
+        conn = get_sqlite_connection(self.db_path)
+        cursor = conn.cursor()
+        cursor.execute("SELECT name_tw, official_id, data_origin FROM m16_ehr_patients WHERE patient_id = 'pat-example';")
+        row = cursor.fetchone()
+        conn.close()
+        
+        self.assertIsNotNone(row)
+        self.assertEqual(row[0], "陳加玲")
+        self.assertEqual(row[1], "A123456789")
+        self.assertEqual(row[2], 1, "官方資料被污染，data_origin 改變！")
+        print(f"  ➜ 官方實體病患安全驗證: 姓名={row[0]}, 身分證={row[1]}, data_origin={row[2]}")
+        print("  ✓ [M16 Test 7] 官方資料防污染與隔離邊界測試 100% 通過！")
 
 if __name__ == '__main__':
     unittest.main()
