@@ -8,8 +8,11 @@
 ## 1. 資料安全合規與本機數據路徑定錨規範 (Data Governance & Compliance)
 
 > [!IMPORTANT]
-> **PhysioNet Credentialed Data 零敏感數據流出安全承諾**：
+> **PhysioNet Credentialed Data 零敏感數據流出安全承諾與版本對照**：
 > MIMIC-IV-ED 屬於受控存取數據（Credentialed Health Data），**嚴禁打包公開在開源 Repository 或隨軟體散佈**。
+> - **外接硬碟全量庫 (Full Dataset)**：預設連結本機實體外接庫 **MIMIC-IV-ED v2.2** (788.7 萬筆數據)。
+> - **本機 Demo 種子庫 (Demo Seed Dataset)**：採用 PhysioNet 官方公開 **MIMIC-IV-ED Demo v2.2** (100 位病患 6 表數據)。
+> - **跨模組連動性**：與 `M55` (ICU/住院) 共用相同之 100 位去識別化 `subject_id` 病患。
 
 ### 智慧型數據路徑選擇順序 (Fallback Sequence)
 系統執行時依照以下順序動態解析與定錨 MIMIC-IV-ED 2.2 全量實體資料庫路徑：

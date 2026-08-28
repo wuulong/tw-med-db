@@ -8,8 +8,11 @@
 ## 1. 資料安全合規與本機數據路徑定錨規範 (Data Governance & Compliance)
 
 > [!IMPORTANT]
-> **PhysioNet Credentialed Data 零敏感數據流出安全承諾**：
+> **PhysioNet Credentialed Data 零敏感數據流出安全承諾與版本對照**：
 > MIMIC-IV 屬於受控存取數據（Credentialed Health Data），**嚴禁打包公開在開源 Repository 或隨軟體散佈**。
+> - **外接硬碟全量庫 (Full Dataset)**：預設連結本機實體外接庫 **MIMIC-IV v2.1** (6.36 億筆數據)。
+> - **本機 Demo 種子庫 (Demo Seed Dataset)**：採用 PhysioNet 官方公開最新 **MIMIC-IV Demo v2.2** (100 位病患 31 表數據)。
+> - **跨版本相容性**：兩版本核心臨床 Schema 100% 向後相容，系統引擎支援雙版本動態交集查詢。
 
 ### 智慧型數據路徑選擇順序 (Fallback Sequence)
 系統執行時依照以下順序動態解析與定錨 MIMIC-IV 2.1 全量實體資料庫路徑：
@@ -20,7 +23,7 @@
 2. **本機常用實體硬碟自動偵測**：
    若環境變數未設定，自動探勘本機常見實體硬碟路徑（如 `/Volumes/D2024/data/mimic.iv/mimic-iv-2.1`）。
 3. **無感安全降級 (Offline Demo Fallback)**：
-   若無權存取全量實體庫，系統友善提示並降級使用 `M55` 本地預載之 100 筆去識別化 Demo 測試種子庫 (`db/med.db`)。
+   若無權存取全量實體庫，系統友善提示並降級使用 `M55` 本地預載之 100 筆去識別化 Demo v2.2 測試種子庫 (`db/med.db`)。
 
 ---
 
@@ -86,3 +89,17 @@
   ```bash
   ./pa meddb m55 map-nhi 10000032
   ```
+
+---
+
+## 5. 零 Mock 數據質檢與 PhysioNet Demo 種子庫規範 (Zero-Mock Policy)
+
+1. **零人工偽造資料 (Zero Mock Policy)**：
+   - 專案嚴禁使用任何硬編碼補位（如偽造體溫/心率或預設數據）。
+   - 視圖 `m55_mimic_cache` 與 CLI 查詢 100% 直連 PhysioNet 原始實體表，無資料即回傳 `NULL` /未記錄。
+2. **PhysioNet 官方 Demo 範例資料來源與規格 (Demo Dataset Provenance)**：
+   - **範例資料來源 URL**：`https://physionet.org/files/mimic-iv-demo/2.2/` (PhysioNet 官方公開 `mimic-iv-clinical-database-demo-2.2`)
+   - **範例資料內涵與筆數**：
+     - 包含 **100 位獨立去識別化病患 (`subject_id`)** 的全套 31 張實體表數據 (`hosp/` 21 張, `icu/` 8 張, 字典檔 2 張)。
+   - **入庫與標註機制**：由 `ingest_native.py` 原生解析並灌入 SQLite (`db/med.db`) 建立實體表 `m55_hosp_*` / `m55_icu_*`，於 `m55_mimic_cache` 視圖中標註為 `is_seed = 1`。
+   - **作用**：於未設定外接硬碟時，提供本機 100% 真實數據的離線 Demo 單元測試、`--seed-only` 強制測試與 CLI 操作展示。
