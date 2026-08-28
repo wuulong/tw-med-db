@@ -257,33 +257,44 @@ def cohort_ed_analysis(
 
 @m56_app.command("triage-stats")
 def triage_stats(
+    seed_only: bool = typer.Option(False, "--seed-only", "-s", help="強制僅使用本機 PhysioNet Demo 種子庫 (100人)"),
     json_output: bool = typer.Option(False, "--json", help="輸出 Structured JSON")
 ):
     """【急診宏觀】統計全院急診檢傷 1~5 級人數比例與前 10 大急診主訴 (Chief Complaints)"""
-    data_dir = resolve_mimic_ed_data_dir()
-    if not data_dir:
-        console.print("[bold red]❌ 未找到全量 MIMIC-IV-ED 數據目錄。請設定 MIMIC_IV_ED_DATA_DIR 環境變數。[/bold red]")
-        return
-
-    ed_subdir = os.path.join(data_dir, "ed")
-    if os.path.exists(ed_subdir):
-        data_dir = ed_subdir
-
-    from modules.m56_mimic_iv_ed_db.duckdb_ed_engine import get_duckdb_connection
-    triage_csv = os.path.join(data_dir, "triage.csv.gz")
-
-    con = get_duckdb_connection()
-    sql_ac = f"SELECT acuity, COUNT(*) as cnt FROM read_csv_auto('{triage_csv}') GROUP BY acuity ORDER BY acuity ASC;"
-    sql_cc = f"SELECT chiefcomplaint, COUNT(*) as cnt FROM read_csv_auto('{triage_csv}') WHERE chiefcomplaint IS NOT NULL AND chiefcomplaint != 'None' GROUP BY chiefcomplaint ORDER BY cnt DESC LIMIT 10;"
-
-    try:
-        ac_df = con.execute(sql_ac).fetchdf()
-        cc_df = con.execute(sql_cc).fetchdf()
-        con.close()
-    except Exception as e:
-        con.close()
-        console.print(f"[bold red]❌ 查詢失敗: {e}[/bold red]")
-        return
+    data_dir = None if seed_only else resolve_mimic_ed_data_dir()
+    
+    if data_dir:
+        ed_subdir = os.path.join(data_dir, "ed")
+        if os.path.exists(ed_subdir):
+            data_dir = ed_subdir
+        from modules.m56_mimic_iv_ed_db.duckdb_ed_engine import get_duckdb_connection
+        triage_csv = os.path.join(data_dir, "triage.csv.gz")
+        con = get_duckdb_connection()
+        sql_ac = f"SELECT acuity, COUNT(*) as cnt FROM read_csv_auto('{triage_csv}') GROUP BY acuity ORDER BY acuity ASC;"
+        sql_cc = f"SELECT chiefcomplaint, COUNT(*) as cnt FROM read_csv_auto('{triage_csv}') WHERE chiefcomplaint IS NOT NULL AND chiefcomplaint != 'None' GROUP BY chiefcomplaint ORDER BY cnt DESC LIMIT 10;"
+        try:
+            ac_df = con.execute(sql_ac).fetchdf()
+            cc_df = con.execute(sql_cc).fetchdf()
+            con.close()
+        except Exception as e:
+            con.close()
+            console.print(f"[bold red]❌ 查詢失敗: {e}[/bold red]")
+            return
+    else:
+        # 無外接硬碟全量庫或指定 --seed-only ➔ 查詢 SQLite 中 PhysioNet 原生 6 大實體表 (Demo 數據)
+        resolved_db = resolve_db_path("db/med.db")
+        conn = get_sqlite_connection(resolved_db)
+        import pandas as pd
+        try:
+            ac_df = pd.read_sql_query("SELECT acuity, COUNT(*) as cnt FROM m56_ed_triage GROUP BY acuity ORDER BY acuity ASC;", conn)
+            cc_df = pd.read_sql_query("SELECT chiefcomplaint, COUNT(*) as cnt FROM m56_ed_triage WHERE chiefcomplaint IS NOT NULL AND chiefcomplaint != 'None' GROUP BY chiefcomplaint ORDER BY cnt DESC LIMIT 10;", conn)
+            conn.close()
+            hint_str = " (模式: --seed-only 強制種子庫)" if seed_only else " (模式: 未設定 MIMIC_IV_ED_DATA_DIR，自動切換至種子庫)"
+            console.print(f"[bold yellow]ℹ️ 展示 PhysioNet Demo 100 人實體種子庫之統計結果{hint_str}[/bold yellow]")
+        except Exception as e:
+            conn.close()
+            console.print(f"[bold red]❌ 實體庫查詢失敗: {e}[/bold red]")
+            return
 
     if json_output:
         res = {
@@ -308,7 +319,10 @@ def triage_stats(
     }
 
     for _, r in ac_df.iterrows():
-        ac = int(r['acuity']) if pd_not_null(r['acuity']) else "未知"
+        try:
+            ac = int(r['acuity']) if pd_not_null(r['acuity']) else "未知"
+        except (ValueError, TypeError):
+            ac = "未知"
         table_ac.add_row(f"Level {ac}", f"{int(r['cnt']):,}", meaning_map.get(ac, "未記錄"))
     console.print(table_ac)
 

@@ -508,47 +508,80 @@ def status(
 @m55_app.command("cohort")
 def cohort_analysis(
     disease: str = typer.Argument(..., help="疾病搜尋關鍵字或 ICD 碼 (如 'multiple myeloma', 'diabetes', 'sepsis')"),
+    seed_only: bool = typer.Option(False, "--seed-only", "-s", help="強制僅使用本機 PhysioNet Demo 種子庫 (100人)"),
     db_path: str = typer.Option("db/med.db", "--db", help="SQLite 資料庫路徑"),
     json_output: bool = typer.Option(False, "--json", help="輸出 Structured JSON")
 ):
     """【佇列分析】查詢特定疾病佇列的人數、住院人次與 ICD 子分類統計"""
-    data_dir = resolve_mimic_data_dir()
-    if not data_dir:
-        console.print("[bold red]❌ 未找到全量 MIMIC-IV 數據目錄。請設定 MIMIC_IV_DATA_DIR 環境變數。[/bold red]")
-        return
+    data_dir = None if seed_only else resolve_mimic_data_dir()
+    dis_clean = disease.strip().lower()
 
-    from modules.m55_mimic_iv_db.duckdb_engine import get_duckdb_connection
-    hosp_dir = os.path.join(data_dir, "hosp")
-    diagnoses_csv = os.path.join(hosp_dir, "diagnoses_icd.csv.gz")
-    d_icd_csv = os.path.join(hosp_dir, "d_icd_diagnoses.csv.gz")
+    if data_dir:
+        from modules.m55_mimic_iv_db.duckdb_engine import get_duckdb_connection
+        hosp_dir = os.path.join(data_dir, "hosp")
+        if os.path.exists(hosp_dir):
+            diagnoses_csv = os.path.join(hosp_dir, "diagnoses_icd.csv.gz")
+            d_icd_csv = os.path.join(hosp_dir, "d_icd_diagnoses.csv.gz")
+        else:
+            diagnoses_csv = os.path.join(data_dir, "diagnoses_icd.csv.gz")
+            d_icd_csv = os.path.join(data_dir, "d_icd_diagnoses.csv.gz")
 
-    con = get_duckdb_connection()
-    disease_clean = disease.strip().lower()
-
-    sql = f"""
-    SELECT d.icd_version, d.icd_code, dict.long_title, COUNT(DISTINCT d.subject_id) as patient_count, COUNT(DISTINCT d.hadm_id) as admission_count
-    FROM read_csv_auto('{diagnoses_csv}') d
-    JOIN read_csv_auto('{d_icd_csv}') dict ON d.icd_code = dict.icd_code AND d.icd_version = dict.icd_version
-    WHERE LOWER(dict.long_title) LIKE '%{disease_clean}%' OR LOWER(d.icd_code) LIKE '%{disease_clean}%'
-    GROUP BY d.icd_version, d.icd_code, dict.long_title
-    ORDER BY patient_count DESC
-    LIMIT 15;
-    """
-
-    try:
-        df = con.execute(sql).fetchdf()
-        con.close()
-    except Exception as e:
-        con.close()
-        console.print(f"[bold red]❌ 查詢失敗: {e}[/bold red]")
-        return
-
+        con = get_duckdb_connection()
+        sql = f"""
+        SELECT 
+            d.icd_version,
+            d.icd_code,
+            COALESCE(dicd.long_title, 'Unknown Title') as long_title,
+            COUNT(DISTINCT d.subject_id) as total_pts,
+            COUNT(DISTINCT d.hadm_id) as total_admissions
+        FROM read_csv_auto('{diagnoses_csv}') d
+        LEFT JOIN read_csv_auto('{d_icd_csv}') dicd 
+            ON d.icd_code = dicd.icd_code AND d.icd_version = dicd.icd_version
+        WHERE LOWER(COALESCE(dicd.long_title, '')) LIKE '%{dis_clean}%' OR LOWER(d.icd_code) LIKE '%{dis_clean}%'
+        GROUP BY d.icd_version, d.icd_code, dicd.long_title
+        ORDER BY total_pts DESC;
+        """
+        try:
+            df = con.execute(sql).fetchdf()
+            con.close()
+        except Exception as e:
+            con.close()
+            console.print(f"[bold red]❌ 查詢失敗: {e}[/bold red]")
+            return
+    else:
+        # 未設定全量庫或 --seed-only ➔ 查詢 SQLite 中 PhysioNet Demo 原生 31 表 (100 人)
+        resolved_db = resolve_db_path(db_path)
+        conn = get_sqlite_connection(resolved_db)
+        import pandas as pd
+        sql = f"""
+        SELECT 
+            d.icd_version,
+            d.icd_code,
+            COALESCE(dict.long_title, 'Unknown Title') as long_title,
+            COUNT(DISTINCT d.subject_id) as total_pts,
+            COUNT(DISTINCT d.hadm_id) as total_admissions
+        FROM m55_hosp_diagnoses_icd d
+        LEFT JOIN m55_hosp_d_icd_diagnoses dict 
+            ON d.icd_code = dict.icd_code AND d.icd_version = dict.icd_version
+        WHERE LOWER(COALESCE(dict.long_title, '')) LIKE '%{dis_clean}%' OR LOWER(d.icd_code) LIKE '%{dis_clean}%'
+        GROUP BY d.icd_version, d.icd_code, dict.long_title
+        ORDER BY total_pts DESC;
+        """
+        try:
+            df = pd.read_sql_query(sql, conn)
+            conn.close()
+            hint_str = " (模式: --seed-only 強制種子庫)" if seed_only else " (模式: 未設定 MIMIC_IV_DATA_DIR，自動切換至種子庫)"
+            console.print(f"[bold yellow]ℹ️ 展示 PhysioNet Demo 100 人實體種子庫之統計結果{hint_str}[/bold yellow]")
+        except Exception as e:
+            conn.close()
+            console.print(f"[bold red]❌ 實體庫查詢失敗: {e}[/bold red]")
+            return
     if df.empty:
         console.print(f"[bold yellow]⚠️ 未找到匹配關鍵字 '{disease}' 的疾病佇列。[/bold yellow]")
         return
 
-    total_pts = int(df['patient_count'].sum())
-    total_adms = int(df['admission_count'].sum())
+    total_pts = int(df['total_pts'].sum())
+    total_adms = int(df['total_admissions'].sum())
 
     if json_output:
         records = df.to_dict(orient="records")
@@ -571,8 +604,8 @@ def cohort_analysis(
             f"ICD-{r['icd_version']}",
             str(r['icd_code']),
             str(r['long_title']),
-            f"{int(r['patient_count']):,}",
-            f"{int(r['admission_count']):,}"
+            f"{int(r['total_pts']):,}",
+            f"{int(r['total_admissions']):,}"
         )
 
     console.print(table)

@@ -3,7 +3,7 @@
 > [!IMPORTANT]
 > **受控授權數據告示與環境變數聲明**：
 > MIMIC-IV 屬於 PhysioNet 受控授權數據 (Credentialed Health Data)，**本專案開源發行包絕對不提供、不附帶亦不散佈其全量實體資料集**。
-> 使用者需自行申請完成授權認證，並將全量數據（如 `mimic-iv-2.1` 6.36 億筆數據）下載至本機或外接硬碟後，透過環境變數 `export MIMIC_IV_DATA_DIR="/path/to/mimic-iv-2.1"` 進行動態定錨。本專案僅提供去識別化 100 筆 Demo 種子庫與 DuckDB 4 大防禦零解壓引擎。
+> 使用者需自行申請完成授權認證，並將全量數據（如 `mimic-iv-2.1` 6.36 億筆數據）下載至本機或外接硬碟後，透過環境變數 `export MIMIC_IV_DATA_DIR="/path/to/mimic-iv-2.1"` 進行動態定錨。本專案預載去識別化 PhysioNet 官方 100 筆 Demo 種子庫 (`is_seed = 1`) 與 DuckDB 4 大防禦零解壓引擎。
 
 ### (A) 為何而戰 (Why We Build M55)
 * **使用者痛點**：全台醫學中心與臨床研究員缺乏能將美規重症 ICU 數據（包含護理監視器 Vital Signs 時間序列、SOFA 分數、重症處方）直接與台灣健保藥碼 (`M01`) 及 LOINC 檢驗 (`M12`) 雙向對照轉碼的輕量中樞。
@@ -31,5 +31,11 @@
 2. **`risk-tags`**：Sepsis-3 敗血症與 AKI 1~3 級急性腎損傷自動標註。
 3. **`benchmark-nhi`**：美規 ICU 高價重症處方對合台灣健保給付與自費試算。
 4. **`progression`**：特定疾病佇列（如多發性骨髓瘤 MM）之**病程瀑布流 (Waterfall Stream) 時間軸與階段轉折間隔時間 (Interval Days) 分析**。
-5. **`mortality-risk`** *(新)*：特定疾病入住院內之**院內死亡率 (In-Hospital Mortality Rate)** 統計。
-6. **`comorbidities`** *(新)*：特定主診斷病患最常併發的前 N 大熱門**共病組合 (Comorbidities)** 統計。
+5. **`mortality-risk`**：特定疾病入住院內之**院內死亡率 (In-Hospital Mortality Rate)** 統計。
+6. **`comorbidities`**：特定主診斷病患最常併發的前 N 大熱門**共病組合 (Comorbidities)** 統計。
+
+---
+
+### (E) 雙軌定錨與 `--seed-only` 強制 Demo 模式
+* **預設全量模式**：當有設定 `MIMIC_IV_DATA_DIR` 時，自動發動 DuckDB 零解壓過濾 6.36 億筆數據。
+* **強制 Demo 模式 (`--seed-only` / `-s`)**：帶入 `-s` 旗標時，強制定錨本機 SQLite `db/med.db` 100 人 PhysioNet Demo 種子庫。

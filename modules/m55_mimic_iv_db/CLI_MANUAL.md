@@ -48,7 +48,11 @@
 
 * **疾病佇列與 ICD 子分類統計 (`cohort`)**：
   ```bash
+  # 預設: 有掛載大硬碟查全量庫，未掛載自動切換至種子庫
   ./pa meddb m55 cohort "multiple myeloma"
+
+  # 強制切換: 即使掛載大硬碟，亦強制定錨本機 100 人 Demo 種子庫
+  ./pa meddb m55 cohort "diabetes" --seed-only
   ```
 
 * **疾病專一性標靶與常用處方分析 (`top-drugs`)**：

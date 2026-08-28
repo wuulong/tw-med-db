@@ -43,3 +43,18 @@
 - `SET temp_directory = '/Volumes/D2024/tmp_duckdb';` (Spill 檔案導至外接大硬碟，主硬碟開銷為 0)
 - `read_only = True` (唯讀鎖防範併發拋錯)
 - 過濾下推 (`WHERE stay_id = ?` 或 `WHERE subject_id = ?`)
+
+---
+
+## 4. 零 Mock 數據質檢與 PhysioNet Demo 種子庫規範 (Zero-Mock Policy)
+
+1. **零人工偽造資料 (Zero Mock Policy)**：
+   - 專案嚴禁使用任何硬編碼補位（如偽造體溫/心率或預設檢傷級數 `COALESCE(t.acuity, 3)`）。
+   - 視圖 `m56_ed_cache` 與 CLI 查詢 100% 直連 PhysioNet 原始實體表，無資料即回傳 `NULL` /未記錄。
+2. **PhysioNet 官方 Demo 範例資料來源與規格 (Demo Dataset Provenance)**：
+   - **範例資料來源 URL**：`https://physionet.org/files/mimic-iv-ed-demo/2.2/ed/` (PhysioNet 官方公開 `mimic-iv-ed-demo-2.2`)
+   - **範例資料內涵與筆數**：
+     - 包含 **100 位獨立去識別化病患 (`subject_id`)** 的 **222 次急診入住記錄 (`stay_id`)**。
+     - 包含 6 大急診表：`m56_ed_edstays` (222筆), `m56_ed_triage` (222筆), `m56_ed_vitalsign` (815筆), `m56_ed_medrecon` (1,496筆), `m56_ed_pyxis` (843筆), `m56_ed_diagnosis` (467筆)。
+   - **入庫與標註機制**：由 `download_ed_demo.py` 下載並由 `ingest_native.py` 原生灌入 SQLite (`db/med.db`) 建立實體表，於 `m56_ed_cache` 視圖中標註為 `is_seed = 1`。
+   - **作用**：於未設定外接硬碟時，提供本機 100% 真實資料的離線 Demo 單元測試與 CLI 操作展示。

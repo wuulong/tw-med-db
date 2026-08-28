@@ -3,7 +3,7 @@
 > [!IMPORTANT]
 > **受控授權數據告示與環境變數聲明**：
 > MIMIC-IV-ED 屬於 PhysioNet 受控授權數據 (Credentialed Health Data)，**本專案開源發行包絕對不提供、不附帶亦不散佈其全量實體資料集**。
-> 使用者需自行申請完成授權認證，並將全量數據（如 `mimic_iv_ed_2.2` 788.7 萬筆數據）下載至本機或外接硬碟後，透過環境變數 `export MIMIC_IV_ED_DATA_DIR="/path/to/mimic-iv-ed-2.2"` 進行動態定錨。本專案僅提供合規邏輯、Demo 快取與 DuckDB 零解壓急診引擎。
+> 使用者需自行申請完成授權認證，並將全量數據（如 `mimic_iv_ed_2.2` 788.7 萬筆數據）下載至本機或外接硬碟後，透過環境變數 `export MIMIC_IV_ED_DATA_DIR="/path/to/mimic-iv-ed-2.2"` 進行動態定錨。本專案預載去識別化 PhysioNet 官方 100 筆 Demo 種子庫 (`is_seed = 1`) 與 DuckDB 零解壓急診引擎。
 
 ### (A) 為何而戰 (Why We Build M56)
 * **使用者痛點**：醫療大數據研究中，病患通常從「急診室 (Emergency Department)」到診與第一時間檢傷，舊有架構缺乏急診檢傷分類 (Triage)、急診現場給藥與急診到診規模分析鏈路。
@@ -38,12 +38,15 @@
 # 4. 全院急診檢傷 Level 1~5 人數與 Top 10 熱門主訴
 ./pa meddb m56 triage-stats
 
-# 5. 急診室前 N 大 BD Pyxis 常用給藥排行榜
-./pa meddb m56 top-ed-drugs --limit 10
+# 5. 強制使用本機 PhysioNet Demo 100 人種子庫
+./pa meddb m56 triage-stats --seed-only
 
 # 6. 急診主訴/疾病轉住院 vs 返家動向比例預測
 ./pa meddb m56 admission-rate "chest pain"
 ```
 
-#### 全病患照護路徑 (Full Patient Journey: ED ➔ ICU)
-`M56` 急診入口與 `M55` 重症 ICU 透過 `stay_id` 與 `hadm_id` 達成 100% 鏈接，構建從「急診檢傷 ➔ 急診處置 ➔ 轉入重症 ICU ➔ 復原出院」的全鏈路照顧流向！
+---
+
+### (D) 雙軌定錨與 `--seed-only` 強制 Demo 模式
+* **預設全量模式**：當有設定 `MIMIC_IV_ED_DATA_DIR` 時，自動發動 DuckDB 零解壓過濾 788.7 萬筆數據。
+* **強制 Demo 模式 (`--seed-only` / `-s`)**：帶入 `-s` 旗標時，強制定錨本機 SQLite `db/med.db` 100 人 PhysioNet Demo 種子庫。

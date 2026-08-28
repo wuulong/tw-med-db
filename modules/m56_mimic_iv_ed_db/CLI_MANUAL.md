@@ -37,8 +37,11 @@
 ### 5. 🔥 全院急診檢傷級數與 10 大主訴統計 (`triage-stats`)
 統計全院急診檢傷 Level 1~5 級人數比例，以及前 10 大熱門到院急診主訴（如胸痛、腹痛、呼吸困難）。
 ```bash
+# 全量或自動模式
 ./pa meddb m56 triage-stats
-./pa meddb m56 triage-stats --json
+
+# 強制使用本機 PhysioNet Demo 100 人種子庫
+./pa meddb m56 triage-stats --seed-only
 ```
 
 ### 6. 🔥 急診室 BD Pyxis 常用給藥排行榜 (`top-ed-drugs`)
