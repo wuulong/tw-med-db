@@ -34,7 +34,7 @@
   );
   ```
 
-### (E) ⚡ 核心演演演演演算法與資料處理邏輯 (Core Algorithms & Logic)
+### (E) ⚡ 核心演算法與資料處理邏輯 (Core Algorithms & Logic)
 1. **裁判參考價值 Re-ranking 評分模型與爭點標籤萃取**。
 
 ### (F) 目前核心功能、CLI 手冊與 Agent 工作流 (Current Capabilities)

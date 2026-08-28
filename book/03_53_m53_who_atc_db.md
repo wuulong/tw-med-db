@@ -43,11 +43,11 @@
   CREATE INDEX IF NOT EXISTS idx_m53_parent ON m53_atc_cache(parent_code);
   ```
 
-### (E) ⚡ 核心演演演演演算法與資料處理邏輯 (Core Algorithms & Logic)
-1. **Top 200 常用西藥 ATC 藥理樹 Seed 採樣固化演演演演演算法**：調用 `fetch_m53()` 向 WHO ATC Index API 預抓全台熱門 200 大處方藥對應之 5 階 ATC 分類樹與 DDD 劑量，預先寫入 `m53_atc_cache` 表，確保離線與 CI 環境 100% 運行 PASS。
-2. **WHO ATC API Pass-Through 旁路透傳快取演演演演演算法**：本機未命中時自動連線 WHO API 抓取 Level 1 ~ 5 階層節點並自動持久化。
-3. **WHO 5 階 ATC 樹狀 CTE 遞迴演演演演演算法**：使用 SQL `WITH RECURSIVE` 自根節點 (Level 1 大類如 `L`) 遞迴向下穿透至 Level 5 (如 `L01ED04`)。
-4. **DDD (Defined Daily Dose) 劑量轉換演演演演演算法**：以 WHO DDD 為標準計算跨藥品給付劑量比例。
+### (E) ⚡ 核心演算法與資料處理邏輯 (Core Algorithms & Logic)
+1. **Top 200 常用西藥 ATC 藥理樹 Seed 採樣固化演算法**：調用 `fetch_m53()` 向 WHO ATC Index API 預抓全台熱門 200 大處方藥對應之 5 階 ATC 分類樹與 DDD 劑量，預先寫入 `m53_atc_cache` 表，確保離線與 CI 環境 100% 運行 PASS。
+2. **WHO ATC API Pass-Through 旁路透傳快取演算法**：本機未命中時自動連線 WHO API 抓取 Level 1 ~ 5 階層節點並自動持久化。
+3. **WHO 5 階 ATC 樹狀 CTE 遞迴演算法**：使用 SQL `WITH RECURSIVE` 自根節點 (Level 1 大類如 `L`) 遞迴向下穿透至 Level 5 (如 `L01ED04`)。
+4. **DDD (Defined Daily Dose) 劑量轉換演算法**：以 WHO DDD 為標準計算跨藥品給付劑量比例。
 
 ### (F) 目前核心功能、CLI 手冊與 Agent 工作流 (Current Capabilities)
 * **CLI 檢索指令**：

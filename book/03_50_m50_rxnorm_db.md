@@ -43,10 +43,10 @@
   CREATE INDEX IF NOT EXISTS idx_m50_nhi ON m50_rxnorm_cache(nhi_code);
   ```
 
-### (E) ⚡ 核心演演演演演算法與資料處理邏輯 (Core Algorithms & Logic)
-1. **Top 200 健保熱門藥品 Seed 離線採樣固化演演演演演算法**：調用 `fetch_m50()` 將全台前 200 大健保處方藥向 NLM API 發動採樣，預先寫入 `m50_rxnorm_cache` 表，確保離線與 CI 環境 100% 可用。
-2. **Pass-Through 旁路透傳快取演演演演演算法**：本機未命中時自動透傳 NLM RxNav API，抓取 SBD (Semantic Branded Drug) 概念碼並自動寫入快取與 `cached_at` 時間戳。
-3. **TTY 語意階層過濾演演演演演算法**：自動識別 IN (Ingredient), PIN (Precise Ingredient), SBD (Semantic Branded Drug) 階層。
+### (E) ⚡ 核心演算法與資料處理邏輯 (Core Algorithms & Logic)
+1. **Top 200 健保熱門藥品 Seed 離線採樣固化演算法**：調用 `fetch_m50()` 將全台前 200 大健保處方藥向 NLM API 發動採樣，預先寫入 `m50_rxnorm_cache` 表，確保離線與 CI 環境 100% 可用。
+2. **Pass-Through 旁路透傳快取演算法**：本機未命中時自動透傳 NLM RxNav API，抓取 SBD (Semantic Branded Drug) 概念碼並自動寫入快取與 `cached_at` 時間戳。
+3. **TTY 語意階層過濾演算法**：自動識別 IN (Ingredient), PIN (Precise Ingredient), SBD (Semantic Branded Drug) 階層。
 
 ### (F) 目前核心功能、CLI 手冊與 Agent 工作流 (Current Capabilities)
 * **CLI 檢索指令**：

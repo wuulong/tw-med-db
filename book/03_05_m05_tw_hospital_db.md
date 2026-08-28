@@ -38,8 +38,8 @@
   );
   ```
 
-### (E) ⚡ 核心演演演演演算法與資料處理邏輯 (Core Algorithms & Logic)
-1. **看診時間 21 位元矩陣演演演演演算法 (21-Bit Time Matrix)**：將週一至週日早中晚門診編碼為 21 個 Bit 位元。
+### (E) ⚡ 核心演算法與資料處理邏輯 (Core Algorithms & Logic)
+1. **看診時間 21 位元矩陣演算法 (21-Bit Time Matrix)**：將週一至週日早中晚門診編碼為 21 個 Bit 位元。
 2. **Haversine 空間半徑檢索**：以 WGS84 經緯度毫秒級計算指定公里內院所。
 
 ### (F) 目前核心功能、CLI 手冊與 Agent 工作流 (Current Capabilities)

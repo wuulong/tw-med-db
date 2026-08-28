@@ -34,8 +34,8 @@
   );
   ```
 
-### (E) ⚡ 核心演演演演演算法與資料處理邏輯 (Core Algorithms & Logic)
-1. **癌症照護旅程有限狀態機 (FSM) 轉移與拓撲演演演演演算法**。
+### (E) ⚡ 核心演算法與資料處理邏輯 (Core Algorithms & Logic)
+1. **癌症照護旅程有限狀態機 (FSM) 轉移與拓撲演算法**。
 
 ### (F) 目前核心功能、CLI 手冊與 Agent 工作流 (Current Capabilities)
 * **CLI 檢索指令**：

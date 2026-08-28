@@ -50,12 +50,12 @@
   CREATE INDEX IF NOT EXISTS idx_m01_license ON m01_tw_drug_db(license_id);
   ```
 
-### (E) ⚡ 核心演演演演演算法與資料處理邏輯 (Core Algorithms & Logic)
-1. **健保碼補零與主鍵正規化演演演演演算法 (`zfill(10)`)**：
+### (E) ⚡ 核心演算法與資料處理邏輯 (Core Algorithms & Logic)
+1. **健保碼補零與主鍵正規化演算法 (`zfill(10)`)**：
    比對位數，若健保代碼長度為 9 位數且開頭非字母，自動於首位補 `0`，避免跨庫關聯失敗。
-2. **藥價歷史中位數與四分位距 (IQR) 統計演演演演演算法**：
+2. **藥價歷史中位數與四分位距 (IQR) 統計演算法**：
    調用 DuckDB C++ 引擎，將歷史藥價調整紀錄進行 IQR 離群值掃除，計算藥價歷史中位數。
-3. **5 大維度 Rule-based Tag 自動萃取演演演演演算法**：
+3. **5 大維度 Rule-based Tag 自動萃取演算法**：
    解析 `indication` 與 `劑型` 文字，以 Regex 自動標定 `#癌症`, `#注射劑`, `#心血管`, `#管制藥`, `#外用` 標籤。
 
 ### (F) 目前核心功能、CLI 手冊與 Agent 工作流 (Current Capabilities)
