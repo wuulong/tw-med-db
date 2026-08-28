@@ -37,11 +37,10 @@
 
 ---
 
-## 💾 2. 核心 Schema 結構
+## 💾 2. 核心 Schema 與觀念解構說明
 
-```sql
--- 請參閱 modules/m56_mimic_iv_ed_db/SPEC.md 了解完整欄位細節
-```
+* 📖 **急診資料表觀念與 ID 鏈結解析**：[`CORE_CONCEPTS.md`](CORE_CONCEPTS.md)
+* 📖 **工程規格說明書 (SPEC)**：[`SPEC.md`](SPEC.md)
 
 ---
 

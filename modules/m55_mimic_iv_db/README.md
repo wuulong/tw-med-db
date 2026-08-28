@@ -8,6 +8,7 @@
 * `schema.sql`：純 SQL 建表腳本（包含 `m55_mimic_cache` 與 31 表結構）。
 * `raw_sample_single.json`：單筆重症病患跨 Hosp/ICU 結構化 Sample 附件。
 * `metadata.json`：子模組 Manifest。
+* `CORE_CONCEPTS.md`：M55 31 張資料表核心概念、外鍵鏈條 (subject_id/hadm_id/stay_id) 與臨床對照手冊。
 * `SPEC.md`：環境變數定錨、DuckDB 惰性存取與基礎工程規格說明書。
 * `ADVANCED_DESIGN_SPEC.md`：四大高階臨床加值功能說明書 (SOFA, NEWS2, Sepsis-3, Weaning)。
 * `CLI_MANUAL.md`：CLI 使用者與 Agent 檢索手冊。
