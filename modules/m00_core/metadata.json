@@ -1,0 +1,12 @@
+{
+  "module_id": "M00",
+  "module_name": "m00_core",
+  "title_zh": "tw-med-db 全域核心數據大腦與總指揮官",
+  "version": "2.0.0",
+  "category": "core",
+  "description": "專責收割國內 14 大子模組與國際 6 大 Gateway (包含 M55 ICU/住院 與 M56 急診/門診)，建立 FTS5 全網倒排神經網與全病患照護路徑 (ED ➔ ICU) 全域視圖。",
+  "table_name": "sys_module_metadata",
+  "record_count": 21,
+  "data_source": "system_core",
+  "last_updated": "2026-08-28"
+}

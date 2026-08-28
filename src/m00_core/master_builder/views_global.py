@@ -10,7 +10,8 @@ GLOBAL_HARVEST_QUERIES = [
     ("m52_pubchem_cache", "SELECT cid, 'PUBCHEM_COMPOUND', ingredient_name, inchikey, 'tw-med-db://m52/' || cid FROM m52_pubchem_cache"),
     ("m53_atc_cache", "SELECT atc_code, 'WHO_ATC_NODE', atc_name_en, parent_code, 'tw-med-db://m53/' || atc_code FROM m53_atc_cache"),
     ("m54_fhir_cache", "SELECT profile_id, 'TWCORE_FHIR_PROFILE', profile_name_en, resource_type, 'tw-med-db://m54/' || profile_id FROM m54_fhir_cache"),
-    ("m55_mimic_cache", "SELECT CAST(subject_id AS TEXT), 'MIMIC_PATIENT', 'MIMIC-IV Patient ' || CAST(subject_id AS TEXT), gender || ' ' || CAST(anchor_age AS TEXT) || 'yo', 'tw-med-db://m55/' || CAST(subject_id AS TEXT) FROM m55_mimic_cache")
+    ("m55_mimic_cache", "SELECT CAST(subject_id AS TEXT), 'MIMIC_PATIENT', 'MIMIC-IV Patient ' || CAST(subject_id AS TEXT), gender || ' ' || CAST(anchor_age AS TEXT) || 'yo', 'tw-med-db://m55/' || CAST(subject_id AS TEXT) FROM m55_mimic_cache"),
+    ("m56_ed_cache", "SELECT CAST(subject_id AS TEXT), 'MIMIC_ED_PATIENT', 'MIMIC-IV-ED Patient ' || CAST(subject_id AS TEXT), 'Acuity Level ' || CAST(acuity AS TEXT) || ' - ' || chiefcomplaint, 'tw-med-db://m56/' || CAST(subject_id AS TEXT) FROM m56_ed_cache")
 ]
 
 

@@ -1,0 +1,12 @@
+{
+  "module_id": "M56",
+  "module_name": "mimic_iv_ed_db",
+  "title_zh": "MIMIC-IV-ED 2.2 美國急診門診臨床大數據 Gateway",
+  "version": "1.0.0",
+  "category": "international",
+  "description": "收錄美國 BIDMC 醫院 MIMIC-IV-ED 2.2 全量 6 大急診表 (788.7 萬筆數據)，支援 DuckDB 零解壓查詢、檢傷分類 Acuity 1~5 級評估與 Pyxis 自動發藥機紀錄。",
+  "table_name": "m56_ed_cache",
+  "record_count": 425087,
+  "data_source": "/Volumes/D2024/data/mimic.iv/mimic-iv-ed-2.2",
+  "last_updated": "2026-08-28"
+}

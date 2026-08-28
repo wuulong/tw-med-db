@@ -3,6 +3,7 @@ commands_m00.py - M00 母大腦與全域治理 CLI 指令
 """
 
 import os
+import json
 import typer
 from typing import Optional
 from src.m00_core.utils_db import get_sqlite_connection, resolve_db_path
@@ -13,14 +14,19 @@ m00_app = typer.Typer(name="m00", help="M00 母大腦與全域治理 CLI")
 
 @m00_app.command("status")
 def status(
-    db_path: str = typer.Option("tw-med-db/db/med.db", "--db", "-d", help="實體 SQLite 資料庫路徑")
+    db_path: str = typer.Option("tw-med-db/db/med.db", "--db", "-d", help="實體 SQLite 資料庫路徑"),
+    json_mode: bool = typer.Option(False, "--json", "-j", help="傳回緊湊 JSON 格式 (CGS v2.0 Token-Saving)"),
+    quiet: bool = typer.Option(False, "--quiet", "-q", help="僅傳回極簡狀態")
 ):
     """
-    [M00 全域] 查詢 tw-med-db 全庫已註冊子模組狀態與資料量看板。
+    [M00 全域] 查詢 tw-med-db 全庫已註冊子模組狀態與資料量看板 (CGS v2.0)。
     """
     resolved_path = resolve_db_path(db_path)
     if not os.path.exists(resolved_path):
-        typer.echo(f"❌ 找不到實體資料庫: {db_path} (校正路徑: {resolved_path})", err=True)
+        if json_mode:
+            typer.echo(json.dumps({"error": f"找不到實體資料庫: {db_path}"}, ensure_ascii=False))
+        else:
+            typer.echo(f"❌ 找不到實體資料庫: {db_path} (校正路徑: {resolved_path})", err=True)
         raise typer.Exit(code=1)
 
     conn = get_sqlite_connection(resolved_path)
@@ -35,6 +41,23 @@ def status(
     cursor.execute("SELECT COUNT(*) FROM v_med_global_drugs;")
     total_drugs = cursor.fetchone()[0]
     conn.close()
+
+    modules_list = [dict(r) for r in rows] if rows else []
+
+    if json_mode:
+        res = {
+            "status": "ACTIVE",
+            "db_path": resolved_path,
+            "total_registered_modules": len(modules_list),
+            "v_med_global_drugs_count": total_drugs,
+            "modules": modules_list
+        }
+        typer.echo(json.dumps(res, ensure_ascii=False))
+        return
+
+    if quiet:
+        typer.echo(f"ACTIVE modules:{len(modules_list)} drugs:{total_drugs}")
+        return
 
     typer.echo("\n🏛️ tw-med-db 全大腦子模組元資料看板 (sys_module_metadata):")
     typer.echo("=" * 85)
@@ -192,14 +215,16 @@ def doctor(
     report = run_health_doctor_check(db_path)
 
     typer.echo("\n=====================================================================================")
-    for check in report["checks"]:
+    for check in report.get("checks", []):
         typer.echo(f"  {check}")
-    for warn in report["warnings"]:
+    for warn in report.get("warnings", []):
         typer.echo(f"  {warn}")
-    for err in report["errors"]:
+    for err in report.get("errors", []):
         typer.echo(f"  {err}")
+    if "reason" in report:
+        typer.echo(f"  ❌ 原因: {report['reason']}")
     typer.echo("=====================================================================================")
-    typer.echo(f"🩺 最終診斷結果: [{report['status']}]\n")
+    typer.echo(f"🩺 最終診斷結果: [{report.get('status', 'FAIL')}]\n")
 
 
 @m00_app.command("audit-log")
