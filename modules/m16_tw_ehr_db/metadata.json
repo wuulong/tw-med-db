@@ -1,0 +1,19 @@
+{
+  "module_id": "M16",
+  "module_name": "tw_ehr_db",
+  "title_zh": "台灣醫院臨床電子病歷 Gateway",
+  "version": "1.0.0",
+  "category": "taiwan_local",
+  "description": "對接衛生福利部 TW Core IG (HL7 FHIR R4) 電子病歷交換標準，收錄台灣醫院臨床病患人口學、床邊生命徵象 (Vitals) 與生化檢驗報告 (Labs)，支援 FHIR JSON 一鍵匯出與台美臨床照護軌跡比對。",
+  "table_name": "m16_ehr_cache",
+  "record_count": 10,
+  "data_source": {
+    "name": "衛生福利部 TW Core IG (HL7 FHIR R4) 官方 Portal 範例庫",
+    "portal_url": "https://twcore.mohw.gov.tw/ig/twcore/",
+    "download_url": "https://twcore.mohw.gov.tw/ig/twcore/Patient-pat-example.json",
+    "local_file": "./data/ehr_demo/twcore_fhir_samples.json",
+    "format": "HL7 FHIR R4 JSON (Patient, Observation, Condition)",
+    "retrieved_at": "2026-08-29"
+  },
+  "last_updated": "2026-08-29"
+}

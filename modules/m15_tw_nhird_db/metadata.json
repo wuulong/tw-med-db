@@ -1,0 +1,19 @@
+{
+  "module_id": "M15",
+  "module_name": "tw_nhird_db",
+  "title_zh": "台灣健保申報與抽樣資料庫 Gateway",
+  "version": "1.0.0",
+  "category": "taiwan_local",
+  "description": "收錄台灣衛生福利部中央健康保險署 (NHI) 門診與住院醫療費用點數申報結構 (CD/DD/OO/ORDER) 與 NHIRD 100 萬人抽樣歸人庫架構，支援健保點數試算、DRG 分組與台美跨國臨床對對碰。",
+  "table_name": "m15_nhird_cache",
+  "record_count": 100,
+  "data_source": {
+    "name": "衛福部中央健康保險署 醫療費用 XML 申報格式與測試檔專區",
+    "portal_url": "https://www.nhi.gov.tw/ch/cp-2804-d5cb3-3051-1.html",
+    "download_url": "https://www.nhi.gov.tw/DL.ashx?files=Files/OPD_XML_SAMPLE.zip",
+    "local_file": "./data/nhird_demo/opd_claim_sample.xml",
+    "format": "XML (nhi_claim_data: dhead / dbody)",
+    "retrieved_at": "2026-08-29"
+  },
+  "last_updated": "2026-08-29"
+}

@@ -32,7 +32,7 @@ def run_health_doctor_check(db_path: str = "tw-med-db/db/med.db") -> Dict[str, A
     }
 
     # 檢測 1: 實體表與筆數
-    target_tables = ["m01_tw_drug_db", "m02_tw_ingredient_map_db", "m55_mimic_cache", "m56_ed_cache", "sys_module_metadata", "sys_data_audit_log"]
+    target_tables = ["m01_tw_drug_db", "m02_tw_ingredient_map_db", "m15_nhird_cache", "m16_ehr_cache", "m55_mimic_cache", "m56_ed_cache", "sys_module_metadata", "sys_data_audit_log"]
     for tbl in target_tables:
         try:
             cursor.execute(f"SELECT COUNT(*) FROM {tbl};")

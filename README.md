@@ -2,20 +2,21 @@
 
 歡迎使用 **`tw-med-db`** —— 專為台灣醫療健康、健保開放資料與國際醫學生醫標準 (HL7 FHIR, RxNorm, PubChem, WHO ATC, MIMIC-IV, MIMIC-IV-ED) 設計的大一統 SQLite / DuckDB 大數據引擎與統一 CLI 工具鏈。
 
-* **最新版本**：**`v1.0.0`**
-* **子模組規模**：**21 大實體子模組 (國內 14 大垂直 DB + 國際 7 大 Gateway)**
-* **核心資料庫主檔**：`db/med.db`
+| **最新版本**：**`v1.0.0`**
+| **子模組規模**：**23 大實體子模組 (國內 16 大垂直 DB + 國際 7 大 Gateway)**
+| **核心資料庫主檔**：`db/med.db`
 
 ---
 
 ## 📖 快速上手與手冊指引
 
 1. **📙 大一統公開使用者手冊 (Book)**：參閱 [`book/00_toc.md`](book/00_toc.md) (含全書 6 大專章獨立導航)
-2. **📖 人類 CLI 指令全手冊**：參閱 [`CLI_MANUAL.md`](CLI_MANUAL.md)
+2. **🇹🇼 美規數據落地台灣架構與指引**：參閱 [`LOCALIZATION_STRATEGY.md`](LOCALIZATION_STRATEGY.md)
+3. **📖 人類 CLI 指令全手冊**：參閱 [`CLI_MANUAL.md`](CLI_MANUAL.md)
 
 ---
 
-## 📊 21 大子模組與 4 大領域大類總覽 (21 Submodules & 4 Domain Pillars)
+## 📊 23 大子模組與 4 大領域大類總覽 (23 Submodules & 4 Domain Pillars)
 
 | 領域大類 (Pillars) | 代號 | 模組名稱與專屬 README | CLI 指令手冊 | 說明摘要與核心資料源 | 實體數據規模 / 快取 | 獨立測試狀態 |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -33,6 +34,8 @@
 | | **`M12`** | [`med_lab_fhir_db`](modules/m12_med_lab_fhir_db/README.md) | [CLI 手冊](modules/m12_med_lab_fhir_db/CLI_MANUAL.md) | TW Core IG (FHIR) + LOINC 檢驗碼 | 500 筆 | 🟢 100% PASS |
 | | **`M13`** | [`tw_med_device_db`](modules/m13_tw_med_device_db/README.md) | [CLI 手冊](modules/m13_tw_med_device_db/CLI_MANUAL.md) | 食藥署醫療器材許可證與說明書 | 200 筆 | 🟢 100% PASS |
 | | **`M14`** | [`cdc_epidemic_db`](modules/m14_cdc_epidemic_db/README.md) | [CLI 手冊](modules/m14_cdc_epidemic_db/CLI_MANUAL.md) | 疾管署法定傳染病與疫苗接種據點 | 200 筆 | 🟢 100% PASS |
+| | **`M15`** | [`tw_nhird_db`](modules/m15_tw_nhird_db/README.md) | [CLI 手冊](modules/m15_tw_nhird_db/CLI_MANUAL.md) | 健保署點數申報範例與 NHIRD 抽樣歸人庫 Gateway | 100 筆 (4 表) | 🟢 100% PASS |
+| | **`M16`** | [`tw_ehr_db`](modules/m16_tw_ehr_db/README.md) | [CLI 手冊](modules/m16_tw_ehr_db/CLI_MANUAL.md) | 衛福部 TW Core IG 臨床電子病歷 Gateway | 官方 FHIR JSON | 🟢 100% PASS |
 | **Pillar 4: 國際標準** | **`M50`** | [`rxnorm_db`](modules/m50_rxnorm_db/README.md) | [CLI 手冊](modules/m50_rxnorm_db/CLI_MANUAL.md) | NLM RxNorm 美規 RxCUI 藥物概念快取 | 200 筆 | 🟢 100% PASS |
 | | **`M51`** | [`clinical_trials_gov`](modules/m51_clinical_trials_gov/README.md) | [CLI 手冊](modules/m51_clinical_trials_gov/CLI_MANUAL.md) | NIH ClinicalTrials.gov 在台招募中試驗 | 200 筆 | 🟢 100% PASS |
 | | **`M52`** | [`pubchem_db`](modules/m52_pubchem_db/README.md) | [CLI 手冊](modules/m52_pubchem_db/CLI_MANUAL.md) | PubChem 化學分子結構式與 InChIKey | 200 筆 | 🟢 100% PASS |

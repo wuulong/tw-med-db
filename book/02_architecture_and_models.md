@@ -124,14 +124,15 @@ flowchart TB
 
 ```mermaid
 graph TD
-    subgraph Emergency_to_ICU["情境: 急診到診 ➔ 重症加護 ➔ 台灣健保藥價接力鏈"]
-        ED_Entry["M56 急診入場 (edstays)"] -->|1. 到院檢傷 Triage Acuity 1~5 級| ED_Triage["M56 急診檢傷與主訴 (triage)"]
-        ED_Triage -->|2. 急診現場發藥| Pyxis["M56 BD Pyxis 自動發藥 (pyxis)"]
-        Pyxis -->|3. 急診轉住院/ICU hadm_id/stay_id| ICU_Stay["M55 重症加護 (icustays)"]
-        ICU_Stay -->|4. 生理監視器與 SOFA 警訊| ICU_Vitals["M55 chartevents / SOFA 評分"]
-        ICU_Vitals -->|5. 跨國藥碼對照| RxNorm["M50 RxNorm 美規對照 (rxnorm_db)"]
-        RxNorm -->|6. 試算台灣健保給付| TW_Drug["M01 / M06 台灣藥證與健保比價"]
+    subgraph Emergency_to_ICU["情境: M00 台美全景照護與財務接力鏈 (M56 ➔ M55 ➔ M16 ➔ M15)"]
+        ED_Entry["M56 急診入場 (edstays)"] -->|1. 到院檢傷 Acuity 與轉住院率| ED_Triage["M56 急診檢傷與主訴"]
+        ED_Triage -->|2. 入住 ICU| ICU_Stay["M55 重症加護 (icustays)"]
+        ICU_Stay -->|3. 生理監視器與 SOFA 警訊| ICU_Vitals["M55 chartevents / SOFA 評分"]
+        ICU_Vitals -->|4. 轉入台灣普通病房| EHR_TW["M16 台灣臨床 FHIR (tw_ehr_db)"]
+        EHR_TW -->|5. 床邊生命徵象 8小時/次| Vital_TW["M16 LOINC 血壓心率時間序列"]
+        Vital_TW -->|6. 出院結算與慢籤| NHI_TW["M15 台灣健保申報 (tw_nhird_db)"]
+        NHI_TW -->|7. DRG 點數與 28天慢籤| NHI_Claim["M15 健保請款與台美對對碰"]
     end
 ```
 
-* **`Fig 2.4` 全域跨模組業務接力與臨床協同網路全景圖 (M56 急診 ➔ M55 ICU ➔ M50 RxNorm ➔ M01/M06 健保)**
+* **`Fig 2.4` 全域跨模組業務接力與臨床協同網路全景圖 (M56 急診 ➔ M55 ICU ➔ M16 台灣 FHIR ➔ M15 健保申報)**

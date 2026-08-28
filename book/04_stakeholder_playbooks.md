@@ -124,40 +124,41 @@ sequenceDiagram
 
 ---
 
-## 4.4 生醫研究員：DuckDB C++ OLAP 數據分析手冊
+## 4.4 生醫研究員：M00 台美跨國照護與財務對對碰實戰 Playbook (M15, M16, M55, M56)
 
-### 📖 【真實故事】李博士的藥價流行病學巨量統計研究
-李博士是大學生醫資訊研究所的副教授。她的研究團隊接獲國科會專案，需要分析過去 10 年全台灣健保處方藥價調整趨勢，並交叉比對全台 2 萬多家特約醫院的地理分佈與自費比價。以往團隊使用 Python Pandas 載入全量 CSV 檔時，記憶體常暴增至 64GB 而崩潰 (OOM)；而使用傳統 RDBMS 資料庫執行多表 JOIN 又極其耗時。李博士需要一種不用載入記憶體、可在微秒級完成 OLAP 巨量統計的分析引擎。
+### 📖 【真實故事】張副教授的台美重症醫療開銷流行病學研究
+張副教授是醫學大學生醫資訊學系的研究員。她正在執行一項科技部專案，旨在比較台灣與美國在糖尿病與重症加護 (ICU) 的「床邊照護頻率與醫療費用差異」。以往研究者很難將台灣健保申報 (NHIRD) 與美國 MIMIC-IV 臨床數據畫上等號。張副教授需要一個能夠同時調度台灣健保申報點數 (`M15`)、台灣電子病歷 FHIR (`M16`)、美國 MIMIC-IV 重症 (`M55`) 與急診 (`M56`) 的「跨國總中樞 (M00)」。
 
-### ❓ 李博士最想知道的 3 個問題：
-1. **問題 1**：如何不經過資料庫匯入流程，直接用 DuckDB C++ 引擎鏈結 `tw-med-db/db/med.db` 檔案？
-2. **問題 2**：如何在 1 秒之內完成 24,198 家醫院與 66,453 筆處方藥價的四分位數 (IQR) 跨庫關聯統計？
-3. **問題 3**：如何將 DuckDB 分析結果直接導出為 Python Pandas DataFrame 或 Apache Arrow 格式以進行機器學習繪圖？
+### ❓ 張副教授最想知道的 3 個問題：
+1. **問題 1**：如何一次性查詢糖尿病 (`diabetes`) 在台灣健保申報點數 vs 美國急診轉住院率與 ICU 死亡率？
+2. **問題 2**：如何還原一位病患從「M56 急診 ➔ M55 ICU ➔ M16 台灣病房 ➔ M15 健保申報」的 4 庫全景照護軌跡？
+3. **問題 3**：如何在 Python 中連結 SQLite 4 庫 View `v_master_tw_us_cross_bridge` 進行零拷貝統計？
 
 ### 🔍 跨庫接力查詢方法 (How to Query via tw-med-db)
-* **步驟 1 (DuckDB Attach)**：在 Python 腳本中執行 `duckdb.connect().execute("ATTACH 'tw-med-db/db/med.db' AS med (TYPE SQLITE);")`。
-* **步驟 2 (SQL OLAP 聚合)**：撰寫 SQL 進行 `JOIN med.m05_hospitals` 與 `med.m01_tw_drug_db`。
-* **步驟 3 (零拷貝導出)**：呼叫 `.df()` 導出為 Pandas DataFrame。
+* **步驟 1 (台美跨國總中樞查詢)**：呼叫 `./pa med m00 search-bridge "diabetes"`，一次發動 4 庫跨國全景比對。
+* **步驟 2 (4庫全景照護鏈查詢)**：呼叫 `./pa med m00 tw-us-journey "TW_P000001"`，獲取完整照護與財務軌跡。
+* **步驟 3 (DuckDB 零拷貝鏈結)**：在 Python 中讀取全域 View `v_master_tw_us_cross_bridge`。
 
 ### 📊 Python DuckDB 零拷貝查詢實戰程式碼：
 
 ```python
 import duckdb
 
-# 直接連結 SQLite med.db 檔進行高併發 OLAP 統計 (零拷貝 zero-copy)
+# 直接連結 SQLite med.db 檔進行 M00 4庫台美跨國總中樞 OLAP 統計
 con = duckdb.connect()
 con.execute("ATTACH 'tw-med-db/db/med.db' AS med (TYPE SQLITE);")
 
-# 統計全台各縣市專科醫院數量與平均健保給付藥價
+# 查詢全網台美對對碰視圖
 df = con.execute("""
     SELECT 
-        h.city as 縣市,
-        COUNT(DISTINCT h.hosp_id) as 醫院總數,
-        ROUND(AVG(d.price), 2) as 平均健保給付藥價
-    FROM med.m05_hospitals h
-    JOIN med.m01_tw_drug_db d ON d.price > 0
-    GROUP BY h.city
-    ORDER BY 醫院總數 DESC
+        primary_icd10 as 主要診斷,
+        tw_nhi_dots as 台灣健保申報點數,
+        tw_patient_name as 台灣病患,
+        tw_vital_status as 台灣普通病房床邊監測,
+        us_ed_admission_rate as 美規急診轉住院率,
+        us_icu_mortality_rate as 美規ICU死亡率,
+        us_estimated_cost_usd as 美規估計醫療費用
+    FROM med.v_master_tw_us_cross_bridge
 """).df()
 
 print(df)

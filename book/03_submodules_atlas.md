@@ -26,6 +26,8 @@
 * 3.12 **[`M12` TW Core IG FHIR 與 LOINC 碼庫 (`med_lab_fhir_db`)](03_12_m12_med_lab_fhir_db.md)**
 * 3.13 **[`M13` 醫療器材許可證與說明書庫 (`tw_med_device_db`)](03_13_m13_tw_med_device_db.md)**
 * 3.14 **[`M14` 疾管署傳染病與疫苗據點網 (`cdc_epidemic_db`)](03_14_m14_cdc_epidemic_db.md)**
+* 3.15 **[`M15` 台灣健保申報與抽樣資料庫 Gateway (`tw_nhird_db`)](03_15_m15_tw_nhird_db.md)**
+* 3.16 **[`M16` 台灣醫院臨床電子病歷 Gateway (`tw_ehr_db`)](03_16_m16_tw_ehr_db.md)**
 
 ### Pillar 4: 國際標準
 * 3.50 **[`M50` RxNorm 美國藥學概念網 Gateway (`rxnorm_db`)](03_50_m50_rxnorm_db.md)**

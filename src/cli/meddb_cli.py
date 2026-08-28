@@ -124,6 +124,8 @@ from src.cli.commands_m11 import m11_app
 from src.cli.commands_m12 import m12_app
 from src.cli.commands_m13 import m13_app
 from src.cli.commands_m14 import m14_app
+from src.cli.commands_m15 import m15_app
+from src.cli.commands_m16 import m16_app
 from src.cli.commands_m50 import m50_app
 from src.cli.commands_m51 import m51_app
 from src.cli.commands_m52 import m52_app
@@ -155,6 +157,8 @@ app.add_typer(m11_app, name="m11")
 app.add_typer(m12_app, name="m12")
 app.add_typer(m13_app, name="m13")
 app.add_typer(m14_app, name="m14")
+app.add_typer(m15_app, name="m15")
+app.add_typer(m16_app, name="m16")
 app.add_typer(m50_app, name="m50")
 app.add_typer(m51_app, name="m51")
 app.add_typer(m52_app, name="m52")

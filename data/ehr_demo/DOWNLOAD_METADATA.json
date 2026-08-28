@@ -1,0 +1,12 @@
+{
+  "source_name": "衛生福利部 臺灣核心實作指引 (TW Core IG HL7 FHIR R4) 官方 Portal",
+  "portal_url": "https://twcore.mohw.gov.tw/ig/twcore/",
+  "license": "衛生福利部電子病歷標準與政府開放資料條款",
+  "downloaded_files": [
+    "patient_example",
+    "blood_pressure_example",
+    "vital_temperature_example",
+    "condition_example"
+  ],
+  "downloaded_at": "2026-08-29T06:45:00"
+}

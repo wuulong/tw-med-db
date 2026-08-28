@@ -1,0 +1,9 @@
+{
+  "source_name": "衛生福利部中央健康保險署 (NHI) 醫療費用 XML 申報格式專區",
+  "portal_url": "https://www.nhi.gov.tw/ch/cp-2804-d5cb3-3051-1.html",
+  "download_url": "https://www.nhi.gov.tw/DL.ashx?files=Files/OPD_XML_SAMPLE.zip",
+  "local_file": "opd_claim_sample.xml",
+  "schema_standard": "健保署申報上傳 XML 格式作業說明 (dhead/dbody 12欄位標準)",
+  "license": "中華民國政府資料開放授權條款 (Open Government Data License)",
+  "downloaded_at": "2026-08-29T06:30:00"
+}

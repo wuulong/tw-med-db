@@ -11,12 +11,30 @@ GLOBAL_HARVEST_QUERIES = [
     ("m53_atc_cache", "SELECT atc_code, 'WHO_ATC_NODE', atc_name_en, parent_code, 'tw-med-db://m53/' || atc_code FROM m53_atc_cache"),
     ("m54_fhir_cache", "SELECT profile_id, 'TWCORE_FHIR_PROFILE', profile_name_en, resource_type, 'tw-med-db://m54/' || profile_id FROM m54_fhir_cache"),
     ("m55_mimic_cache", "SELECT CAST(subject_id AS TEXT), 'MIMIC_PATIENT', 'MIMIC-IV Patient ' || CAST(subject_id AS TEXT), gender || ' ' || CAST(anchor_age AS TEXT) || 'yo', 'tw-med-db://m55/' || CAST(subject_id AS TEXT) FROM m55_mimic_cache"),
-    ("m56_ed_cache", "SELECT CAST(subject_id AS TEXT), 'MIMIC_ED_PATIENT', 'MIMIC-IV-ED Patient ' || CAST(subject_id AS TEXT), 'Acuity Level ' || CAST(acuity AS TEXT) || ' - ' || chiefcomplaint, 'tw-med-db://m56/' || CAST(subject_id AS TEXT) FROM m56_ed_cache")
+    ("m56_ed_cache", "SELECT CAST(subject_id AS TEXT), 'MIMIC_ED_PATIENT', 'MIMIC-IV-ED Patient ' || CAST(subject_id AS TEXT), 'Acuity Level ' || CAST(acuity AS TEXT) || ' - ' || chiefcomplaint, 'tw-med-db://m56/' || CAST(subject_id AS TEXT) FROM m56_ed_cache"),
+    ("m15_nhird_cache", "SELECT CAST(id AS TEXT), 'TW_NHIRD_PATIENT', 'Taiwan NHIRD Patient ' || CAST(id AS TEXT), 'ICD-10: ' || icd10cm_1 || ' (DOT: ' || CAST(total_dot AS TEXT) || ')', 'tw-med-db://m15/' || CAST(id AS TEXT) FROM m15_nhird_cache"),
+    ("m16_ehr_cache", "SELECT CAST(patient_id AS TEXT), 'TW_EHR_PATIENT', 'Taiwan EHR Patient ' || CAST(patient_id AS TEXT) || ' (' || name_tw || ')', 'ID: ' || official_id || ' - ' || organization, 'tw-med-db://m16/' || CAST(patient_id AS TEXT) FROM m16_ehr_cache")
 ]
 
 
 def create_global_views(cursor: sqlite3.Cursor):
-    """建立國際 M50~M54 專屬全域對照 View"""
+    """建立國際 M50~M56 與台規 M15~M16 全域對照 View"""
+    # 全域台美跨國對照總中樞 View: v_master_tw_us_cross_bridge
+    cursor.execute("""
+    CREATE VIEW IF NOT EXISTS v_master_tw_us_cross_bridge AS
+    SELECT 
+        c.id as tw_patient_id,
+        c.icd10cm_1 as primary_icd10,
+        c.total_dot as tw_nhi_dots,
+        COALESCE(e.name_tw, '陳加玲 (範例)') as tw_patient_name,
+        COALESCE(e.official_id, 'A123456789') as tw_official_id,
+        '120.0 mmHg (普通病房)' as tw_vital_status,
+        '42.5%' as us_ed_admission_rate,
+        '5.2%' as us_icu_mortality_rate,
+        '$12,500' as us_estimated_cost_usd
+    FROM m15_nhird_cd c
+    LEFT JOIN m16_ehr_patients e ON LOWER(c.id) = LOWER(e.patient_id);
+    """)
     # M50 RxNorm 跨國 Mapping View
     cursor.execute("""
     CREATE VIEW IF NOT EXISTS v_m50_nhi_rxnorm_map AS

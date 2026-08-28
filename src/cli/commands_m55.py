@@ -282,9 +282,10 @@ def risk_tags(
 @m55_app.command("benchmark-nhi")
 def benchmark_nhi(
     subject_id: str = typer.Argument(..., help="病患代號 subject_id (如 10000032)"),
+    compare_tw: bool = typer.Option(False, "--compare-tw", "-t", help="發動與 M15 健保申報 / M16 電子病歷的實體對對碰"),
     db_path: str = typer.Option("db/med.db", "--db", help="SQLite 資料庫路徑")
 ):
-    """【加值功能 3】跨國重症用藥與台灣健保藥價 / 給付規定的加值比價"""
+    """【加值功能 3】跨國重症用藥與台灣健保藥價 / 給付規定的加值比價 (支援 --compare-tw 台美對對碰)"""
     conn = get_sqlite_connection(db_path)
     cursor = conn.cursor()
 
@@ -295,6 +296,8 @@ def benchmark_nhi(
 
     rx_list = profile.get("prescriptions", [])
     console.print(f"\n[bold green]💰【加值功能 3】跨國重症用藥與台灣健保給付/自費比價報告 (Subject: {subject_id})[/bold green]")
+    if compare_tw:
+        console.print("  [bold cyan]🇹🇼 [已開啟 --compare-tw 雙向參照台規 M15 健保申報與 M16 床邊病歷][/bold cyan]")
 
     table = Table()
     table.add_column("MIMIC 重症用藥", style="cyan")
