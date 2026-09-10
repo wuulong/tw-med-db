@@ -8,11 +8,13 @@
 
 ---
 
-## 📖 快速上手與手冊指引
+## 📖 快速上手與結構規範
 
 1. **📙 大一統公開使用者手冊 (Book)**：參閱 [`book/00_toc.md`](book/00_toc.md) (含全書 6 大專章獨立導航)
 2. **🇹🇼 美規數據落地台灣架構與指引**：參閱 [`LOCALIZATION_STRATEGY.md`](LOCALIZATION_STRATEGY.md)
 3. **📖 人類 CLI 指令全手冊**：參閱 [`CLI_MANUAL.md`](CLI_MANUAL.md)
+4. **📚 子模組專屬補充文件規範 (Module Documentation)**：
+   每個子模組目錄下均設有 `modules/mXX/docs/` 子目錄，專門存放該模組之領域知識規範、專業標準與臨床指引（例如 `modules/m56_mimic_iv_ed_db/docs/TRIAGE_CLASSIFICATION_SPEC.md` 即存放 MIMIC-IV-ED ESI 5 級急診傷檢分類標準）。
 
 ---
 
