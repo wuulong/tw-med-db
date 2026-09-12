@@ -11,8 +11,8 @@ from src.m00_core.downloader import download_and_extract_tfda_full_drugs
 from src.m00_core.logger import setup_module_logger
 from src.m00_core.m00_global_views import record_audit_log
 from src.m00_core.utils_db import get_sqlite_connection
-from modules.m01_tw_drug_db.etl import process_m01_etl
-from modules.m02_tw_ingredient_map_db.etl import process_m02_etl
+from modules.h10_tw_drug_db.etl import process_m01_etl
+from modules.h11_tw_ingredient_map_db.etl import process_m02_etl
 
 logger = setup_module_logger("med_db.daily_maintenance")
 
@@ -57,8 +57,8 @@ def run_daily_maintenance_cron(db_path: str = "tw-med-db/db/med.db", raw_json_pa
     m02_count = process_m02_etl(downloaded_file, db_path)
 
     # 執行 M03, M04, M10 ETL 同步
-    from modules.m03_health_supp_db.etl import process_m03_etl
-    from modules.m04_drug_shortage_alert.etl import process_m04_etl
+    from modules.h12_health_supp_db.etl import process_m03_etl
+    from modules.h13_drug_shortage_alert.etl import process_m04_etl
     from scripts.medical.extract_ljmeta_medical import process_m10_ljmeta_extraction
     
     supp_file = "/Volumes/D2024/data/med-db-in/raw/tfda_health_food_full.json"

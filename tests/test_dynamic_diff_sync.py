@@ -10,11 +10,11 @@ import tempfile
 import sqlite3
 from src.m00_core.utils_db import get_sqlite_connection
 from src.m00_core.m00_global_views import create_m00_global_tables_and_views
-from modules.m01_tw_drug_db.etl import process_m01_etl, create_m01_schema
-from modules.m01_tw_drug_db.fts import create_m01_fts, search_m01_fts
-from modules.m01_tw_drug_db.metadata_gen import generate_m01_metadata
-from modules.m02_tw_ingredient_map_db.etl import process_m02_etl
-from modules.m02_tw_ingredient_map_db.metadata_gen import generate_m02_metadata
+from modules.h10_tw_drug_db.etl import process_m01_etl, create_m01_schema
+from modules.h10_tw_drug_db.fts import create_m01_fts, search_m01_fts
+from modules.h10_tw_drug_db.metadata_gen import generate_m01_metadata
+from modules.h11_tw_ingredient_map_db.etl import process_m02_etl
+from modules.h11_tw_ingredient_map_db.metadata_gen import generate_m02_metadata
 
 
 class TestDynamicDiffSync(unittest.TestCase):

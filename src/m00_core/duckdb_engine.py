@@ -1,5 +1,5 @@
 """
-duckdb_engine.py - M00 DuckDB 跨庫零拷貝 OLAP 分析引擎
+duckdb_engine.py - M00/H00 DuckDB 跨庫零拷貝 OLAP 分析引擎
 """
 
 import os
@@ -7,17 +7,18 @@ import duckdb
 from typing import Optional, Any
 import pandas as pd
 from src.m00_core.logger import setup_module_logger
+from src.m00_core.utils_db import resolve_db_path
 
 logger = setup_module_logger("med_db.duckdb_engine")
 
 
 class MedDbDuckDBEngine:
     """
-    DuckDB C++ 高速跨庫分析引擎，支援連線與 Attach m00 及各個 SQLite 模組庫
+    DuckDB C++ 高速跨庫分析引擎，支援連線與 Attach m00/h00 及各個 SQLite 模組庫
     """
 
-    def __init__(self, db_path: str = "tw-med-db/db/med.db"):
-        self.db_path = db_path
+    def __init__(self, db_path: Optional[str] = None):
+        self.db_path = resolve_db_path(db_path)
         self.con = duckdb.connect(database=":memory:")
         self._initialize_attachments()
 
@@ -29,8 +30,11 @@ class MedDbDuckDBEngine:
                 self.con.execute("INSTALL sqlite; LOAD sqlite;")
             except Exception:
                 pass
-            self.con.execute(f"ATTACH '{abs_p}' AS med_db (TYPE SQLITE);")
-            logger.info(f"DuckDB 成功 Attach 實體 SQLite 主庫: {abs_p}")
+            try:
+                self.con.execute(f"ATTACH '{abs_p}' AS med_db (TYPE SQLITE);")
+                logger.info(f"DuckDB 成功 Attach 實體 SQLite 主庫: {abs_p}")
+            except Exception as e:
+                logger.warning(f"DuckDB Attach 失敗: {e}")
 
     def query(self, sql_query: str) -> pd.DataFrame:
         """執行 DuckDB SQL 查詢並回傳 Pandas DataFrame"""
@@ -47,10 +51,9 @@ class MedDbDuckDBEngine:
         self.con.close()
 
 
-def query_med_olap(db_path: str = "tw-med-db/db/med.db", sql_query: str = "SELECT 1;") -> pd.DataFrame:
+def query_med_olap(db_path: Optional[str] = None, sql_query: str = "SELECT 1;") -> pd.DataFrame:
     """單次 DuckDB OLAP 快速查詢 API (相容兩者引數順序)"""
-    if "SELECT" in db_path.upper():
-        # 參數傳倒的情況相容
+    if db_path and "SELECT" in str(db_path).upper():
         db_path, sql_query = sql_query, db_path
     engine = MedDbDuckDBEngine(db_path)
     df = engine.query(sql_query)

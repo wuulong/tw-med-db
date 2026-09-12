@@ -18,7 +18,7 @@ import logging
 import unittest
 from typer.testing import CliRunner
 from src.cli.main import app
-from src.m00_core.utils_db import get_sqlite_connection
+from src.m00_core.utils_db import resolve_db_path, get_sqlite_connection
 from src.m00_core.duckdb_engine import query_med_olap
 from src.m00_core.fhir_gateway import convert_entity_to_fhir_resource
 
@@ -31,7 +31,7 @@ logging.getLogger("med_db").setLevel(logging.WARNING)
 class TestM00ComprehensiveGovernance(unittest.TestCase):
 
     def setUp(self):
-        self.db_path = "db/med.db"
+        self.db_path = resolve_db_path()
         self.assertTrue(os.path.exists(self.db_path), f"❌ 找不到實體資料庫: {self.db_path}")
 
     def test_m00_01_master_count_alignment(self):

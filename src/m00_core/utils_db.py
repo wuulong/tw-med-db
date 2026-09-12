@@ -1,41 +1,67 @@
 """
-utils_db.py - 統一資料庫路徑解析與連線工具
+utils_db.py - 統一資料庫路徑解析與連線工具 (支援四階優先鏈: CLI -> ENV -> External Drive -> Local Fallback)
 """
 
 import os
 import re
 import json
 import sqlite3
-from typing import Any, Dict, Optional
+from pathlib import Path
+from typing import Any, Dict, Optional, Tuple
 
-def resolve_db_path(db_path: str) -> str:
+EXTERNAL_MED_DB_PATH = Path("/Volumes/D2024/data/med-db-in/db/med.db")
+
+def resolve_db_path(custom_path: Optional[str] = None) -> str:
     """
-    動態智慧解析與校正 db_path:
-    若傳入相對路徑 (如 'db/med.db' 或 'tw-med-db/db/med.db') 且當前 CWD 下不存在，
-    自動尋找專案內實體的 db/med.db 絕對路徑。
+    動態智慧解析與校正 db_path (四階優先順序):
+    1. 顯式參數 custom_path (--db)
+    2. 環境變數 MED_DB_PATH 或 MOHW_DB_PATH
+    3. 外部擴充磁碟預設路徑 (/Volumes/D2024/data/med-db-in/db/med.db)
+    4. 本地專案相對路徑 fallback (tw-med-db/db/med.db 或 db/med.db)
     """
-    if os.path.isabs(db_path) and os.path.exists(db_path):
-        return db_path
+    # 1. 顯式參數
+    if custom_path and str(custom_path).strip():
+        cp = str(custom_path).strip()
+        if os.path.isabs(cp) and os.path.exists(cp):
+            return cp
+        if os.path.exists(cp):
+            return os.path.abspath(cp)
 
-    # 定位子專案內部 db/med.db
-    base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../.."))
-    canonical_path = os.path.join(base_dir, "db", "med.db")
+    # 2. 環境變數
+    for env_var in ["MED_DB_PATH", "MOHW_DB_PATH"]:
+        env_val = os.environ.get(env_var)
+        if env_val and os.path.exists(env_val):
+            return os.path.abspath(env_val)
 
-    if os.path.exists(canonical_path):
-        return canonical_path
+    # 3. 外部擴充磁碟
+    if EXTERNAL_MED_DB_PATH.exists():
+        return str(EXTERNAL_MED_DB_PATH)
 
-    # 若傳入的路徑在當前工作目錄下存在，則回傳
-    cwd_path = os.path.abspath(db_path)
-    if os.path.exists(cwd_path):
-        return cwd_path
+    # 4. 本地專案路徑 fallback
+    base_dir = Path(__file__).resolve().parent.parent.parent
+    local_p = base_dir / "db" / "med.db"
+    if local_p.exists():
+        return str(local_p)
 
-    return canonical_path
+    cwd_p = Path.cwd() / "tw-med-db" / "db" / "med.db"
+    if cwd_p.exists():
+        return str(cwd_p)
 
-def get_sqlite_connection(db_path: str = "db/med.db") -> sqlite3.Connection:
-    """取得校正路徑後的 SQLite 連線"""
+    cwd_p2 = Path.cwd() / "db" / "med.db"
+    if cwd_p2.exists():
+        return str(cwd_p2)
+
+    return str(local_p)
+
+def get_sqlite_connection(db_path: Optional[str] = None, timeout: float = 30.0) -> sqlite3.Connection:
+    """取得校正路徑後的 SQLite 連線 (預設 timeout=30.0 避免 lock 衝突)"""
     resolved = resolve_db_path(db_path)
-    conn = sqlite3.connect(resolved)
+    conn = sqlite3.connect(resolved, timeout=timeout)
     conn.row_factory = sqlite3.Row
+    try:
+        conn.execute("PRAGMA busy_timeout = 30000;")
+    except Exception:
+        pass
     return conn
 
 def safe_fts_query_cleaner(query: str) -> str:

@@ -26,8 +26,8 @@ class TestM00Core(unittest.TestCase):
     def test_m00_global_views_and_metadata(self):
         # 建立 Schema 與 M01 採樣資料
         conn = get_sqlite_connection(self.db_path)
-        from modules.m01_tw_drug_db.etl import create_m01_schema, process_m01_etl
-        from modules.m01_tw_drug_db.metadata_gen import generate_m01_metadata
+        from modules.h10_tw_drug_db.etl import create_m01_schema, process_m01_etl
+        from modules.h10_tw_drug_db.metadata_gen import generate_m01_metadata
         create_m01_schema(conn)
         create_m00_global_tables_and_views(conn)
         conn.close()
@@ -62,16 +62,21 @@ class TestM00Core(unittest.TestCase):
         self.assertEqual(row[0].lower(), "wal")
         conn.close()
 
-    def test_daily_maintenance(self):
-        res = run_daily_maintenance_cron(self.db_path, self.sample_file)
     def test_zfill_normalization(self):
         self.assertEqual(normalize_zfill("123", 10), "0000000123")
         self.assertEqual(normalize_zfill("A123456789", 10), "A123456789")
 
     def test_daily_maintenance(self):
         sample_file = os.path.join(self.test_dir, "sample.json")
-        res = run_daily_maintenance_cron(self.db_path, sample_file)
-        self.assertIn(res["status"], ["NO_CHANGE", "UPDATED"])
+        with open(sample_file, "w", encoding="utf-8") as sf:
+            sf.write("[]")
+        # 使用 unittest.mock 隔離線上 12MB 下載與 7 萬筆全量重構
+        from unittest.mock import patch
+        with patch("src.m00_core.daily_maintenance.download_and_extract_tfda_full_drugs", return_value=sample_file):
+            with patch("src.m00_core.daily_maintenance.process_m01_etl", return_value=1):
+                with patch("src.m00_core.daily_maintenance.process_m02_etl", return_value=1):
+                    res = run_daily_maintenance_cron(self.db_path, sample_file)
+                    self.assertIn(res["status"], ["NO_CHANGE", "UPDATED"])
 
     def test_strip_html_tags(self):
         html = "<p>適應症：<b>肺癌</b>與<i>乳癌</i></p>"

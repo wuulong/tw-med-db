@@ -81,6 +81,7 @@ def search_global(
     """
     [M00 全域] 經由 v_med_global_drugs 進行跨模組統一檢索。
     """
+    db_path = resolve_db_path(db_path)
     if not os.path.exists(db_path):
         typer.echo(f"❌ 找不到實體資料庫: {db_path}", err=True)
         raise typer.Exit(code=1)
@@ -108,6 +109,7 @@ def search_global(
     """
     [M00 E1 Advanced Spec] 全大腦跨庫 fts_med_global 全文檢索 ($0.001s 涵蓋藥品/成分/健康食品)。
     """
+    db_path = resolve_db_path(db_path)
     if not os.path.exists(db_path):
         typer.echo(f"❌ 找不到實體資料庫: {db_path}", err=True)
         raise typer.Exit(code=1)
@@ -172,6 +174,7 @@ def safety_check(
     """
     [M00 E2 Advanced Spec] 全域藥用安全防禦 (v_master_drug_safety_mesh)。
     """
+    db_path = resolve_db_path(db_path)
     if not os.path.exists(db_path):
         typer.echo(f"❌ 找不到實體資料庫: {db_path}", err=True)
         raise typer.Exit(code=1)
@@ -211,8 +214,9 @@ def doctor(
     [維度四 Doctor 檢測] 執行資料庫健康度 4 大硬核檢測。
     """
     from src.m00_core.doctor import run_health_doctor_check
-    typer.echo(f"🏥 開始對資料庫 [{db_path}] 執行健康診斷 Doctor Check...")
-    report = run_health_doctor_check(db_path)
+    resolved_db = resolve_db_path(db_path)
+    typer.echo(f"🏥 開始對資料庫 [{resolved_db}] 執行健康診斷 Doctor Check...")
+    report = run_health_doctor_check(resolved_db)
 
     typer.echo("\n=====================================================================================")
     for check in report.get("checks", []):
@@ -235,6 +239,7 @@ def audit_log(
     """
     [維度三 稽核檢視] 查看 sys_data_audit_log 資料變更稽核日誌。
     """
+    db_path = resolve_db_path(db_path)
     if not os.path.exists(db_path):
         typer.echo(f"❌ 找不到實體資料庫: {db_path}", err=True)
         raise typer.Exit(code=1)
@@ -279,6 +284,7 @@ def rebuild_master(
     """
     [M00 Advanced Spec] 匯整 M01~M12 子模組數據，重建 M00 5 大實體整合表 (m00_entities, m00_hospital_capabilities 等)。
     """
+    db_path = resolve_db_path(db_path)
     if not os.path.exists(db_path):
         typer.echo(f"❌ 找不到實體資料庫: {db_path}", err=True)
         raise typer.Exit(code=1)
@@ -299,6 +305,7 @@ def convert_fhir(
     """
     [M00 Advanced Spec] 將 M00 全域實體轉換為 HL7 FHIR R4 標準 JSON Payload (Patient/MedicationRequest/Observation)。
     """
+    db_path = resolve_db_path(db_path)
     if not os.path.exists(db_path):
         typer.echo(f"❌ 找不到實體資料庫: {db_path}", err=True)
         raise typer.Exit(code=1)

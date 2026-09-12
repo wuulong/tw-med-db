@@ -10,8 +10,8 @@ from src.m00_core.utils_db import get_sqlite_connection
 from src.m00_core.m00_global_views import create_m00_global_tables_and_views, rebuild_m00_master_tables
 from src.m00_core.duckdb_engine import query_med_olap
 from src.m00_core.fhir_gateway import convert_entity_to_fhir_resource
-from modules.m01_tw_drug_db.etl import process_m01_etl
-from modules.m12_med_lab_fhir_db.etl import process_m12_etl
+from modules.h10_tw_drug_db.etl import process_m01_etl
+from modules.h40_med_lab_fhir_db.etl import process_m12_etl
 
 
 class TestM00AdvancedIntegration(unittest.TestCase):
