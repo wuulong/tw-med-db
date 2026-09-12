@@ -10,8 +10,8 @@
 
 ## 🎯 1. 工具定位與簡介 (Overview)
 
-`tw-med-cli` 是 `tw-med-db` 醫療大數據專案的**總指揮官與全域管理 CLI 工具**。
-它負責管理國內 12 大子模組 (`M01`~`M12`) 的資料庫建置、DuckDB C++ OLAP 高速分析、HL7 FHIR R4 標準 Resource 輸出、每日遠端數據指紋 Cron 同步，以及跨全庫 **78,000+ 筆實體的全域 FTS5 全文檢索**。
+`tw-med-cli` 是 `tw-med-db` 醫療大資料專案的**總指揮官與全域管理 CLI 工具**。
+它負責管理國內 12 大子模組 (`H10` (原 M01)~`H40` (原 M12)) 的資料庫建置、DuckDB C++ OLAP 高速分析、HL7 FHIR R4 標準 Resource 輸出、每日遠端資料指紋 Cron 同步，以及跨全庫 **78,000+ 筆實體的全域 FTS5 全文檢索**。
 
 ---
 
@@ -65,7 +65,7 @@ PYTHONPATH=. python src/cli/main.py m00 convert-fhir --entity-id DHA00201892401
 PYTHONPATH=. python src/cli/main.py m00 rebuild-master
 ```
 
-### 範例 E：觸發每日遠端數據指紋 Cron 排程與自動同步
+### 範例 E：觸發每日遠端資料指紋 Cron 排程與自動同步
 ```bash
 PYTHONPATH=. python src/cli/main.py m00 cron
 ```
