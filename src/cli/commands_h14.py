@@ -3,6 +3,7 @@ import sqlite3
 import json
 import os
 from typing import Optional
+from src.m00_core.utils_db import resolve_db_path, get_sqlite_connection
 
 h14_app = typer.Typer(help="M13 醫療器材許可證與說明書庫")
 DEFAULT_DB = os.path.join(os.path.dirname(__file__), "../../db/med.db")

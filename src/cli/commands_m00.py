@@ -102,13 +102,21 @@ def search_global(
 
 @m00_app.command("search")
 def search_global(
-    query: str = typer.Argument(..., help="跨庫全域檢索關鍵字 (如: 阿司匹靈, 燕麥, Atorvastatin)"),
+    query: Optional[str] = typer.Argument(None, help="跨庫全域檢索關鍵字 (支援 '-' 或直接管道 stdin 輸入)"),
     db_path: str = typer.Option("tw-med-db/db/med.db", "--db", "-d", help="實體 SQLite 資料庫路徑"),
-    limit: int = typer.Option(10, "--limit", "-l", help="回傳結果筆數")
+    limit: int = typer.Option(10, "--limit", "-l", help="回傳結果筆數"),
+    json_mode: bool = typer.Option(False, "--json", "-j", help="單行緊湊 JSON 輸出 (Token-Saving)")
 ):
     """
-    [M00 E1 Advanced Spec] 全大腦跨庫 fts_med_global 全文檢索 ($0.001s 涵蓋藥品/成分/健康食品)。
+    [M00 E1 Advanced Spec & CGS v2.4 Pipeline-Native] 全大腦跨庫 fts_med_global 全文檢索。
+    支援管道串流輸入 (例如: echo '普拿疼' | ./pa med search)
     """
+    from src.m00_core.utils_db import resolve_pipeline_input
+    inputs = resolve_pipeline_input(query)
+    if not inputs:
+        typer.echo("❌ 請提供檢索關鍵字，或透過管道 stdin 輸入 (例如: echo '普拿疼' | ./pa med search)", err=True)
+        raise typer.Exit(code=2)
+
     db_path = resolve_db_path(db_path)
     if not os.path.exists(db_path):
         typer.echo(f"❌ 找不到實體資料庫: {db_path}", err=True)
@@ -123,47 +131,57 @@ def search_global(
     if cursor.fetchone()[0] == 0:
         rebuild_fts_med_global(conn)
 
-    clean_query = query.strip().replace('"', '').replace("'", "")
-    cursor.execute("""
-    SELECT entity_type, entity_id, title, subtitle, content
-    FROM fts_med_global
-    WHERE fts_med_global MATCH ?
-    LIMIT ?;
-    """, (f'"{clean_query}"', limit))
-    results = [dict(r) for r in cursor.fetchall()]
+    all_results = []
+    for q in inputs:
+        clean_query = q.strip().replace('"', '').replace("'", "")
+        if not clean_query:
+            continue
+        cursor.execute("""
+        SELECT entity_type, entity_id, title, subtitle, content
+        FROM fts_med_global
+        WHERE fts_med_global MATCH ?
+        LIMIT ?;
+        """, (f'"{clean_query}"', limit))
+        rows = [dict(r) for r in cursor.fetchall()]
+        if json_mode:
+            all_results.extend(rows)
+        else:
+            if not rows:
+                typer.echo(f"🔍 [M00 大一統搜尋] 查無全域跨庫匹配紀錄: '{q}'")
+                continue
+
+            type_icons = {
+                "DRUG": "💊 [處方藥/指示藥]",
+                "INGREDIENT": "🧬 [藥物主成分/ATC]",
+                "HEALTH_SUPP": "🌱 [健字號健康食品]",
+                "RECALL_ALERT": "⚠️ [缺藥/回收公告]",
+                "HOSPITAL": "🏥 [特約醫院/診所]",
+                "NHI_RULE": "💳 [健保給付規定/條文]",
+                "PROCEDURE": "🩺 [醫療處置/手術碼]",
+                "RARE_DISEASE": "🎗️ [國健署罕見疾病]",
+                "ONCOLOGY_TRIAL": "🔬 [癌症指引/臨床試驗]",
+                "MED_LEGAL": "⚖️ [醫療過失裁判/爭點]",
+                "PATIENT_JOURNEY": "🧭 [病患臨床旅程/導航]",
+                "LAB_LOINC": "🧪 [FHIR/LOINC檢驗碼]"
+            }
+
+            typer.echo(f"\n🌐 M00 大一統全域神經網檢索結果 (關鍵字: '{q}', 共 {len(rows)} 筆):")
+            typer.echo("=" * 85)
+            for idx, row in enumerate(rows, 1):
+                icon = type_icons.get(row["entity_type"], "📦 [實體]")
+                typer.echo(f"[{idx}] {icon} ID: {row['entity_id']}")
+                typer.echo(f"    主要名稱: {row['title']}")
+                if row["subtitle"]:
+                    typer.echo(f"    次要說明: {row['subtitle']}")
+                if row["content"]:
+                    summary = row["content"][:100] + "..." if len(row["content"]) > 100 else row["content"]
+                    typer.echo(f"    詳細摘要: {summary}")
+                typer.echo("-" * 85)
+
     conn.close()
 
-    if not results:
-        typer.echo(f"🔍 [M00 大一統搜尋] 查無全域跨庫匹配紀錄: '{query}'")
-        return
-
-    type_icons = {
-        "DRUG": "💊 [處方藥/指示藥]",
-        "INGREDIENT": "🧬 [藥物主成分/ATC]",
-        "HEALTH_SUPP": "🌱 [健字號健康食品]",
-        "RECALL_ALERT": "⚠️ [缺藥/回收公告]",
-        "HOSPITAL": "🏥 [特約醫院/診所]",
-        "NHI_RULE": "💳 [健保給付規定/條文]",
-        "PROCEDURE": "🩺 [醫療處置/手術碼]",
-        "RARE_DISEASE": "🎗️ [國健署罕見疾病]",
-        "ONCOLOGY_TRIAL": "🔬 [癌症指引/臨床試驗]",
-        "MED_LEGAL": "⚖️ [醫療過失裁判/爭點]",
-        "PATIENT_JOURNEY": "🧭 [病患臨床旅程/導航]",
-        "LAB_LOINC": "🧪 [FHIR/LOINC檢驗碼]"
-    }
-
-    typer.echo(f"\n🌐 M00 大一統全域神經網檢索結果 (關鍵字: '{query}', 共 {len(results)} 筆):")
-    typer.echo("=" * 85)
-    for idx, row in enumerate(results, 1):
-        icon = type_icons.get(row["entity_type"], "📦 [實體]")
-        typer.echo(f"[{idx}] {icon} ID: {row['entity_id']}")
-        typer.echo(f"    主要名稱: {row['title']}")
-        if row["subtitle"]:
-            typer.echo(f"    次要說明: {row['subtitle']}")
-        if row["content"]:
-            summary = row["content"][:100] + "..." if len(row["content"]) > 100 else row["content"]
-            typer.echo(f"    詳細摘要: {summary}")
-        typer.echo("-" * 85)
+    if json_mode:
+        print(json.dumps(all_results, ensure_ascii=False, indent=2))
 
 
 @m00_app.command("safety-check")

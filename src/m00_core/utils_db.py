@@ -3,6 +3,7 @@ utils_db.py - 統一資料庫路徑解析與連線工具 (支援四階優先鏈:
 """
 
 import os
+import sys
 import re
 import json
 import sqlite3
@@ -97,3 +98,20 @@ def build_attributes_json(extra_data: Dict[str, Any], schema_version: str = "1.0
     payload = {"_v": schema_version}
     payload.update(extra_data)
     return safe_json_dumps(payload)
+
+def resolve_pipeline_input(arg_val: Optional[str] = None) -> list:
+    """
+    [CGS v2.4 Pipeline-Native] 智慧解析命令列參數或 sys.stdin 管道輸入
+    回傳清洗後的輸入關鍵字/ID 列表 (支援多行串流)
+    """
+    if arg_val and arg_val.strip() != "-":
+        return [arg_val.strip()]
+    if not sys.stdin.isatty():
+        try:
+            raw = sys.stdin.read().strip()
+            if raw:
+                lines = [l.strip() for l in raw.splitlines() if l.strip()]
+                return lines
+        except Exception:
+            pass
+    return []

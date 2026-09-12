@@ -4,6 +4,7 @@ import json
 import os
 import math
 from typing import Optional
+from src.m00_core.utils_db import resolve_db_path, get_sqlite_connection
 
 h34_app = typer.Typer(help="M14 疾管署傳染病與疫苗據點網")
 DEFAULT_DB = os.path.join(os.path.dirname(__file__), "../../db/med.db")
