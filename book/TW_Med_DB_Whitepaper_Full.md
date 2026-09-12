@@ -47,39 +47,39 @@
 
 ### 📌 [第 3 章：21 大子模組數據資產圖鑑](03_submodules_atlas.md) (`03_submodules_atlas.md`)
 > **💡 本章寫作意圖**：
-> 做為全書最核心的「數據資產百科圖鑑」，本章以單一檔案拆分架構，為國內 14 大 DB (`M01`~`M14`) 與國際 7 大 Gateway (`M50`~`M56`) 提供專屬獨立檔案檔。
+> 做為全書最核心的「數據資產百科圖鑑」，本章以單一檔案拆分架構，為國內 14 大 DB (`H10` (原 M01)~`H34` (原 M14)) 與國際 7 大 Gateway (`H50` (原 M50)~`H55` (原 M56)) 提供專屬獨立檔案檔。
 * **[3.0 全章子模組撰寫規範與通用 7 大維度架構說明](03_00_structure_guide.md)**
 * **Pillar 1: 藥品安全**
-  * 3.1 **[`M01` 台灣處方藥證與健保價庫 (`tw_drug_db`)](03_01_m01_tw_drug_db.md)** (附: `Fig 3.1` M01 跨模組連結拓撲圖: M01 ➔ M02/M04/M50/M53)
-  * 3.2 **[`M02` 主成分字典與 WHO ATC 藥理樹庫 (`tw_ingredient_map_db`)](03_02_m02_tw_ingredient_map_db.md)** (附: `Fig 3.2` M02 跨模組連結拓撲圖: M02 ➔ M01/M52/M53)
-  * 3.3 **[`M03` TFDA 健康食品許可證庫 (`health_supp_db`)](03_03_m03_health_supp_db.md)** (附: `Fig 3.3` M03 跨模組連結拓撲圖: M03 ➔ M01 禁忌對照)
-  * 3.4 **[`M04` 食藥署缺藥與藥品回收警訊庫 (`drug_shortage_alert`)](03_04_m04_drug_shortage_alert.md)** (附: `Fig 3.4` M04 跨模組連結拓撲圖: M04 ➔ M01/M53 替代藥)
+  * 3.1 **[`H10` (原 M01) 台灣處方藥證與健保價庫 (`tw_drug_db`)](03_01_h10_tw_drug_db.md)** (附: `Fig 3.1` M01 跨模組連結拓撲圖: M01 ➔ M02/M04/M50/M53)
+  * 3.2 **[`H11` (原 M02) 主成分字典與 WHO ATC 藥理樹庫 (`tw_ingredient_map_db`)](03_02_h11_tw_ingredient_map_db.md)** (附: `Fig 3.2` M02 跨模組連結拓撲圖: M02 ➔ M01/M52/M53)
+  * 3.3 **[`H12` (原 M03) TFDA 健康食品許可證庫 (`health_supp_db`)](03_03_h12_health_supp_db.md)** (附: `Fig 3.3` M03 跨模組連結拓撲圖: M03 ➔ M01 禁忌對照)
+  * 3.4 **[`H13` (原 M04) 食藥署缺藥與藥品回收警訊庫 (`drug_shortage_alert`)](03_04_h13_drug_shortage_alert.md)** (附: `Fig 3.4` M04 跨模組連結拓撲圖: M04 ➔ M01/M53 替代藥)
 * **Pillar 2: 機構比價**
-  * 3.5 **[`M05` 健保特約醫事機構與專科地圖 (`tw_hospital_db`)](03_05_m05_tw_hospital_db.md)** (附: `Fig 3.5` M05 跨模組連結拓撲圖: M05 ➔ M06/M07/M09/M11)
-  * 3.6 **[`M06` 健保給付規定與自費比價庫 (`nhi_payment_db`)](03_06_m06_nhi_payment_db.md)** (附: `Fig 3.6` M06 跨模組連結拓撲圖: M06 ➔ M01/M05 比價)
-  * 3.7 **[`M07` 健保醫療服務處置與手術碼庫 (`nhi_procedure_db`)](03_07_m07_nhi_procedure_db.md)** (附: `Fig 3.7` M07 跨模組連結拓撲圖: M07 ➔ M05/M12 處置)
-  * 3.8 **[`M08` 國健署罕見疾病與罕藥名單庫 (`rare_disease_db`)](03_08_m08_rare_disease_db.md)** (附: `Fig 3.8` M08 跨模組連結拓撲圖: M08 ➔ M01/M12 罕藥)
+  * 3.5 **[`H20` (原 M05) 健保特約醫事機構與專科地圖 (`tw_hospital_db`)](03_05_h20_tw_hospital_db.md)** (附: `Fig 3.5` M05 跨模組連結拓撲圖: M05 ➔ M06/M07/M09/M11)
+  * 3.6 **[`H21` (原 M06) 健保給付規定與自費比價庫 (`nhi_payment_db`)](03_06_h21_nhi_payment_db.md)** (附: `Fig 3.6` M06 跨模組連結拓撲圖: M06 ➔ M01/M05 比價)
+  * 3.7 **[`H22` (原 M07) 健保醫療服務處置與手術碼庫 (`nhi_procedure_db`)](03_07_h22_nhi_procedure_db.md)** (附: `Fig 3.7` M07 跨模組連結拓撲圖: M07 ➔ M05/M12 處置)
+  * 3.8 **[`H30` (原 M08) 國健署罕見疾病與罕藥名單庫 (`rare_disease_db`)](03_08_h30_rare_disease_db.md)** (附: `Fig 3.8` M08 跨模組連結拓撲圖: M08 ➔ M01/M12 罕藥)
 * **Pillar 3: 臨床法規**
-  * 3.9 **[`M09` 癌症指引與 ClinicalTrials 台灣試驗庫 (`oncology_meta`)](03_09_m09_oncology_meta.md)** (附: `Fig 3.9` M09 跨模組連結拓撲圖: M09 ➔ M01/M05/M51)
-  * 3.10 **[`M10` 醫療過失裁判與訴訟防護庫 (`med_legal_db`)](03_10_m10_med_legal_db.md)** (附: `Fig 3.10` M10 跨模組連結拓撲圖: M10 ➔ M05/M07 訴訟案)
-  * 3.11 **[`M11` 病患全程臨床照護導航庫 (`patient_journey_db`)](03_11_m11_patient_journey_db.md)** (附: `Fig 3.11` M11 跨模組連結拓撲圖: M11 ➔ M05/M09 導航)
-  * 3.12 **[`M12` TW Core IG FHIR 與 LOINC 碼庫 (`med_lab_fhir_db`)](03_12_m12_med_lab_fhir_db.md)** (附: `Fig 3.12` M12 跨模組連結拓撲圖: M12 ➔ M01/M54 FHIR)
-  * 3.13 **[`M13` 醫療器材許可證與說明書庫 (`tw_med_device_db`)](03_13_m13_tw_med_device_db.md)**
-  * 3.14 **[`M14` 疾管署傳染病與疫苗據點網 (`cdc_epidemic_db`)](03_14_m14_cdc_epidemic_db.md)**
-  * 3.15 **[`M15` 台灣健保申報與抽樣資料庫 Gateway (`tw_nhird_db`)](03_15_m15_tw_nhird_db.md)**
-  * 3.16 **[`M16` 台灣醫院臨床電子病歷 Gateway (`tw_ehr_db`)](03_16_m16_tw_ehr_db.md)**
+  * 3.9 **[`H31` (原 M09) 癌症指引與 ClinicalTrials 台灣試驗庫 (`oncology_meta`)](03_09_h31_oncology_meta.md)** (附: `Fig 3.9` M09 跨模組連結拓撲圖: M09 ➔ M01/M05/M51)
+  * 3.10 **[`H32` (原 M10) 醫療過失裁判與訴訟防護庫 (`med_legal_db`)](03_10_h32_med_legal_db.md)** (附: `Fig 3.10` M10 跨模組連結拓撲圖: M10 ➔ M05/M07 訴訟案)
+  * 3.11 **[`H33` (原 M11) 病患全程臨床照護導航庫 (`patient_journey_db`)](03_11_h33_patient_journey_db.md)** (附: `Fig 3.11` M11 跨模組連結拓撲圖: M11 ➔ M05/M09 導航)
+  * 3.12 **[`H40` (原 M12) TW Core IG FHIR 與 LOINC 碼庫 (`med_lab_fhir_db`)](03_12_h40_med_lab_fhir_db.md)** (附: `Fig 3.12` M12 跨模組連結拓撲圖: M12 ➔ M01/M54 FHIR)
+  * 3.13 **[`H14` (原 M13) 醫療器材許可證與說明書庫 (`tw_med_device_db`)](03_13_h14_tw_med_device_db.md)**
+  * 3.14 **[`H34` (原 M14) 疾管署傳染病與疫苗據點網 (`cdc_epidemic_db`)](03_14_h34_cdc_epidemic_db.md)**
+  * 3.15 **[`H23` (原 M15) 台灣健保申報與抽樣資料庫 Gateway (`tw_nhird_db`)](03_15_h23_tw_nhird_db.md)**
+  * 3.16 **[`H41` (原 M16) 台灣醫院臨床電子病歷 Gateway (`tw_ehr_db`)](03_16_h41_tw_ehr_db.md)**
 * **Pillar 4: 國際標準**
-  * 3.50 **[`M50` RxNorm 美國藥學概念網 Gateway (`rxnorm_db`)](03_50_m50_rxnorm_db.md)** (附: `Fig 3.50` M50 跨模組對照整合拓撲圖: M50 ➔ M01 台規對接)
-  * 3.51 **[`M51` ClinicalTrials.gov 美國 NIH 試驗 Gateway (`clinical_trials_gov`)](03_51_m51_clinical_trials_gov.md)** (附: `Fig 3.51` M51 跨模組對照整合拓撲圖: M51 ➔ M09 在台試驗)
-  * 3.52 **[`M52` PubChem 美國 NIH 化學結構庫 Gateway (`pubchem_db`)](03_52_m52_pubchem_db.md)** (附: `Fig 3.52` M52 跨模組對照整合拓撲圖: M52 ➔ M02 主成分鏈結)
-  * 3.53 **[`M53` WHO ATC 國際藥理樹 Gateway (`who_atc_db`)](03_53_m53_who_atc_db.md)** (附: `Fig 3.53` M53 跨模組對照整合拓撲圖: M53 ➔ M01/M02 藥理樹)
-  * 3.54 **[`M54` TW Core IG 台灣核心 FHIR 指引 Gateway (`twcore_fhir_db`)](03_54_m54_twcore_fhir_db.md)** (附: `Fig 3.54` M54 跨模組對照整合拓撲圖: M54 ➔ M12 LOINC 對照)
-  * 3.55 **[`M55` MIMIC-IV 美國重症臨床資料庫 Gateway (`mimic_iv_db`)](03_55_m55_mimic_iv_db.md)**
+  * 3.50 **[`H50` (原 M50) RxNorm 美國藥學概念網 Gateway (`rxnorm_db`)](03_50_h50_rxnorm_db.md)** (附: `Fig 3.50` M50 跨模組對照整合拓撲圖: M50 ➔ M01 台規對接)
+  * 3.51 **[`H51` (原 M51) ClinicalTrials.gov 美國 NIH 試驗 Gateway (`clinical_trials_gov`)](03_51_h51_clinical_trials_gov.md)** (附: `Fig 3.51` M51 跨模組對照整合拓撲圖: M51 ➔ M09 在台試驗)
+  * 3.52 **[`H52` (原 M52) PubChem 美國 NIH 化學結構庫 Gateway (`pubchem_db`)](03_52_h52_pubchem_db.md)** (附: `Fig 3.52` M52 跨模組對照整合拓撲圖: M52 ➔ M02 主成分鏈結)
+  * 3.53 **[`H53` (原 M53) WHO ATC 國際藥理樹 Gateway (`who_atc_db`)](03_53_h53_who_atc_db.md)** (附: `Fig 3.53` M53 跨模組對照整合拓撲圖: M53 ➔ M01/M02 藥理樹)
+  * 3.54 **[`H42` (原 M54) TW Core IG 台灣核心 FHIR 指引 Gateway (`twcore_fhir_db`)](03_54_h42_twcore_fhir_db.md)** (附: `Fig 3.54` M54 跨模組對照整合拓撲圖: M54 ➔ M12 LOINC 對照)
+  * 3.55 **[`H54` (原 M55) MIMIC-IV 美國重症臨床資料庫 Gateway (`mimic_iv_db`)](03_55_h54_mimic_iv_db.md)**
     > [!IMPORTANT]
     > **受控授權數據告示與環境變數聲明**：
     > MIMIC-IV 屬於 PhysioNet 受控授權數據 (Credentialed Health Data)，**本開源專案絕對不提供、不附帶亦不散佈其全量實體資料集**。
     > 使用者需自行申請完成授權認證，並將全量數據（如 `mimic-iv-2.1`）下載至本機或外接硬碟後，透過環境變數 `export MIMIC_IV_DATA_DIR="/path/to/mimic-iv-2.1"` 進行動態定錨。本專案軟體包僅提供去識別化之 100 筆測試 Demo 種子與零解壓引擎。
-  * 3.56 **[`M56` MIMIC-IV-ED 美國急診門診臨床大數據 Gateway (`mimic_iv_ed_db`)](03_56_m56_mimic_iv_ed_db.md)**
+  * 3.56 **[`H55` (原 M56) MIMIC-IV-ED 美國急診門診臨床大數據 Gateway (`mimic_iv_ed_db`)](03_56_h55_mimic_iv_ed_db.md)**
     > [!IMPORTANT]
     > **受控授權數據告示與環境變數聲明**：
     > MIMIC-IV-ED 亦屬於 PhysioNet 受控授權數據，**本開源專案絕對不提供、不附帶亦不散佈其全量實體資料集**。
@@ -345,35 +345,35 @@ graph TD
 ## 📚 21 大子模組章節地圖
 
 ### Pillar 1: 藥品安全
-* 3.1 **[`M01` 台灣處方藥證與健保價庫 (`tw_drug_db`)](03_01_m01_tw_drug_db.md)**
-* 3.2 **[`M02` 主成分字典與 WHO ATC 藥理樹庫 (`tw_ingredient_map_db`)](03_02_m02_tw_ingredient_map_db.md)**
-* 3.3 **[`M03` TFDA 健康食品許可證庫 (`health_supp_db`)](03_03_m03_health_supp_db.md)**
-* 3.4 **[`M04` 食藥署缺藥與藥品回收警訊庫 (`drug_shortage_alert`)](03_04_m04_drug_shortage_alert.md)**
+* 3.1 **[`H10` (原 M01) 台灣處方藥證與健保價庫 (`tw_drug_db`)](03_01_h10_tw_drug_db.md)**
+* 3.2 **[`H11` (原 M02) 主成分字典與 WHO ATC 藥理樹庫 (`tw_ingredient_map_db`)](03_02_h11_tw_ingredient_map_db.md)**
+* 3.3 **[`H12` (原 M03) TFDA 健康食品許可證庫 (`health_supp_db`)](03_03_h12_health_supp_db.md)**
+* 3.4 **[`H13` (原 M04) 食藥署缺藥與藥品回收警訊庫 (`drug_shortage_alert`)](03_04_h13_drug_shortage_alert.md)**
 
 ### Pillar 2: 機構比價
-* 3.5 **[`M05` 健保特約醫事機構與專科地圖 (`tw_hospital_db`)](03_05_m05_tw_hospital_db.md)**
-* 3.6 **[`M06` 健保給付規定與自費比價庫 (`nhi_payment_db`)](03_06_m06_nhi_payment_db.md)**
-* 3.7 **[`M07` 健保醫療服務處置與手術碼庫 (`nhi_procedure_db`)](03_07_m07_nhi_procedure_db.md)**
-* 3.8 **[`M08` 國健署罕見疾病與罕藥名單庫 (`rare_disease_db`)](03_08_m08_rare_disease_db.md)**
+* 3.5 **[`H20` (原 M05) 健保特約醫事機構與專科地圖 (`tw_hospital_db`)](03_05_h20_tw_hospital_db.md)**
+* 3.6 **[`H21` (原 M06) 健保給付規定與自費比價庫 (`nhi_payment_db`)](03_06_h21_nhi_payment_db.md)**
+* 3.7 **[`H22` (原 M07) 健保醫療服務處置與手術碼庫 (`nhi_procedure_db`)](03_07_h22_nhi_procedure_db.md)**
+* 3.8 **[`H30` (原 M08) 國健署罕見疾病與罕藥名單庫 (`rare_disease_db`)](03_08_h30_rare_disease_db.md)**
 
 ### Pillar 3: 臨床法規
-* 3.9 **[`M09` 癌症指引與 ClinicalTrials 台灣試驗庫 (`oncology_meta`)](03_09_m09_oncology_meta.md)**
-* 3.10 **[`M10` 醫療過失裁判與訴訟防護庫 (`med_legal_db`)](03_10_m10_med_legal_db.md)**
-* 3.11 **[`M11` 病患全程臨床照護導航庫 (`patient_journey_db`)](03_11_m11_patient_journey_db.md)**
-* 3.12 **[`M12` TW Core IG FHIR 與 LOINC 碼庫 (`med_lab_fhir_db`)](03_12_m12_med_lab_fhir_db.md)**
-* 3.13 **[`M13` 醫療器材許可證與說明書庫 (`tw_med_device_db`)](03_13_m13_tw_med_device_db.md)**
-* 3.14 **[`M14` 疾管署傳染病與疫苗據點網 (`cdc_epidemic_db`)](03_14_m14_cdc_epidemic_db.md)**
-* 3.15 **[`M15` 台灣健保申報與抽樣資料庫 Gateway (`tw_nhird_db`)](03_15_m15_tw_nhird_db.md)**
-* 3.16 **[`M16` 台灣醫院臨床電子病歷 Gateway (`tw_ehr_db`)](03_16_m16_tw_ehr_db.md)**
+* 3.9 **[`H31` (原 M09) 癌症指引與 ClinicalTrials 台灣試驗庫 (`oncology_meta`)](03_09_h31_oncology_meta.md)**
+* 3.10 **[`H32` (原 M10) 醫療過失裁判與訴訟防護庫 (`med_legal_db`)](03_10_h32_med_legal_db.md)**
+* 3.11 **[`H33` (原 M11) 病患全程臨床照護導航庫 (`patient_journey_db`)](03_11_h33_patient_journey_db.md)**
+* 3.12 **[`H40` (原 M12) TW Core IG FHIR 與 LOINC 碼庫 (`med_lab_fhir_db`)](03_12_h40_med_lab_fhir_db.md)**
+* 3.13 **[`H14` (原 M13) 醫療器材許可證與說明書庫 (`tw_med_device_db`)](03_13_h14_tw_med_device_db.md)**
+* 3.14 **[`H34` (原 M14) 疾管署傳染病與疫苗據點網 (`cdc_epidemic_db`)](03_14_h34_cdc_epidemic_db.md)**
+* 3.15 **[`H23` (原 M15) 台灣健保申報與抽樣資料庫 Gateway (`tw_nhird_db`)](03_15_h23_tw_nhird_db.md)**
+* 3.16 **[`H41` (原 M16) 台灣醫院臨床電子病歷 Gateway (`tw_ehr_db`)](03_16_h41_tw_ehr_db.md)**
 
 ### Pillar 4: 國際標準
-* 3.50 **[`M50` RxNorm 美國藥學概念網 Gateway (`rxnorm_db`)](03_50_m50_rxnorm_db.md)**
-* 3.51 **[`M51` ClinicalTrials.gov 美國 NIH 試驗 Gateway (`clinical_trials_gov`)](03_51_m51_clinical_trials_gov.md)**
-* 3.52 **[`M52` PubChem 美國 NIH 化學結構庫 Gateway (`pubchem_db`)](03_52_m52_pubchem_db.md)**
-* 3.53 **[`M53` WHO ATC 國際藥理樹 Gateway (`who_atc_db`)](03_53_m53_who_atc_db.md)**
-* 3.54 **[`M54` TW Core IG 台灣核心 FHIR 指引 Gateway (`twcore_fhir_db`)](03_54_m54_twcore_fhir_db.md)**
-* 3.55 **[`M55` MIMIC-IV 美國重症臨床資料庫 Gateway (`mimic_iv_db`)](03_55_m55_mimic_iv_db.md)** *(受控數據，需設定 `MIMIC_IV_DATA_DIR`)*
-* 3.56 **[`M56` MIMIC-IV-ED 美國急診門診臨床大數據 Gateway (`mimic_iv_ed_db`)](03_56_m56_mimic_iv_ed_db.md)** *(受控數據，需設定 `MIMIC_IV_ED_DATA_DIR`)*
+* 3.50 **[`H50` (原 M50) RxNorm 美國藥學概念網 Gateway (`rxnorm_db`)](03_50_h50_rxnorm_db.md)**
+* 3.51 **[`H51` (原 M51) ClinicalTrials.gov 美國 NIH 試驗 Gateway (`clinical_trials_gov`)](03_51_h51_clinical_trials_gov.md)**
+* 3.52 **[`H52` (原 M52) PubChem 美國 NIH 化學結構庫 Gateway (`pubchem_db`)](03_52_h52_pubchem_db.md)**
+* 3.53 **[`H53` (原 M53) WHO ATC 國際藥理樹 Gateway (`who_atc_db`)](03_53_h53_who_atc_db.md)**
+* 3.54 **[`H42` (原 M54) TW Core IG 台灣核心 FHIR 指引 Gateway (`twcore_fhir_db`)](03_54_h42_twcore_fhir_db.md)**
+* 3.55 **[`H54` (原 M55) MIMIC-IV 美國重症臨床資料庫 Gateway (`mimic_iv_db`)](03_55_h54_mimic_iv_db.md)** *(受控數據，需設定 `MIMIC_IV_DATA_DIR`)*
+* 3.56 **[`H55` (原 M56) MIMIC-IV-ED 美國急診門診臨床大數據 Gateway (`mimic_iv_ed_db`)](03_56_h55_mimic_iv_ed_db.md)** *(受控數據，需設定 `MIMIC_IV_ED_DATA_DIR`)*
 
 
 ---
@@ -412,7 +412,7 @@ graph TD
 
 ---
 
-<!-- START_OF_FILE: 03_01_m01_tw_drug_db.md -->
+<!-- START_OF_FILE: 03_01_h10_tw_drug_db.md -->
 # 3.1 [M01] 台灣處方藥證與健保價庫 (tw_drug_db)
 
 ### (A) 為何而戰 (Why We Build M01)
@@ -509,7 +509,7 @@ graph LR
 
 ---
 
-<!-- START_OF_FILE: 03_02_m02_tw_ingredient_map_db.md -->
+<!-- START_OF_FILE: 03_02_h11_tw_ingredient_map_db.md -->
 # 3.2 [M02] 西藥有效成分字典與主成分對照庫 (tw_ingredient_map_db)
 
 ### (A) 為何而戰 (Why We Build M02)
@@ -600,7 +600,7 @@ graph LR
 
 ---
 
-<!-- START_OF_FILE: 03_03_m03_health_supp_db.md -->
+<!-- START_OF_FILE: 03_03_h12_health_supp_db.md -->
 # 3.3 [M03] TFDA 健康食品許可證與保健交互作用庫 (health_supp_db)
 
 ### (A) 為何而戰 (Why We Build M03)
@@ -666,7 +666,7 @@ graph LR
 
 ---
 
-<!-- START_OF_FILE: 03_04_m04_drug_shortage_alert.md -->
+<!-- START_OF_FILE: 03_04_h13_drug_shortage_alert.md -->
 # 3.4 [M04] 食藥署缺藥與藥品回收警訊庫 (drug_shortage_alert)
 
 ### (A) 為何而戰 (Why We Build M04)
@@ -733,7 +733,7 @@ graph LR
 
 ---
 
-<!-- START_OF_FILE: 03_05_m05_tw_hospital_db.md -->
+<!-- START_OF_FILE: 03_05_h20_tw_hospital_db.md -->
 # 3.5 [M05] 健保特約醫事機構與專科地圖 (tw_hospital_db)
 
 ### (A) 為何而戰 (Why We Build M05)
@@ -802,7 +802,7 @@ graph LR
 
 ---
 
-<!-- START_OF_FILE: 03_06_m06_nhi_payment_db.md -->
+<!-- START_OF_FILE: 03_06_h21_nhi_payment_db.md -->
 # 3.6 [M06] 健保給付規定與自費比價庫 (nhi_payment_db)
 
 ### (A) 為何而戰 (Why We Build M06)
@@ -865,7 +865,7 @@ graph LR
 
 ---
 
-<!-- START_OF_FILE: 03_07_m07_nhi_procedure_db.md -->
+<!-- START_OF_FILE: 03_07_h22_nhi_procedure_db.md -->
 # 3.7 [M07] 健保醫療服務處置與手術碼庫 (nhi_procedure_db)
 
 ### (A) 為何而戰 (Why We Build M07)
@@ -929,7 +929,7 @@ graph LR
 
 ---
 
-<!-- START_OF_FILE: 03_08_m08_rare_disease_db.md -->
+<!-- START_OF_FILE: 03_08_h30_rare_disease_db.md -->
 # 3.8 [M08] 國健署罕見疾病與罕藥名單庫 (rare_disease_db)
 
 ### (A) 為何而戰 (Why We Build M08)
@@ -992,7 +992,7 @@ graph LR
 
 ---
 
-<!-- START_OF_FILE: 03_09_m09_oncology_meta.md -->
+<!-- START_OF_FILE: 03_09_h31_oncology_meta.md -->
 # 3.9 [M09] 癌症指引與 ClinicalTrials 台灣試驗庫 (oncology_meta)
 
 ### (A) 為何而戰 (Why We Build M09)
@@ -1055,7 +1055,7 @@ graph LR
 
 ---
 
-<!-- START_OF_FILE: 03_10_m10_med_legal_db.md -->
+<!-- START_OF_FILE: 03_10_h32_med_legal_db.md -->
 # 3.10 [M10] 醫療過失裁判與訴訟防護庫 (med_legal_db)
 
 ### (A) 為何而戰 (Why We Build M10)
@@ -1118,7 +1118,7 @@ graph LR
 
 ---
 
-<!-- START_OF_FILE: 03_11_m11_patient_journey_db.md -->
+<!-- START_OF_FILE: 03_11_h33_patient_journey_db.md -->
 # 3.11 [M11] 病患全程臨床照護導航庫 (patient_journey_db)
 
 ### (A) 為何而戰 (Why We Build M11)
@@ -1181,7 +1181,7 @@ graph LR
 
 ---
 
-<!-- START_OF_FILE: 03_12_m12_med_lab_fhir_db.md -->
+<!-- START_OF_FILE: 03_12_h40_med_lab_fhir_db.md -->
 # 3.12 [M12] TW Core IG FHIR 與 LOINC 碼庫 (med_lab_fhir_db)
 
 ### (A) 為何而戰 (Why We Build M12)
@@ -1244,7 +1244,7 @@ graph LR
 
 ---
 
-<!-- START_OF_FILE: 03_13_m13_tw_med_device_db.md -->
+<!-- START_OF_FILE: 03_13_h14_tw_med_device_db.md -->
 # 專章 3.13：`M13 tw-med-device-db` 醫療器材許可證與說明書庫白皮書
 
 * **模組代號**：`M13` (`tw_med_device_db`)
@@ -1280,7 +1280,7 @@ python src/cli/main.py m13 substitutes 內衛成製字第000012號 --db db/med.d
 
 ---
 
-<!-- START_OF_FILE: 03_14_m14_cdc_epidemic_db.md -->
+<!-- START_OF_FILE: 03_14_h34_cdc_epidemic_db.md -->
 # 專章 3.14：`M14 cdc-epidemic-db` 疾管署傳染病與疫苗據點網白皮書
 
 * **模組代號**：`M14` (`cdc_epidemic_db`)
@@ -1316,7 +1316,7 @@ python src/cli/main.py m14 nearby --lat 25.0339 --lng 121.5645 --radius-km 3.0 -
 
 ---
 
-<!-- START_OF_FILE: 03_15_m15_tw_nhird_db.md -->
+<!-- START_OF_FILE: 03_15_h23_tw_nhird_db.md -->
 # 📖 3.15 `M15` 台灣健保申報與抽樣資料庫 Gateway (`tw_nhird_db`)
 
 * **模組代號**：`M15` (`tw_nhird_db`)
@@ -1465,7 +1465,7 @@ flowchart TD
 
 ---
 
-<!-- START_OF_FILE: 03_16_m16_tw_ehr_db.md -->
+<!-- START_OF_FILE: 03_16_h41_tw_ehr_db.md -->
 # 📖 3.16 `M16` 台灣醫院臨床電子病歷 Gateway (`tw_ehr_db`)
 
 * **模組代號**：`M16` (`tw_ehr_db`)
@@ -1621,7 +1621,7 @@ flowchart TD
 
 ---
 
-<!-- START_OF_FILE: 03_50_m50_rxnorm_db.md -->
+<!-- START_OF_FILE: 03_50_h50_rxnorm_db.md -->
 # 3.50 [M50] RxNorm 美國藥學概念網 Gateway (rxnorm_db)
 
 ### (A) 為何而戰 (Why We Build M50)
@@ -1702,7 +1702,7 @@ graph LR
 
 ---
 
-<!-- START_OF_FILE: 03_51_m51_clinical_trials_gov.md -->
+<!-- START_OF_FILE: 03_51_h51_clinical_trials_gov.md -->
 # 3.51 [M51] ClinicalTrials.gov 美國 NIH 試驗 Gateway (clinical_trials_gov)
 
 ### (A) 為何而戰 (Why We Build M51)
@@ -1773,7 +1773,7 @@ graph LR
 
 ---
 
-<!-- START_OF_FILE: 03_52_m52_pubchem_db.md -->
+<!-- START_OF_FILE: 03_52_h52_pubchem_db.md -->
 # 3.52 [M52] PubChem 美國 NIH 化學結構庫 Gateway (pubchem_db)
 
 ### (A) 為何而戰 (Why We Build M52)
@@ -1845,7 +1845,7 @@ graph LR
 
 ---
 
-<!-- START_OF_FILE: 03_53_m53_who_atc_db.md -->
+<!-- START_OF_FILE: 03_53_h53_who_atc_db.md -->
 # 3.53 [M53] WHO ATC 國際藥理樹 Gateway (who_atc_db)
 
 ### (A) 為何而戰 (Why We Build M53)
@@ -1928,7 +1928,7 @@ graph LR
 
 ---
 
-<!-- START_OF_FILE: 03_54_m54_twcore_fhir_db.md -->
+<!-- START_OF_FILE: 03_54_h42_twcore_fhir_db.md -->
 # 3.54 [M54] TW Core IG 台灣核心 FHIR 指引 Gateway (twcore_fhir_db)
 
 ### (A) 為何而戰 (Why We Build M54)
@@ -1995,7 +1995,7 @@ graph LR
 
 ---
 
-<!-- START_OF_FILE: 03_55_m55_mimic_iv_db.md -->
+<!-- START_OF_FILE: 03_55_h54_mimic_iv_db.md -->
 # 3.55 [M55] MIMIC-IV 美國重症臨床資料庫 Gateway (mimic_iv_db)
 
 > [!IMPORTANT]
@@ -2041,7 +2041,7 @@ graph LR
 
 ---
 
-<!-- START_OF_FILE: 03_56_m56_mimic_iv_ed_db.md -->
+<!-- START_OF_FILE: 03_56_h55_mimic_iv_ed_db.md -->
 # 3.56 [M56] MIMIC-IV-ED 美國急診門診臨床大數據 Gateway (mimic_iv_ed_db)
 
 > [!IMPORTANT]
