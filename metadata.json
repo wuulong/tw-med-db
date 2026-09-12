@@ -1,14 +1,29 @@
 {
-  "module_id": "M12",
-  "module_name": "med_lab_fhir_db",
-  "title": "TW Core IG (FHIR R4) 與 LOINC 檢驗碼對照庫",
-  "table_name": "m12_loinc_codes",
-  "schema_version": "1.0.0",
-  "record_count": 500,
-  "last_updated": "2026-08-16T12:18:22.877325",
-  "attributes_count": 4,
-  "data_sources": [
-    "LOINC Official Standard Database (Regenstrief Institute)",
-    "衛福部 TW Core IG (FHIR R4) 台灣核心實作指引"
+  "project_name": "tw-med-db",
+  "domain_code": "GOV-A18",
+  "aliases": [
+    "mohw",
+    "med"
+  ],
+  "agency_name": "衛生福利部",
+  "agency_oid": "2.16.886.101.20003.20008",
+  "mother_project_id": "GOV-300",
+  "mother_domain_map_path": "/Volumes/D2024/data/gov-db-in/domain_map_config.json",
+  "five_pillars_alignment": {
+    "publisher_pillar": "master_agencies.sqlite",
+    "spatial_pillar": "universal_keys.sqlite (admin_code)",
+    "hydrology_pillar": "universal_keys.sqlite (river_id, station_id)",
+    "corporate_pillar": "corporate_registry / tax_id",
+    "temporal_pillar": "ISO-8601 (YYYY-MM-DDTHH:MM:SS+08:00)"
+  },
+  "spec_version": "v2.1.0",
+  "synergy_status": "Bootstrapped (已完成全路徑對接驗證)",
+  "synergy_verified_at": "2026-09-12T10:58:00+08:00",
+  "synergy_verification_pass_rate": "100% (4/4 PASS)",
+  "synergy_requirements_verified": [
+    "G300-REQ-MOHW-01: OID 權責歸併成功 (2.16.886.101.20003.20008)",
+    "G300-REQ-MOHW-02: 6碼門牌區號反查 (2.3萬家院所地址極速反查)",
+    "G300-REQ-MOHW-03: 藥商統編 Pass-Through 快取 (6.6萬筆藥品許可證持有商統編對照)",
+    "G300-REQ-MOHW-04: 跨部會 DB 直連與 CLI 調度 (med.db 66,488筆藥品與520家醫院直連)"
   ]
 }

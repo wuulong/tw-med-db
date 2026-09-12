@@ -2,9 +2,10 @@
 
 歡迎使用 **`tw-med-db`** —— 專為台灣醫療健康、健保開放資料與國際醫學生醫標準 (HL7 FHIR, RxNorm, PubChem, WHO ATC, MIMIC-IV, MIMIC-IV-ED) 設計的大一統 SQLite / DuckDB 大資料引擎與統一 CLI 工具鏈。
 
-| **最新版本**：**`v2.0.0`**
+| **最新版本**：**`v2.1.0`** (母專案 GOV-300 雙向連鎖對接完成版)
+| **部會代號**：**`GOV-A18`** (衛生福利部 MOHW，母大腦註冊別名: `mohw`, `med`)
 | **子模組規模**：**23 大實體子模組 (國內 16 大垂直 DB + 國際 7 大 Gateway)**
-| **核心資料庫主檔**：`db/med.db`
+| **核心資料庫主檔**：`db/med.db` (支援 `/Volumes/D2024/data/med-db-in/db/med.db`)
 
 ---
 
