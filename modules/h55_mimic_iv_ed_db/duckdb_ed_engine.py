@@ -141,3 +141,155 @@ def query_ed_patient_from_full_dataset(subject_id_query: str, data_dir: str) -> 
 
 def pd_not_null(val):
     return val is not None and str(val) != "nan" and str(val) != "None" and str(val) != "0"
+
+
+def query_ed_candidates_from_full_dataset(
+    data_dir: str,
+    condition: Optional[str] = None,
+    acuity: Optional[int] = None,
+    archetype: Optional[str] = None,
+    limit: int = 10
+) -> list:
+    """
+    透過 DuckDB Filter Pushdown 批量檢索符合條件之急診病患清單，並組裝完整病患資料。
+    """
+    ed_subdir = os.path.join(data_dir, "ed")
+    if os.path.exists(ed_subdir):
+        data_dir = ed_subdir
+
+    edstays_csv = os.path.join(data_dir, "edstays.csv.gz")
+    triage_csv = os.path.join(data_dir, "triage.csv.gz")
+    pyxis_csv = os.path.join(data_dir, "pyxis.csv.gz")
+    medrecon_csv = os.path.join(data_dir, "medrecon.csv.gz")
+
+    if not os.path.exists(edstays_csv) or not os.path.exists(triage_csv):
+        return []
+
+    con = get_duckdb_connection()
+
+    where_clauses = []
+    if condition and condition.strip():
+        cond_clean = condition.strip().replace("'", "''").lower()
+        where_clauses.append(f"LOWER(t.chiefcomplaint) LIKE '%{cond_clean}%'")
+
+    if acuity is not None:
+        where_clauses.append(f"t.acuity = {int(acuity)}")
+
+    # Archetype 篩選條件
+    if archetype:
+        arch = archetype.strip().lower()
+        if arch == "common-emergency":
+            # 常見急診：檢傷 2 或 3
+            where_clauses.append("t.acuity IN (2, 3)")
+        elif arch == "rare-critical":
+            # 危急重症：檢傷 1 或 ADMITTED
+            where_clauses.append("(t.acuity = 1 OR UPPER(e.disposition) = 'ADMITTED')")
+        elif arch == "borderline-trap":
+            # 臨界陷阱：檢傷 4~5 但 ADMITTED，或檢傷 2~3 但 HOME
+            where_clauses.append("((t.acuity IN (4, 5) AND UPPER(e.disposition) = 'ADMITTED') OR (t.acuity IN (2, 3) AND UPPER(e.disposition) = 'HOME'))")
+
+    where_sql = ("WHERE " + " AND ".join(where_clauses)) if where_clauses else ""
+
+    cand_sql = f"""
+    SELECT e.subject_id, e.stay_id, e.hadm_id, e.gender, e.race, e.disposition,
+           t.acuity, t.chiefcomplaint, t.temperature, t.heartrate, t.resprate, t.o2sat, t.sbp, t.dbp, t.pain
+    FROM read_csv_auto('{triage_csv}') t
+    JOIN read_csv_auto('{edstays_csv}') e ON t.stay_id = e.stay_id
+    {where_sql}
+    LIMIT {int(limit)};
+    """
+
+    try:
+        cand_df = con.execute(cand_sql).fetchdf()
+    except Exception as exc:
+        sys.stderr.write(f"⚠️ [DuckDB Error] {exc}\n")
+        con.close()
+        return []
+
+    if cand_df.empty:
+        con.close()
+        return []
+
+    stay_ids = [int(s) for s in cand_df['stay_id'].tolist()]
+    stay_ids_str = ",".join(str(s) for s in stay_ids)
+
+    # 批次取得 pyxis
+    pyxis_map = {}
+    if os.path.exists(pyxis_csv) and stay_ids:
+        pyx_sql = f"""
+        SELECT stay_id, name, charttime
+        FROM read_csv_auto('{pyxis_csv}')
+        WHERE stay_id IN ({stay_ids_str})
+        ORDER BY charttime ASC;
+        """
+        try:
+            pyx_df = con.execute(pyx_sql).fetchdf()
+            for _, r in pyx_df.iterrows():
+                sid = int(r['stay_id'])
+                if sid not in pyxis_map:
+                    pyxis_map[sid] = []
+                if len(pyxis_map[sid]) < 5:
+                    pyxis_map[sid].append({"name": str(r['name']), "charttime": str(r['charttime'])})
+        except Exception:
+            pass
+
+    # 批次取得 medrecon
+    medrecon_map = {}
+    if os.path.exists(medrecon_csv) and stay_ids:
+        med_sql = f"""
+        SELECT stay_id, name, etcdescription
+        FROM read_csv_auto('{medrecon_csv}')
+        WHERE stay_id IN ({stay_ids_str})
+        LIMIT {len(stay_ids) * 10};
+        """
+        try:
+            med_df = con.execute(med_sql).fetchdf()
+            for _, r in med_df.iterrows():
+                sid = int(r['stay_id'])
+                if sid not in medrecon_map:
+                    medrecon_map[sid] = []
+                if len(medrecon_map[sid]) < 5:
+                    medrecon_map[sid].append({
+                        "name": str(r['name']),
+                        "category": str(r['etcdescription']) if pd_not_null(r['etcdescription']) else ""
+                    })
+        except Exception:
+            pass
+
+    con.close()
+
+    results = []
+    for _, row in cand_df.iterrows():
+        sid = int(row['stay_id'])
+        sub_id = int(row['subject_id'])
+        hadm_id = int(row['hadm_id']) if pd_not_null(row['hadm_id']) else 0
+        ac_val = int(row['acuity']) if pd_not_null(row['acuity']) else 3
+
+        triage_info = {
+            "acuity": ac_val,
+            "chiefcomplaint": str(row['chiefcomplaint']) if pd_not_null(row['chiefcomplaint']) else "N/A",
+            "temperature": float(row['temperature']) if pd_not_null(row['temperature']) else None,
+            "heartrate": float(row['heartrate']) if pd_not_null(row['heartrate']) else None,
+            "resprate": float(row['resprate']) if pd_not_null(row['resprate']) else None,
+            "o2sat": float(row['o2sat']) if pd_not_null(row['o2sat']) else None,
+            "sbp": float(row['sbp']) if pd_not_null(row['sbp']) else None,
+            "dbp": float(row['dbp']) if pd_not_null(row['dbp']) else None,
+            "pain": str(row['pain']) if pd_not_null(row['pain']) else None
+        }
+
+        results.append({
+            "subject_id": sub_id,
+            "stay_id": sid,
+            "hadm_id": hadm_id,
+            "gender": str(row['gender']),
+            "race": str(row['race']),
+            "acuity": ac_val,
+            "chiefcomplaint": str(row['chiefcomplaint']) if pd_not_null(row['chiefcomplaint']) else "N/A",
+            "disposition": str(row['disposition']),
+            "triage_info": triage_info,
+            "pyxis_list": pyxis_map.get(sid, []),
+            "medrecon_list": medrecon_map.get(sid, [])
+        })
+
+    return results
+

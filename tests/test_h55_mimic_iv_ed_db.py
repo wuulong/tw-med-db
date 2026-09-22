@@ -46,12 +46,23 @@ class TestM56MimicIvEdDbDomain(unittest.TestCase):
         self.assertIn("M56 mimic_iv_ed_db", result.output)
         print("  ✓ M56 CLI status 看板檢查通過！")
 
-    def test_m56_03_ed_triage_acuity_duckdb(self):
-        """[M56 測試 3] 急診檢傷 (Triage Acuity) 零解壓查詢"""
-        print("\n--- [M56 Domain Test 3] 急診檢傷零解壓過濾檢查 ---")
-        result = runner.invoke(app, ["h55", "triage", "10000032"])
+    def test_m56_04_candidates_cli_command(self):
+        """[M56 測試 4] CLI candidates 候選病患檢索與 JSON 結構驗證"""
+        print("\n--- [M56 Domain Test 4] CLI candidates 命令檢查 ---")
+        result = runner.invoke(app, ["h55", "candidates", "--condition", "pain", "--limit", "2", "--json"])
         self.assertEqual(result.exit_code, 0)
-        print("  ✓ M56 CLI triage 病患 10000032 檢驗成功！")
+        data = json.loads(result.output)
+        self.assertIsInstance(data, list)
+        self.assertGreater(len(data), 0)
+        first = data[0]
+        self.assertIn("subject_id", first)
+        self.assertIn("stay_id", first)
+        self.assertIn("acuity", first)
+        self.assertIn("chiefcomplaint", first)
+        self.assertIn("triage_info", first)
+        self.assertIn("pyxis_list", first)
+        self.assertIn("medrecon_list", first)
+        print(f"  ✓ M56 CLI candidates 成功檢索 {len(data)} 筆符合結構之急診病患！")
 
 if __name__ == "__main__":
     unittest.main()

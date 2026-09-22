@@ -10,7 +10,11 @@ from typing import Dict, Any, Optional
 from rich.console import Console
 from rich.table import Table
 from src.m00_core.utils_db import get_sqlite_connection, resolve_db_path
-from modules.h55_mimic_iv_ed_db.duckdb_ed_engine import resolve_mimic_ed_data_dir, query_ed_patient_from_full_dataset
+from modules.h55_mimic_iv_ed_db.duckdb_ed_engine import (
+    resolve_mimic_ed_data_dir,
+    query_ed_patient_from_full_dataset,
+    query_ed_candidates_from_full_dataset
+)
 
 h55_app = typer.Typer(name="m56", help="M56 MIMIC-IV-ED 2.2 美國急診門診臨床大數據 Gateway 命令集")
 console = Console()
@@ -518,5 +522,167 @@ def status(
         typer.echo(f"  • {t:<35}: {c} 筆")
     typer.echo("=" * 80)
 
+@h55_app.command("candidates")
+def query_candidates(
+    condition: Optional[str] = typer.Option(None, "--condition", help="主訴或診斷關鍵字 (如 'chest pain', 'shortness of breath')"),
+    acuity: Optional[int] = typer.Option(None, "--acuity", help="指定 ESI 檢傷等級 (1~5)"),
+    archetype: Optional[str] = typer.Option(None, "--archetype", help="臨床原型篩選 (common-emergency, rare-critical, borderline-trap 等)"),
+    limit: int = typer.Option(10, "--limit", "-n", help="回傳筆數上限 (預設 10)"),
+    json_output: bool = typer.Option(False, "--json", "-j", help="輸出標準 JSON 陣列"),
+    db_path: str = typer.Option("db/med.db", "--db", "-d", help="SQLite 資料庫路徑")
+):
+    """
+    [CGS v2.4] 依條件批次檢索 MIMIC-IV-ED 急診候選病患清單 (支援 condition/acuity/archetype)
+    """
+    candidates = []
+    resolved_db = resolve_db_path(db_path)
+
+    # 1. 優先從 SQLite m56_ed_cache 進行快取查詢
+    if os.path.exists(resolved_db):
+        try:
+            conn = get_sqlite_connection(resolved_db)
+            cursor = conn.cursor()
+
+            where_clauses = []
+            params = []
+
+            if condition and condition.strip():
+                where_clauses.append("LOWER(chiefcomplaint) LIKE ?")
+                params.append(f"%{condition.strip().lower()}%")
+
+            if acuity is not None:
+                where_clauses.append("acuity = ?")
+                params.append(int(acuity))
+
+            if archetype:
+                arch = archetype.strip().lower()
+                if arch == "common-emergency":
+                    where_clauses.append("acuity IN (2, 3)")
+                elif arch == "rare-critical":
+                    where_clauses.append("(acuity = 1 OR UPPER(disposition) = 'ADMITTED')")
+                elif arch == "borderline-trap":
+                    where_clauses.append("((acuity IN (4, 5) AND UPPER(disposition) = 'ADMITTED') OR (acuity IN (2, 3) AND UPPER(disposition) = 'HOME'))")
+
+            where_sql = ("WHERE " + " AND ".join(where_clauses)) if where_clauses else ""
+            sql = f"""
+            SELECT subject_id, stay_id, hadm_id, gender, race, acuity, chiefcomplaint, disposition,
+                   triage_json, pyxis_json, medrecon_json
+            FROM m56_ed_cache
+            {where_sql}
+            LIMIT ?;
+            """
+            params.append(int(limit))
+            cursor.execute(sql, tuple(params))
+            rows = cursor.fetchall()
+
+            for r in rows:
+                candidates.append({
+                    "subject_id": r[0],
+                    "stay_id": r[1],
+                    "hadm_id": r[2],
+                    "gender": r[3],
+                    "race": r[4],
+                    "acuity": r[5],
+                    "chiefcomplaint": r[6],
+                    "disposition": r[7],
+                    "triage_info": json.loads(r[8]) if r[8] else {},
+                    "pyxis_list": json.loads(r[9]) if r[9] else [],
+                    "medrecon_list": json.loads(r[10]) if r[10] else []
+                })
+            conn.close()
+        except Exception as e:
+            sys.stderr.write(f"ℹ️ [SQLite Cache Notice] {e}\n")
+
+    # 2. 若快取數量不足 limit 且全量目錄可用，透過 DuckDB 引擎穿透檢索
+    if len(candidates) < limit:
+        data_dir = resolve_mimic_ed_data_dir()
+        if data_dir:
+            needed = limit - len(candidates)
+            sys.stderr.write(f"🔍 [DuckDB] 發動全量零解壓檢索，目標補充 {needed} 筆候選案例...\n")
+            duck_results = query_ed_candidates_from_full_dataset(
+                data_dir=data_dir,
+                condition=condition,
+                acuity=acuity,
+                archetype=archetype,
+                limit=needed
+            )
+            # 排除已存在的 subject_id
+            existing_subs = {c["subject_id"] for c in candidates}
+            for d_item in duck_results:
+                if d_item["subject_id"] not in existing_subs:
+                    candidates.append(d_item)
+                    # 自動寫入 m56_ed_cache
+                    if os.path.exists(resolved_db):
+                        try:
+                            conn = get_sqlite_connection(resolved_db)
+                            c_cur = conn.cursor()
+                            c_cur.execute("""
+                            INSERT INTO m56_ed_cache (
+                                subject_id, stay_id, hadm_id, gender, race, acuity, chiefcomplaint, disposition,
+                                triage_json, pyxis_json, medrecon_json, is_seed
+                            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0)
+                            ON CONFLICT(subject_id) DO UPDATE SET
+                                stay_id=excluded.stay_id, hadm_id=excluded.hadm_id, acuity=excluded.acuity,
+                                chiefcomplaint=excluded.chiefcomplaint, disposition=excluded.disposition,
+                                triage_json=excluded.triage_json, pyxis_json=excluded.pyxis_json, medrecon_json=excluded.medrecon_json;
+                            """, (
+                                d_item["subject_id"],
+                                d_item["stay_id"],
+                                d_item["hadm_id"],
+                                d_item["gender"],
+                                d_item["race"],
+                                d_item["acuity"],
+                                d_item["chiefcomplaint"],
+                                d_item["disposition"],
+                                json.dumps(d_item["triage_info"], ensure_ascii=False),
+                                json.dumps(d_item["pyxis_list"], ensure_ascii=False),
+                                json.dumps(d_item["medrecon_list"], ensure_ascii=False)
+                            ))
+                            conn.commit()
+                            conn.close()
+                        except Exception:
+                            pass
+                if len(candidates) >= limit:
+                    break
+
+    # 3. 輸出結果 (遵從 CGS v2.4 規範: stdout 輸出結果，stderr 輸出日誌)
+    if json_output:
+        print(json.dumps(candidates, ensure_ascii=False, indent=2))
+        return
+
+    # 人類可讀表格模式
+    console.print(f"\n[bold cyan]🚨 MIMIC-IV-ED 臨床候選病患篩選 (共 {len(candidates)} 筆)[/bold cyan]")
+    if condition:
+        console.print(f"  • 主訴條件: [yellow]{condition}[/yellow]")
+    if acuity:
+        console.print(f"  • 檢傷分級: [yellow]Level {acuity}[/yellow]")
+    if archetype:
+        console.print(f"  • 臨床原型: [yellow]{archetype}[/yellow]")
+
+    table = Table()
+    table.add_column("Subject ID", style="cyan")
+    table.add_column("Stay ID", style="magenta")
+    table.add_column("Acuity", style="bold yellow")
+    table.add_column("Chief Complaint", style="green")
+    table.add_column("Disposition", style="blue")
+    table.add_column("Pyxis 藥物數", style="cyan")
+    table.add_column("居家用藥數", style="white")
+
+    for c in candidates:
+        table.add_row(
+            str(c["subject_id"]),
+            str(c["stay_id"]),
+            f"Level {c['acuity']}",
+            str(c["chiefcomplaint"]),
+            str(c["disposition"]),
+            str(len(c.get("pyxis_list", []))),
+            str(len(c.get("medrecon_list", [])))
+        )
+
+    console.print(table)
+    console.print()
+
+
 def pd_not_null(val):
     return val is not None and str(val) != "nan" and str(val) != "None" and str(val) != "0"
+
