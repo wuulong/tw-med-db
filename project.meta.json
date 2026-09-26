@@ -1,0 +1,45 @@
+{
+  "pgs_spec_version": "3.2",
+  "project_id": "tw-med-db",
+  "name": "tw-med-db (GOV-A18 衛福部醫療大數據中樞)",
+  "description": "衛生福利部主題開放資料、藥品登記、醫院診所機構、全民健保醫療統計與國際醫學標準 (FHIR/LOINC/RxNorm/MIMIC) 大一統 SQLite 引擎",
+  "lifecycle_state": "ACTIVE",
+  "domain_tags": [
+    "醫療",
+    "衛福部",
+    "GOV-A18",
+    "tw-med-db",
+    "FHIR",
+    "LOINC",
+    "RxNorm",
+    "MIMIC-IV",
+    "CGS-v2.4",
+    "PGS-v3.2",
+    "DGS-v2.0"
+  ],
+  "owner": "Antigravity & wuulong",
+  "created_at": "2026-08-15 08:00:00",
+  "aiif": {
+    "dir": "aiif",
+    "api": "aiif/prompt_for_api.md",
+    "db": "aiif/prompt_for_db.md"
+  },
+  "seman": {
+    "enabled": true,
+    "entry_point": "sys_eng/00_buildlogs/OVERVIEW.md",
+    "aliases": ["med", "meddb", "mohw", "tw-med-db"]
+  },
+  "dbs": [
+    "/Volumes/D2024/data/med-db-in/db/med.db"
+  ],
+  "scripts": [
+    "src/cli/meddb_cli.py"
+  ],
+  "relations": {
+    "public_repo": "tw-med-db",
+    "books": [
+      "book/00_toc.md"
+    ],
+    "parent_project": "events-2026Q3/gov-db-in"
+  }
+}

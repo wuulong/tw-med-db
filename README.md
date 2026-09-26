@@ -57,19 +57,29 @@
 ## 🛠️ CLI 命令行快速指令 (CLI Quickstart)
 
 ```bash
-# 1. 執行全系統健康診斷 Doctor Check (驗證全數 21 大子模組)
-./pa med doctor --db db/med.db
+# 1. 執行全系統健康診斷 Doctor Check (驗證全數 23 大子模組)
+python src/cli/meddb_cli.py doctor --db db/med.db
 
 # 2. 全域 FTS5 全文跨庫搜尋 (如檢索藥名 Tagrisso)
-./pa med search Tagrisso --db db/med.db
+python src/cli/meddb_cli.py search Tagrisso --db db/med.db
 
-# 3. 執行 M56 急診檢傷大資料與 Top 10 主訴統計
-./pa meddb m56 triage-stats
+# 3. 執行 H55 (M56) 急診檢傷大資料與 Top 10 主訴統計
+python src/cli/meddb_cli.py h55 triage-stats
 
-# 4. 執行 M55 重症院內死亡率與並行共病統計
-./pa meddb m55 mortality-risk "multiple myeloma"
-./pa meddb m55 comorbidities "multiple myeloma" --limit 5
+# 4. 執行 H54 (M55) 重症院內死亡率與並行共病統計
+python src/cli/meddb_cli.py h54 mortality-risk "multiple myeloma"
+python src/cli/meddb_cli.py h54 comorbidities "multiple myeloma" --limit 5
 ```
+
+---
+
+## 🤖 AI 協同與外銷接駁介面 (AI Interfaces - aiif)
+
+本公開專案遵循 **PGS v3.2** 規格，專為外部 AI 代理人（如 `tw-hos-agent`、`sovereign-health-agent`）提供乾淨、零 Token 負擔的接駁規範，收錄於 [`aiif/`](aiif/)：
+
+- 📘 [aiif/README.md](aiif/README.md)：四大支柱 23 大子模組功能全覽與接駁導航。
+- 🚀 [aiif/prompt_for_api.md](aiif/prompt_for_api.md)：CLI / API 調用合約、指令全覽、Clean JSON 樣態與 Unix 管道範例（含最新 `h55 candidates`）。
+- 🗄️ [aiif/prompt_for_db.md](aiif/prompt_for_db.md)：SQLite 四階路徑解析、唯讀掛載 (ATTACH) 語法與 182 張表字典。
 
 ---
 
