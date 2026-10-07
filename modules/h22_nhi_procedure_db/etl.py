@@ -75,7 +75,7 @@ def process_m07_etl(source_json_path: str, target_db_path: str = "tw-med-db/db/m
             continue
         code = str(raw_code).strip()
 
-        name_zh = strip_html_tags(item.get("name_zh") or item.get("中文名稱") or item.get("項目名稱") or "")
+        name_zh = strip_html_tags(item.get("name_zh") or item.get("name") or item.get("中文名稱") or item.get("項目名稱") or "")
         icd10_pcs = item.get("icd10_pcs") or item.get("ICD10") or ""
         try:
             nhi_points = int(item.get("nhi_points") or item.get("點數") or 0)

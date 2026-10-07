@@ -16,9 +16,7 @@ def create_m07_fts(conn: sqlite3.Connection):
     CREATE VIRTUAL TABLE IF NOT EXISTS m07_procedures_fts USING fts5(
         code,
         name_zh,
-        icd10_pcs,
-        content='m07_procedures',
-        content_rowid='rowid'
+        icd10_pcs
     );
     """)
 
@@ -31,21 +29,20 @@ def create_m07_fts(conn: sqlite3.Connection):
 
     cursor.execute("""
     CREATE TRIGGER IF NOT EXISTS m07_after_delete AFTER DELETE ON m07_procedures BEGIN
-        INSERT INTO m07_procedures_fts(m07_procedures_fts, rowid, code, name_zh, icd10_pcs)
-        VALUES('delete', old.rowid, old.code, old.name_zh, old.icd10_pcs);
+        DELETE FROM m07_procedures_fts WHERE rowid = old.rowid;
     END;
     """)
 
     cursor.execute("""
     CREATE TRIGGER IF NOT EXISTS m07_after_update AFTER UPDATE ON m07_procedures BEGIN
-        INSERT INTO m07_procedures_fts(m07_procedures_fts, rowid, code, name_zh, icd10_pcs)
-        VALUES('delete', old.rowid, old.code, old.name_zh, old.icd10_pcs);
+        DELETE FROM m07_procedures_fts WHERE rowid = old.rowid;
         INSERT INTO m07_procedures_fts(rowid, code, name_zh, icd10_pcs)
         VALUES (new.rowid, new.code, new.name_zh, new.icd10_pcs);
     END;
     """)
 
     conn.commit()
+
 
 
 def search_m07_fts(conn: sqlite3.Connection, query: str, limit: int = 10) -> list:
@@ -56,17 +53,20 @@ def search_m07_fts(conn: sqlite3.Connection, query: str, limit: int = 10) -> lis
     # 🛡️ 避坑點 4：關鍵字安全清洗，去除單雙引號防止 FTS5 崩潰
     cleaned_fts_query = safe_fts_query_cleaner(query)
 
+    columns = ["code", "name_zh", "icd10_pcs", "nhi_points", "requires_inpatient"]
     try:
         cursor.execute("""
-        SELECT code, name_zh, icd10_pcs, nhi_points, requires_inpatient
-        FROM m07_procedures_fts
-        JOIN m07_procedures ON m07_procedures_fts.rowid = m07_procedures.rowid
+        SELECT p.code, p.name_zh, p.icd10_pcs, p.nhi_points, p.requires_inpatient
+        FROM m07_procedures_fts f
+        JOIN m07_procedures p ON f.rowid = p.rowid
         WHERE m07_procedures_fts MATCH ?
         LIMIT ?;
         """, (cleaned_fts_query, limit))
-        results = [dict(row) for row in cursor.fetchall()]
-        if results:
-            return results
+        rows = cursor.fetchall()
+        if rows:
+            if conn.row_factory == sqlite3.Row:
+                return [dict(row) for row in rows]
+            return [dict(zip(columns, row)) for row in rows]
     except Exception:
         pass
 
@@ -78,4 +78,8 @@ def search_m07_fts(conn: sqlite3.Connection, query: str, limit: int = 10) -> lis
     WHERE name_zh LIKE ? OR icd10_pcs LIKE ? OR code LIKE ?
     LIMIT ?;
     """, (pattern, pattern, pattern, limit))
-    return [dict(row) for row in cursor.fetchall()]
+    rows = cursor.fetchall()
+    if conn.row_factory == sqlite3.Row:
+        return [dict(row) for row in rows]
+    return [dict(zip(columns, row)) for row in rows]
+

@@ -20,13 +20,14 @@ python src/cli/meddb_cli.py <subcommand> [flags]
 ### 2.1 全域查詢中樞 (M00/H00)
 1. **`status`**：檢視 23 大子模組健康診斷、路徑與筆數看板。
 2. **`search <keyword>`**：全域 FTS5 倒排索引極速全文檢索（同時命中藥名、適應症、成分、醫院）。支援 `-` 從 stdin 批次讀入。
-3. **`substitutes <keyword>`**：同成分同劑型之健保平價/同質替代藥物反查。支援 `-` 從 stdin 批次讀入。
-4. **`price-history <keyword>`**：藥品歷年健保核定價格變動與調降歷程。
-5. **`doctor`**：全系統與 23 大子模組健康檢查。
+3. **`substitutes <drug_code | drug_name>`**：同成分健保平價/同質替代藥物反查（智慧兩階段支援藥名中文如「普拿疼」或藥品程式碼，亦可透過 `h10 substitutes` 調用）。支援 `-` 從 stdin 批次讀入。
+4. **`price-history <drug_code>`**：藥品歷年健保核定價格變動與調降歷程（亦可透過 `h10 price-history` 調用）。
+5. **`procedure <keyword>`**：健保醫療服務處置與手術碼檢索（如「導尿管」、「鼻胃管」、「換藥」，亦可透過 `h22 search` 調用）。支援 `-` 從 stdin 批次讀入與 `-j` JSON 輸出。
+6. **`doctor`**：全系統與 23 大子模組健康檢查。
 
 ### 2.2 四大領域支柱 23 大垂直模組指令 (H10~H55)
 * **Pillar 1: 食藥署 TFDA（藥品與醫材安全）**：
-  - **`h10` (西藥許可證庫)**：`search <kw>`, `details <code>`, `substitutes <kw>`, `status`
+  - **`h10` (西藥許可證庫)**：`search <kw>`, `details <code>`, `substitutes <kw|code>` (智慧兩階段同成分推薦), `price-history <code>`, `status`
   - **`h11` (成分字典庫)**：`search <kw>`, `atc <code>`, `status`
   - **`h12` (健康食品庫)**：`search <kw>`, `status`
   - **`h13` (缺藥通報警訊)**：`search <kw>`, `status`
@@ -34,7 +35,8 @@ python src/cli/meddb_cli.py <subcommand> [flags]
 * **Pillar 2: 健保署 NHI（機構比價與費用申報）**：
   - **`h20` (特約醫事機構庫)**：`search <kw>`, `nearby <city>`, `status`
   - **`h21` (健保給付與自費比價)**：`search <kw>`, `rules <kw>`, `status`
-  - **`h22` (健保處置與手術碼)**：`search <kw>`, `status`
+  - **`h22` (健保處置與手術碼)**：`search <kw>` (支援中文診療名稱與 `-j` JSON 輸出), `status`
+
   - **`h23` (健保申報 NHIRD 沙箱)**：`drg-calc`, `cross-eval`, `status`
 * **Pillar 3: 疾管/國健/醫事司（臨床照護與法規安全）**：
   - **`h30` (罕病與罕藥公告名冊)**：`search <kw>`, `status`
@@ -51,7 +53,7 @@ python src/cli/meddb_cli.py <subcommand> [flags]
   - **`h52` (PubChem 化學分子庫)**：`search <inchikey>`, `status`
   - **`h53` (WHO ATC 藥理分類樹)**：`tree <atc_code>`, `status`
   - **`h54` (MIMIC-IV 重症 ICU Gateway)**：`mortality-risk <disease>`, `comorbidities <disease>`, `status`
-  - **`h55` (MIMIC-IV-ED 急診大數據 Gateway)**：
+  - **`h55` (MIMIC-IV-ED 急診巨量資料 Gateway)**：
     - **`search <subject_id>`**：查詢病患完整到診、檢傷與給藥紀錄。
     - **`triage <subject_id>`**：查詢檢傷 Acuity、生理徵象量測值。
     - **`candidates [選項]`**：**[最新]** 依條件批次檢索候選急診病患：

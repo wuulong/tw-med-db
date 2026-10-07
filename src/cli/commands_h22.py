@@ -6,6 +6,7 @@ import os
 import json
 import sqlite3
 import typer
+from typing import Optional
 from modules.h22_nhi_procedure_db.etl import process_m07_etl
 from modules.h22_nhi_procedure_db.fts import create_m07_fts, search_m07_fts
 from modules.h22_nhi_procedure_db.metadata_gen import generate_m07_metadata
@@ -40,34 +41,51 @@ def build(
 
 @h22_app.command("search")
 def search(
-    query: str = typer.Argument(..., help="檢索關鍵字 (例如: 心導管, 達文西, 手術, 64002B)"),
+    query: Optional[str] = typer.Argument(None, help="檢索關鍵字 (例如: 導尿管, 鼻胃管, 換藥, 心導管, 47013C；支援 '-' 或管道 stdin 輸入)"),
     db_path: str = typer.Option("tw-med-db/db/med.db", "--db", "-d", help="實體 SQLite 資料庫路徑"),
-    limit: int = typer.Option(5, "--limit", "-l", help="回傳筆數限制")
+    limit: int = typer.Option(5, "--limit", "-l", help="回傳筆數限制"),
+    json_mode: bool = typer.Option(False, "--json", "-j", help="單行緊湊 JSON 輸出 (Token-Saving & Pipeline-Friendly)")
 ):
     """
-    執行 M07 健保醫療處置與手術碼檢索。
+    [CGS v2.4 Pipeline-Native] 執行 M07/H22 健保醫療處置與手術碼檢索。
+    支援管道串流輸入與 JSON 格式輸出 (例如: echo '導尿管' | python src/cli/meddb_cli.py h22 search - -j)
     """
+    from src.m00_core.utils_db import resolve_pipeline_input
+    inputs = resolve_pipeline_input(query)
+    if not inputs:
+        typer.echo("❌ 請提供檢索關鍵字，或透過管道 stdin 輸入 (例如: echo '導尿管' | python src/cli/meddb_cli.py h22 search - -j)", err=True)
+        raise typer.Exit(code=2)
+
     db_path = resolve_db_path(db_path)
     if not os.path.exists(db_path):
         typer.echo(f"❌ 找不到實體資料庫: {db_path}，請先執行 'tw-med-cli m07 build'", err=True)
         raise typer.Exit(code=1)
 
     conn = get_sqlite_connection(db_path)
-    results = search_m07_fts(conn, query, limit=limit)
+    all_results = []
+    for q in inputs:
+        results = search_m07_fts(conn, q, limit=limit)
+        if json_mode:
+            all_results.extend(results)
+        else:
+            if not results:
+                typer.echo(f"🔍 查無匹配健保處置與手術碼: '{q}'")
+                continue
+
+            typer.echo(f"\n🩺 M07/H22 健保處置與手術碼檢索結果 (關鍵字: '{q}', 共 {len(results)} 筆):")
+            typer.echo("=" * 80)
+            for idx, row in enumerate(results, 1):
+                inpatient_tag = "🏥 [需住院]" if row.get("requires_inpatient") else "🟢 [門診即可]"
+                typer.echo(f"[{idx}] 處置碼: {row.get('code')} / ICD-10-PCS: {row.get('icd10_pcs') or '(未標註)'}  {inpatient_tag}")
+                typer.echo(f"    處置名稱: {row.get('name_zh')}")
+                typer.echo(f"    健保點數: {row.get('nhi_points')} 點")
+                typer.echo("-" * 80)
+
     conn.close()
 
-    if not results:
-        typer.echo(f"🔍 查無匹配健保處置與手術碼: '{query}'")
-        return
+    if json_mode:
+        print(json.dumps(all_results, ensure_ascii=False, indent=2))
 
-    typer.echo(f"\n🩺 M07 健保處置與手術碼檢索結果 (關鍵字: '{query}', 共 {len(results)} 筆):")
-    typer.echo("=" * 80)
-    for idx, row in enumerate(results, 1):
-        inpatient_tag = "🏥 [需住院]" if row.get("requires_inpatient") else "🟢 [門診即可]"
-        typer.echo(f"[{idx}] 處置碼: {row.get('code')} / ICD-10-PCS: {row.get('icd10_pcs') or '(未標註)'}  {inpatient_tag}")
-        typer.echo(f"    處置名稱: {row.get('name_zh')}")
-        typer.echo(f"    健保點數: {row.get('nhi_points')} 點")
-        typer.echo("-" * 80)
 
 
 @h22_app.command("status")

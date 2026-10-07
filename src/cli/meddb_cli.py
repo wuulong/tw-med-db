@@ -32,14 +32,14 @@ SPEC_PATH = "scripts/specs/meddb_cli.spec.md"
 MANUAL_PATH = "scripts/manuals/meddb_cli.md"
 
 # 導入子模組 commands (H 體系)
-from src.cli.commands_h10 import h10_app
+from src.cli.commands_h10 import h10_app, substitutes as substitutes_cmd, price_history as price_history_cmd
 from src.cli.commands_h11 import h11_app
 from src.cli.commands_h12 import h12_app
 from src.cli.commands_h13 import h13_app
 from src.cli.commands_h14 import h14_app
 from src.cli.commands_h20 import h20_app
 from src.cli.commands_h21 import h21_app
-from src.cli.commands_h22 import h22_app
+from src.cli.commands_h22 import h22_app, search as procedure_cmd
 from src.cli.commands_h23 import h23_app
 from src.cli.commands_h30 import h30_app
 from src.cli.commands_h31 import h31_app
@@ -97,10 +97,13 @@ for h_name, m_name, sub_app in APPS_MAPPING:
     app.add_typer(sub_app, name=h_name)
     app.add_typer(sub_app, name=m_name)
 
-# 掛載頂層快捷命令
+# 掛載頂層快捷命令 (Master Router)
 app.command("status")(status_cmd)
 app.command("search")(search_cmd)
 app.command("doctor")(doctor_cmd)
+app.command("substitutes")(substitutes_cmd)
+app.command("price-history")(price_history_cmd)
+app.command("procedure")(procedure_cmd)
 
 @app.command("version")
 def version():
@@ -129,6 +132,9 @@ def schema():
             "status": "查詢 tw-med-db 全庫已註冊子模組狀態與資料量看板",
             "search": "跨庫 fts_med_global 全文檢索",
             "doctor": "執行資料庫健康度 4 大硬核檢測",
+            "substitutes": "智慧型兩階段同成分平價替代藥物檢索 (快捷別名至 h10/m01)",
+            "price-history": "查詢指定藥品之歷年健保價調降趨勢與歷史紀錄 (快捷別名至 h10/m01)",
+            "procedure": "健保醫療服務處置與手術碼檢索 (快捷別名至 h22/m07)",
             "version": "顯示版本與 CGS 規範資訊",
             "manual": "顯示或開啟使用說明手冊",
             "schema": "輸出自我描述 JSON Schema"
@@ -141,6 +147,8 @@ def schema():
         }
     }
     print(json.dumps(schema_info, ensure_ascii=False, indent=2))
+
+
 
 @app.command("manual")
 def manual(

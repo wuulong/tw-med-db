@@ -93,18 +93,20 @@ def search(
 
 @h10_app.command("substitutes")
 def substitutes(
-    drug_code: Optional[str] = typer.Argument(None, help="藥品代碼 (例如: DHA00000000002；支援 '-' 或管道 stdin 輸入)"),
+    drug_query: Optional[str] = typer.Argument(None, help="藥品代碼或名稱 (例如: DHA00000000002 或 '普拿疼'；支援 '-' 或管道 stdin 輸入)"),
     db_path: str = typer.Option("tw-med-db/db/med.db", "--db", "-d", help="實體 SQLite 資料庫路徑"),
+    limit: int = typer.Option(10, "--limit", "-l", help="替代藥物推薦上限筆數"),
     json_mode: bool = typer.Option(False, "--json", "-j", help="單行緊湊 JSON 輸出 (Token-Saving & Pipeline-Friendly)")
 ):
     """
-    [Advanced E2 & CGS v2.4 Pipeline-Native] 查詢指定藥品之同成分/同劑型平價替代藥物 (Substitution Graph)。
-    支援管道串流輸入 (例如: echo 'DHA00000000002' | ./pa med h10 substitutes -)
+    [Advanced E2 & CGS v2.4 Pipeline-Native] 智慧型兩階段同成分平價替代藥物檢索。
+    支援藥品代碼或中文名稱輸入，自動對位有效成分並自全庫 6.6 萬筆藥品中動態推薦替代藥物。
+    支援管道串流輸入 (例如: echo '普拿疼' | python src/cli/meddb_cli.py h10 substitutes - -j)
     """
     from src.m00_core.utils_db import resolve_pipeline_input
-    inputs = resolve_pipeline_input(drug_code)
+    inputs = resolve_pipeline_input(drug_query)
     if not inputs:
-        typer.echo("❌ 請提供藥品代碼，或透過管道 stdin 輸入 (例如: echo 'DHA00000000002' | ./pa med h10 substitutes -)", err=True)
+        typer.echo("❌ 請提供藥品代碼或名稱，或透過管道 stdin 輸入 (例如: echo '普拿疼' | python src/cli/meddb_cli.py substitutes - -j)", err=True)
         raise typer.Exit(code=2)
 
     db_path = resolve_db_path(db_path)
@@ -116,36 +118,107 @@ def substitutes(
     cursor = conn.cursor()
 
     all_results = []
-    for code in inputs:
-        code_zfill = code.strip().zfill(10)
+    for item in inputs:
+        item_str = item.strip()
+        if not item_str:
+            continue
+
+        # 第一階段：識別與定位目標藥品 (Smart Identification)
+        target_drug = None
+        # 1. 嘗試程式碼或許可證精確匹配
         cursor.execute("""
-        SELECT original_name_tw, original_price, substitute_code, substitute_name_tw, substitute_price, price_savings
-        FROM v_m01_drug_substitutes
-        WHERE original_code = ?
-        ORDER BY substitute_price ASC;
-        """, (code_zfill,))
-        rows = [dict(r) for r in cursor.fetchall()]
+            SELECT drug_code, trade_name_tw, trade_name_en, ingredient_name, form_description, nhi_price
+            FROM m01_tw_drug_db
+            WHERE drug_code = ? OR drug_code = ? OR license_id = ?
+            LIMIT 1;
+        """, (item_str, item_str.zfill(10), item_str))
+        row = cursor.fetchone()
+        if row:
+            target_drug = dict(row)
+        else:
+            # 2. 嘗試 FTS5 全文檢索
+            try:
+                fts_rows = search_m01_fts(conn, item_str, limit=5)
+                if fts_rows:
+                    hit_code = fts_rows[0].get("drug_code")
+                    cursor.execute("""
+                        SELECT drug_code, trade_name_tw, trade_name_en, ingredient_name, form_description, nhi_price
+                        FROM m01_tw_drug_db
+                        WHERE drug_code = ?
+                        LIMIT 1;
+                    """, (hit_code,))
+                    r = cursor.fetchone()
+                    if r:
+                        target_drug = dict(r)
+            except Exception:
+                pass
+
+        # 3. 嘗試 LIKE 模糊搜尋備援
+        if not target_drug:
+            cursor.execute("""
+                SELECT drug_code, trade_name_tw, trade_name_en, ingredient_name, form_description, nhi_price
+                FROM m01_tw_drug_db
+                WHERE trade_name_tw LIKE ? OR trade_name_en LIKE ?
+                LIMIT 1;
+            """, (f"%{item_str}%", f"%{item_str}%"))
+            r = cursor.fetchone()
+            if r:
+                target_drug = dict(r)
+
+        if not target_drug or not target_drug.get("ingredient_name"):
+            if not json_mode:
+                typer.echo(f"🔍 找不到目標藥品或該藥品無成分資料: '{item_str}'")
+            continue
+
+        orig_code = target_drug.get("drug_code")
+        orig_name = target_drug.get("trade_name_tw") or target_drug.get("trade_name_en") or orig_code
+        orig_ingredient = target_drug.get("ingredient_name")
+        orig_price = float(target_drug.get("nhi_price") or 0.0)
+
+        # 第二階段：動態同成分替代查詢 (Dynamic Active Ingredient Matching)
+        cursor.execute("""
+            SELECT drug_code, trade_name_tw, trade_name_en, form_description, nhi_price, ingredient_name
+            FROM m01_tw_drug_db
+            WHERE ingredient_name = ? AND drug_code != ?
+            ORDER BY nhi_price ASC, drug_code ASC
+            LIMIT ?;
+        """, (orig_ingredient, orig_code, limit))
+
+        matches = [dict(r) for r in cursor.fetchall()]
+        formatted_matches = []
+        for m in matches:
+            sub_price = float(m.get("nhi_price") or 0.0)
+            savings = round(orig_price - sub_price, 2)
+            formatted_matches.append({
+                "original_drug": orig_name,
+                "substitute_drug": m.get("trade_name_tw") or m.get("trade_name_en") or m.get("drug_code"),
+                "ingredient": orig_ingredient,
+                "original_price": orig_price,
+                "substitute_price": sub_price,
+                "savings": savings,
+                "substitute_code": m.get("drug_code")
+            })
 
         if json_mode:
-            all_results.extend(rows)
+            all_results.extend(formatted_matches)
         else:
-            if not rows:
-                typer.echo(f"💡 藥品 [{code_zfill}] 查無同成分更平價的替代藥物 (已有極高CP值或無可替代選項)。")
+            if not formatted_matches:
+                typer.echo(f"💡 藥品 [{orig_name}] 查無同成分之替代藥物。")
                 continue
 
-            typer.echo(f"\n💊 藥品 [{code_zfill}] 平價替代藥物推薦清單 (共 {len(rows)} 筆):")
+            typer.echo(f"\n💊 藥品 [{orig_name}] 同成分替代藥物推薦 (成分: {orig_ingredient}, 共 {len(formatted_matches)} 筆):")
             typer.echo("=" * 80)
-            for idx, row in enumerate(rows, 1):
-                typer.echo(f"[{idx}] 替代藥代碼: {row['substitute_code']}")
-                typer.echo(f"    替代藥品名: {row['substitute_name_tw']}")
-                typer.echo(f"    原價 vs 替代價: ${row['original_price']} ➔ ${row['substitute_price']}")
-                typer.echo(f"    💰 每顆可節省: ${row['price_savings']:.2f} NTD")
+            for idx, row in enumerate(formatted_matches, 1):
+                typer.echo(f"[{idx}] 替代藥品: {row['substitute_drug']} ({row['substitute_code']})")
+                typer.echo(f"    健保價比對: 原藥 ${row['original_price']} ➔ 替代藥 ${row['substitute_price']} (價差: ${row['savings']})")
                 typer.echo("-" * 80)
+
     conn.close()
 
     if json_mode:
         import json
         print(json.dumps(all_results, ensure_ascii=False, indent=2))
+
 
 
 @h10_app.command("price-history")
