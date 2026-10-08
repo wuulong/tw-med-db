@@ -20,14 +20,15 @@ python src/cli/meddb_cli.py <subcommand> [flags]
 ### 2.1 全域查詢中樞 (M00/H00)
 1. **`status`**：檢視 23 大子模組健康診斷、路徑與筆數看板。
 2. **`search <keyword>`**：全域 FTS5 倒排索引極速全文檢索（同時命中藥名、適應症、成分、醫院）。支援 `-` 從 stdin 批次讀入。
-3. **`substitutes <drug_code | drug_name>`**：同成分健保平價/同質替代藥物反查（智慧兩階段支援藥名中文如「普拿疼」或藥品程式碼，亦可透過 `h10 substitutes` 調用）。支援 `-` 從 stdin 批次讀入。
-4. **`price-history <drug_code>`**：藥品歷年健保核定價格變動與調降歷程（亦可透過 `h10 price-history` 調用）。
-5. **`procedure <keyword>`**：健保醫療服務處置與手術碼檢索（如「導尿管」、「鼻胃管」、「換藥」，亦可透過 `h22 search` 調用）。支援 `-` 從 stdin 批次讀入與 `-j` JSON 輸出。
-6. **`doctor`**：全系統與 23 大子模組健康檢查。
+3. **`drug <drug_code | license_id>`**：**[新]** 藥品程式碼或許可證字號單筆詳情秒級直查（< 15ms，直接展平製造廠牌、申請商、包裝與適應症，亦可透過 `h10 get` 調用）。支援 `-` 從 stdin 批次讀入與 `-j` JSON 輸出。
+4. **`substitutes <drug_code | drug_name>`**：同成分健保平價/同質替代藥物反查（智慧兩階段支援藥名中文如「普拿疼」或藥品程式碼，亦可透過 `h10 substitutes` 調用）。支援 `-` 從 stdin 批次讀入。
+5. **`price-history <drug_code>`**：藥品歷年健保核定價格變動與調降歷程（亦可透過 `h10 price-history` 調用）。
+6. **`procedure <keyword>`**：健保醫療服務處置與手術碼檢索（如「導尿管」、「鼻胃管」、「換藥」，亦可透過 `h22 search` 調用）。支援 `-` 從 stdin 批次讀入與 `-j` JSON 輸出。
+7. **`doctor`**：全系統與 23 大子模組健康檢查。
 
 ### 2.2 四大領域支柱 23 大垂直模組指令 (H10~H55)
 * **Pillar 1: 食藥署 TFDA（藥品與醫材安全）**：
-  - **`h10` (西藥許可證庫)**：`search <kw>`, `details <code>`, `substitutes <kw|code>` (智慧兩階段同成分推薦), `price-history <code>`, `status`
+  - **`h10` (西藥許可證庫)**：`search <kw>` (自帶製造廠與劑型), `get <code|license>` (詳情直查), `substitutes <kw|code>` (智慧兩階段同成分推薦), `price-history <code>`, `status`
   - **`h11` (成分字典庫)**：`search <kw>`, `atc <code>`, `status`
   - **`h12` (健康食品庫)**：`search <kw>`, `status`
   - **`h13` (缺藥通報警訊)**：`search <kw>`, `status`

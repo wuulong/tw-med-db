@@ -80,15 +80,20 @@ def search(
             typer.echo(f"\n🔍 全文檢索結果 (關鍵字: '{q}', 共 {len(results)} 筆):")
             typer.echo("=" * 80)
             for idx, row in enumerate(results, 1):
-                typer.echo(f"[{idx}] 藥品代碼: {row.get('drug_code')}")
+                typer.echo(f"[{idx}] 藥品代碼: {row.get('drug_code')} (許可證: {row.get('license_id')})")
                 typer.echo(f"    中文品名: {row.get('trade_name_tw')}")
                 typer.echo(f"    英文品名: {row.get('trade_name_en')}")
                 typer.echo(f"    主要成分: {row.get('ingredient_name')}")
+                if row.get('manufacturer'):
+                    typer.echo(f"    製造廠牌: {row.get('manufacturer')}")
+                if row.get('form_description'):
+                    typer.echo(f"    藥物劑型: {row.get('form_description')}")
     conn.close()
 
     if json_mode:
         import json
         print(json.dumps(all_results, ensure_ascii=False, indent=2))
+
 
 
 @h10_app.command("substitutes")
@@ -308,3 +313,108 @@ def status(
     for t, c in counts.items():
         typer.echo(f"  • {t:<35}: {c} 筆")
     typer.echo("=" * 80)
+
+
+@h10_app.command("get")
+def get_drug_detail(
+    query: Optional[str] = typer.Argument(None, help="藥品代碼 (如: DHA06000126201) 或許可證字號 (如: 衛部菌疫輸字第001262號)；支援 '-' 或管道 stdin 輸入"),
+    db_path: str = typer.Option("tw-med-db/db/med.db", "--db", "-d", help="實體 SQLite 資料庫路徑"),
+    json_mode: bool = typer.Option(False, "--json", "-j", help="單行緊湊 JSON 輸出 (Token-Saving & Pipeline-Friendly)")
+):
+    """
+    [CGS v2.4 Pipeline-Native] 精確查詢單筆藥品/許可證詳細資訊 (< 15ms)。
+    自動將 attributes_json 屬性展平為 Clean JSON Object，包含製造商清單、申請商、包裝與適應症。
+    """
+    import json
+    from src.m00_core.utils_db import resolve_pipeline_input
+    inputs = resolve_pipeline_input(query)
+    if not inputs:
+        typer.echo("❌ 請提供藥品代碼或許可證字號，或透過管道 stdin 輸入 (例如: echo 'DHA06000126201' | python src/cli/meddb_cli.py h10 get - -j)", err=True)
+        raise typer.Exit(code=2)
+
+    db_path = resolve_db_path(db_path)
+    if not os.path.exists(db_path):
+        typer.echo(f"❌ 找不到實體資料庫: {db_path}", err=True)
+        raise typer.Exit(code=1)
+
+    conn = get_sqlite_connection(db_path)
+    cursor = conn.cursor()
+
+    all_details = []
+    for q in inputs:
+        clean_q = q.strip()
+        if not clean_q:
+            continue
+        cursor.execute("""
+        SELECT drug_code, license_id, trade_name_tw, trade_name_en, ingredient_name,
+               form_description, nhi_price, price_median, indications, approval_date,
+               attributes_json, updated_at
+        FROM m01_tw_drug_db
+        WHERE drug_code = ? OR license_id = ?
+        LIMIT 1;
+        """, (clean_q, clean_q))
+        row = cursor.fetchone()
+        if not row:
+            if not json_mode:
+                typer.echo(f"🔍 查無藥品紀錄: '{clean_q}'", err=True)
+            continue
+
+        row_dict = dict(row)
+        attr = {}
+        if row_dict.get("attributes_json"):
+            try:
+                attr = json.loads(row_dict["attributes_json"])
+            except Exception:
+                attr = {}
+
+        # 展平合併屬性
+        detail = {
+            "drug_code": row_dict["drug_code"],
+            "license_id": row_dict["license_id"],
+            "trade_name_tw": row_dict["trade_name_tw"],
+            "trade_name_en": row_dict["trade_name_en"],
+            "ingredient_name": row_dict["ingredient_name"],
+            "form_description": row_dict["form_description"],
+            "nhi_price": row_dict["nhi_price"],
+            "price_median": row_dict["price_median"],
+            "indications": row_dict["indications"],
+            "approval_date": row_dict["approval_date"],
+            "manufacturer": attr.get("manufacturer") or "",
+            "manufacturers": attr.get("manufacturers") or [],
+            "applicant": attr.get("applicant") or "",
+            "packaging": attr.get("packaging") or "",
+            "prescription_category": attr.get("prescription_category") or "",
+            "atc_code": attr.get("atc_code") or "",
+            "updated_at": row_dict["updated_at"]
+        }
+        all_details.append(detail)
+
+        if not json_mode:
+            typer.echo(f"\n💊 藥品詳細資訊 [{detail['drug_code']}]")
+            typer.echo("=" * 80)
+            typer.echo(f"  • 許可證字號 : {detail['license_id']}")
+            typer.echo(f"  • 中文品名   : {detail['trade_name_tw']}")
+            typer.echo(f"  • 英文品名   : {detail['trade_name_en']}")
+            typer.echo(f"  • 主有效成分 : {detail['ingredient_name']}")
+            typer.echo(f"  • 製造廠牌   : {detail['manufacturer']}")
+            if detail["applicant"]:
+                typer.echo(f"  • 申請代理商 : {detail['applicant']}")
+            typer.echo(f"  • 劑型描述   : {detail['form_description']}")
+            typer.echo(f"  • 健保參考價 : NT$ {detail['nhi_price']}")
+            typer.echo(f"  • 包裝規格   : {detail['packaging']}")
+            typer.echo(f"  • 處方類別   : {detail['prescription_category']}")
+            typer.echo(f"  • 適應症狀   : {detail['indications']}")
+            if detail["manufacturers"]:
+                typer.echo(f"  • 製造廠清單 :")
+                for m in detail["manufacturers"]:
+                    typer.echo(f"      - {m}")
+            typer.echo("=" * 80)
+
+    conn.close()
+
+    if json_mode:
+        if len(inputs) == 1 and len(all_details) == 1:
+            print(json.dumps(all_details[0], ensure_ascii=False, indent=2))
+        else:
+            print(json.dumps(all_details, ensure_ascii=False, indent=2))
+
