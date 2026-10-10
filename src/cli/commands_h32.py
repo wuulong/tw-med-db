@@ -44,8 +44,18 @@ def search(
     db_path: str = typer.Option("tw-med-db/db/med.db", "--db", "-d", help="實體 SQLite 資料庫路徑"),
     limit: int = typer.Option(5, "--limit", "-l", help="回傳筆數限制")
 ):
-    """
-    執行 M10 醫療過失裁判與訴訟爭點檢索。
+    """【台灣醫療糾紛與過失裁判庫】查詢最高法院與各級法院醫療過失判決、訴訟爭點、醫療常規認定與判賠金額。
+
+    臨床適用情境：評估手術、麻醉、急診或侵入性醫療行為之法律糾紛風險、法院對醫療常規 (Medical Routine) 之認定與判決傾向。
+    支援查詢項目：專科別（如 '麻醉科', '婦產科', '急診科'）、醫療爭議關鍵字（如 '延誤診斷', '告知義務不足', '過失致死'）、判決案號。
+
+    Args:
+        query: 醫療糾紛專科或爭點關鍵字（例如：'麻醉', '急診', '告知義務'）
+        db_path: 實體 SQLite 資料庫路徑
+        limit: 回傳筆數限制（預設 5）
+
+    Returns:
+        輸出終端清單，包含判決案號、專科、過失判定結果 (勝訴/敗訴)、爭點起因與判賠金額。
     """
     db_path = resolve_db_path(db_path)
     if not os.path.exists(db_path):
@@ -76,7 +86,18 @@ def status(
     db_path: str = typer.Option("db/med.db", "--db", "-d", help="實體 SQLite 資料庫路徑"),
     json_mode: bool = typer.Option(False, "--json", "-j", help="單行緊湊 JSON 輸出")
 ):
-    """[CGS v2.0] 查看 M10 (med_legal_db) 專屬實體表與 FTS5 筆數看板"""
+    """【醫療訴訟裁判庫數據看板】檢視 M10/H32 醫療過失裁判表及 FTS5 全文索引資料量。
+
+    臨床適用情境：確認司法院醫療糾紛判決資料庫之同步筆數與裁判爭點資料總量。
+    支援查詢項目：無輸入參數，自動統計 m10_legal_cases 表紀錄。
+
+    Args:
+        db_path: 實體 SQLite 資料庫路徑
+        json_mode: 是否以 Clean JSON 結構化輸出結果
+
+    Returns:
+        若開啟 --json，回傳包含模組名稱與表筆數之 Dict；否則輸出終端看板。
+    """
     resolved = resolve_db_path(db_path)
     if not os.path.exists(resolved):
         typer.echo(f"❌ 找不到實體資料庫: {db_path}", err=True)

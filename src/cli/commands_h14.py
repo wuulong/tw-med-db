@@ -13,7 +13,18 @@ def search_device(
     keyword: str,
     db: str = typer.Option(DEFAULT_DB, "--db", help="SQLite 資料庫路徑")
 ):
-    """查詢醫療器材許可證"""
+    """【台灣醫療器材許可證與說明書庫】檢索食藥署列管之一級/二級/三級醫療器材許可證、廠商與功能說明。
+
+    臨床適用情境：醫師/手術室護理師確認植入物、導管、快篩試劑或診斷儀器之合法許可證效期、原廠仿單與規格。
+    支援查詢項目：器材中文名稱（如 '導尿管', '血糖機', '人工水晶體'）、許可證字號（如 '衛部醫器輸字第012345號'）、申請藥商名稱。
+
+    Args:
+        keyword: 器材品名、許可證字號或廠商關鍵字（例如：'心導管', '血糖機', '美敦力'）
+        db: SQLite 資料庫路徑
+
+    Returns:
+        輸出終端清單，包含許可證字號、中文品名、申請商名稱與器材分類碼。
+    """
     conn = sqlite3.connect(db)
     cursor = conn.cursor()
     cursor.execute("""
@@ -34,7 +45,18 @@ def device_substitutes(
     licence_id: str,
     db: str = typer.Option(DEFAULT_DB, "--db", help="SQLite 資料庫路徑")
 ):
-    """同級同適應症醫療器材平價替代品比對"""
+    """【同級同功能醫療器材替代品推薦】依食藥署器材分類碼 (Category Code) 推薦同等級替代醫材。
+
+    臨床適用情境：臨床遇到特定品牌醫材（如紗布、骨釘、輸液套）缺貨或醫院議價換約時，尋找同功能規格之替代許可證。
+    支援查詢項目：醫療器材許可證字號（如 '衛部醫器輸字第012345號'）。
+
+    Args:
+        licence_id: 目標醫療器材許可證字號（例如：'衛部醫器製字第000001號'）
+        db: SQLite 資料庫路徑
+
+    Returns:
+        輸出終端清單，包含相同分類碼之其他合格替代器材與廠商。
+    """
     conn = sqlite3.connect(db)
     cursor = conn.cursor()
     cursor.execute("SELECT category_code, device_name_c FROM m13_tw_med_device_db WHERE licence_id = ?;", (licence_id,))
@@ -72,7 +94,18 @@ def status(
     db_path: str = typer.Option("db/med.db", "--db", "-d", help="實體 SQLite 資料庫路徑"),
     json_mode: bool = typer.Option(False, "--json", "-j", help="單行緊湊 JSON 輸出")
 ):
-    """[CGS v2.0] 查看 M13 (tw_med_device_db) 專屬實體表與 FTS5 筆數看板"""
+    """【醫療器材許可證數據看板】檢視 M13/H14 醫療器材表及 FTS5 全文索引資料量。
+
+    臨床適用情境：確認食藥署醫療器材許可證、仿單資料與替代品對照表之健康筆數。
+    支援查詢項目：無輸入參數，自動統計 m13_tw_med_device_db 表紀錄。
+
+    Args:
+        db_path: 實體 SQLite 資料庫路徑
+        json_mode: 是否以 Clean JSON 結構化輸出結果
+
+    Returns:
+        若開啟 --json，回傳包含模組名稱與表筆數之 Dict；否則輸出終端看板。
+    """
     resolved = resolve_db_path(db_path)
     if not os.path.exists(resolved):
         typer.echo(f"❌ 找不到實體資料庫: {db_path}", err=True)

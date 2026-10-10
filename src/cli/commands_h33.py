@@ -44,8 +44,18 @@ def search(
     db_path: str = typer.Option("tw-med-db/db/med.db", "--db", "-d", help="實體 SQLite 資料庫路徑"),
     limit: int = typer.Option(5, "--limit", "-l", help="回傳筆數限制")
 ):
-    """
-    執行 M11 病患全程臨床旅程檢索。
+    """【病患全程臨床旅程與照護導航庫】以 GraphRAG 檢索癌友與慢性病患從確診、治療、副作用處置到康復之各階段臨床任務與衛教指引。
+
+    臨床適用情境：個案管理師 (Case Manager)、癌症導航員 (Patient Navigator) 或病患諮詢機器人提供特定治療階段之照護對策與心理支持。
+    支援查詢項目：疾病分期與歷程階段（如 '新確診', '術後照護', '化療'）、副作用處置（如 '皮疹', '噁心嘔吐', '掉髮'）、心理支持關鍵字。
+
+    Args:
+        query: 臨床旅程階段或副作用關鍵字（例如：'新確診', '皮疹', '化療'）
+        db_path: 實體 SQLite 資料庫路徑
+        limit: 回傳筆數限制（預設 5）
+
+    Returns:
+        輸出終端清單，包含旅程節點 ID、疾病代碼、階段名稱、核心任務與衛教應對對策。
     """
     db_path = resolve_db_path(db_path)
     if not os.path.exists(db_path):
@@ -75,7 +85,18 @@ def status(
     db_path: str = typer.Option("db/med.db", "--db", "-d", help="實體 SQLite 資料庫路徑"),
     json_mode: bool = typer.Option(False, "--json", "-j", help="單行緊湊 JSON 輸出")
 ):
-    """[CGS v2.0] 查看 M11 (patient_journey_db) 專屬實體表與 FTS5 筆數看板"""
+    """【病患臨床旅程數據看板】檢視 M11/H33 臨床旅程節點表及 FTS5 索引資料量。
+
+    臨床適用情境：確認全病程照護指引節點、處遇任務與 GraphRAG 圖譜索引之建置健全度。
+    支援查詢項目：無輸入參數，自動統計 m11_journey_nodes 表紀錄。
+
+    Args:
+        db_path: 實體 SQLite 資料庫路徑
+        json_mode: 是否以 Clean JSON 結構化輸出結果
+
+    Returns:
+        若開啟 --json，回傳包含模組名稱與表筆數之 Dict；否則輸出終端看板。
+    """
     resolved = resolve_db_path(db_path)
     if not os.path.exists(resolved):
         typer.echo(f"❌ 找不到實體資料庫: {db_path}", err=True)

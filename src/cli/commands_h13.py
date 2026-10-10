@@ -44,8 +44,18 @@ def search(
     db_path: str = typer.Option("tw-med-db/db/med.db", "--db", "-d", help="實體 SQLite 資料庫路徑"),
     limit: int = typer.Option(5, "--limit", "-l", help="回傳筆數限制")
 ):
-    """
-    執行 M04 藥品回收與缺藥公告檢索。
+    """【食藥署缺藥通報與藥品回收警訊】即時查詢食藥署官方公告之瑕疵藥品批號回收、不純物下架與供應短缺預警。
+
+    臨床適用情境：醫師處方前確認特定藥品是否斷貨、藥師發藥前比對批號是否屬於官方勒令回收下架批次、採購評估替代供貨管道。
+    支援查詢項目：藥品商品名（如 '癒尿寧'）、許可證字號、回收批號（如 'B1234'）、通報原因（如 '溶出度不合格', '雜質超標'）。
+
+    Args:
+        query: 藥品品名、批號或回收原因關鍵字（例如：'降血壓', '不純物', '缺藥'）
+        db_path: 實體 SQLite 資料庫路徑
+        limit: 回傳筆數限制（預設 5）
+
+    Returns:
+        輸出終端清單，包含公告文號、產品名稱、許可證字號、回收批號與處分/缺藥原因。
     """
     db_path = resolve_db_path(db_path)
     if not os.path.exists(db_path):
@@ -76,7 +86,18 @@ def status(
     db_path: str = typer.Option("db/med.db", "--db", "-d", help="實體 SQLite 資料庫路徑"),
     json_mode: bool = typer.Option(False, "--json", "-j", help="單行緊湊 JSON 輸出")
 ):
-    """[CGS v2.0] 查看 M04 (drug_shortage_alert) 專屬實體表與 FTS5 筆數看板"""
+    """【缺藥與回收警訊數據看板】檢視 M04/H13 藥品回收與缺藥警訊表及 FTS5 索引資料量。
+
+    臨床適用情境：確認食藥署缺藥與藥品回收通報資料之即時同步狀態與歷史總筆數。
+    支援查詢項目：無輸入參數，自動統計 m04_recalls 表紀錄。
+
+    Args:
+        db_path: 實體 SQLite 資料庫路徑
+        json_mode: 是否以 Clean JSON 結構化輸出結果
+
+    Returns:
+        若開啟 --json，回傳包含模組名稱與表筆數之 Dict；否則輸出終端看板。
+    """
     resolved = resolve_db_path(db_path)
     if not os.path.exists(resolved):
         typer.echo(f"❌ 找不到實體資料庫: {db_path}", err=True)

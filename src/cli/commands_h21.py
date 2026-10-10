@@ -44,8 +44,18 @@ def search(
     db_path: str = typer.Option("tw-med-db/db/med.db", "--db", "-d", help="實體 SQLite 資料庫路徑"),
     limit: int = typer.Option(5, "--limit", "-l", help="回傳筆數限制")
 ):
-    """
-    執行 M06 健保給付規定與條文檢索。
+    """【健保給付規定與事前審查條文】查詢健保署官方之藥品給付限制、事前審查條件、自費比價與核刪防護規定。
+
+    臨床適用情境：醫師評估標靶藥物、免疫療法或高價特材是否符合健保專案給付適應症，或確認是否需檢附基因報告申請事前審查。
+    支援查詢項目：疾病適應症（如 '肺癌標靶', '免疫治療'）、標靶藥物名稱（如 '泰格莎', '吉舒安'）、基因檢測門檻（如 'EGFR', 'ALK'）、事前審查規定、健保章節代碼。
+
+    Args:
+        query: 疾病、標靶藥品或處置名稱（例如：'肺癌標靶', '泰格莎', '事前審查'）
+        db_path: 實體 SQLite 資料庫路徑
+        limit: 回傳筆數限制（預設 5）
+
+    Returns:
+        輸出終端清單，包含規則 ID、健保代碼、事前審查標籤、章節條文與詳細給付規定摘要。
     """
     db_path = resolve_db_path(db_path)
     if not os.path.exists(db_path):
@@ -76,7 +86,18 @@ def status(
     db_path: str = typer.Option("db/med.db", "--db", "-d", help="實體 SQLite 資料庫路徑"),
     json_mode: bool = typer.Option(False, "--json", "-j", help="單行緊湊 JSON 輸出")
 ):
-    """[CGS v2.0] 查看 M06 (nhi_payment_db) 專屬實體表與 FTS5 筆數看板"""
+    """【健保給付規定數據看板】檢視 M06/H21 健保給付規定表及 FTS5 全文索引資料量。
+
+    臨床適用情境：確認健保給付規範條文與事前審查代碼表之資料同步狀態與筆數統計。
+    支援查詢項目：無輸入參數，自動統計 m06_nhi_rules 表紀錄。
+
+    Args:
+        db_path: 實體 SQLite 資料庫路徑
+        json_mode: 是否以 Clean JSON 結構化輸出結果
+
+    Returns:
+        若開啟 --json，回傳包含模組名稱與表筆數之 Dict；否則輸出終端看板。
+    """
     resolved = resolve_db_path(db_path)
     if not os.path.exists(resolved):
         typer.echo(f"❌ 找不到實體資料庫: {db_path}", err=True)

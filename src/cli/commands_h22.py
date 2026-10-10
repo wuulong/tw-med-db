@@ -46,9 +46,19 @@ def search(
     limit: int = typer.Option(5, "--limit", "-l", help="回傳筆數限制"),
     json_mode: bool = typer.Option(False, "--json", "-j", help="單行緊湊 JSON 輸出 (Token-Saving & Pipeline-Friendly)")
 ):
-    """
-    [CGS v2.4 Pipeline-Native] 執行 M07/H22 健保醫療處置與手術碼檢索。
-    支援管道串流輸入與 JSON 格式輸出 (例如: echo '導尿管' | python src/cli/meddb_cli.py h22 search - -j)
+    """【健保醫療服務給付處置與手術碼庫】查詢官方全民健保醫療服務給付項目、手術碼、ICD-10-PCS 對照與申報點數。
+
+    臨床適用情境：醫師/診所護理師開立處置單、申報健保醫療點數、確認特定處置是否需要住院 (inpatient) 或門診即可執行。
+    支援查詢項目：中文處置項目（如 '導尿管置入術', '鼻胃管', '傷口換藥'）、健保處置碼（如 '47013C', '48001C'）、ICD-10-PCS 國際手術碼。
+
+    Args:
+        query: 處置中文名稱或代碼（例如：'導尿管', '鼻胃管', '47013C'；支援管道 stdin 或 '-'）
+        db_path: 實體 SQLite 資料庫路徑
+        limit: 回傳筆數上限（預設 5）
+        json_mode: 是否以 Clean JSON 結構化陣列輸出結果（AI 代理人調用時強烈建議開啟）
+
+    Returns:
+        若開啟 --json，回傳包含 [code, name_zh, icd10_pcs, nhi_points, requires_inpatient] 之結構化 Dict 陣列；否則輸出終端可讀卡片。
     """
     from src.m00_core.utils_db import resolve_pipeline_input
     inputs = resolve_pipeline_input(query)
@@ -93,7 +103,18 @@ def status(
     db_path: str = typer.Option("db/med.db", "--db", "-d", help="實體 SQLite 資料庫路徑"),
     json_mode: bool = typer.Option(False, "--json", "-j", help="單行緊湊 JSON 輸出")
 ):
-    """[CGS v2.0] 查看 M07 (nhi_procedure_db) 專屬實體表與 FTS5 筆數看板"""
+    """【健保處置與手術碼數據看板】檢視 M07/H22 健保診療項目表及 FTS5 索引資料量。
+
+    臨床適用情境：確認健保醫療服務給付項目及支付標準主檔與 ICD-10-PCS 對照表之同步狀態與筆數。
+    支援查詢項目：無輸入參數，自動統計 m07_procedures 表紀錄。
+
+    Args:
+        db_path: 實體 SQLite 資料庫路徑
+        json_mode: 是否以 Clean JSON 結構化輸出結果
+
+    Returns:
+        若開啟 --json，回傳包含模組名稱與表筆數之 Dict；否則輸出終端看板。
+    """
     resolved = resolve_db_path(db_path)
     if not os.path.exists(resolved):
         typer.echo(f"❌ 找不到實體資料庫: {db_path}", err=True)

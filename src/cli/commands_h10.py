@@ -52,8 +52,19 @@ def search(
     limit: int = typer.Option(5, "--limit", "-l", help="回傳筆數限制"),
     json_mode: bool = typer.Option(False, "--json", "-j", help="單行緊湊 JSON 輸出 (Token-Saving & Pipeline-Friendly)")
 ):
-    """
-    [CGS v2.4 Pipeline-Native] 執行 M01 全文檢索 (< 5ms)，支援 Terminal 格式化顯示或 JSON Pipeline 輸出。
+    """【台灣西藥許可證與健保價資料庫】檢索食藥署 (TFDA) 核准之 6.6 萬筆西藥許可證、商品名、主成分、製造廠與健保價格。
+
+    臨床適用情境：醫師開立處方、藥師審核處方、確認藥品原廠/學名藥廠牌、適應症範圍或健保參考價格。
+    支援查詢項目：藥品中文品名（如 '普拿疼'）、英文品名（如 'Spikevax'）、主成分（如 'Acetaminophen'）、疾病適應症（如 '肺癌'）、許可證字號（如 '衛部菌疫輸字第001262號'）。
+
+    Args:
+        query: 檢索關鍵字或許可證代碼（例如：'COVID', '吉舒安', 'Acetaminophen'；支援管道 stdin 或 '-'）
+        db_path: 實體 SQLite 資料庫路徑
+        limit: 回傳筆數上限（預設 5）
+        json_mode: 是否以 Clean JSON 結構化陣列輸出結果（AI 代理人調用時強烈建議開啟）
+
+    Returns:
+        若開啟 --json，回傳包含 [drug_code, license_id, trade_name_tw, trade_name_en, ingredient_name, manufacturer, form_description, nhi_price, indications] 之結構化 Dict 陣列；否則輸出終端可讀報表。
     """
     from src.m00_core.utils_db import resolve_pipeline_input
     inputs = resolve_pipeline_input(query)
@@ -103,10 +114,19 @@ def substitutes(
     limit: int = typer.Option(10, "--limit", "-l", help="替代藥物推薦上限筆數"),
     json_mode: bool = typer.Option(False, "--json", "-j", help="單行緊湊 JSON 輸出 (Token-Saving & Pipeline-Friendly)")
 ):
-    """
-    [Advanced E2 & CGS v2.4 Pipeline-Native] 智慧型兩階段同成分平價替代藥物檢索。
-    支援藥品代碼或中文名稱輸入，自動對位有效成分並自全庫 6.6 萬筆藥品中動態推薦替代藥物。
-    支援管道串流輸入 (例如: echo '普拿疼' | python src/cli/meddb_cli.py h10 substitutes - -j)
+    """【同成分健保平價替代藥推薦】智慧型兩階段同成分/同劑型替代藥物推薦與健保價差節省計算。
+
+    臨床適用情境：病患面臨原廠藥缺藥、或希望選擇健保給付/自費負擔更低之同主成分學名藥時，醫師或藥師調用尋找可替換藥品。
+    支援查詢項目：藥品中文品名（如 '普拿疼'、'立普妥'）、英文品名、健保/藥品代碼（如 'DHA00000000002'）。系統自動反查主成分並在全庫 6.6 萬筆中動態比對。
+
+    Args:
+        drug_query: 原始藥品代碼或中文名稱（例如：'普拿疼', 'DHA00000000002'；支援管道 stdin 或 '-'）
+        db_path: 實體 SQLite 資料庫路徑
+        limit: 推薦替代藥物上限筆數（預設 10）
+        json_mode: 是否以 Clean JSON 結構化陣列輸出結果（AI 代理人調用時強烈建議開啟）
+
+    Returns:
+        若開啟 --json，回傳包含 [original_drug, substitute_drug, ingredient, original_price, substitute_price, savings] 之結構化 Dict 陣列；否則輸出價格對比排行表。
     """
     from src.m00_core.utils_db import resolve_pipeline_input
     inputs = resolve_pipeline_input(drug_query)
@@ -232,9 +252,18 @@ def price_history(
     db_path: str = typer.Option("tw-med-db/db/med.db", "--db", "-d", help="實體 SQLite 資料庫路徑"),
     json_mode: bool = typer.Option(False, "--json", "-j", help="單行緊湊 JSON 輸出 (Token-Saving & Pipeline-Friendly)")
 ):
-    """
-    [Advanced E4 & CGS v2.4 Pipeline-Native] 查詢指定藥品之歷年健保價調降趨勢與歷史紀錄。
-    支援管道串流輸入 (例如: echo 'DHA00200005505' | ./pa med h10 price-history -)
+    """【健保用藥歷年核定價調降趨勢】查詢指定藥品歷年之健保給付價格調整、調降幅度與生效日期歷程。
+
+    臨床適用情境：醫療院所採購議價、藥師評估歷年健保藥價差趨勢、病患自費或差額負擔歷史變動分析。
+    支援查詢項目：健保 10 碼藥品代碼（如 'A002000055', 'DHA00200005505'）。
+
+    Args:
+        drug_code: 健保 10 碼藥品代碼（例如：'DHA00200005505'；支援管道 stdin 或 '-'）
+        db_path: 實體 SQLite 資料庫路徑
+        json_mode: 是否以 Clean JSON 結構化陣列輸出結果（AI 代理人調用時強烈建議開啟）
+
+    Returns:
+        若開啟 --json，回傳包含 [drug_code, effective_date, price, price_drop_ratio] 之歷史變動陣列；否則輸出趨勢報表。
     """
     from src.m00_core.utils_db import resolve_pipeline_input
     inputs = resolve_pipeline_input(drug_code)
@@ -286,7 +315,18 @@ def status(
     db_path: str = typer.Option("db/med.db", "--db", "-d", help="實體 SQLite 資料庫路徑"),
     json_mode: bool = typer.Option(False, "--json", "-j", help="單行緊湊 JSON 輸出")
 ):
-    """[CGS v2.0] 查看 M01 (tw_drug_db) 專屬實體表與 FTS5 筆數看板"""
+    """【西藥資料庫數據看板】檢視 M01/H10 藥品主檔、價格歷程與 FTS5 全文索引資料量。
+
+    臨床適用情境：確認藥品資料庫實體表（如 6.6 萬筆許可證與歷史價格紀錄）之同步狀態與筆數。
+    支援查詢項目：無輸入參數，自動統計 m01_tw_drug_db、m01_price_history 等資料表筆數。
+
+    Args:
+        db_path: 實體 SQLite 資料庫路徑
+        json_mode: 是否以 Clean JSON 結構化輸出結果
+
+    Returns:
+        若開啟 --json，回傳包含模組名稱與各表筆數之 Dict；否則輸出終端看板。
+    """
     resolved = resolve_db_path(db_path)
     if not os.path.exists(resolved):
         typer.echo(f"❌ 找不到實體資料庫: {db_path}", err=True)
@@ -321,9 +361,18 @@ def get_drug_detail(
     db_path: str = typer.Option("tw-med-db/db/med.db", "--db", "-d", help="實體 SQLite 資料庫路徑"),
     json_mode: bool = typer.Option(False, "--json", "-j", help="單行緊湊 JSON 輸出 (Token-Saving & Pipeline-Friendly)")
 ):
-    """
-    [CGS v2.4 Pipeline-Native] 精確查詢單筆藥品/許可證詳細資訊 (< 15ms)。
-    自動將 attributes_json 屬性展平為 Clean JSON Object，包含製造商清單、申請商、包裝與適應症。
+    """【單筆藥品與許可證詳細規格直查】以藥品代碼或許可證字號精確查詢單筆藥品之完整製造商、代理商、包裝與適應症 (< 15ms)。
+
+    臨床適用情境：已知藥品代碼（如院內碼、健保代碼）或許可證字號，需秒級獲取原廠藥商清單、完整處方適應症、包裝規格與管制類別。
+    支援查詢項目：健保/藥品代碼（如 'DHA06000126201'）、食藥署許可證字號（如 '衛部菌疫輸字第001262號'）。
+
+    Args:
+        query: 藥品代碼或許可證字號（例如：'DHA06000126201', '衛部菌疫輸字第001262號'；支援管道 stdin 或 '-'）
+        db_path: 實體 SQLite 資料庫路徑
+        json_mode: 是否以 Clean JSON 結構化物件輸出結果（AI 代理人調用時強烈建議開啟）
+
+    Returns:
+        若開啟 --json，回傳包含 [drug_code, license_id, trade_name_tw, trade_name_en, ingredient_name, manufacturer, manufacturers, applicant, packaging, indications, prescription_category] 之完整 Dict；否則輸出終端詳細卡片。
     """
     import json
     from src.m00_core.utils_db import resolve_pipeline_input

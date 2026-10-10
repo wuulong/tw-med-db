@@ -99,7 +99,22 @@ def search_ed(
     db_path: str = typer.Option("db/med.db", "--db", help="SQLite 資料庫路徑"),
     json_output: bool = typer.Option(False, "--json", help="輸出 Structured JSON")
 ):
-    """M56 專屬 MIMIC-IV-ED 急診病患資料檢索"""
+    """【美國 MIMIC-IV-ED 急診病患資料檢索】查詢急診病患到院主訴、檢傷嚴重度分級與離院動向。
+
+    臨床適用情境:
+      急診臨床醫學研究、急診留觀與住院決策回溯、檢索急診停留識別碼 (Stay ID) 與住院關聯 (HADM ID)。
+
+    支援查詢項目:
+      病患代號 subject_id (如 10000032)。
+
+    Args:
+      query_str (str): MIMIC-IV-ED 病患識別碼。
+      db_path (str): 實體 SQLite 資料庫檔案路徑，預設為 'db/med.db'。
+      json_output (bool): 是否以 JSON 格式輸出病患急診概況，預設為 False。
+
+    Returns:
+      None (CLI 終端輸出包含 Subject ID、Stay ID、檢傷分級、主訴與離院動向之表格，或以 JSON 輸出)。
+    """
     profile = get_or_fetch_ed_patient_profile(query_str, db_path)
     if not profile:
         data_dir = resolve_mimic_ed_data_dir()
@@ -137,7 +152,22 @@ def triage_analysis(
     db_path: str = typer.Option("db/med.db", "--db", help="SQLite 資料庫路徑"),
     json_output: bool = typer.Option(False, "--json", help="輸出 Structured JSON")
 ):
-    """【急診檢傷】查詢病患到院檢傷分級 (Acuity 1~5)、主訴與初步生命徵象"""
+    """【急診檢傷評估與生命徵象報告】查詢病患到院檢傷分級 (ESI 1~5)、主訴描述與床邊初步生理數值。
+
+    臨床適用情境:
+      急診檢傷分類審查、疼痛與生命徵象即時評估、急重症分流決策驗證。
+
+    支援查詢項目:
+      病患代號 subject_id (如 10000032)。
+
+    Args:
+      subject_id (str): MIMIC-IV-ED 病患識別碼。
+      db_path (str): 實體 SQLite 資料庫檔案路徑，預設為 'db/med.db'。
+      json_output (bool): 是否以 JSON 格式輸出檢傷資訊結構，預設為 False。
+
+    Returns:
+      None (CLI 終端直接輸出檢傷嚴重度、主訴、血壓、心率、SpO2、體溫與疼痛評分報告，或以 JSON 輸出)。
+    """
     profile = get_or_fetch_ed_patient_profile(subject_id, db_path)
     if not profile or not profile.get("triage_info"):
         console.print(f"[bold red]❌ 找不到病患代號 '{subject_id}' 的急診檢傷紀錄。[/bold red]")
@@ -162,7 +192,22 @@ def pyxis_analysis(
     db_path: str = typer.Option("db/med.db", "--db", help="SQLite 資料庫路徑"),
     json_output: bool = typer.Option(False, "--json", help="輸出 Structured JSON")
 ):
-    """【急診發藥】查詢急診室現場 BD Pyxis 自動發藥機實時給藥紀錄"""
+    """【急診室現場自動發藥機給藥紀錄】查詢病患在急診現場 BD Pyxis 機台之實時發藥時序與藥品品名。
+
+    臨床適用情境:
+      急救藥品開立時效性審查、急診管制藥品取藥軌跡稽核、現場即時給藥處置比對。
+
+    支援查詢項目:
+      病患代號 subject_id (如 10000032)。
+
+    Args:
+      subject_id (str): MIMIC-IV-ED 病患識別碼。
+      db_path (str): 實體 SQLite 資料庫檔案路徑，預設為 'db/med.db'。
+      json_output (bool): 是否以 JSON 格式輸出 Pyxis 發藥清單，預設為 False。
+
+    Returns:
+      None (CLI 終端輸出包含發藥時間與藥品名稱之時序表格，或以 JSON 輸出)。
+    """
     profile = get_or_fetch_ed_patient_profile(subject_id, db_path)
     if not profile or not profile.get("pyxis_list"):
         console.print(f"[bold red]❌ 找不到病患代號 '{subject_id}' 的 Pyxis 急診發藥紀錄。[/bold red]")
@@ -189,7 +234,21 @@ def cohort_ed_analysis(
     disease: str = typer.Argument(..., help="疾病關鍵字 (如 'multiple myeloma', 'chest pain')"),
     json_output: bool = typer.Option(False, "--json", help="輸出 Structured JSON")
 ):
-    """【急診佇列】統計特定疾病之急診到診人數與檢傷嚴重度分級比例"""
+    """【急診疾病佇列與檢傷嚴重度分析】統計特定疾病在急診到診總人數、轉住院比例與平均檢傷分級。
+
+    臨床適用情境:
+      急診常見症狀疾病世代研究、胸痛或呼吸困難等高危主訴入院率量化分析。
+
+    支援查詢項目:
+      疾病英文名稱 (如 'chest pain', 'sepsis')、ICD 診斷代碼。
+
+    Args:
+      disease (str): 疾病名稱或急診主訴。
+      json_output (bool): 是否以 JSON 格式輸出佇列統計指標，預設為 False。
+
+    Returns:
+      None (CLI 終端直接輸出到診病患數、轉住院率與平均檢傷等級報告，或以 JSON 輸出)。
+    """
     data_dir = resolve_mimic_ed_data_dir()
     if not data_dir:
         console.print("[bold red]❌ 未找到全量 MIMIC-IV-ED 數據目錄。請設定 MIMIC_IV_ED_DATA_DIR 環境變數。[/bold red]")
@@ -264,7 +323,21 @@ def triage_stats(
     seed_only: bool = typer.Option(False, "--seed-only", "-s", help="強制僅使用本機 PhysioNet Demo 種子庫 (100人)"),
     json_output: bool = typer.Option(False, "--json", help="輸出 Structured JSON")
 ):
-    """【急診宏觀】統計全院急診檢傷 1~5 級人數比例與前 10 大急診主訴 (Chief Complaints)"""
+    """【全院急診檢傷分級分佈與十大主訴統計】統計全院急診檢傷 1~5 級人數比例與前十大急診主訴。
+
+    臨床適用情境:
+      急診醫療量能監控、急診五級檢傷 (ESI) 人數佔比審計、常見急診症狀分佈分析。
+
+    支援查詢項目:
+      全院急診檢傷分級、急診主訴統計。
+
+    Args:
+      seed_only (bool): 是否強制僅使用本機 100 人種子庫，預設為 False。
+      json_output (bool): 是否以 JSON 格式輸出檢傷分佈統計，預設為 False。
+
+    Returns:
+      None (CLI 終端輸出包含各級檢傷人數意義與前十大主訴表格，或以 JSON 輸出)。
+    """
     data_dir = None if seed_only else resolve_mimic_ed_data_dir()
     
     if data_dir:
@@ -285,7 +358,7 @@ def triage_stats(
             console.print(f"[bold red]❌ 查詢失敗: {e}[/bold red]")
             return
     else:
-        # 無外接硬碟全量庫或指定 --seed-only ➔ 查詢 SQLite 中 PhysioNet 原生 6 大實體表 (Demo 數據)
+        # 無外接硬碟全量庫或指定 --seed-only ➔ 查詢 SQLite 中 PhysioNet 原生 6 大實體表 (Demo 資料)
         resolved_db = resolve_db_path("db/med.db")
         conn = get_sqlite_connection(resolved_db)
         import pandas as pd
@@ -348,7 +421,22 @@ def top_ed_drugs(
     limit: int = typer.Option(10, "--limit", "-n", help="顯示前 N 大藥品"),
     json_output: bool = typer.Option(False, "--json", help="輸出 Structured JSON")
 ):
-    """【急診用藥】統計急診室現場 BD Pyxis 自動發藥機最常開立的前 N 大急救處方"""
+    """【急診室 BD Pyxis 前 N 大常用給藥分析】統計急診現場自動發藥機最常開立之急救處方排行。
+
+    臨床適用情境:
+      急診實務給藥型態分析、特定疾病專一性急診發藥偏好研究、急救備藥品項調控。
+
+    支援查詢項目:
+      疾病英文名稱 (選填，如 'chest pain')、顯示筆數上限。
+
+    Args:
+      disease (Optional[str]): 疾病名稱或急診主訴，未指定則統計全院急診發藥。
+      limit (int): 顯示前 N 大藥品，預設為 10。
+      json_output (bool): 是否以 JSON 格式輸出藥品清單，預設為 False。
+
+    Returns:
+      None (CLI 終端輸出包含排名、急診發藥名稱與次數之表格，或以 JSON 輸出)。
+    """
     data_dir = resolve_mimic_ed_data_dir()
     if not data_dir:
         console.print("[bold red]❌ 未找到全量 MIMIC-IV-ED 數據目錄。請設定 MIMIC_IV_ED_DATA_DIR 環境變數。[/bold red]")
@@ -422,7 +510,21 @@ def admission_rate(
     disease: str = typer.Argument(..., help="疾病關鍵字或主訴 (如 'chest pain', 'shortness of breath')"),
     json_output: bool = typer.Option(False, "--json", help="輸出 Structured JSON")
 ):
-    """【離院動向】分析特定疾病或主訴抵達急診後之動向比例 (返家/轉住院/死亡)"""
+    """【急診抵達後離院動向比例分析】分析特定疾病或主訴抵達急診後之動向比例 (返家/轉住院/死亡)。
+
+    臨床適用情境:
+      急診轉住院率評估、胸痛或呼吸急促高危病患處置路徑分析、急診壅塞動向分流。
+
+    支援查詢項目:
+      疾病名稱或急診到院主訴 (如 'chest pain')。
+
+    Args:
+      disease (str): 疾病名稱或主訴關鍵字。
+      json_output (bool): 是否以 JSON 格式輸出動向分佈，預設為 False。
+
+    Returns:
+      None (CLI 終端輸出包含離院動向、人數與百分比之表格，或以 JSON 輸出)。
+    """
     data_dir = resolve_mimic_ed_data_dir()
     if not data_dir:
         console.print("[bold red]❌ 未找到全量 MIMIC-IV-ED 數據目錄。請設定 MIMIC_IV_ED_DATA_DIR 環境變數。[/bold red]")
@@ -497,7 +599,21 @@ def status(
     db_path: str = typer.Option("db/med.db", "--db", "-d", help="實體 SQLite 資料庫路徑"),
     json_mode: bool = typer.Option(False, "--json", "-j", help="單行緊湊 JSON 輸出")
 ):
-    """[CGS v2.0] 查看 M56 (mimic_iv_ed_db) 專屬實體表筆數看板"""
+    """【美國 MIMIC-IV-ED 急診門診模組】實體快取資料表筆數監控。
+
+    臨床適用情境:
+      系統維運、急診模組資料庫初始化檢查、確認急診病患快取就緒狀態。
+
+    支援查詢項目:
+      m56_ed_cache (急診病患快取主表)。
+
+    Args:
+      db_path (str): 實體 SQLite 資料庫檔案路徑，預設為 'db/med.db'。
+      json_mode (bool): 是否以單行緊湊 JSON 格式輸出統計數據，預設為 False。
+
+    Returns:
+      None (CLI 終端直接輸出統計摘要表格，或以 JSON 輸出 module 與 counts 物件)。
+    """
     resolved = resolve_db_path(db_path)
     if not os.path.exists(resolved):
         typer.echo(f"❌ 找不到實體資料庫: {db_path}", err=True)
@@ -531,8 +647,24 @@ def query_candidates(
     json_output: bool = typer.Option(False, "--json", "-j", help="輸出標準 JSON 陣列"),
     db_path: str = typer.Option("db/med.db", "--db", "-d", help="SQLite 資料庫路徑")
 ):
-    """
-    [CGS v2.4] 依條件批次檢索 MIMIC-IV-ED 急診候選病患清單 (支援 condition/acuity/archetype)
+    """【MIMIC-IV-ED 急診候選病患篩選】依主訴、檢傷等級或臨床原型批次檢索候選病患清單。
+
+    臨床適用情境:
+      急診臨床模擬訓練案例抽取、AI 急診檢傷基準評測、典型急診 (Common Emergency) 或臨界陷阱 (Borderline Trap) 病患篩檢。
+
+    支援查詢項目:
+      主訴條件 (condition)、檢傷等級 (acuity: 1~5)、臨床原型 (archetype: common-emergency, rare-critical, borderline-trap)。
+
+    Args:
+      condition (Optional[str]): 主訴或診斷關鍵字。
+      acuity (Optional[int]): 指定 ESI 檢傷等級 (1~5)。
+      archetype (Optional[str]): 臨床原型篩選標籤。
+      limit (int): 回傳筆數上限，預設為 10。
+      json_output (bool): 是否以 JSON 格式輸出候選病患結構陣列，預設為 False。
+      db_path (str): 實體 SQLite 資料庫檔案路徑，預設為 'db/med.db'。
+
+    Returns:
+      None (CLI 終端輸出包含 Subject ID、Stay ID、Acuity、主訴與用藥數之表格，或以 JSON 輸出)。
     """
     candidates = []
     resolved_db = resolve_db_path(db_path)

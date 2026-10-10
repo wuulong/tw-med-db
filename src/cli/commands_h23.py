@@ -35,7 +35,20 @@ def search_nhird(
     db_path: str = typer.Option("db/med.db", "--db", help="SQLite 資料庫路徑"),
     json_output: bool = typer.Option(False, "--json", help="輸出 Structured JSON")
 ):
-    """【健保檢索】查詢台灣病患費用申報紀錄、門診點數與出院主診斷 ICD-10"""
+    """【健保門診費用申報與主診斷檢索】查詢特定歸人病患代號之健保費用申報紀錄、門診點數與 ICD-10 主診斷。
+
+    臨床適用情境：真實世界數據 (RWD) 世代追蹤、病患醫療利用度分析、核對特定病患門診申報就醫歷史與部分負擔。
+    支援查詢項目：台灣健保歸人病患識別碼（如 'TW_P000001'）。
+
+    Args:
+        query_id: 歸人病患代號 ID（例如：'TW_P000001'）
+        seed_only: 是否僅使用本機 100 人測試種子庫
+        db_path: SQLite 資料庫路徑
+        json_output: 是否以 Clean JSON 結構化陣列輸出結果（AI 代理人調用時強烈建議開啟）
+
+    Returns:
+        若開啟 --json，回傳包含 [ID, FEE_YM, ICD10CM_1, TOTAL_DOT, PART_CODE] 之申報明細陣列；否則輸出 Rich 格式化表格。
+    """
     resolved_db = resolve_db_path(db_path)
     conn = get_sqlite_connection(resolved_db)
     
@@ -79,7 +92,19 @@ def drg_calc(
     db_path: str = typer.Option("db/med.db", "--db", help="SQLite 資料庫路徑"),
     json_output: bool = typer.Option(False, "--json", help="輸出 Structured JSON")
 ):
-    """【健保 DRG 試算】計算住院宣告 DRG 診斷關聯群點數與健保支付費用"""
+    """【健保住院診斷關聯群 DRG 點數試算】查詢與試算住院病患宣告之 DRG 分組編號與健保給付點數。
+
+    臨床適用情境：醫院病歷編碼室、醫管財務評估住院個案打包包裹式給付標準、試算健保申報給付額。
+    支援查詢項目：歸人病患識別碼（如 'TW_P000002'）。
+
+    Args:
+        query_id: 歸人病患代號 ID（例如：'TW_P000002'）
+        db_path: SQLite 資料庫路徑
+        json_output: 是否以 Clean JSON 結構化陣列輸出結果（AI 代理人調用時強烈建議開啟）
+
+    Returns:
+        若開啟 --json，回傳包含 [ID, DRG_NO, MED_DOT] 之 Dict 陣列；否則輸出終端試算報告。
+    """
     resolved_db = resolve_db_path(db_path)
     conn = get_sqlite_connection(resolved_db)
     
@@ -111,7 +136,19 @@ def top_nhi_drugs(
     db_path: str = typer.Option("db/med.db", "--db", help="SQLite 資料庫路徑"),
     json_output: bool = typer.Option(False, "--json", help="輸出 Structured JSON")
 ):
-    """【健保用藥榜】全院門診處方常用健保用藥排行榜 (Top NHI Prescriptions)"""
+    """【健保門診熱門用藥排行榜】統計全院或抽樣世代之門診開立次數與總開藥顆粒量前 N 大處方排行榜。
+
+    臨床適用情境：藥事委員會 (P&T) 審議常用藥清單、評估特定科別用藥集中度與採購庫存需求。
+    支援查詢項目：顯示排名數量限制 (limit)。
+
+    Args:
+        limit: 顯示前 N 大用藥（預設 10）
+        db_path: SQLite 資料庫路徑
+        json_output: 是否以 Clean JSON 結構化陣列輸出結果（AI 代理人調用時強烈建議開啟）
+
+    Returns:
+        若開啟 --json，回傳包含 [DRUG_NO, DRUG_NAME, prescription_cnt, total_qty_sum] 之 Dict 陣列；否則輸出排行表格。
+    """
     resolved_db = resolve_db_path(db_path)
     conn = get_sqlite_connection(resolved_db)
     
@@ -155,7 +192,19 @@ def chronic_polypharmacy(
     db_path: str = typer.Option("db/med.db", "--db", help="SQLite 資料庫路徑"),
     json_output: bool = typer.Option(False, "--json", help="輸出 Structured JSON")
 ):
-    """【慢籤多藥分析】分析台灣門診慢性病連續處方箋 (DRUG_DAY >= 28) 與多藥共用軌跡"""
+    """【慢箋多重用藥軌跡分析】分析門診慢性病連續處方箋 (給藥天數 >= 28天) 之多藥共用與潛在交互作用。
+
+    臨床適用情境：老年醫學科/家庭醫學科評估多重慢病患者（如糖尿病+高血壓+高血脂）之多藥共用 (Polypharmacy) 風險與慢箋開立軌跡。
+    支援查詢項目：最小給藥天數（如 28 天）。
+
+    Args:
+        min_days: 篩選連續處方箋之最小給藥天數（預設 28 天）
+        db_path: SQLite 資料庫路徑
+        json_output: 是否以 Clean JSON 結構化陣列輸出結果（AI 代理人調用時強烈建議開啟）
+
+    Returns:
+        若開啟 --json，回傳包含 [ID, DRUG_NO, DRUG_NAME, DRUG_FRE, DRUG_DAY, TOTAL_QTY] 之慢箋明細；否則輸出終端清單。
+    """
     resolved_db = resolve_db_path(db_path)
     conn = get_sqlite_connection(resolved_db)
     
@@ -205,7 +254,20 @@ def cross_eval(
     db_path: str = typer.Option("db/med.db", "--db", help="SQLite 資料庫路徑"),
     json_output: bool = typer.Option(False, "--json", help="輸出 Structured JSON")
 ):
-    """【台美對對碰】跨國對比 M15 台灣健保申報 vs M55/M56 美國急診重症開銷與轉住院率"""
+    """【台美跨國醫療負擔全景對比】對比特定疾病在台灣全民健保申報費用與美國 MIMIC 重症急診花費及住院率。
+
+    臨床適用情境：跨國衛生經濟學 (HEOR) 評估、醫療政策研究、比較台灣健保給付與美國醫療體系下同病種之財務開銷。
+    支援查詢項目：疾病英文名稱或縮寫（如 'diabetes', 'myeloma'）。
+
+    Args:
+        disease: 疾病關鍵字（例如：'diabetes', 'myeloma'）
+        seed_only: 是否僅使用本機種子庫
+        db_path: SQLite 資料庫路徑
+        json_output: 是否以 Clean JSON 結構化陣列輸出結果（AI 代理人調用時強烈建議開啟）
+
+    Returns:
+        若開啟 --json，回傳包含台灣平均申報點數、折合新台幣與美國急診轉住院率、死亡率與估算美金費用；否則輸出對比報表。
+    """
     resolved_db = resolve_db_path(db_path)
     conn = get_sqlite_connection(resolved_db)
     
@@ -251,7 +313,18 @@ def status(
     db_path: str = typer.Option("db/med.db", "--db", "-d", help="實體 SQLite 資料庫路徑"),
     json_mode: bool = typer.Option(False, "--json", "-j", help="單行緊湊 JSON 輸出")
 ):
-    """[CGS v2.0] 查看 M15 (tw_nhird_db) 專屬實體表與 FTS5 筆數看板"""
+    """【健保申報抽樣資料庫數據看板】檢視 M15/H23 健保申報快取、門診處方與住院明細表筆數。
+
+    臨床適用情境：確認 NHIRD 健保申報抽樣母體（CD/DD/OO 表）資料庫就緒狀態與筆數統計。
+    支援查詢項目：無輸入參數，自動統計 m15_nhird_cd, m15_nhird_dd, m15_nhird_oo 表紀錄。
+
+    Args:
+        db_path: 實體 SQLite 資料庫路徑
+        json_mode: 是否以 Clean JSON 結構化輸出結果
+
+    Returns:
+        若開啟 --json，回傳包含模組名稱與表筆數之 Dict；否則輸出終端看板。
+    """
     resolved = resolve_db_path(db_path)
     if not os.path.exists(resolved):
         typer.echo(f"❌ 找不到實體資料庫: {db_path}", err=True)

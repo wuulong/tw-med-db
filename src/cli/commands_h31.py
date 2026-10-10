@@ -44,8 +44,18 @@ def search(
     db_path: str = typer.Option("tw-med-db/db/med.db", "--db", "-d", help="實體 SQLite 資料庫路徑"),
     limit: int = typer.Option(5, "--limit", "-l", help="回傳筆數限制")
 ):
-    """
-    執行 M09 癌症指引與 ClinicalTrials 臨床試驗檢索。
+    """【癌症臨床指引與在台招募試驗庫】檢索台灣各大醫學中心進行中之癌症臨床試驗 (ClinicalTrials.gov)、期別與生物標記。
+
+    臨床適用情境：腫瘤科醫師評估標準治療無效之晚期癌友、為病患配對台灣境內進行中之標靶/免疫新藥臨床試驗 (Phase 1~3)。
+    支援查詢項目：癌別（如 '非小細胞肺癌', '乳癌'）、生物標記基因（如 'EGFR', 'KRAS', 'HER2'）、試驗期別（如 'Phase 3'）、NCT 編號。
+
+    Args:
+        query: 癌別、基因標記或試驗編號關鍵字（例如：'肺癌', 'EGFR', 'Phase 3'）
+        db_path: 實體 SQLite 資料庫路徑
+        limit: 回傳筆數限制（預設 5）
+
+    Returns:
+        輸出終端清單，包含 NCT 試驗編號、試驗期別、招募狀態 (RECRUITING)、標靶基因、試驗標題與適用癌別。
     """
     db_path = resolve_db_path(db_path)
     if not os.path.exists(db_path):
@@ -76,7 +86,18 @@ def status(
     db_path: str = typer.Option("db/med.db", "--db", "-d", help="實體 SQLite 資料庫路徑"),
     json_mode: bool = typer.Option(False, "--json", "-j", help="單行緊湊 JSON 輸出")
 ):
-    """[CGS v2.0] 查看 M09 (oncology_meta) 專屬實體表與 FTS5 筆數看板"""
+    """【癌症臨床試驗模組數據看板】檢視 M09/H31 臨床試驗表及 FTS5 全文索引資料量。
+
+    臨床適用情境：確認在台癌症臨床試驗登錄名冊之同步狀態與收錄試驗總筆數。
+    支援查詢項目：無輸入參數，自動統計 m09_clinical_trials 表紀錄。
+
+    Args:
+        db_path: 實體 SQLite 資料庫路徑
+        json_mode: 是否以 Clean JSON 結構化輸出結果
+
+    Returns:
+        若開啟 --json，回傳包含模組名稱與表筆數之 Dict；否則輸出終端看板。
+    """
     resolved = resolve_db_path(db_path)
     if not os.path.exists(resolved):
         typer.echo(f"❌ 找不到實體資料庫: {db_path}", err=True)

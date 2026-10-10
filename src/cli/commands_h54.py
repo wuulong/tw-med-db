@@ -91,7 +91,22 @@ def search_mimic(
     db_path: str = typer.Option("db/med.db", "--db", help="SQLite 資料庫路徑"),
     json_output: bool = typer.Option(False, "--json", help="輸出標準天衣無縫的 Structured JSON")
 ):
-    """M55 專屬 MIMIC-IV 重症病患資料檢索"""
+    """【美國 MIMIC-IV 重症病患資料檢索】查詢加護病房重症病患診斷、用藥與生命徵象摘要。
+
+    臨床適用情境:
+      重症醫學臨床研究、ICU 病患跨國大數據分析、檢索病患之住院識別碼 (HADM ID) 與加護停留碼 (Stay ID)。
+
+    支援查詢項目:
+      病患代號 subject_id (如 10000032)、住院序號 hadm_id。
+
+    Args:
+      query_str (str): MIMIC-IV 病患唯一代號或住院代號。
+      db_path (str): 實體 SQLite 資料庫檔案路徑，預設為 'db/med.db'。
+      json_output (bool): 是否以 JSON 格式輸出結構化病患紀錄，預設為 False。
+
+    Returns:
+      None (CLI 終端輸出包含 Subject ID、HADM ID、Stay ID、年齡性別與主要診斷之表格，或以 JSON 輸出)。
+    """
     conn = get_sqlite_connection(db_path)
     cursor = conn.cursor()
 
@@ -157,7 +172,21 @@ def icu_summary(
     subject_id: str = typer.Argument(..., help="病患代號 subject_id (如 10000032)"),
     db_path: str = typer.Option("db/med.db", "--db", help="SQLite 資料庫路徑")
 ):
-    """M55 基礎命令 1：印出病患在 ICU 入住期間之 GCS 昏迷指數、生理指數與點滴輸液摘要"""
+    """【ICU 重症生理與給藥摘要報告】印出病患在加護病房入住期間之 GCS 昏迷指數、生命徵象與床邊監控數據。
+
+    臨床適用情境:
+      ICU 交接班重點回顧、病患生命徵象極值與昏迷評估、重症臨床處置回溯。
+
+    支援查詢項目:
+      病患代號 subject_id (如 10000032)。
+
+    Args:
+      subject_id (str): MIMIC-IV 病患識別碼。
+      db_path (str): 實體 SQLite 資料庫檔案路徑，預設為 'db/med.db'。
+
+    Returns:
+      None (CLI 終端直接輸出心率、收縮壓、SpO2 與最低 GCS 之摘要報告)。
+    """
     conn = get_sqlite_connection(db_path)
     cursor = conn.cursor()
 
@@ -182,7 +211,21 @@ def map_nhi(
     subject_id: str = typer.Argument(..., help="病患代號 subject_id (如 10000032)"),
     db_path: str = typer.Option("db/med.db", "--db", help="SQLite 資料庫路徑")
 ):
-    """M55 基礎命令 2：將 MIMIC-IV 的美規處方 NDC/RxCUI 自動對合轉碼為台灣健保藥碼 (M01)"""
+    """【美規處方轉碼台灣健保藥碼】將 MIMIC-IV 美規處方 NDC 與 RxCUI 自動對合為台灣健保藥品代碼。
+
+    臨床適用情境:
+      台美跨國臨床處方比對、外籍病患處方轉換為台灣健保申報碼、跨國用藥等效性分析。
+
+    支援查詢項目:
+      病患代號 subject_id (如 10000032)。
+
+    Args:
+      subject_id (str): MIMIC-IV 病患識別碼。
+      db_path (str): 實體 SQLite 資料庫檔案路徑，預設為 'db/med.db'。
+
+    Returns:
+      None (CLI 終端輸出美規藥名、NDC 碼、RxCUI 與台灣健保藥碼對照表格)。
+    """
     conn = get_sqlite_connection(db_path)
     cursor = conn.cursor()
 
@@ -220,7 +263,21 @@ def early_warning(
     subject_id: str = typer.Argument(..., help="病患代號 subject_id (如 10000032)"),
     db_path: str = typer.Option("db/med.db", "--db", help="SQLite 資料庫路徑")
 ):
-    """【加值功能 1】重症 SOFA / NEWS2 評分與生理訊號早期警訊演算法"""
+    """【重症 SOFA 與 NEWS2 早期警訊評分】計算病患器官衰竭指數與早期惡化預警分數。
+
+    臨床適用情境:
+      急救早期警訊判讀、休克前期偵測、加護病房病患惡化風險即時分級。
+
+    支援查詢項目:
+      病患代號 subject_id (如 10000032)。
+
+    Args:
+      subject_id (str): MIMIC-IV 病患識別碼。
+      db_path (str): 實體 SQLite 資料庫檔案路徑，預設為 'db/med.db'。
+
+    Returns:
+      None (CLI 終端直接輸出 SOFA 分數、NEWS2 分數與臨床風險判定)。
+    """
     conn = get_sqlite_connection(db_path)
     cursor = conn.cursor()
 
@@ -256,7 +313,21 @@ def risk_tags(
     subject_id: str = typer.Argument(..., help="病患代號 subject_id (如 10000032)"),
     db_path: str = typer.Option("db/med.db", "--db", help="SQLite 資料庫路徑")
 ):
-    """【加值功能 2】敗血症 (Sepsis-3) 與 AKI 急性腎損傷風險自動標註"""
+    """【敗血症與急性腎損傷風險自動標註】依據 Sepsis-3 與 KDIGO 標準自動生成臨床風險標籤。
+
+    臨床適用情境:
+      智慧病歷自動標記、急性腎衰竭高風險個案篩檢、重症感染敗血症早期干預。
+
+    支援查詢項目:
+      病患代號 subject_id (如 10000032)。
+
+    Args:
+      subject_id (str): MIMIC-IV 病患識別碼。
+      db_path (str): 實體 SQLite 資料庫檔案路徑，預設為 'db/med.db'。
+
+    Returns:
+      None (CLI 終端直接輸出智慧型 Agent 臨床風險標籤清單)。
+    """
     conn = get_sqlite_connection(db_path)
     cursor = conn.cursor()
 
@@ -285,7 +356,22 @@ def benchmark_nhi(
     compare_tw: bool = typer.Option(False, "--compare-tw", "-t", help="發動與 M15 健保申報 / M16 電子病歷的實體對對碰"),
     db_path: str = typer.Option("db/med.db", "--db", help="SQLite 資料庫路徑")
 ):
-    """【加值功能 3】跨國重症用藥與台灣健保藥價 / 給付規定的加值比價 (支援 --compare-tw 台美對對碰)"""
+    """【跨國重症用藥健保給付與自費比價】分析美規重症用藥在台灣健保給付狀態與預估自費差額。
+
+    臨床適用情境:
+      海外返台就醫費用評估、自費重症藥品負擔試算、健保事前審查核准條件分析。
+
+    支援查詢項目:
+      病患代號 subject_id (如 10000032)。
+
+    Args:
+      subject_id (str): MIMIC-IV 病患識別碼。
+      compare_tw (bool): 是否雙向參照台灣 M15 健保申報與 M16 床邊病歷，預設為 False。
+      db_path (str): 實體 SQLite 資料庫檔案路徑，預設為 'db/med.db'。
+
+    Returns:
+      None (CLI 終端輸出包含用藥、RxCUI、健保給付狀態與估算自費差額之表格)。
+    """
     conn = get_sqlite_connection(db_path)
     cursor = conn.cursor()
 
@@ -321,7 +407,21 @@ def icu_trajectory(
     subject_id: str = typer.Argument(..., help="病患代號 subject_id (如 10000032)"),
     db_path: str = typer.Option("db/med.db", "--db", help="SQLite 資料庫路徑")
 ):
-    """【加值功能 4】ICU 呼吸機脫離與照護旅程軌跡分析"""
+    """【ICU 呼吸機脫離與照護歷程軌跡分析】重構病患自加護病房轉入、機械通氣、拔管至轉出普通病房歷程。
+
+    臨床適用情境:
+      胸腔重症科呼吸器脫離評估、重症復原路徑品質審計、出院轉銜計畫制定。
+
+    支援查詢項目:
+      病患代號 subject_id (如 10000032)。
+
+    Args:
+      subject_id (str): MIMIC-IV 病患識別碼。
+      db_path (str): 實體 SQLite 資料庫檔案路徑，預設為 'db/med.db'。
+
+    Returns:
+      None (CLI 終端直接輸出重症照護歷程階段清單)。
+    """
     conn = get_sqlite_connection(db_path)
     cursor = conn.cursor()
 
@@ -345,7 +445,21 @@ def mortality_risk(
     disease: str = typer.Argument(..., help="疾病關鍵字 (如 'multiple myeloma', 'sepsis')"),
     json_output: bool = typer.Option(False, "--json", help="輸出 Structured JSON")
 ):
-    """【預後分析】統計特定疾病入住 ICU / 住院之院內死亡率 (In-Hospital Mortality) 與平均住院天數"""
+    """【疾病院內死亡率與臨床預後分析】統計特定疾病入住 ICU 或住院之院內死亡率與總人次。
+
+    臨床適用情境:
+      重大疾病預後諮詢、重症風險分級評估、流行病學死亡率基準 (Benchmarking) 比較。
+
+    支援查詢項目:
+      疾病英文名稱 (如 'sepsis', 'multiple myeloma')、ICD 診斷代碼。
+
+    Args:
+      disease (str): 疾病名稱或 ICD 代碼。
+      json_output (bool): 是否以 JSON 格式輸出死亡率統計數據，預設為 False。
+
+    Returns:
+      None (CLI 終端輸出累計人次、死亡人數與死亡率，或以 JSON 輸出預後指標物件)。
+    """
     data_dir = resolve_mimic_data_dir()
     if not data_dir:
         console.print("[bold red]❌ 未找到全量 MIMIC-IV 數據目錄。請設定 MIMIC_IV_DATA_DIR 環境變數。[/bold red]")
@@ -415,7 +529,22 @@ def comorbidities(
     limit: int = typer.Option(10, "--limit", "-n", help="顯示前 N 大共病"),
     json_output: bool = typer.Option(False, "--json", help="輸出 Structured JSON")
 ):
-    """【共病分析】統計特定主診斷病患最常併發的前 N 大次要診斷 (Comorbidities)"""
+    """【特定疾病前 N 大次要共病分析】統計特定主診斷病患最常併發的共病組合與次要診斷排行。
+
+    臨床適用情境:
+      共病症候群評估、臨床多專科會診需求試算、高風險併發症早期預防路徑規劃。
+
+    支援查詢項目:
+      疾病英文名稱 (如 'multiple myeloma', 'diabetes')、ICD 診斷代碼。
+
+    Args:
+      disease (str): 主診斷疾病名稱或 ICD 代碼。
+      limit (int): 顯示前 N 大共病項目，預設為 10。
+      json_output (bool): 是否以 JSON 格式輸出共病統計清單，預設為 False。
+
+    Returns:
+      None (CLI 終端輸出包含排名、併發次要診斷與人次之表格，或以 JSON 輸出)。
+    """
     data_dir = resolve_mimic_data_dir()
     if not data_dir:
         console.print("[bold red]❌ 未找到全量 MIMIC-IV 數據目錄。請設定 MIMIC_IV_DATA_DIR 環境變數。[/bold red]")
@@ -479,7 +608,21 @@ def status(
     db_path: str = typer.Option("db/med.db", "--db", "-d", help="實體 SQLite 資料庫路徑"),
     json_mode: bool = typer.Option(False, "--json", "-j", help="單行緊湊 JSON 輸出")
 ):
-    """[CGS v2.0] 查看 M55 (mimic_iv_db) 專屬實體表與 FTS5 筆數看板"""
+    """【美國 MIMIC-IV 重症臨床資料庫】實體快取表與住院/加護資料表筆數監控。
+
+    臨床適用情境:
+      系統維運、重症資料庫環境檢查、確認快取表與 PhysioNet Demo 種子庫就緒狀態。
+
+    支援查詢項目:
+      m55_mimic_cache (快取表)、m55_hosp_patients (病患表)、m55_hosp_admissions (住院表)、m55_icu_icustays (ICU 停留表)。
+
+    Args:
+      db_path (str): 實體 SQLite 資料庫檔案路徑，預設為 'db/med.db'。
+      json_mode (bool): 是否以單行緊湊 JSON 格式輸出統計數據，預設為 False。
+
+    Returns:
+      None (CLI 終端直接輸出統計摘要表格，或以 JSON 輸出 module 與 counts 物件)。
+    """
     resolved = resolve_db_path(db_path)
     if not os.path.exists(resolved):
         typer.echo(f"❌ 找不到實體資料庫: {db_path}", err=True)
@@ -515,7 +658,23 @@ def cohort_analysis(
     db_path: str = typer.Option("db/med.db", "--db", help="SQLite 資料庫路徑"),
     json_output: bool = typer.Option(False, "--json", help="輸出 Structured JSON")
 ):
-    """【佇列分析】查詢特定疾病佇列的人數、住院人次與 ICD 子分類統計"""
+    """【特定疾病病患佇列統計】分析特定疾病佇列涵蓋病患人數、住院總人次與 ICD 細項分類。
+
+    臨床適用情境:
+      臨床試驗收案可行性評估 (Feasibility Study)、特定疾病大數據世代 (Cohort) 規模試算。
+
+    支援查詢項目:
+      疾病英文名稱 (如 'diabetes', 'sepsis')、ICD-9 / ICD-10 代碼。
+
+    Args:
+      disease (str): 疾病名稱或 ICD 代碼。
+      seed_only (bool): 是否強制僅使用本機 100 人種子庫，預設為 False。
+      db_path (str): 實體 SQLite 資料庫檔案路徑，預設為 'db/med.db'。
+      json_output (bool): 是否以 JSON 格式輸出佇列統計結構，預設為 False。
+
+    Returns:
+      None (CLI 終端輸出包含 ICD 版本、代碼、英文名稱、病患數與住院人次之表格，或以 JSON 輸出)。
+    """
     data_dir = None if seed_only else resolve_mimic_data_dir()
     dis_clean = disease.strip().lower()
 
@@ -621,7 +780,23 @@ def top_drugs_analysis(
     targeted_only: bool = typer.Option(False, "--targeted", help="僅篩選標靶/化療/抗癌專一性核心藥物"),
     json_output: bool = typer.Option(False, "--json", help="輸出 Structured JSON")
 ):
-    """【藥物分析】分析特定疾病佇列病患最常使用的處方藥物與標靶使用率"""
+    """【特定疾病前 N 大常用處方藥物分析】統計疾病佇列最常開立之處方藥物排行與標靶藥物使用率。
+
+    臨床適用情境:
+      臨床實務用藥指引比對 (Real-World Evidence)、特定癌症第一線/第二線治療藥物使用偏好分析。
+
+    支援查詢項目:
+      疾病英文名稱 (如 'multiple myeloma', 'sepsis')、是否限定標靶抗癌藥。
+
+    Args:
+      disease (str): 疾病名稱或 ICD 代碼。
+      limit (int): 顯示前 N 大常用藥物，預設為 20。
+      targeted_only (bool): 是否僅篩選標靶/化療專一性藥物，預設為 False。
+      json_output (bool): 是否以 JSON 格式輸出藥物清單，預設為 False。
+
+    Returns:
+      None (CLI 終端輸出包含藥物名稱、使用病患人數與開立次數之表格，或以 JSON 輸出)。
+    """
     data_dir = resolve_mimic_data_dir()
     if not data_dir:
         console.print("[bold red]❌ 未找到全量 MIMIC-IV 數據目錄。請設定 MIMIC_IV_DATA_DIR 環境變數。[/bold red]")
@@ -698,7 +873,21 @@ def icu_stats_analysis(
     disease: str = typer.Argument(..., help="疾病搜尋關鍵字 (如 'multiple myeloma', 'sepsis')"),
     json_output: bool = typer.Option(False, "--json", help="輸出 Structured JSON")
 ):
-    """【重症統計】分析特定疾病佇列在 ICU 加護病房的入住率、留觀天數與重症規模"""
+    """【重症 ICU 入住規模與留觀天數分析】統計特定疾病入住加護病房比率、總次數與平均留觀日數。
+
+    臨床適用情境:
+      重症加護病床配置規劃、疾病重症化傾向量化分析、ICU 醫療資源消耗評估。
+
+    支援查詢項目:
+      疾病英文名稱 (如 'sepsis', 'multiple myeloma')、ICD 診斷代碼。
+
+    Args:
+      disease (str): 疾病名稱或 ICD 代碼。
+      json_output (bool): 是否以 JSON 格式輸出重症統計物件，預設為 False。
+
+    Returns:
+      None (CLI 終端輸出包含總病患數、ICU 人數、入住率與平均留觀天數之報告，或以 JSON 輸出)。
+    """
     data_dir = resolve_mimic_data_dir()
     if not data_dir:
         console.print("[bold red]❌ 未找到全量 MIMIC-IV 數據目錄。請設定 MIMIC_IV_DATA_DIR 環境變數。[/bold red]")
@@ -781,7 +970,21 @@ def progression_analysis(
     disease: str = typer.Argument("multiple myeloma", help="疾病搜尋關鍵字 (預設: 'multiple myeloma')"),
     json_output: bool = typer.Option(False, "--json", help="輸出 Structured JSON")
 ):
-    """【病程瀑布流】分析特定疾病佇列的時間演進軌跡 (狀態轉移、平均耗時與處方演變)"""
+    """【特定疾病病程瀑布流與時間軌跡分析】重構疾病初診、復發住院、治療間隔至照護終點之轉移瀑布流。
+
+    臨床適用情境:
+      慢性或惡性疾病長期病程監測、疾病復發 (Relapse) 週期預測、再住院率與存活終點時序分析。
+
+    支援查詢項目:
+      疾病英文名稱 (預設為 'multiple myeloma')。
+
+    Args:
+      disease (str): 疾病名稱，預設為 'multiple myeloma'。
+      json_output (bool): 是否以 JSON 格式輸出病程階段統計物件，預設為 False。
+
+    Returns:
+      None (CLI 終端直接輸出階段 1 初診、階段 2 復發與階段 3 緩解終點之瀑布流報告，或以 JSON 輸出)。
+    """
     data_dir = resolve_mimic_data_dir()
     if not data_dir:
         console.print("[bold red]❌ 未找到全量 MIMIC-IV 數據目錄。請設定 MIMIC_IV_DATA_DIR 環境變數。[/bold red]")

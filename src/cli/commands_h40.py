@@ -44,8 +44,18 @@ def search(
     db_path: str = typer.Option("tw-med-db/db/med.db", "--db", "-d", help="實體 SQLite 資料庫路徑"),
     limit: int = typer.Option(5, "--limit", "-l", help="回傳筆數限制")
 ):
-    """
-    執行 M12 LOINC 檢驗碼與 FHIR Observation 檢索。
+    """【TW Core IG 臨床檢驗碼與 LOINC 對照庫】檢索 HL7 FHIR R4 檢驗檢查 (Observation) 標準代碼、中英文名稱與參考值範圍。
+
+    臨床適用情境：醫師/醫檢師開立檢驗單、介接醫院 LIS 系統、將院內檢驗碼轉譯為國際 LOINC 代碼以符合衛福部次世代電子病歷標準。
+    支援查詢項目：檢驗項目中文名（如 '血糖', '糖化血色素', '肌酸酐'）、LOINC 代碼（如 '2345-7', '4548-4'）、英文縮寫（如 'CEA', 'AST', 'ALT'）。
+
+    Args:
+        query: 檢驗項目名稱或 LOINC 代碼（例如：'血糖', '2345-7', '糖化血色素'）
+        db_path: 實體 SQLite 資料庫路徑
+        limit: 回傳筆數限制（預設 5）
+
+    Returns:
+        輸出終端清單，包含 LOINC 碼、中文檢驗項目、FHIR 資源型別、參考區間下限/上限與計量單位。
     """
     db_path = resolve_db_path(db_path)
     if not os.path.exists(db_path):
@@ -76,7 +86,21 @@ def status(
     db_path: str = typer.Option("db/med.db", "--db", "-d", help="實體 SQLite 資料庫路徑"),
     json_mode: bool = typer.Option(False, "--json", "-j", help="單行緊湊 JSON 輸出")
 ):
-    """[CGS v2.0] 查看 M12 (med_lab_fhir_db) 專屬實體表與 FTS5 筆數看板"""
+    """【TW Core IG 臨床檢驗碼與 LOINC 對照庫】模組狀態與實體資料表筆數監控。
+
+    臨床適用情境:
+      系統維運、臨床系統整合前置檢查、確認檢驗檢查代碼庫與 FTS5 全文檢索索引是否完整就緒。
+
+    支援查詢項目:
+      m12_loinc_codes (LOINC 檢驗碼標準對照)、m12_loinc_codes_fts (檢驗項目全文檢索表)。
+
+    Args:
+      db_path (str): 實體 SQLite 資料庫檔案路徑，預設為 'db/med.db'。
+      json_mode (bool): 是否以單行緊湊 JSON 格式輸出統計數據，預設為 False。
+
+    Returns:
+      None (CLI 終端直接輸出統計摘要表格，或以 JSON 輸出 module 與 counts 物件)。
+    """
     resolved = resolve_db_path(db_path)
     if not os.path.exists(resolved):
         typer.echo(f"❌ 找不到實體資料庫: {db_path}", err=True)

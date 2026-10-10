@@ -44,8 +44,18 @@ def search(
     db_path: str = typer.Option("tw-med-db/db/med.db", "--db", "-d", help="實體 SQLite 資料庫路徑"),
     limit: int = typer.Option(5, "--limit", "-l", help="回傳筆數限制")
 ):
-    """
-    執行 M05 健保特約醫事機構檢索。
+    """【台灣健保特約醫事機構與專科地圖庫】檢索全國健保特約醫院、基層診所、藥局、醫事機構代碼與地址電話。
+
+    臨床適用情境：轉診轉介、尋找特定行政區之專科特約院所、確認院所健保代碼 (hosp_id) 與評鑑層級（醫學中心/區域醫院/地區醫院/診所）。
+    支援查詢項目：機構名稱（如 '台大醫院', '榮總'）、醫事機構代碼（10碼）、縣市鄉鎮市區（如 '台北市中正區'）、機構類別（如 '診所', '醫學中心'）。
+
+    Args:
+        query: 機構名稱、代碼或地區關鍵字（例如：'台大醫院', '榮總', '台北市'）
+        db_path: 實體 SQLite 資料庫路徑
+        limit: 回傳筆數限制（預設 5）
+
+    Returns:
+        輸出終端清單，包含醫事機構代碼、機構名稱、層級類別、行政區與完整實體地址。
     """
     db_path = resolve_db_path(db_path)
     if not os.path.exists(db_path):
@@ -76,7 +86,18 @@ def status(
     db_path: str = typer.Option("db/med.db", "--db", "-d", help="實體 SQLite 資料庫路徑"),
     json_mode: bool = typer.Option(False, "--json", "-j", help="單行緊湊 JSON 輸出")
 ):
-    """[CGS v2.0] 查看 M05 (tw_hospital_db) 專屬實體表與 FTS5 筆數看板"""
+    """【特約醫事機構模組數據看板】檢視 M05/H20 特約醫院、診所名冊表及 FTS5 索引資料量。
+
+    臨床適用情境：確認全國特約醫事機構名冊與 GIS 空間分佈表之同步健康度與總筆數。
+    支援查詢項目：無輸入參數，自動統計 m05_hospitals 表紀錄。
+
+    Args:
+        db_path: 實體 SQLite 資料庫路徑
+        json_mode: 是否以 Clean JSON 結構化輸出結果
+
+    Returns:
+        若開啟 --json，回傳包含模組名稱與表筆數之 Dict；否則輸出終端看板。
+    """
     resolved = resolve_db_path(db_path)
     if not os.path.exists(resolved):
         typer.echo(f"❌ 找不到實體資料庫: {db_path}", err=True)

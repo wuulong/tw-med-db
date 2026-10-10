@@ -23,7 +23,19 @@ def search_epidemic(
     city: Optional[str] = typer.Option(None, "--city", help="縣市篩選"),
     db: str = typer.Option(DEFAULT_DB, "--db", help="SQLite 資料庫路徑")
 ):
-    """查詢疾管署疫苗據點與傳染病合約院所"""
+    """【疾管署傳染病與公費疫苗合約據點網】查詢流感、新冠、猴痘、肺鏈公費疫苗合約院所、快篩站與法定傳染病指定隔離醫院。
+
+    臨床適用情境：民眾或醫師查詢公費疫苗施打據點、指定快篩院所、行政區合約醫療院所清單與看診地址。
+    支援查詢項目：醫療院所名稱（如 '衛生所', '兒科診所'）、服務類別（如 'COVID-19疫苗', '流感疫苗', '抗病毒藥物'）、縣市名稱（如 '台北市'）。
+
+    Args:
+        keyword: 機構名稱或服務項目關鍵字（例如：'流感疫苗', '衛生所', '快篩'）
+        city: 縣市名稱過濾（例如：'台北市', '新北市'）
+        db: SQLite 資料庫路徑
+
+    Returns:
+        輸出終端清單，包含據點 ID、院所名稱、防疫服務類別與完整地址。
+    """
     conn = sqlite3.connect(db)
     cursor = conn.cursor()
 
@@ -56,7 +68,20 @@ def nearby_points(
     radius_km: float = typer.Option(5.0, "--radius-km", help="搜尋半徑(km)"),
     db: str = typer.Option(DEFAULT_DB, "--db", help="SQLite 資料庫路徑")
 ):
-    """GIS 空間鄰近據點比對 (Haversine 算式)"""
+    """【GIS 空間半徑鄰近防疫與疫苗據點比對】以經緯度座標與 Haversine 球面距離演算法計算半徑 N 公里內最近之疫苗/快篩據點。
+
+    臨床適用情境：行動端或在地 Agent 依據使用者 GPS 座標，即時推薦步行或車程範圍內最近之公費疫苗接種站或傳染病指定院所。
+    支援查詢項目：中心緯度 (lat)、中心經度 (lng)、搜尋半徑 (radius_km)。
+
+    Args:
+        lat: 所在地中心緯度（例如：25.04）
+        lng: 所在地中心經度（例如：121.55）
+        radius_km: 搜尋半徑公里數（預設 5.0 km）
+        db: SQLite 資料庫路徑
+
+    Returns:
+        輸出終端清單，包含直線距離公里數、據點 ID、機構名稱與服務項目。
+    """
     conn = sqlite3.connect(db)
     cursor = conn.cursor()
     cursor.execute("SELECT point_id, facility_name, service_type, latitude, longitude FROM m14_cdc_epidemic_db;")
@@ -85,7 +110,18 @@ def status(
     db_path: str = typer.Option("db/med.db", "--db", "-d", help="實體 SQLite 資料庫路徑"),
     json_mode: bool = typer.Option(False, "--json", "-j", help="單行緊湊 JSON 輸出")
 ):
-    """[CGS v2.0] 查看 M14 (cdc_epidemic_db) 專屬實體表與 FTS5 筆數看板"""
+    """【疾管署疫苗據點網數據看板】檢視 M14/H34 疫苗據點表及 FTS5 全文索引資料量。
+
+    臨床適用情境：確認公費疫苗合約院所與 GIS 經緯度座標庫之同步健康度與總筆數。
+    支援查詢項目：無輸入參數，自動統計 m14_cdc_epidemic_db 表紀錄。
+
+    Args:
+        db_path: 實體 SQLite 資料庫路徑
+        json_mode: 是否以 Clean JSON 結構化輸出結果
+
+    Returns:
+        若開啟 --json，回傳包含模組名稱與表筆數之 Dict；否則輸出終端看板。
+    """
     resolved = resolve_db_path(db_path)
     if not os.path.exists(resolved):
         typer.echo(f"❌ 找不到實體資料庫: {db_path}", err=True)

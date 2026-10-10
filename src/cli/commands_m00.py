@@ -18,8 +18,18 @@ def status(
     json_mode: bool = typer.Option(False, "--json", "-j", help="傳回緊湊 JSON 格式 (CGS v2.0 Token-Saving)"),
     quiet: bool = typer.Option(False, "--quiet", "-q", help="僅傳回極簡狀態")
 ):
-    """
-    [M00 全域] 查詢 tw-med-db 全庫已註冊子模組狀態與資料量看板 (CGS v2.0)。
+    """【全域中樞與治理看板】檢視 tw-med-db 23 大子模組健康診斷、資料表註冊狀態與筆數統計看板。
+
+    臨床適用情境：系統啟動或批次工作前，確認全庫 23 大醫療資料模組之連線健康狀態與資料集覆蓋完整度。
+    支援查詢項目：無輸入參數，自動掃描全庫實體表（如西藥庫、健保處置、檢驗碼等）之最新筆數與更新時間。
+
+    Args:
+        db_path: 實體 SQLite 資料庫路徑（預設：'tw-med-db/db/med.db'）
+        json_mode: 是否以 Clean JSON 結構化輸出結果（AI 代理人調用時強烈建議開啟）
+        quiet: 是否僅輸出簡短一行狀態摘要
+
+    Returns:
+        若開啟 --json，回傳包含 [status, total_registered_modules, modules] 之結構化 Dict；否則輸出終端可讀看板。
     """
     resolved_path = resolve_db_path(db_path)
     if not os.path.exists(resolved_path):
@@ -78,8 +88,18 @@ def search_global(
     db_path: str = typer.Option("tw-med-db/db/med.db", "--db", "-d", help="實體 SQLite 資料庫路徑"),
     limit: int = typer.Option(5, "--limit", "-l", help="回傳筆數限制")
 ):
-    """
-    [M00 全域] 經由 v_med_global_drugs 進行跨模組統一檢索。
+    """【全域跨模組整合檢索】經由 v_med_global_drugs 統一視圖查詢全藥品、適應症與主成分。
+
+    臨床適用情境：需跨越西藥、中藥與指示藥進行廣泛品名與成分摸底時調用。
+    支援查詢項目：藥品中文品名、英文品名、主要成分名稱、臨床適應症關鍵字。
+
+    Args:
+        query: 檢索關鍵字（例如：'肺癌', '普拿疼', '雙氧水'）
+        db_path: 實體 SQLite 資料庫路徑
+        limit: 回傳筆數上限（預設 5）
+
+    Returns:
+        輸出終端表格，包含模組來源、全域 ID、藥品名稱、成分與健保參考價。
     """
     db_path = resolve_db_path(db_path)
     if not os.path.exists(db_path):
@@ -107,9 +127,19 @@ def search_global(
     limit: int = typer.Option(10, "--limit", "-l", help="回傳結果筆數"),
     json_mode: bool = typer.Option(False, "--json", "-j", help="單行緊湊 JSON 輸出 (Token-Saving)")
 ):
-    """
-    [M00 E1 Advanced Spec & CGS v2.4 Pipeline-Native] 全大腦跨庫 fts_med_global 全文檢索。
-    支援管道串流輸入 (例如: echo '普拿疼' | ./pa med search)
+    """【全大腦跨庫神經網檢索】全域 FTS5 倒排索引極速全文檢索，同時涵蓋藥品、成分、健保處置、檢驗碼與裁判爭點。
+
+    臨床適用情境：臨床輔助決策、跨模組複合概念查詢（如同時查詢某疾病的處方藥、健保處置碼、檢驗項目與法律爭點）。
+    支援查詢項目：藥品名稱（如 '普拿疼'）、疾病名稱（如 '肺癌'）、醫療處置（如 '導尿管'）、檢驗碼（如 'HbA1c'）、法規關鍵字（如 '麻醉'）。
+
+    Args:
+        query: 跨庫全域檢索關鍵字（例如：'COVID', '心肌梗塞', '導尿管'；支援管道 stdin 或 '-'）
+        db_path: 實體 SQLite 資料庫路徑
+        limit: 回傳結果筆數（預設 10）
+        json_mode: 是否以 Clean JSON 結構化陣列輸出結果（AI 代理人調用時強烈建議開啟）
+
+    Returns:
+        若開啟 --json，回傳包含 [entity_type, entity_id, title, subtitle, content] 之結構化 Dict 陣列；否則輸出高可讀性終端卡片。
     """
     from src.m00_core.utils_db import resolve_pipeline_input
     inputs = resolve_pipeline_input(query)
@@ -125,7 +155,7 @@ def search_global(
     conn = get_sqlite_connection(db_path)
     from src.m00_core.m00_global_views import rebuild_fts_med_global
     
-    # 確保全域 FTS 存在與數據對齊
+    # 確保全域 FTS 存在與資料對齊
     cursor = conn.cursor()
     cursor.execute("SELECT COUNT(*) FROM fts_med_global;")
     if cursor.fetchone()[0] == 0:
@@ -189,8 +219,17 @@ def safety_check(
     query: str = typer.Argument(..., help="藥品或成分關鍵字 (例如: 阿司匹靈, Atorvastatin, 降血脂)"),
     db_path: str = typer.Option("tw-med-db/db/med.db", "--db", "-d", help="實體 SQLite 資料庫路徑")
 ):
-    """
-    [M00 E2 Advanced Spec] 全域藥用安全防禦 (v_master_drug_safety_mesh)。
+    """【藥品與保健品安全防護網】檢索處方藥物與健康食品/草本成分之潛在交互作用與禁忌警訊。
+
+    臨床適用情境：醫師開立處方或藥師衛教時，評估病患同時攝取健康食品（如銀杏、紅麴、魚油、大豆異黃酮）時是否存在出血或肝腎毒性交互作用風險。
+    支援查詢項目：藥品商品名、藥品主成分（如 'Warfarin', 'Atorvastatin'）、健康食品成分（如 '銀杏', '紅麴'）。
+
+    Args:
+        query: 欲評估之藥品或保健成分關鍵字（例如：'阿司匹靈', '銀杏', 'Atorvastatin'）
+        db_path: 實體 SQLite 資料庫路徑
+
+    Returns:
+        輸出終端臨床警訊卡片，包含衝突處方藥、主成分、互斥保健成分、風險等級 (HIGH/MEDIUM) 與具體臨床處置警訊。
     """
     db_path = resolve_db_path(db_path)
     if not os.path.exists(db_path):
@@ -228,8 +267,16 @@ def safety_check(
 def doctor(
     db_path: str = typer.Option("tw-med-db/db/med.db", "--db", "-d", help="實體 SQLite 資料庫路徑")
 ):
-    """
-    [維度四 Doctor 檢測] 執行資料庫健康度 4 大硬核檢測。
+    """【醫療大腦健康診斷中心】執行 SQLite 資料庫完整性、路徑解析、FTS 索引健全度與 Schema 版本 4 大硬實力檢測。
+
+    臨床適用情境：部署上線前、批次匯入後，或當查詢結果異常時，由運維或 AI Agent 自動驗證資料庫底層健康狀態。
+    支援查詢項目：無輸入參數，自動檢測 SQLite 檔頭完整性、Trigger 狀態、索引可用性與四階路徑解析相容性。
+
+    Args:
+        db_path: 實體 SQLite 資料庫路徑
+
+    Returns:
+        輸出各檢測項 PASS/FAIL 狀態報告與最終診斷判定。
     """
     from src.m00_core.doctor import run_health_doctor_check
     resolved_db = resolve_db_path(db_path)

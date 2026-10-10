@@ -34,7 +34,22 @@ def search_ehr(
     db_path: str = typer.Option("db/med.db", "--db", help="SQLite 資料庫路徑"),
     json_output: bool = typer.Option(False, "--json", help="輸出 Structured JSON")
 ):
-    """【臨床病歷檢索】查詢指定台灣病患之全景電子病歷、身分證字號與保管機構"""
+    """【台灣臨床電子病歷檢索】查詢病患全景電子病歷基本身分、身分證字號與保管醫療機構。
+
+    臨床適用情境:
+      急診或門診掛號身分確認、轉診病歷調閱、查詢就醫識別碼 (MRN) 與資料來源合法性。
+
+    支援查詢項目:
+      病患代號 (如 pat-example, pat-001)、身分證字號、病歷號。
+
+    Args:
+      patient_id (str): 病患唯一識別碼 (如 'pat-example')。
+      db_path (str): 實體 SQLite 資料庫檔案路徑，預設為 'db/med.db'。
+      json_output (bool): 是否以 JSON 格式輸出結構化病患紀錄，預設為 False。
+
+    Returns:
+      None (CLI 終端輸出病患資訊摘要，或以 JSON 輸出病患身分欄位陣列)。
+    """
     resolved_db = resolve_db_path(db_path)
     conn = get_sqlite_connection(resolved_db)
     
@@ -68,7 +83,22 @@ def vitals(
     db_path: str = typer.Option("db/med.db", "--db", help="SQLite 資料庫路徑"),
     json_output: bool = typer.Option(False, "--json", help="輸出 Structured JSON")
 ):
-    """【生命徵象】檢視床邊生命徵象 (收縮壓、舒張壓、體溫、心率) 時間序列"""
+    """【床邊生命徵象時間序列】查詢病患體溫、脈搏、心率、收縮壓與舒張壓觀測紀錄。
+
+    臨床適用情境:
+      住院病程監測、急診檢傷生命徵象趨勢評估、敗血症與休克早期預警分析。
+
+    支援查詢項目:
+      病患代號 (如 pat-example)、LOINC 代碼對照觀測值。
+
+    Args:
+      patient_id (str): 病患唯一識別碼 (如 'pat-example')。
+      db_path (str): 實體 SQLite 資料庫檔案路徑，預設為 'db/med.db'。
+      json_output (bool): 是否以 JSON 格式輸出生命徵象紀錄陣列，預設為 False。
+
+    Returns:
+      None (CLI 終端表格呈現生命徵象時序數據，或以 JSON 輸出 Observation 列表)。
+    """
     resolved_db = resolve_db_path(db_path)
     conn = get_sqlite_connection(resolved_db)
     
@@ -115,7 +145,21 @@ def fhir_export(
     patient_id: str = typer.Argument("pat-example", help="病患代號 (如 pat-example)"),
     db_path: str = typer.Option("db/med.db", "--db", help="SQLite 資料庫路徑")
 ):
-    """【FHIR 匯出】一鍵將病患資料還原與匯出為衛福部標準 TW Core IG FHIR JSON 檔"""
+    """【TW Core IG FHIR 匯出網關】將病患資料還原並匯出為衛福部標準 FHIR R4 JSON 物件。
+
+    臨床適用情境:
+      院際轉診電子病歷交換、跨院雲端健康存摺整合、符合 TW Core IG Profile 格式驗證。
+
+    支援查詢項目:
+      病患代號 (如 pat-example)。
+
+    Args:
+      patient_id (str): 病患唯一識別碼 (如 'pat-example')。
+      db_path (str): 實體 SQLite 資料庫檔案路徑，預設為 'db/med.db'。
+
+    Returns:
+      None (CLI 直接輸出標準 FHIR Patient 與 Observation 資源結構之 JSON 物件)。
+    """
     resolved_db = resolve_db_path(db_path)
     conn = get_sqlite_connection(resolved_db)
     
@@ -152,7 +196,22 @@ def cross_journey(
     db_path: str = typer.Option("db/med.db", "--db", help="SQLite 資料庫路徑"),
     json_output: bool = typer.Option(False, "--json", help="輸出 Structured JSON")
 ):
-    """【台美照護軌跡比對】比較 M16 台灣病房照護軌跡 vs M55 美國 ICU 照護軌跡"""
+    """【台美照護軌跡跨國比對】比對台灣 TW Core 普通病房與美國 MIMIC-IV ICU 重症監護時序。
+
+    臨床適用情境:
+      跨國醫療照護模式研究、重症監測頻率差異性分析、AI 跨院資料特徵對齊驗證。
+
+    支援查詢項目:
+      病患代號 (如 pat-example)。
+
+    Args:
+      patient_id (str): 病患唯一識別碼 (如 'pat-example')。
+      db_path (str): 實體 SQLite 資料庫檔案路徑，預設為 'db/med.db'。
+      json_output (bool): 是否以 JSON 格式輸出比對分析結果，預設為 False。
+
+    Returns:
+      None (CLI 終端輸出照護軌跡比對報告，或以 JSON 輸出台美對照結構體)。
+    """
     res = {
         "patient_id": patient_id,
         "taiwan_twcore_m16": {
@@ -183,7 +242,21 @@ def status(
     db_path: str = typer.Option("db/med.db", "--db", "-d", help="實體 SQLite 資料庫路徑"),
     json_mode: bool = typer.Option(False, "--json", "-j", help="單行緊湊 JSON 輸出")
 ):
-    """[CGS v2.0] 查看 M16 (tw_ehr_db) 專屬實體表、data_origin 來源分組與 FTS5 看板"""
+    """【台灣臨床電子病歷模組】實體病歷表與合成資料來源監控。
+
+    臨床適用情境:
+      系統維運、臨床電子病歷交換前置檢查、確認種子病患與合成資料庫就緒狀態。
+
+    支援查詢項目:
+      m16_ehr_cache (快取表)、m16_ehr_patients (病患主表)、m16_ehr_vitals (生命徵象時序表)。
+
+    Args:
+      db_path (str): 實體 SQLite 資料庫檔案路徑，預設為 'db/med.db'。
+      json_mode (bool): 是否以單行緊湊 JSON 格式輸出統計數據，預設為 False。
+
+    Returns:
+      None (CLI 終端直接輸出統計摘要表格，或以 JSON 輸出模組計數與 data_origin 物件)。
+    """
     resolved = resolve_db_path(db_path)
     if not os.path.exists(resolved):
         typer.echo(f"❌ 找不到實體資料庫: {db_path}", err=True)

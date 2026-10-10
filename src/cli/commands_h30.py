@@ -44,8 +44,18 @@ def search(
     db_path: str = typer.Option("tw-med-db/db/med.db", "--db", "-d", help="實體 SQLite 資料庫路徑"),
     limit: int = typer.Option(5, "--limit", "-l", help="回傳筆數限制")
 ):
-    """
-    執行 M08 罕見疾病與孤兒藥檢索。
+    """【國健署罕見疾病與孤兒藥名單庫】查詢衛福部公告罕見疾病清冊、致病基因、Orphanet 與 OMIM 國際對照。
+
+    臨床適用情境：遺傳諮詢門診、小兒神經科確認特定病症是否屬於台灣法定公告罕病，以利病患申請重大傷病卡、罕病補助與專案孤兒藥給付。
+    支援查詢項目：罕見疾病中文名稱（如 '脊髓性肌肉萎縮症', '黏多醣症'）、致病基因符號（如 'SMN1', 'DMD'）、Orpha 代碼、OMIM 編號。
+
+    Args:
+        query: 罕病名稱、基因或編碼關鍵字（例如：'脊髓性肌肉萎縮症', 'SMN1', 'ORPHA'）
+        db_path: 實體 SQLite 資料庫路徑
+        limit: 回傳筆數限制（預設 5）
+
+    Returns:
+        輸出終端清單，包含法定罕病編號、中文名稱、致病基因 Symbol、OrphaCode 與 OMIM 基因編號。
     """
     db_path = resolve_db_path(db_path)
     if not os.path.exists(db_path):
@@ -75,7 +85,18 @@ def status(
     db_path: str = typer.Option("db/med.db", "--db", "-d", help="實體 SQLite 資料庫路徑"),
     json_mode: bool = typer.Option(False, "--json", "-j", help="單行緊湊 JSON 輸出")
 ):
-    """[CGS v2.0] 查看 M08 (rare_disease_db) 專屬實體表與 FTS5 筆數看板"""
+    """【罕見疾病名單庫數據看板】檢視 M08/H30 法定罕見疾病表及 FTS5 全文索引資料量。
+
+    臨床適用情境：確認國健署法定罕病清冊資料同步狀態與收錄病種總數。
+    支援查詢項目：無輸入參數，自動統計 m08_rare_diseases 表紀錄。
+
+    Args:
+        db_path: 實體 SQLite 資料庫路徑
+        json_mode: 是否以 Clean JSON 結構化輸出結果
+
+    Returns:
+        若開啟 --json，回傳包含模組名稱與表筆數之 Dict；否則輸出終端看板。
+    """
     resolved = resolve_db_path(db_path)
     if not os.path.exists(resolved):
         typer.echo(f"❌ 找不到實體資料庫: {db_path}", err=True)

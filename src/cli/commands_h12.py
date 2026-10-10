@@ -44,8 +44,18 @@ def search(
     db_path: str = typer.Option("tw-med-db/db/med.db", "--db", "-d", help="實體 SQLite 資料庫路徑"),
     limit: int = typer.Option(5, "--limit", "-l", help="回傳筆數限制")
 ):
-    """
-    執行 M03 健康食品與保健功效檢索。
+    """【台灣小綠人健康食品許可證庫】檢索衛福部官方核准之小綠人標章健康食品、保健功效宣告與活性成分。
+
+    臨床適用情境：民眾詢問保健食品功效宣稱是否具官方認證、醫師/營養師評估健康食品之功效成分與輔助療效。
+    支援查詢項目：健康食品中文名稱（如 '紅麴膠囊'、'魚油'）、核准保健功效（如 '調節血脂', '不易形成體脂肪', '胃腸功能改善'）、功效成分（如 'Monacolin K', 'EPA/DHA'）、衛署健食字號。
+
+    Args:
+        query: 欲查詢之品名、成分或保健功效關鍵字（例如：'魚油', '膽固醇', '腸胃功能'）
+        db_path: 實體 SQLite 資料庫路徑
+        limit: 回傳筆數限制（預設 5）
+
+    Returns:
+        輸出終端清單，包含許可證字號、中文品名、核定保健功效與功效成分規格。
     """
     db_path = resolve_db_path(db_path)
     if not os.path.exists(db_path):
@@ -75,8 +85,17 @@ def interaction(
     query: str = typer.Argument(..., help="保健成分或西藥名稱 (例如: 紅麴, 銀杏, Statin, Aspirin)"),
     db_path: str = typer.Option("tw-med-db/db/med.db", "--db", "-d", help="實體 SQLite 資料庫路徑")
 ):
-    """
-    [E2 Advanced Spec] 檢索西藥與保健食品/成分之交互作用警訊。
+    """【西藥與保健食品交互作用警訊】評估特定草本保健成分與西藥處方之藥物動力學/藥效學衝突。
+
+    臨床適用情境：評估病患自行補充之營養保健品是否會降低處方療效或引發橫紋肌溶解、異常出血等嚴重副作用。
+    支援查詢項目：保健食品成分（如 '紅麴', '銀杏', '聖約翰草'）、西藥學名（如 'Statin', 'Aspirin', 'Warfarin'）。
+
+    Args:
+        query: 保健成分或西藥成分關鍵字（例如：'紅麴', '銀杏', 'Statin', 'Aspirin'）
+        db_path: 實體 SQLite 資料庫路徑
+
+    Returns:
+        輸出終端警訊卡片，包含保健成分、處方藥成分、風險等級 (HIGH/MEDIUM) 與具體臨床處置警訊。
     """
     db_path = resolve_db_path(db_path)
     if not os.path.exists(db_path):
@@ -114,7 +133,18 @@ def status(
     db_path: str = typer.Option("db/med.db", "--db", "-d", help="實體 SQLite 資料庫路徑"),
     json_mode: bool = typer.Option(False, "--json", "-j", help="單行緊湊 JSON 輸出")
 ):
-    """[CGS v2.0] 查看 M03 (health_supp_db) 專屬實體表與 FTS5 筆數看板"""
+    """【健康食品許可證數據看板】檢視 M03/H12 健康食品主表、保健功效與 FTS5 索引資料量。
+
+    臨床適用情境：確認健康食品許可證清冊與西藥交互作用網之建立狀態與筆數統計。
+    支援查詢項目：無輸入參數，自動統計 m03_health_supp_db 表筆數。
+
+    Args:
+        db_path: 實體 SQLite 資料庫路徑
+        json_mode: 是否以 Clean JSON 結構化輸出結果
+
+    Returns:
+        若開啟 --json，回傳包含模組名稱與資料表筆數之 Dict；否則輸出終端看板。
+    """
     resolved = resolve_db_path(db_path)
     if not os.path.exists(resolved):
         typer.echo(f"❌ 找不到實體資料庫: {db_path}", err=True)

@@ -18,7 +18,21 @@ def search_rxnorm(
     query_str: str = typer.Argument(..., help="搜尋關鍵字 (如 Osimertinib, AC49322100)"),
     db_path: str = typer.Option("tw-med-db/db/med.db", "--db", help="SQLite 資料庫路徑")
 ):
-    """M50 專屬 FTS5 美國 RxNorm / RxCUI 藥物概念網全文檢索"""
+    """【美國 RxNorm 國際藥學概念對照庫】檢索美國 NLM RxNorm 藥學概念網與台灣健保藥品代碼對照。
+
+    臨床適用情境:
+      跨國臨床藥學對照、國際電子病歷藥品標準化 (如 FHIR MedicationRequest)、外籍病患用藥對合、臨床決策支援。
+
+    支援查詢項目:
+      RxCUI 概念碼 (如 1603504)、英文藥名 (如 Osimertinib, Acetaminophen)、台灣健保代碼 (如 AC49322100)。
+
+    Args:
+      query_str (str): 藥物概念關鍵字、RxCUI 碼或健保代碼。
+      db_path (str): 實體 SQLite 資料庫檔案路徑，預設為 'tw-med-db/db/med.db'。
+
+    Returns:
+      None (CLI 終端輸出包含 RxCUI、英文藥名、Term Type 與對照健保碼之摘要表格)。
+    """
     conn = get_sqlite_connection(db_path)
     results = search_m50_fts(conn, query_str, limit=10)
     conn.close()
@@ -44,7 +58,21 @@ def status(
     db_path: str = typer.Option("db/med.db", "--db", "-d", help="實體 SQLite 資料庫路徑"),
     json_mode: bool = typer.Option(False, "--json", "-j", help="單行緊湊 JSON 輸出")
 ):
-    """[CGS v2.0] 查看 M50 (rxnorm-db) 專屬實體表與 FTS5 筆數看板"""
+    """【美國 RxNorm 國際藥學概念對照庫】實體概念對照表與全文檢索索引狀態監控。
+
+    臨床適用情境:
+      系統維運、國際藥物資料庫同步前置檢查、確認 RxCUI 概念快取與全文檢索就緒狀態。
+
+    支援查詢項目:
+      m50_rxnorm_cache (RxNorm 快取表)、fts_m50_rxnorm (全文檢索索引表)。
+
+    Args:
+      db_path (str): 實體 SQLite 資料庫檔案路徑，預設為 'db/med.db'。
+      json_mode (bool): 是否以單行緊湊 JSON 格式輸出統計數據，預設為 False。
+
+    Returns:
+      None (CLI 終端直接輸出統計摘要表格，或以 JSON 輸出 module 與 counts 物件)。
+    """
     resolved = resolve_db_path(db_path)
     if not os.path.exists(resolved):
         typer.echo(f"❌ 找不到實體資料庫: {db_path}", err=True)

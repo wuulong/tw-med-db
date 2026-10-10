@@ -45,8 +45,18 @@ def search(
     db_path: str = typer.Option("tw-med-db/db/med.db", "--db", "-d", help="實體 SQLite 資料庫路徑"),
     limit: int = typer.Option(5, "--limit", "-l", help="回傳筆數限制")
 ):
-    """
-    執行 M02 主成分全文檢索與別名比對。
+    """【台灣藥物有效成分字典】檢索標準化藥物活性成分、中英文雙語對照名稱與 ATC 分類碼。
+
+    臨床適用情境：處方比對、確認藥品主成分學名、查找跨國藥品代碼（如 RxNorm / WHO ATC）對照關聯。
+    支援查詢項目：英文成分學名（如 'Gefitinib', 'Acetaminophen'）、中文成分名稱（如 '乙醯胺酚', '吉非替尼'）、ATC 代碼（如 'N02BE01'）。
+
+    Args:
+        query: 欲查詢之藥物主成分名稱或學名（例如：'Gefitinib', 'Acetaminophen', '乙醯胺酚'）
+        db_path: 實體 SQLite 資料庫路徑
+        limit: 回傳筆數限制（預設 5）
+
+    Returns:
+        輸出終端清單，包含成分 ID、英文學名、中文別名與對應之 WHO ATC 分類代碼。
     """
     db_path = resolve_db_path(db_path)
     if not os.path.exists(db_path):
@@ -76,8 +86,17 @@ def atc_tree(
     atc_code: str = typer.Argument(..., help="ATC 分類碼 (例如: L01EB01, N02BE01)"),
     db_path: str = typer.Option("tw-med-db/db/med.db", "--db", "-d", help="實體 SQLite 資料庫路徑")
 ):
-    """
-    [Advanced E1] 查詢 WHO ATC 5 階藥理樹拓樸階層結構。
+    """【WHO ATC 5 階藥理分類拓樸樹】遞迴展開指定藥物之 5 階解剖學/治療學/化學分類結構。
+
+    臨床適用情境：藥師評估藥物作用機轉、同藥理機轉群體分析、藥品同類交叉過敏或併用禁忌分類探勘。
+    支援查詢項目：WHO 國際標準 7 碼 ATC 代碼（如 'L01EB01' 表 EGFR 抑制劑、'N02BE01' 表 Anilides 止痛藥）。
+
+    Args:
+        atc_code: 7 碼國際 ATC 分類碼（例如：'L01EB01', 'N02BE01'）
+        db_path: 實體 SQLite 資料庫路徑
+
+    Returns:
+        輸出終端層級樹狀拓樸（Level 1 解剖大類 ➔ Level 2 治療大類 ➔ Level 3 藥理小類 ➔ Level 4 化學小類 ➔ Level 5 化學成分物質）。
     """
     db_path = resolve_db_path(db_path)
     if not os.path.exists(db_path):
@@ -120,7 +139,18 @@ def status(
     db_path: str = typer.Option("db/med.db", "--db", "-d", help="實體 SQLite 資料庫路徑"),
     json_mode: bool = typer.Option(False, "--json", "-j", help="單行緊湊 JSON 輸出")
 ):
-    """[CGS v2.0] 查看 M02 (tw_ingredient_map_db) 專屬實體表與 FTS5 筆數看板"""
+    """【有效成分字典模組數據看板】檢視 M02/H11 活性主成分、ATC 分類對照表與全文索引資料量。
+
+    臨床適用情境：確認主成分正規化對照表與 ATC 階層分類庫之健康筆數與建立狀態。
+    支援查詢項目：無輸入參數，自動統計 m02_ingredients 與 m02_atc_tree 表紀錄。
+
+    Args:
+        db_path: 實體 SQLite 資料庫路徑
+        json_mode: 是否以 Clean JSON 結構化輸出結果
+
+    Returns:
+        若開啟 --json，回傳包含成分表與 ATC 樹各表筆數之 Dict；否則輸出終端看板。
+    """
     resolved = resolve_db_path(db_path)
     if not os.path.exists(resolved):
         typer.echo(f"❌ 找不到實體資料庫: {db_path}", err=True)

@@ -18,7 +18,21 @@ def search_trials(
     query_str: str = typer.Argument(..., help="搜尋關鍵字 (如 NCT02296125, 乳癌, 臺大醫院)"),
     db_path: str = typer.Option("tw-med-db/db/med.db", "--db", help="SQLite 資料庫路徑")
 ):
-    """M51 專屬 FTS5 NIH 國際臨床試驗全文檢索"""
+    """【美國 NIH ClinicalTrials 臨床試驗在台招募庫】檢索國際臨床試驗案號與在台合作醫療機構。
+
+    臨床適用情境:
+      腫瘤科新藥臨床試驗轉介、罕見疾病受試者招募評估、醫師跨國新藥試驗對照、病人新療法諮詢。
+
+    支援查詢項目:
+      NCT ID (如 NCT02296125)、疾病/癌症名稱 (如 乳癌, 肺腺癌)、台灣參與醫院機構名稱 (如 臺大醫院, 榮總)。
+
+    Args:
+      query_str (str): 臨床試驗案號、疾病適應症或台灣醫院名稱。
+      db_path (str): 實體 SQLite 資料庫檔案路徑，預設為 'tw-med-db/db/med.db'。
+
+    Returns:
+      None (CLI 終端輸出包含 NCT ID、試驗標題、分期 Phase、適應症與在台機構之摘要表格)。
+    """
     conn = get_sqlite_connection(db_path)
     results = search_m51_fts(conn, query_str, limit=10)
     conn.close()
@@ -45,7 +59,21 @@ def status(
     db_path: str = typer.Option("db/med.db", "--db", "-d", help="實體 SQLite 資料庫路徑"),
     json_mode: bool = typer.Option(False, "--json", "-j", help="單行緊湊 JSON 輸出")
 ):
-    """[CGS v2.0] 查看 M51 (clinical-trials-gov) 專屬實體表與 FTS5 筆數看板"""
+    """【美國 NIH ClinicalTrials 臨床試驗在台招募庫】實體快取表與全文檢索索引狀態監控。
+
+    臨床適用情境:
+      系統維運、臨床試驗資料同步前置檢查、確認在台試驗資料庫與 FTS5 全文檢索就緒狀態。
+
+    支援查詢項目:
+      m51_ctgov_cache (試驗快取主表)、fts_m51_ctgov (全文檢索索引表)。
+
+    Args:
+      db_path (str): 實體 SQLite 資料庫檔案路徑，預設為 'db/med.db'。
+      json_mode (bool): 是否以單行緊湊 JSON 格式輸出統計數據，預設為 False。
+
+    Returns:
+      None (CLI 終端直接輸出統計摘要表格，或以 JSON 輸出 module 與 counts 物件)。
+    """
     resolved = resolve_db_path(db_path)
     if not os.path.exists(resolved):
         typer.echo(f"❌ 找不到實體資料庫: {db_path}", err=True)

@@ -18,7 +18,21 @@ def search_chemical(
     query_str: str = typer.Argument(..., help="搜尋關鍵字 (如 CID, 化學名, InChIKey)"),
     db_path: str = typer.Option("tw-med-db/db/med.db", "--db", help="SQLite 資料庫路徑")
 ):
-    """M52 專屬 FTS5 PubChem 分子化學結構全文檢索"""
+    """【美國 NIH PubChem 化學分子結構庫】檢索藥物分子結構、CID 編號、InChIKey 與 IUPAC 名稱。
+
+    臨床適用情境:
+      精準藥物研發、化學結構相似度比對、藥物主成分分子辨識、跨化學資料庫鍵結。
+
+    支援查詢項目:
+      PubChem CID 編號 (如 2244)、主成分化學名 (如 Aspirin, Osimertinib)、InChIKey、IUPAC 名稱。
+
+    Args:
+      query_str (str): 化學分子名稱、CID 或 InChIKey 雜湊值。
+      db_path (str): 實體 SQLite 資料庫檔案路徑，預設為 'tw-med-db/db/med.db'。
+
+    Returns:
+      None (CLI 終端輸出包含 PubChem CID、主成分學名、InChIKey 與 IUPAC 化學名之表格)。
+    """
     conn = get_sqlite_connection(db_path)
     results = search_m52_fts(conn, query_str, limit=10)
     conn.close()
@@ -44,7 +58,21 @@ def status(
     db_path: str = typer.Option("db/med.db", "--db", "-d", help="實體 SQLite 資料庫路徑"),
     json_mode: bool = typer.Option(False, "--json", "-j", help="單行緊湊 JSON 輸出")
 ):
-    """[CGS v2.0] 查看 M52 (pubchem-db) 專屬實體表與 FTS5 筆數看板"""
+    """【美國 NIH PubChem 化學分子結構庫】實體快取表與全文檢索索引狀態監控。
+
+    臨床適用情境:
+      系統維運、化學結構庫同步前置檢查、確認分子快取表與 FTS5 全文檢索就緒狀態。
+
+    支援查詢項目:
+      m52_pubchem_cache (分子快取表)、fts_m52_pubchem (全文檢索索引表)。
+
+    Args:
+      db_path (str): 實體 SQLite 資料庫檔案路徑，預設為 'db/med.db'。
+      json_mode (bool): 是否以單行緊湊 JSON 格式輸出統計數據，預設為 False。
+
+    Returns:
+      None (CLI 終端直接輸出統計摘要表格，或以 JSON 輸出 module 與 counts 物件)。
+    """
     resolved = resolve_db_path(db_path)
     if not os.path.exists(resolved):
         typer.echo(f"❌ 找不到實體資料庫: {db_path}", err=True)
