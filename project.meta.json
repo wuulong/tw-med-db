@@ -14,8 +14,11 @@
     "RxNorm",
     "MIMIC-IV",
     "CGS-v2.4",
-    "PGS-v3.2",
+    "PGS-v3.3",
     "DGS-v2.0"
+  ],
+  "profiles": [
+    "agent_manifest"
   ],
   "owner": "Antigravity & wuulong",
   "created_at": "2026-08-15 08:00:00",

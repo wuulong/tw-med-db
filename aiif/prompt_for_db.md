@@ -1,6 +1,6 @@
 # tw-med-db: 資料庫掛載與跨庫共享協同契約 Prompt
 
-> **調用主體**：需與衛福部醫療大數據庫（`med.db`）進行聯邦查詢、JOIN 關聯或靜態字典反查之外部專案。  
+> **調用主體**：需與衛福部醫療巨量資料庫（`med.db`）進行聯邦查詢、JOIN 關聯或靜態字典反查之外部專案。  
 > **遵守規格**：DGS v2.0 (資料庫治理規範) & SQLite 聯邦 ATTACH 協定。
 
 ---
@@ -30,9 +30,9 @@ ATTACH DATABASE 'file:/Volumes/D2024/data/med-db-in/db/med.db?mode=ro' AS med;
 實體庫中包含 182 張正規化表與 FTS5 全文索引，依四大領域支柱劃分：
 
 ### 💊 Pillar 1: 食藥署 TFDA（藥品與醫材安全）
-* **`m01_tw_drug_db`** (H10): 66,488 筆西藥許可證主檔（代碼、品名、主成分、適應症、健保價）。含 FTS 索引 `m01_tw_drug_db_fts`。
-* **`m02_tw_ingredient_map_db`** (H11): 7,713 筆有效成分字典，商品名/學名/主成分對照與 WHO ATC 代碼。
-* **`m03_health_supp_db`** (H12): 565 筆小綠人健康食品許可證、功效認證項目。
+* **`m01_tw_drug_db`** (H10): 66,488 筆西藥許可證主檔（程式碼、品名、主成分、適應症、健保價）。含 FTS 索引 `m01_tw_drug_db_fts`。
+* **`m02_tw_ingredient_map_db`** (H11): 7,713 筆有效成分字典，商品名/學名/主成分對照與 WHO ATC 程式碼。
+* **`m03_health_supp_db`** (H12): 565 筆小綠人健康食品許可證、功效認證專案。
 * **`m04_drug_shortage_alert`** (H13): 1,220 筆藥品回收批號與國內缺藥通報。
 * **`m13_tw_med_device_db`** (H14): 6.6 萬筆醫療器材許可證與仿單摘要。
 
@@ -57,18 +57,18 @@ ATTACH DATABASE 'file:/Volumes/D2024/data/med-db-in/db/med.db?mode=ro' AS med;
 * **`m51_clinical_trials_gov`** (H51): NIH 臨床試驗在台據點。
 * **`m52_pubchem_db`** (H52): PubChem 分子結構式、SMILES 與 InChIKey。
 * **`m53_who_atc_db`** (H53): WHO 官方 5 階 ATC 藥理分類樹與 DDD 劑量。
-* **`mimic_iv_hosp/icu`** (H54): MIT ICU 重症臨床大數據 Gateway (DuckDB 零解壓)。
+* **`mimic_iv_hosp/icu`** (H54): MIT ICU 重症臨床巨量資料 Gateway (DuckDB 零解壓)。
 * **`m56_ed_cache`** (H55): BIDMC 急診到診病患快取表（主訴、檢傷 Acuity、Pyxis 發藥、Medrecon 居家用藥）。
 
 ---
 
 ## 4. 署司整合檢視表 (Read-Only Views)
 
-* **`v_h10` ~ `v_h55`**：對應部會新編號之 30 個只讀視圖。
+* **`v_h10` ~ `v_h55`**：對應部會新編號之 30 個只讀檢視。
 * **`v_gov_a18_pillar1_tfda_mesh`**：食藥署藥物、成分與缺藥聯防檢視。
 * **`v_gov_a18_pillar2_nhi_mesh`**：健保署院所、給付與申報聯防檢視。
 * **`v_gov_a18_pillar3_cdc_mesh`**：疾管署與國健署法傳與疫苗據點檢視。
-* **`v_gov_a18_pillar4_interop_mesh`**：LOINC/FHIR/RxNorm 國際標準聯網檢視。
+* **`v_gov_a18_pillar4_interop_mesh`**：LOINC/FHIR/RxNorm 國際標準連線檢視。
 
 ---
 
