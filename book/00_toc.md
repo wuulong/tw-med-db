@@ -62,6 +62,7 @@
   * 3.15 **[`H23` (原 M15) 台灣健保申報與抽樣資料庫 Gateway (`tw_nhird_db`)](03_15_h23_tw_nhird_db.md)**
   * 3.16 **[`H41` (原 M16) 台灣醫院臨床電子病歷 Gateway (`tw_ehr_db`)](03_16_h41_tw_ehr_db.md)**
 * **Pillar 4: 國際標準**
+  * 3.17 **[`H35` 長照與居家醫療統計模組 (`h35_ltc_stats_db`)](03_17_h35_ltc_stats_db.md)** *(獨立庫 `db/ltc.db`)*
   * 3.50 **[`H50` (原 M50) RxNorm 美國藥學概念網 Gateway (`rxnorm_db`)](03_50_h50_rxnorm_db.md)** (附: `Fig 3.50` M50 跨模組對照整合拓樸圖: M50 ➔ M01 台規對接)
   * 3.51 **[`H51` (原 M51) ClinicalTrials.gov 美國 NIH 試驗 Gateway (`clinical_trials_gov`)](03_51_h51_clinical_trials_gov.md)** (附: `Fig 3.51` M51 跨模組對照整合拓樸圖: M51 ➔ M09 在台試驗)
   * 3.52 **[`H52` (原 M52) PubChem 美國 NIH 化學結構庫 Gateway (`pubchem_db`)](03_52_h52_pubchem_db.md)** (附: `Fig 3.52` M52 跨模組對照整合拓樸圖: M52 ➔ M02 主成分連結)

@@ -1,13 +1,24 @@
 # 🏷️ tw-med-db (衛生福利部 MOHW 醫療與健保大資料中樞 GOV-A18) 版本演進與開發歷程看板 (VERSION.md)
 
-* **目前最新版本**：`v2.1.0`
-* **發布日期**：2026-09-12
+* **目前最新版本**：`v2.2.0`
+* **發布日期**：2026-11-24
 * **主管機關代號**：`GOV-A18` (衛生福利部 MOHW)
 * **歸檔路徑**：[VERSION.md](VERSION.md)
 
 ---
 
 ## 📜 版本演進與 F-P-I-E-C 生命週期紀錄
+
+### 🏥 `v2.2.0` (2026-11-24) - H35 長照與居家醫療統計模組 (`h35_ltc_stats_db`) 上線版
+* **狀態**：🟢 `COMPLETED`
+* **重大變革與實作成果**：
+  1. **實體分離、邏輯聯邦架構 (`db/ltc.db` + `ATTACH med.db?mode=ro`)**：
+     - 獨立於 596MB `med.db` 之外建立高頻更新之 `db/ltc.db`，支援 `norm_city`、`roc_to_ym`、`cms_group` UDFs。
+  2. **雙軌同步與通用 PDF 引擎**：
+     - 完成政府開放資料 (`opendata_39331` 5,147 筆、`opendata_124999` 1 筆) 與衛福部 1966 長照專區 10 份統計報表（`03, 05, 06, 10, 11, 12, 13, 15, 18, 19`）入庫，通過 Sum Conservation Check 與 Transaction 取代寫入驗證。
+  3. **GIS 座標快取與單一診所分析**：
+     - 新增獨立快取表 `ltc_provider_geocode`、`geocode` 增量編碼、以及 `clinic` / `trend` / `code-mix` / `providers` / `linkage` CLI，並產出 `LIMITATIONS.md` 與 `xingyi_ltc_strategy_analysis.md`。
+  4. **驗證狀態**：`pytest` 8/8 單元測試全數通過。
 
 ### 🌐 `v2.1.0` (2026-09-12) - GOV-300 全政府母大腦連鎖握手完成與 CGS v2.4 Pipeline 原生就緒版
 * **狀態**：🟢 `COMPLETED`
@@ -24,14 +35,14 @@
      - `resolve_pipeline_input()` 全域支援 `sys.stdin` 串流與多行輸入。
      - M00/H00 跨庫總中樞與 H10/M01 藥品許可證實裝原生 Unix Pipe 支援，完成端到端 3 階串流實測。
      - 修復 H14/H34 底層匯入相容性，23 大子模組 H/M 雙軌看板 100% PASS。
-  3. **工程歷程防覆蓋實體歸檔機制實裝**：
+  3. **工程歷程防涵蓋實體歸檔機制實裝**：
      - 於子專案啟用 `sys_eng/00_buildlogs/` 實體分檔機制，落庫 `WT_MOHW_GOV_A18_G300_SYNERGY.md`。
   4. **跨部會聯合查詢實戰 (Federated Cross-Domain Queries Demo)**：
      - 新增 `examples/federated_queries/demo_federated_queries.py` 跨庫調度套件。
      - 實測三大跨領域場景全數綠燈 PASS：
-       - **場景一 (空間與醫療穿透)**：結合 G300 `admin_codes` 與 MED `m05_hospitals`，即時關聯全台前五大醫療重鎮與鄉鎮市區覆蓋率。
+       - **場景一 (空間與醫療穿透)**：結合 G300 `admin_codes` 與 MED `m05_hospitals`，即時關聯全台前五大醫療重鎮與鄉鎮市區涵蓋率。
        - **場景二 (商工法人穿透)**：結合 G300 `corporate_registry` 與 MED `m01_tw_drug_db`，將 Top 5 藥品製造商許可證穿透至商工法人統編與登記地。
-       - **場景三 (醫療與金融保險聯防)**：結合 FSC (GOV-A21) `f30_insurance_institutions` 與 MED `h20`/`h21`，打通 52 家商業保險機構理賠能量與健保自費項目之協同視野。
+       - **場景三 (醫療與金融保險聯防)**：結合 FSC (GOV-A21) `f30_insurance_institutions` 與 MED `h20`/`h21`，串接貫通 52 家商業保險機構理賠能量與健保自費專案之協同視野。
      - 實測證明完整歸檔至 `sys_eng/00_buildlogs/WT_MOHW_GOV_A18_FEDERATED_QUERY_DEMO.md`。
 
 ---

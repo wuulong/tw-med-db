@@ -76,3 +76,10 @@ ATTACH DATABASE 'file:/Volumes/D2024/data/med-db-in/db/med.db?mode=ro' AS med;
 
 1. **嚴禁外部寫入**：`med.db` 為客觀醫學與官方開放資料庫，外部 Agent 嚴禁執行任何 `INSERT`、`UPDATE`、`DROP` 或 `ALTER`。
 2. **病患隱私隔離**：外部系統（如個人健康助理、院內代理人）處理之病患個人私密紀錄，必須保存在該專案自己之私有庫（如 `hos.db` 或 `fv_patient_personal.db`），絕對禁止回寫至 `med.db`。
+
+---
+
+## 🏥 H35 長照與居家醫療獨立庫 (`db/ltc.db`) 接駁指引
+* **獨立實體庫**：高頻更新的長照統計與居家醫療團隊資料存放於 `db/ltc.db`（透過 `ATTACH med.db?mode=ro` 跨庫關聯）。
+* **標準 CLI 入口**：`python -m modules.h35_ltc_stats_db.cli <clinic|providers|code-mix|trend|linkage|geocode|audit> -j`
+* **必讀資料邊界**：使用前請參閱 `modules/h35_ltc_stats_db/LIMITATIONS.md`。

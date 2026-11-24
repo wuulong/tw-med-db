@@ -43,6 +43,7 @@
 | **`H32`** (M10) | `med_legal_db` | `m10_med_legal_db` (1,243 筆) | 司法院醫療過失裁判、醫療糾紛民刑事判決結構化特徵與爭點分析 |
 | **`H33`** (M11) | `patient_journey_db` | `m11_patient_journey_db` (100 筆) | 癌症與慢性病全程照護臨床導航、照護路徑指引（含 DSM-5 心理健康指標） |
 | **`H34`** (M14) | `cdc_epidemic_db` | `m14_cdc_epidemic_db` (18.7 萬筆) | 疾管署法定傳染病統計與全台公費/自費疫苗接種合約院所據點 |
+| **`H35`** | `h35_ltc_stats_db` | `ltc.db` *(獨立實體庫)* | 衛福部 1966 長照統計、健保居家醫療參與院所 (`39331`) 與 GIS 座標快取；採獨立 DB 存放並透過 `ATTACH med.db?mode=ro` 聯邦查詢（見 [CLI_MANUAL.md](../modules/h35_ltc_stats_db/CLI_MANUAL.md) 與 [LIMITATIONS.md](../modules/h35_ltc_stats_db/LIMITATIONS.md)） |
 
 ### 🌐 Pillar 4: 資訊處與國際門戶（國際標準與研究 Gateway）
 | 代號 | 模組名稱 | 核心資料庫與實體表 | 核心功能與資料源 |

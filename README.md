@@ -37,6 +37,7 @@
 | | **`H40` (原 M12)** | [`med_lab_fhir_db`](modules/h40_med_lab_fhir_db/README.md) | [CLI 手冊](modules/h40_med_lab_fhir_db/CLI_MANUAL.md) | TW Core IG (FHIR) + LOINC 檢驗碼 | 500 筆 | 🟢 100% PASS |
 | | **`H14` (原 M13)** | [`tw_med_device_db`](modules/h14_tw_med_device_db/README.md) | [CLI 手冊](modules/h14_tw_med_device_db/CLI_MANUAL.md) | 食藥署醫療器材許可證與說明書 | 200 筆 | 🟢 100% PASS |
 | | **`H34` (原 M14)** | [`cdc_epidemic_db`](modules/h34_cdc_epidemic_db/README.md) | [CLI 手冊](modules/h34_cdc_epidemic_db/CLI_MANUAL.md) | 疾管署法定傳染病與疫苗接種據點 | 200 筆 | 🟢 100% PASS |
+| | **`H35` (獨立庫 `ltc.db`)** | `h35_ltc_stats_db` | [CLI 手冊](modules/h35_ltc_stats_db/CLI_MANUAL.md) | 衛福部 1966 長照統計、健保居家醫療院所與 GIS 座標快取 | 7,723+ 筆 | 🟢 8/8 PASS |
 | | **`H23` (原 M15)** | [`tw_nhird_db`](modules/h23_tw_nhird_db/README.md) | [CLI 手冊](modules/h23_tw_nhird_db/CLI_MANUAL.md) | 健保署點數申報範例與 NHIRD 抽樣歸人庫 Gateway | 100 筆 (4 表) | 🟢 100% PASS |
 | | **`H41` (原 M16)** | [`tw_ehr_db`](modules/h41_tw_ehr_db/README.md) | [CLI 手冊](modules/h41_tw_ehr_db/CLI_MANUAL.md) | 衛福部 TW Core IG 臨床電子病歷 Gateway | 官方 FHIR JSON | 🟢 100% PASS |
 | **Pillar 4: 國際標準** | **`H50` (原 M50)** | [`rxnorm_db`](modules/h50_rxnorm_db/README.md) | [CLI 手冊](modules/h50_rxnorm_db/CLI_MANUAL.md) | NLM RxNorm 美規 RxCUI 藥物概念快取 | 200 筆 | 🟢 100% PASS |
