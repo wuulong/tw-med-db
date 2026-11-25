@@ -27,8 +27,10 @@ LTC_1966_TARGETS: Dict[str, Dict[str, str]] = {
     "13": {"name": "13_workforce", "title_kw": "(十三)"},
     "14": {"name": "14_disabled_cms_users", "title_kw": "(十四)"},
     "15": {"name": "15_city_claims", "title_kw": "(十五)"},
+    "16": {"name": "16_abc_sites", "title_kw": "(十六)"},
     "18": {"name": "18_city_ag_users", "title_kw": "(十八)"},
     "19": {"name": "19_cms_ag_users", "title_kw": "(十九)"},
+    "22": {"name": "22_caregiver_settings", "title_kw": "(二十二)"},
 }
 
 OPENDATA_TARGETS: Dict[str, Dict[str, str]] = {

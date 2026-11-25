@@ -405,6 +405,13 @@ def build_parser() -> argparse.ArgumentParser:
     p_pharm.add_argument("--keyword", help="藥局名稱或地址關鍵字")
     p_pharm.add_argument("-n", "--limit", type=int, default=20)
 
+    p_cc = sub.add_parser("community-care", parents=[common], help="查詢社區照顧關懷據點服務人數/人次 (行政院性別統計資料庫)")
+    p_cc.add_argument("--year", type=int, help="民國年 (如 113)")
+    p_cc.add_argument("--city", default="總計", help="縣市別 (預設 總計)")
+    p_cc.add_argument("--service", help="服務別關鍵字 (如 關懷訪視, 餐飲, 健康促進)")
+    p_cc.add_argument("--gender", default="總計", help="性別 (總計/男/女，預設 總計)")
+    p_cc.add_argument("-n", "--limit", type=int, default=20)
+
     sub.add_parser("version", parents=[common], help="顯示 CLI 與 CGS 規格版本")
     sub.add_parser("list", parents=[common], help="列出支援的資料集與子命令")
 
@@ -483,6 +490,34 @@ def main(argv: Optional[List[str]] = None) -> int:
         rows = [dict(r) for r in conn.execute(sql, params).fetchall()]
         conn.close()
         _emit(rows, as_json)
+        return 0
+    if args.command == "community-care":
+        import json as _json
+        import urllib.request
+        url = "https://www.gender.ey.gov.tw/GecDB/Common/OpenJson.ashx?sn=pclP3E3y8zPCe2EZIjRpsw@@"
+        with urllib.request.urlopen(url, timeout=20) as resp:
+            raw = _json.loads(resp.read().decode("utf-8"))
+        out = []
+        target_city = args.city.replace("台", "臺") if args.city else None
+        for r in raw:
+            yr = int(r.get("Period", 0)) // 100
+            if args.year and yr != args.year:
+                continue
+            if target_city and r.get("Category3Title") != target_city:
+                continue
+            if args.gender and r.get("Category2Title") != args.gender:
+                continue
+            if args.service and args.service not in (r.get("Category1Title") or ""):
+                continue
+            out.append({
+                "year_roc": yr,
+                "city": r.get("Category3Title"),
+                "service_type": r.get("Category1Title"),
+                "gender": r.get("Category2Title"),
+                "value": int(round(float(r.get("Val", 0)))),
+            })
+        out.sort(key=lambda x: (-x["year_roc"], x["service_type"] or ""))
+        _emit(out[:args.limit], as_json)
         return 0
 
     parser.print_help()
